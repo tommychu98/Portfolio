@@ -2,6 +2,7 @@ import content from './content.json';
 export default content;
 export const links = {
   zara: 'https://zara-renewal.vercel.app/',
+  diptyque: 'https://mbc-teamproject-alpha.vercel.app/',
   proposal: 'https://notefolio.net/maygirl_gh5591/429754',
 };
 export const navigation = [
