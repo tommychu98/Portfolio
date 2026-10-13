@@ -8,3 +8,20 @@
 
 /* Condensed poster typography; palette, layout and animation unchanged. */
 .zara-process__intro h3,.zara-process__intro h3 em{font-family:var(--poster);font-weight:400;text-transform:uppercase}.zara-process__copy h3{font-weight:700}
+
+/* DIPTYQUE planning content: scoped to section 08, with the existing motion intact. */
+.zara-process__copy{min-width:0}
+.zara-process__copy h3{white-space:pre-line;font-size:clamp(24px,2.1vw,32px);line-height:1.45;margin:18px 0}
+.zara-process__copy>p{font-size:15px;line-height:1.85;word-break:keep-all;overflow-wrap:break-word}
+.zara-process__reasoning{margin:22px 0 0}
+.zara-process__reasoning>div{display:grid;grid-template-columns:105px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.zara-process__reasoning dt{font-size:12px;font-weight:700;color:#566454;line-height:1.8}
+.zara-process__reasoning dd{margin:0;font-size:14px;line-height:1.8;word-break:keep-all;overflow-wrap:break-word}
+.zara-process__copy .zara-process__note{font-size:12px;line-height:1.8;margin-top:16px}
+.zara-process__preview{background:#f7f6f4;padding:12px}
+.zara-process__collage img{background:#f7f6f4}
+.zara-process__dialog-scroll{background:#f7f6f4}
+.zara-process__tabs{margin-top:16px}
+.zara-process__tabs .ui-button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+@media(min-width:1024px) and (max-height:850px){.zara-process.has-horizontal .zara-process__copy h3{font-size:25px;margin:12px 0}.zara-process.has-horizontal .zara-process__reasoning{margin-top:12px}.zara-process.has-horizontal .zara-process__reasoning>div{padding:8px 0}.zara-process.has-horizontal .zara-process__reasoning dd{font-size:13px}}
+@media(max-width:820px){.zara-process__reasoning>div{grid-template-columns:90px 1fr;gap:10px}.zara-process__material-footer{align-items:flex-start}.zara-process__material-footer>span{max-width:70%}.zara-process__material-footer .text-link{white-space:nowrap}.zara-process__intro h3{font-size:clamp(48px,12vw,64px)}}
