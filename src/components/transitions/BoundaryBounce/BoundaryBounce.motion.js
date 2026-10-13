@@ -25,7 +25,7 @@ export function initBoundaryBounce(root, id) {
   const paths = [...root.querySelectorAll('path')];
   const flat = boundaryPath(0);
   const media = gsap.matchMedia();
-  media.add('(prefers-reduced-motion: no-preference)', () => {
+  media.add('all', () => {
     let tween;
     let lastDirection = 0;
     let peakSpeed = 0;

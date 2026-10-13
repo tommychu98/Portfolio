@@ -4,7 +4,6 @@ import { advanceObject, clamp, constrainPoint } from './Intro.physics';
 
 export function initIntro(root) {
   const stage=root.querySelector('[data-intro-stage]');
-  const preference=matchMedia('(prefers-reduced-motion: reduce)');
   const listeners=[];
   const states=[...root.querySelectorAll('[data-intro-object]')].map((element,index)=>({
     element, art:element.querySelector('[data-object-art]'), data:introObjects[index], originalStyle:element.getAttribute('style'),
@@ -20,7 +19,7 @@ export function initIntro(root) {
   const stop=()=>{cancelAnimationFrame(frame);frame=0;previous=0;};
   function tick(time) {
     frame=0;
-    if(disposed||!visible||document.hidden||preference.matches)return;
+    if(disposed||!visible||document.hidden)return;
     const dt=Math.min((time-(previous||time-16.67))/1000,.032);previous=time;
     let busy=false;
     states.forEach(state=>{
@@ -35,11 +34,11 @@ export function initIntro(root) {
     });
     if(busy)frame=requestAnimationFrame(tick);else previous=0;
   }
-  function wake(){if(!frame&&visible&&!document.hidden&&!preference.matches&&!disposed)frame=requestAnimationFrame(tick);}
+  function wake(){if(!frame&&visible&&!document.hidden&&!disposed)frame=requestAnimationFrame(tick);}
   function release(state,cancelled=false){
     const drag=state.drag;if(!drag)return;
     state.drag=null;state.hover=false;state.element.classList.remove('is-dragging');
-    if(cancelled||preference.matches||performance.now()-drag.lastTime>100){state.vx=0;state.vy=0;}
+    if(cancelled||performance.now()-drag.lastTime>100){state.vx=0;state.vy=0;}
     if(state.element.hasPointerCapture?.(drag.id))state.element.releasePointerCapture(drag.id);
     wake();
   }
@@ -76,7 +75,6 @@ export function initIntro(root) {
   }
   measure();
   const context=gsap.context(()=>{
-    if(preference.matches)return;
     entrance=gsap.timeline();
     entrance.fromTo(root.querySelectorAll('[data-object-entrance]'),{scale:0,rotation:i=>i%2?-65:65,opacity:0},{scale:1,rotation:0,opacity:1,duration:1.2,stagger:.085,ease:'back.out(3)'},.05)
       .fromTo(root.querySelector('[data-intro-name]'),{y:60,opacity:0},{y:0,opacity:1,duration:.6,ease:'back.out(1.4)'},.25)
@@ -96,8 +94,8 @@ export function initIntro(root) {
       const now=performance.now(),dt=Math.max((now-state.drag.lastTime)/1000,.008);
       const rect=stage.getBoundingClientRect();
       const next=constrainPoint({x:event.clientX-rect.left-state.drag.offsetX,y:event.clientY-rect.top-state.drag.offsetY},state.bounds);
-      state.vx=preference.matches?0:clamp((next.x-state.x)/dt,-1500,1500);
-      state.vy=preference.matches?0:clamp((next.y-state.y)/dt,-1500,1500);
+      state.vx=clamp((next.x-state.x)/dt,-1500,1500);
+      state.vy=clamp((next.y-state.y)/dt,-1500,1500);
       state.x=next.x;state.y=next.y;state.drag.lastTime=now;render(state);wake();
     });
     listen(state.element,'pointerup',event=>{if(state.drag?.id===event.pointerId)release(state);});
@@ -115,13 +113,11 @@ export function initIntro(root) {
     });
     listen(state.element,'click',event=>{
       if(event.detail!==0)return;
-      if(preference.matches){const p=constrainPoint({x:state.x+16,y:state.y-12},state.bounds);state.x=p.x;state.y=p.y;render(state);}
-      else{state.vx=120;state.vy=-90;wake();}
+      state.vx=120;state.vy=-90;wake();
     });
   }
   listen(stage,'dragstart',event=>event.preventDefault());
   listen(root.querySelector('[data-intro-reset]'),'click',()=>{stop();states.forEach(state=>{release(state,true);Object.assign(state,state.home,{vx:0,vy:0,scale:1,rotation:state.angle});render(state);});});
-  listen(preference,'change',()=>{entrance?.progress(1).pause();stop();states.forEach(state=>{release(state,true);state.vx=state.vy=0;state.scale=1;state.rotation=state.angle;render(state);});});
   listen(document,'visibilitychange',()=>{
     if(document.hidden){stop();states.forEach(state=>release(state,true));entrance?.pause();}
     else if(visible){entrance?.resume();wake();}

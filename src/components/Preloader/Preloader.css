@@ -2,4 +2,3 @@
 .preloader__drawing{width:min(320px,66vw);height:auto;transform:rotate(-3deg)}
 .preloader__caption{font:600 12px/1.4 var(--subheading);letter-spacing:.22em}
 @keyframes preloader-failsafe{to{opacity:0;visibility:hidden}}
-@media(prefers-reduced-motion:reduce){.preloader__drawing{transform:none}}

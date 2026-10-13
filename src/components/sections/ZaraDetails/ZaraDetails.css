@@ -8,3 +8,10 @@
 /* Condensed poster typography; palette, layout and animation unchanged. */
 .zara-details__copy h3,.zara-details__copy h3 em{font-family:var(--poster);font-weight:400;text-transform:uppercase;letter-spacing:-.015em}.zara-details__flow h4{font-family:var(--subheading);font-weight:600}
 .zara-details__photo>img,.zara-details__products img{display:block;width:100%;height:100%;object-fit:cover}.zara-details__products figure>div{background:#f4ead7}.zara-details__products figure:first-child img{object-position:center}.zara-details__products figure:nth-child(2) img{object-position:center}
+.zara-details__photo--brand-experience{height:auto;min-height:0;aspect-ratio:720/454;background:#f7f5f3}.zara-details__photo--brand-experience>img{object-fit:contain}
+
+/* Keep both GIFs at their existing size; the illustrated frame sits outside them. */
+.zara-details__products figure>div{position:relative;overflow:visible;background:transparent;isolation:isolate}
+.zara-details__products figure>div>img{border-radius:3px}
+.zara-details__products figure>div::after{content:'';position:absolute;left:-9.06%;top:-11.68%;width:118.56%;height:120.77%;background:url('/media/images/diptyque/portrait-browser-frame.png') center/100% 100% no-repeat;pointer-events:none;z-index:1}
+.zara-details__products figcaption{padding-top:30px}

@@ -30,7 +30,7 @@ export function initPersonalWorks(root, onSelect) {
     onSelect(index);
   }
 
-  mm.add('(min-width: 1024px) and (min-height: 740px) and (prefers-reduced-motion: no-preference)', () => {
+  mm.add('(min-width: 1024px) and (min-height: 740px)', () => {
     root.classList.add('personal-works--orbit');
     current = -1;
     holders.forEach((holder, index) => gsap.set(holder, { rotation: index * 20 }));
@@ -76,11 +76,8 @@ export function initPersonalWorks(root, onSelect) {
 export function animatePersonalDetail(dialog, source) {
   const art = dialog.querySelector('[data-detail-art]');
   const copy = dialog.querySelector('[data-detail-copy]');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let timeline;
-  let finish;
   const context = gsap.context(() => {
-    if (reduced.matches) return;
     const target = art.getBoundingClientRect();
     timeline = gsap.timeline();
     timeline.fromTo(art, {
@@ -89,21 +86,14 @@ export function animatePersonalDetail(dialog, source) {
     }, { x: 0, y: 0, scale: 1, duration: 1.2, ease: 'expo.out' }, 0)
       .fromTo(copy, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .6, ease: 'expo.out' }, .15);
   }, dialog);
-  const preferenceChanged = () => {
-    if (!reduced.matches) return;
-    timeline?.progress(1).pause();
-    if (finish) { const done = finish; finish = null; done(); }
-  };
-  reduced.addEventListener('change', preferenceChanged);
   return {
     close(done) {
-      if (!timeline || reduced.matches) { done(); return; }
-      finish = done;
-      timeline.eventCallback('onReverseComplete', () => { finish = null; done(); });
+      if (!timeline) { done(); return; }
+      timeline.eventCallback('onReverseComplete', done);
       // A very early close still has a nonzero reverse interval.
-      if (timeline.progress() === 0) { finish = null; done(); }
+      if (timeline.progress() === 0) done();
       else timeline.timeScale(1.6).reverse();
     },
-    destroy() { finish = null; reduced.removeEventListener('change', preferenceChanged); context.revert(); },
+    destroy() { context.revert(); },
   };
 }

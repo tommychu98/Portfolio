@@ -3,6 +3,9 @@ import { links } from '../../../data/projects';
 import Link from '../../ui/Link';
 import SectionLabel from '../../ui/SectionLabel';
 import HorizontalControls from '../../ui/HorizontalControls';
+import ProjectList from './ProjectList';
+import WorkFolder from './WorkFolder';
+import LaptopPreview from './LaptopPreview';
 import { initZaraDetails } from './ZaraDetails.motion';
 import './ZaraDetails.css';
 
@@ -14,16 +17,13 @@ const details = [
 ];
 
 function DetailVisual({ index }) {
+  if (index === 0) return <LaptopPreview/>;
   if (index === 1) return <div className="zara-details__products">
-    <figure><div><img src="/media/images/diptyque/main.webp" alt="딥디크 메인 화면" loading="lazy"/></div><figcaption><small>SCENT · SCENE</small><h4>향을 만나는 장면</h4><p>브랜드 경험 →</p></figcaption></figure>
-    <figure><div><img src="/media/images/diptyque/story-figma.png" alt="딥디크 브랜드 스토리 화면" loading="lazy"/></div><figcaption><small>HISTORY OF DIPTYQUE</small><h4>이야기로 향을 탐색하기</h4><p>스토리 탐색 →</p></figcaption></figure>
+    <figure><div><img src="/media/images/diptyque/galerie-portrait.gif" alt="딥디크 Galerie 향 탐색 화면 애니메이션" loading="lazy"/></div><figcaption><small>SCENT · SCENE</small><h4>향을 만나는 장면</h4><p>브랜드 경험 →</p></figcaption></figure>
+    <figure><div><img src="/media/images/diptyque/history-portrait.gif" alt="딥디크 History 브랜드 스토리 화면 애니메이션" loading="lazy"/></div><figcaption><small>HISTORY OF DIPTYQUE</small><h4>이야기로 향을 탐색하기</h4><p>스토리 탐색 →</p></figcaption></figure>
   </div>;
-  if (index === 2) return <div className="zara-details__flow">{[
-    ['BRAND HISTORY', '브랜드의 역사와 시작'], ['SCENT STORY', '향에 담긴 이야기'], ['PRODUCT DETAIL', '제품 정보와 특징'], ['EXPLORE SCENT', '나에게 맞는 향 탐색'],
-  ].map(([title, body], i) => <div key={title}><small>0{i + 1}</small><h4>{title}</h4><p>{body}</p><span aria-hidden="true">↓</span></div>)}</div>;
-  const image = index === 0 ? '/media/images/diptyque/story-figma.png' : '/media/images/diptyque/main.png';
-  const alt = index === 0 ? '딥디크 브랜드 스토리 화면 디자인' : '딥디크 웹사이트 메인 화면';
-  return <div className="zara-details__photo"><img src={image} alt={alt} loading="lazy"/></div>;
+  if (index === 2) return <ProjectList/>;
+  return <WorkFolder/>;
 }
 
 export default function ZaraDetails() {
@@ -31,7 +31,7 @@ export default function ZaraDetails() {
   useEffect(() => initZaraDetails(ref.current), []);
   return <section id="zara-details" className="zara-details" ref={ref} aria-labelledby="zara-details-title"><div className="horizontal-viewport" data-viewport>
     <div className="horizontal-heading"><SectionLabel number="07">DIPTYQUE / DESIGN &amp; MY ROLE</SectionLabel><h2 id="zara-details-title">Behind the <em>screen.</em></h2></div>
-    <div data-track>{details.map((detail, i) => <article className="horizontal-panel zara-details__panel" data-panel key={i}><div className="zara-details__copy"><span className="fine-print">DIPTYQUE — 0{i + 1} / 04</span><h3>{detail.title}</h3>{detail.paragraphs.map((paragraph, j) => <p key={j}>{paragraph}</p>)}{i === 3 && <Link href={links.diptyque}>VIEW WEBSITE</Link>}</div><DetailVisual index={i}/></article>)}</div>
+    <div data-track>{details.map((detail, i) => <article className={`horizontal-panel zara-details__panel${i === 0 ? ' zara-details__panel--laptop' : ''}`} data-panel key={i}><div className="zara-details__copy"><span className="fine-print">DIPTYQUE — 0{i + 1} / 04</span><h3>{detail.title}</h3>{detail.paragraphs.map((paragraph, j) => <p key={j}>{paragraph}</p>)}{i === 3 && <Link href={links.diptyque}>VIEW WEBSITE</Link>}</div><DetailVisual index={i}/></article>)}</div>
     <HorizontalControls label="DIPTYQUE 상세"/>
   </div></section>;
 }

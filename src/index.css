@@ -8,7 +8,6 @@
 @media(min-width:1700px){.section-space{padding-inline:max(var(--gutter),calc((100vw - 1560px)/2))}}
 @media(max-width:1199px){.section-space{padding-block:100px}.section-heading{gap:30px}.horizontal-heading{align-items:start}.display{font-size:clamp(56px,7.3vw,88px)}}
 @media(max-width:820px){.section-space{padding-block:76px}.display{font-size:clamp(42px,11vw,64px)}.section-heading{display:block;margin-bottom:40px}.section-heading>p{margin-top:25px}.horizontal-heading{display:block}.horizontal-heading h2{margin-top:20px}.horizontal-viewport{padding-top:76px}.horizontal-panel{padding-top:32px;padding-bottom:55px}.section-label{margin-bottom:24px}.korean-display{font-size:24px}.project-meta{grid-template-columns:75px 1fr}.horizontal-hint{display:none}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 /* The same local sans font, optically sized for former mixed-case serif copy. */
 @font-face{font-family:"Portfolio Compact";font-style:normal;font-weight:100 900;font-display:swap;src:url("@fontsource-variable/noto-sans-kr/files/noto-sans-kr-latin-wght-normal.woff2") format("woff2");size-adjust:80%;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}

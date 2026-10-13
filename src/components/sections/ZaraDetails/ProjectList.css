@@ -1,0 +1,8 @@
+.diptyque-project-list .diptyque-project-list__row{display:block;position:relative;border-top:1px solid var(--line);padding:22px 36px 22px 35px;color:inherit;text-decoration:none;cursor:pointer}
+.diptyque-project-list .diptyque-project-list__row:focus-visible{outline:2px solid #62694b;outline-offset:4px}
+.diptyque-project-list .diptyque-project-list__title{position:relative;overflow:hidden}
+.diptyque-project-list__title>b{display:block;font:inherit;letter-spacing:inherit;will-change:transform}
+.diptyque-project-list__title>[data-title-color]{position:absolute;inset:0;color:#62694b;transform:translateY(100%)}
+.diptyque-project-list [data-project-arrow]{display:block;transform-origin:center;will-change:transform}
+.diptyque-project-preview{position:fixed;left:0;top:0;width:min(320px,calc(100vw - 64px));aspect-ratio:16/9;z-index:590;pointer-events:none;visibility:hidden;opacity:0;overflow:hidden;border-radius:5px;background:#f3eee4;box-shadow:0 16px 40px #30291824;will-change:transform,opacity}
+.diptyque-project-preview>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;opacity:0}

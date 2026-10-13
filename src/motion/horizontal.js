@@ -15,7 +15,7 @@ export function initHorizontal(root) {
     root.querySelector('[data-next]').disabled = index === panels.length-1;
     if(count) count.textContent = `${String(index+1).padStart(2,'0')} / ${String(panels.length).padStart(2,'0')}`;
   }
-  mm.add('(min-width: 1024px) and (min-height: 740px) and (prefers-reduced-motion: no-preference)', () => {
+  mm.add('(min-width: 1024px) and (min-height: 740px)', () => {
     root.classList.add('has-horizontal');
     const distance = () => Math.max(0,track.scrollWidth-viewport.clientWidth);
     tween = gsap.to(track,{x:() => -distance(),ease:'none',scrollTrigger:{trigger:root,pin:viewport,start:'top top',end:() => `+=${distance()}`,scrub:.45,invalidateOnRefresh:true,anticipatePin:1,onUpdate:self=>{

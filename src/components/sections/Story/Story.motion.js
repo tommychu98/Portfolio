@@ -1,2 +1,2 @@
 import { gsap } from '../../../motion/scroll';
-export function initStory(root){const mm=gsap.matchMedia();mm.add('(min-width: 821px) and (prefers-reduced-motion: no-preference)',()=>{root.querySelectorAll('.story__object').forEach((el,i)=>gsap.fromTo(el,{y:i%2?-25:25},{y:i%2?25:-25,ease:'none',scrollTrigger:{trigger:root,start:'top bottom',end:'bottom top',scrub:true}}));});return()=>mm.revert();}
+export function initStory(root){const mm=gsap.matchMedia();mm.add('(min-width: 821px)',()=>{root.querySelectorAll('.story__object').forEach((el,i)=>gsap.fromTo(el,{y:i%2?-25:25},{y:i%2?25:-25,ease:'none',scrollTrigger:{trigger:root,start:'top bottom',end:'bottom top',scrub:true}}));});return()=>mm.revert();}

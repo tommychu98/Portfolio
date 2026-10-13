@@ -36,4 +36,3 @@
  .intro__reset{font-size:11px;gap:6px}
 }
 @media(max-width:480px){.intro__scroll{display:none}.intro__discipline{font-size:16px}.intro__edition{font-size:30px}}
-@media(prefers-reduced-motion:reduce){.intro-object__label{transition:none}}

@@ -27,9 +27,14 @@
   "sourceAssetsVerified": 27,
   "externalLinks": [
     {
-      "url": "https://zara-renewal.vercel.app/",
+      "url": "https://mbc-teamproject-alpha.vercel.app/",
       "status": 200,
       "ok": true
+    },
+    {
+      "url": "https://www.figma.com/design/DwbaDAovYNR7jMSBg62PQs/1%EC%A1%B0--DIPTYQUE-renewal-project?node-id=3208-5234&m=dev",
+      "status": 403,
+      "ok": false
     },
     {
       "url": "https://notefolio.net/maygirl_gh5591/429754",

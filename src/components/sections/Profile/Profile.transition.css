@@ -4,7 +4,3 @@
 .profile__punctuation{display:inline-block;margin-left:.07em}
 .profile__word[data-heading-animating] .profile__heading-source{opacity:0}
 .profile__word[data-heading-animating] .profile__heading-motion{visibility:visible}
-@media(prefers-reduced-motion:reduce){
- .profile__word[data-heading-animating] .profile__heading-source{opacity:1}
- .profile__word .profile__heading-motion{display:none}
-}

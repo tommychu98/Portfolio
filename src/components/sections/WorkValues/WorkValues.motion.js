@@ -8,7 +8,7 @@ export function exitProgress(progress, sectionHeight, viewportHeight) {
 
 export function initWorkValuesExit(root) {
   const media = gsap.matchMedia();
-  media.add('(prefers-reduced-motion: no-preference)', () => {
+  media.add('all', () => {
     gsap.fromTo(root.querySelector('[data-values-exit]'), { y: 0 }, {
       y: () => window.innerWidth < 640 ? 300 : 500,
       ease: progress => exitProgress(progress, root.offsetHeight, window.innerHeight),

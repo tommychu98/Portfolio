@@ -3,7 +3,7 @@ import { circleMask } from './StoryTransition.geometry';
 
 export function initStoryTransition(root) {
   const media = gsap.matchMedia();
-  media.add('(prefers-reduced-motion: no-preference)', () => {
+  media.add('all', () => {
     const wrapper = root.querySelector('[data-story-transition]');
     const circle = root.querySelector('[data-story-circle]');
     const lines = [...root.querySelectorAll('[data-story-line]')];

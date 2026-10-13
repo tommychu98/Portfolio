@@ -2,7 +2,7 @@ import { gsap } from '../../../motion/scroll';
 
 export function initProfile(root) {
   const media=gsap.matchMedia();
-  media.add('(prefers-reduced-motion: no-preference)', () => {
+  media.add('all', () => {
     const heading=root.querySelector('[data-profile-heading]');
     heading.setAttribute('data-heading-animating','');
     gsap.fromTo(heading.querySelectorAll('[data-profile-letter]'), {y:-150,opacity:0,rotation:-10}, {
