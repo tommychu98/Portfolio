@@ -1,0 +1,10 @@
+.profile__word{position:relative}
+.profile__heading-motion{position:absolute;inset:0;visibility:hidden;pointer-events:none;user-select:none}
+.profile__letter{display:inline-block;transform-origin:50% 100%}
+.profile__punctuation{display:inline-block;margin-left:.07em}
+.profile__word[data-heading-animating] .profile__heading-source{opacity:0}
+.profile__word[data-heading-animating] .profile__heading-motion{visibility:visible}
+@media(prefers-reduced-motion:reduce){
+ .profile__word[data-heading-animating] .profile__heading-source{opacity:1}
+ .profile__word .profile__heading-motion{display:none}
+}

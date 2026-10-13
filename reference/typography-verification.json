@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "cssFiles": 19,
+  "sourceFiles": 40,
+  "mediaFiles": 27,
+  "preserved": "Exact color, background, border, box, spacing, font-size, line-height, motion and breakpoint declarations; original JSX/data/media unchanged.",
+  "limitation": "Source comparison, not rendered browser layout. Font advance measurements do not replace viewport testing."
+}

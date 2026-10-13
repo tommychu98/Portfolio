@@ -1,0 +1,75 @@
+{
+  "method": "fontkit shaped advance widths from decompressed installed variable fonts at actual weights. CSS tracking, DOM layout and browser font rasterization are excluded.",
+  "samples": [
+    {
+      "text": "MAKE IT",
+      "oldAdvanceEm": 4.123,
+      "newAdvanceEm": 4.036,
+      "widthChangePercent": -2.1,
+      "sizeAdjust": 1
+    },
+    {
+      "text": "SELECTED",
+      "oldAdvanceEm": 4.91,
+      "newAdvanceEm": 5.082,
+      "widthChangePercent": 3.5,
+      "sizeAdjust": 1
+    },
+    {
+      "text": "WORKS",
+      "oldAdvanceEm": 3.591,
+      "newAdvanceEm": 3.69,
+      "widthChangePercent": 2.7,
+      "sizeAdjust": 1
+    },
+    {
+      "text": "ONDA",
+      "oldAdvanceEm": 2.986,
+      "newAdvanceEm": 2.889,
+      "widthChangePercent": -3.3,
+      "sizeAdjust": 1
+    },
+    {
+      "text": "clear.",
+      "oldAdvanceEm": 1.985,
+      "newAdvanceEm": 1.896,
+      "widthChangePercent": -4.5,
+      "sizeAdjust": 0.7
+    },
+    {
+      "text": "two directions.",
+      "oldAdvanceEm": 5.287,
+      "newAdvanceEm": 5.265,
+      "widthChangePercent": -0.4,
+      "sizeAdjust": 0.7
+    },
+    {
+      "text": "From office,",
+      "oldAdvanceEm": 4.723,
+      "newAdvanceEm": 4.75,
+      "widthChangePercent": 0.6,
+      "sizeAdjust": 0.8
+    },
+    {
+      "text": "VIEW PROJECT",
+      "oldAdvanceEm": 7.121,
+      "newAdvanceEm": 7.108,
+      "widthChangePercent": -0.2,
+      "sizeAdjust": 1
+    },
+    {
+      "text": "PROPOSAL",
+      "oldAdvanceEm": 5.143,
+      "newAdvanceEm": 5.324,
+      "widthChangePercent": 3.5,
+      "sizeAdjust": 1
+    },
+    {
+      "text": "SELECTED WORKS",
+      "oldAdvanceEm": 8.715,
+      "newAdvanceEm": 8.783,
+      "widthChangePercent": 0.8,
+      "sizeAdjust": 1
+    }
+  ]
+}

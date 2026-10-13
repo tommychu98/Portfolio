@@ -1,0 +1,66 @@
+{
+  "sections": [
+    "intro",
+    "story",
+    "values",
+    "profile",
+    "work",
+    "zara",
+    "zara-details",
+    "zara-process",
+    "personal",
+    "film",
+    "clone",
+    "skills",
+    "about",
+    "closing",
+    "contact"
+  ],
+  "headings": 1,
+  "zaraDetailPanels": 4,
+  "uxPanels": 7,
+  "uxMaterials": 20,
+  "videos": 3,
+  "videoDescriptions": 18,
+  "skillCategories": 6,
+  "questions": 4,
+  "sourceAssetsVerified": 27,
+  "externalLinks": [
+    {
+      "url": "https://zara-renewal.vercel.app/",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://notefolio.net/maygirl_gh5591/429754",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://personal3-gilt.vercel.app/pages/personal-01.html",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://personal3-gilt.vercel.app/pages/personal-02.html",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://personal3-gilt.vercel.app/pages/clone-01.html",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://personal3-gilt.vercel.app/pages/clone-02.html",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://personal3-gilt.vercel.app/pages/clone-03.html",
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "browserVerification": "Not run: browser runtime returned no available browsers. Layout, playback, focus and scroll behaviour still require real-browser verification."
+}

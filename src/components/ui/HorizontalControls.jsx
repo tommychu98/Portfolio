@@ -1,0 +1,2 @@
+import Button from './Button';
+export default function HorizontalControls({label}){return <div className="horizontal-controls"><span className="horizontal-hint">SCROLL TO DISCOVER →</span><div className="horizontal-meter" aria-hidden="true"><span data-progress/></div><span data-count>01</span><Button data-prev data-horizontal-keys aria-label={`${label} 이전 패널`}>←</Button><Button data-next data-horizontal-keys aria-label={`${label} 다음 패널`}>→</Button></div>;}

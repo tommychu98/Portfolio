@@ -1,0 +1,214 @@
+{
+  "url": "http://localhost:5174/",
+  "htmlStatus": 200,
+  "utf8": true,
+  "media": [
+    {
+      "file": "/media/assets/editorial-sheet.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 2239838,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/shortform/hero-poster.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1151077,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/shortform/hero.webm",
+      "status": 200,
+      "type": "video/webm",
+      "bytes": 4164467,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/shortform/night-poster.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 983314,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/shortform/night.webm",
+      "status": 200,
+      "type": "video/webm",
+      "bytes": 3700425,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/shortform/quiet-poster.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 990901,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/shortform/quiet.webm",
+      "status": 200,
+      "type": "video/webm",
+      "bytes": 3762367,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/3c.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 105619,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/affinity.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 62968,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/brand.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 77746,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/competitors.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 77116,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/components.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 81606,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/flow.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 45616,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/interviews.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 84922,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/journey.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 91804,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/lean.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 118632,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/meeting.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 84922,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/mindmap.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 78873,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/moodboard.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 71868,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/persona.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 69036,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/questions.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 68611,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/requirements.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 93832,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/sitemap.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 64941,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/steep.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 86764,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/summary.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 71689,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/system.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 77088,
+      "sha256Matches": true
+    },
+    {
+      "file": "/media/images/zara-methodology/wireframe.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 52220,
+      "sha256Matches": true
+    }
+  ],
+  "videoRangeRequests": [
+    {
+      "file": "/media/images/shortform/hero.webm",
+      "status": 206,
+      "range": "bytes 0-63/4164467"
+    },
+    {
+      "file": "/media/images/shortform/night.webm",
+      "status": 206,
+      "range": "bytes 0-63/3700425"
+    },
+    {
+      "file": "/media/images/shortform/quiet.webm",
+      "status": 206,
+      "range": "bytes 0-63/3762367"
+    }
+  ],
+  "browserRenderingVerified": false
+}

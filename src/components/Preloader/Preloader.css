@@ -1,0 +1,5 @@
+.preloader{position:fixed;inset:0;z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#f3e6c7;color:#194e73;pointer-events:none;animation:preloader-failsafe .2s 5.8s forwards}
+.preloader__drawing{width:min(320px,66vw);height:auto;transform:rotate(-3deg)}
+.preloader__caption{font:600 12px/1.4 var(--subheading);letter-spacing:.22em}
+@keyframes preloader-failsafe{to{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.preloader__drawing{transform:none}}

@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "checked": {
+    "cssFiles": 19,
+    "sourceFiles": 40,
+    "mediaFiles": 27
+  },
+  "preserved": "All existing JSX, content, motion modules, media hashes, CSS box dimensions, gaps, transforms, transitions, animation settings and media queries checked against the before snapshot.",
+  "contrasts": [
+    {
+      "foreground": "#11130f",
+      "background": "#e8d8ba",
+      "ratio": 13.31
+    },
+    {
+      "foreground": "#11130f",
+      "background": "#508f8d",
+      "ratio": 5.03
+    },
+    {
+      "foreground": "#285b59",
+      "background": "#e8d8ba",
+      "ratio": 5.48
+    },
+    {
+      "foreground": "#11130f",
+      "background": "#e5cc72",
+      "ratio": 11.76
+    },
+    {
+      "foreground": "#e8d8ba",
+      "background": "#11130f",
+      "ratio": 13.31
+    }
+  ],
+  "limitation": "Source and solid-color checks only. Browser unavailable: before/after screenshots, rendered line breaks, real button widths, overflow and scroll playback remain unverified."
+}

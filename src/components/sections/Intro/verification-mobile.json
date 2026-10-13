@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "mode": "mobile",
+  "protectedFiles": 83,
+  "physicsCases": 840,
+  "objects": 18,
+  "checks": "StrictMode cleanup, keyboard Home, mouse/touch capture and drag, cancel, stable reset, no new scroll trigger",
+  "limitation": "Simulated DOM and pure physics only. Real browser rendering, touch scrolling and visual comparison unavailable."
+}
