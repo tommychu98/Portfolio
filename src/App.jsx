@@ -13,6 +13,7 @@ import ZaraDetails from './components/sections/ZaraDetails/ZaraDetails';
 import ZaraProcess from './components/sections/ZaraProcess/ZaraProcess';
 import PersonalWorks from './components/sections/PersonalWorks/PersonalWorks';
 import Film from './components/sections/Film/Film';
+import FilmArchive from './components/sections/FilmArchive';
 import CloneCoding from './components/sections/CloneCoding/CloneCoding';
 import Skills from './components/sections/Skills/Skills';
 import About from './components/sections/About/About';
@@ -37,6 +38,7 @@ export default function App() {
       <ZaraProcess />
       <PersonalWorks />
       <Film />
+      <FilmArchive />
       <CloneCoding />
       <Skills />
       <About />
