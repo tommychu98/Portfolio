@@ -3,3 +3,7 @@
 
 /* Condensed poster typography; palette, layout and animation unchanged. */
 .about .display{font-family:var(--poster)}.about__qa>h3,.about__qa>h3 em{font-family:var(--poster);font-weight:400;text-transform:uppercase}.about__copy h3{font-weight:700}
+.about__copy>p+p{margin-top:20px}
+.about__question{display:flex;flex-direction:column;gap:10px;min-width:0}
+.about__question .about__number{font-size:12px;letter-spacing:.06em}
+.about details>p{padding-left:0}

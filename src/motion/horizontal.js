@@ -39,8 +39,9 @@ export function initHorizontal(root) {
   const previous = () => navigate(index-1);
   const next = () => navigate(index+1);
   const focus = event => {
+    if(event.target.closest('dialog')) return;
     const panel = event.target.closest('[data-panel]');
-    if(trigger && panel) navigate(panels.indexOf(panel));
+    if(trigger && panel && panels.indexOf(panel)!==index) navigate(panels.indexOf(panel));
   };
   const key = event => {
     if(!event.target.matches('[data-horizontal-keys]')) return;

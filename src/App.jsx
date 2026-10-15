@@ -29,7 +29,7 @@ export default function App() {
       <Story />
       <BoundaryBounce id="story-values" from="#194e73" to="var(--paper)" />
       <WorkValues />
-      <BoundaryBounce id="values-profile" from="var(--paper)" to="var(--teal)" />
+      <BoundaryBounce id="values-profile" from="var(--paper)" to="#CBD5D8" />
       <Profile />
       <WorksIntro />
       <ZaraOverview />

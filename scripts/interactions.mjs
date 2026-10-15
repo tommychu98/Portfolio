@@ -8,6 +8,7 @@ globalThis.IS_REACT_ACT_ENVIRONMENT=true;
 window.matchMedia=()=>({matches:false,addListener(){},removeListener(){},addEventListener(){},removeEventListener(){}});
 globalThis.matchMedia=window.matchMedia;
 globalThis.IntersectionObserver=class{observe(){}disconnect(){}unobserve(){}};
+globalThis.ResizeObserver=class{observe(){}disconnect(){}unobserve(){}};
 window.scrollTo=()=>{};
 // These adapters test React state and cleanup only, not the browser's native focus trap.
 HTMLDialogElement.prototype.showModal=function(){this.setAttribute('open','');};
