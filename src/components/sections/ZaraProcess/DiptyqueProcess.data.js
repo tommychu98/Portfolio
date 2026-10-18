@@ -33,12 +33,21 @@ export const materials = {
   flow: material('strategy-flow', '사용자 흐름', '3109:8869', '762:5358', 'analysis', 2180, 3426, 'HOME → ABOUT → 향 이야기 → SHOP → 제품 상세를 연결하고 바로 쇼핑하는 분기도 둔 사용자 흐름', { crop: true }),
 };
 
+// Transcribed from the existing Figma exports; these are source excerpts, not measured outcomes.
+export const sourceExcerpts = {
+  'desk-analysis': { location: 'Theme & Message', text: '브랜드 소개도 간단한 헤리티지 설명에 그쳐 딥디크의 철학과 감성을 충분히 느끼기 어렵다.' },
+  'competitive-3c': { location: 'INSIGHT', text: '고객은 빠르고 명확한 탐색을 원하지만, 딥디크의 경쟁력은 감성과 세계관에 있다.' },
+  'user-persona': { location: '핵심 니즈 · 팀이 구성한 퍼소나', text: '제품을 사는 것뿐만 아니라 브랜드 자체를 경험하고 싶다' },
+  'insight-journey': { location: 'Solution · 제품 탐색', text: '스토리 콘텐츠에서 관련 제품으로 자연스럽게 연결' },
+  'strategy-canvas': { location: 'Solutions · 설계 방향', text: '브랜드 스토리와 관련 제품을 연결합니다.' },
+};
+
 export const steps = [
   {
     id: 'desk', title: 'Desk Research', eyebrow: '브랜드와 운영 환경에서 출발하다',
     body: '팀은 브랜드의 자연·여행·예술이라는 배경, 니치 향수 시장, 국내 브랜드관의 운영 환경을 조사했습니다. 초기 메모를 여섯 가지 평가 기준의 자사 분석으로 정리했습니다.',
     process: [materials.brand, materials.market], output: [materials.company], outputLabel: 'ANALYSIS',
-    evidence: '팀의 자사 분석', finding: '구매 기능은 갖춰져 있지만, 브랜드의 이야기와 향을 이해하며 탐색하는 경험은 부족했습니다.',
+    evidence: '팀의 자사 분석', finding: '제품은 보이지만, 브랜드의 이야기는 충분히 전달되지 않았습니다.', findingHighlight: '브랜드의 이야기',
     bridge: '다음 질문 → 경쟁사는 구매 편의와 브랜드 경험을 어떻게 연결하고 있을까?',
     note: '시장 조사 이미지는 팀이 수집·정리한 2차 자료입니다. 초안의 시장 수치를 검증된 사실이나 프로젝트 성과로 재인용하지 않았습니다.',
   },
@@ -46,7 +55,7 @@ export const steps = [
     id: 'competitive', title: 'Competitive Analysis', eyebrow: '비교의 기준을 넓히다',
     body: '조 말론의 현지화된 쇼핑, 르 라보의 개인화·향 이야기, 바이레도의 시각적 정체성을 비교했습니다. STEEP과 3C로 외부 환경과 고객·경쟁사·자사의 관계를 정리했습니다.',
     process: [materials.competitors], output: [materials.threeC, materials.steep], outputLabel: 'ANALYSIS',
-    evidence: '팀의 비교 분석', finding: '딥디크의 차별화 방향은 빠른 제품 탐색과 감성적인 브랜드 경험을 하나의 흐름으로 연결하는 것이었습니다.',
+    evidence: '팀의 비교 분석', finding: '빠른 제품 탐색과 브랜드 경험을 하나의 흐름으로 연결해야 했습니다.', findingHighlight: '하나의 흐름',
     bridge: '다음 질문 → 실제 사용자도 이야기와 제품 탐색 사이에서 불편을 느낄까?',
     note: '경쟁사 비교와 STEEP·3C의 시사점은 팀의 조사·해석이며, 개선 효과를 검증한 결과는 아닙니다.',
   },
@@ -54,7 +63,7 @@ export const steps = [
     id: 'user', title: 'User Research', eyebrow: '사용자의 말에서 불편을 찾다',
     body: '인터뷰에서 향의 분위기를 이해하고 제품 간 차이를 비교하기 어렵다는 응답을 확인했습니다. 팀은 기존 고객형·브랜드 몰입형·향 탐색형을 정리하고 브랜드 몰입형을 주요 퍼소나로 설정했습니다.',
     process: [materials.answers, materials.questions], output: [materials.persona], outputLabel: 'ANALYSIS',
-    evidence: '인터뷰에서 확인', finding: '이 응답자는 제품 목록보다 향의 분위기와 브랜드 이야기를 이해한 뒤 제품을 선택하고 싶어 했습니다.',
+    evidence: '인터뷰에서 확인', finding: '이 응답자는 향과 브랜드 이야기를 이해한 뒤 제품을 선택하고 싶어 했습니다.', findingHighlight: '이해한 뒤 제품을 선택',
     bridge: '다음 질문 → 개별 답변을 어떤 공통 문제와 탐색 단계로 묶을 수 있을까?',
     note: '응답 요약은 실제 인터뷰 기록을 바탕으로 문장을 정리했습니다. 퍼소나는 팀이 구성한 설계용 모델이며 실제 응답자의 신원이 아닙니다.',
   },
@@ -62,7 +71,7 @@ export const steps = [
     id: 'insight', title: 'Insight Synthesis', eyebrow: '의견을 묶고, 여정 위에 놓다',
     body: 'Affinity Diagram으로 의견을 브랜드 전달·향 이해·제품 비교·메인 구조·온오프라인 간극의 다섯 범주로 묶었습니다. 여정지도에서는 진입 → 브랜드·향 이야기 → 제품 탐색 → 구매 판단에 문제와 기회를 배치했습니다.',
     process: [materials.affinity], output: [materials.journey], outputLabel: 'ANALYSIS',
-    evidence: '분석에서 도출', finding: '이야기를 찾고 이해하는 구간의 단절을 줄이고, 각 이야기에서 관련 제품으로 이어지는 경로가 필요했습니다.',
+    evidence: '분석에서 도출', finding: '브랜드 이야기에서 관련 제품으로 이어지는 경로가 필요했습니다.', findingHighlight: '관련 제품으로 이어지는 경로',
     bridge: '다음 질문 → 이 연결을 어떤 메뉴와 사용자 흐름으로 설계할까?',
     note: '여정지도의 감정과 개선안은 인터뷰를 해석한 팀의 모델입니다. 개선 후 행동이나 만족도를 관측한 결과가 아닙니다.',
   },
@@ -70,7 +79,7 @@ export const steps = [
     id: 'strategy', title: 'UX Strategy & IA', eyebrow: '인사이트를 메뉴와 경로로 바꾸다',
     body: '린 캔버스에서 “시각적 이야기와 관련 제품 연결이 브랜드 이해를 높이는가”를 검증 가설로 정리했습니다. ABOUT에 역사·향 이야기를, GALERIE에 향 탐색을 두고, 이야기에서 SHOP·제품 상세로 이어지는 경로를 설계했습니다.',
     process: [materials.canvas], output: [materials.ia, materials.menu, materials.flow], outputLabel: 'OUTPUT',
-    evidence: '설계 가설', finding: 'HOME → ABOUT → 향 이야기 → 관련 제품의 경로와, SHOP으로 바로 가는 경로를 함께 마련했습니다.',
+    evidence: '설계 가설', finding: '브랜드 탐색과 바로 구매하는 경로를 함께 설계했습니다.', findingHighlight: '브랜드 탐색과 바로 구매',
     bridge: '다음 단계 → 이 정보의 순서와 연결을 와이어프레임으로 구체화',
     note: '검증 목표: 정체성 이해도 4.0/5 이상 · 관련 제품 상세 이동률 20% 이상 · 연결 이유 설명 75% 이상. 테스트 계획이며 달성 성과가 아닙니다.',
   },

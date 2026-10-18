@@ -1,5 +1,32 @@
 # DIPTYQUE UX Case Study — Section 08
 
+## Typography & Visual Hierarchy refinement
+
+2026-10-18. Research Cut의 구조·35:65 그리드·폰트 패밀리·컬러·6단계를 보존하고 섹션 안의 가독성을 조정했다.
+
+- 1440px 실측: 본문 13→17px/1.7, Key Finding 16→24px/1.55, 단계 제목 50.4→42px, 탭 13→15px, 메인 타이틀 90.72→81.36px. 본문 영역 시작 위치는 섹션 상단 기준 482.88→385.59px로 약 97px 올라왔다.
+- 모바일 본문 16px, Key Finding 22px. 영문 라벨은 12~13px, 탭은 최소 44px 터치 영역을 유지한다. 강한 청록색 강조는 단계당 핵심 문구 한 곳만 사용한다.
+- Key Finding 문장을 기존 분석의 의미를 유지해 간결하게 정리했다. RESULT 진입 시 fade-up .45초와 밑줄 .5초, power2.out을 적용한다. reduced-motion에서는 즉시 완성 상태를 표시한다.
+- 고정 높이에 이미지를 축소하던 방식 대신 원본 비율의 전체 폭 미리보기를 사용한다. 긴 문서는 명시적인 스크롤 안내와 최대 높이의 읽기 영역을 제공한다. 클릭 확대와 ESC·포커스 복귀는 유지한다.
+- 로컬 원본 이미지를 직접 확인해 자사 분석 Theme & Message, 3C INSIGHT, 퍼소나 핵심 니즈, 여정지도 Solution, 린 캔버스 Solutions의 문구를 `sourceExcerpts`에 옮겼다. 해당 문서가 선택될 때만 이미지 아래 HTML로 표시하고 원본 노드 링크를 함께 제공한다. 퍼소나와 설계 방향을 관측 결과로 표현하지 않는다.
+- `scripts/capture-diptyque-typography.mjs`: 수정 전 6개 상태, 수정 후 1440/1024/390px의 6단계·두 탭 33개 상태를 캡처한다. 본문 크기, Key Finding 문장 순서, 원본 이미지 종횡비, 가로 넘침과 런타임 오류를 검증한다.
+- 전후 비교: `artifacts/diptyque-process/typography-comparison.html`. 화면과 실측값은 `typography-before/`, `typography-after/`에 있다.
+
+## 현재 구현: Research Cut — Interactive UX Archive
+
+2026-10-18 후속 수정. 아래 과거 구현 기록의 겹친 문서와 Reading Note 인터랙션을 단일 이미지 아카이브로 대체했다. 기존 헤더, 35:65 정보/자료 그리드, 01~06 순서, 원본 이미지와 공통 토큰은 유지한다.
+
+- RESEARCH / RESULT 탭에서 한 번에 하나의 원본 이미지를 표시한다. 탭 내부에 여러 자료가 있으면 하단 자료 이름으로 넘긴다. 인터뷰 응답 요약은 별도 읽기 버튼으로 보존하며 원문 답변 이미지는 표시하지 않는다.
+- 05의 완성된 린 캔버스는 RESULT에 IA·메뉴트리·사용자 흐름과 함께 배치한다. 연결된 초기 조사 이미지가 없는 RESEARCH에는 빈 상태를 표시한다. 06 Wireframe은 보류 상태다.
+- 왼쪽에는 제목·설명과 RESULT에서 드러나는 Key Finding을 표시한다. 분석 모델 및 검증 목표의 한계를 알리는 기존 주석은 finding 아래 유지한다. 작업 목록·다음 단계 질문·장식 선은 화면에서 제외한다.
+- GSAP 전환은 약 0.64초, power3.out. 자료 탭은 수평 이동·약한 Y축 회전·축소로 종이 전환을 표현하고 단계는 축소 퇴장 → 자료 등장 → 설명 → finding 순서다. 연속 입력 시 이전 타임라인을 취소하고 최신 선택을 적용한다. reduced-motion은 즉시 전환하며 설정 변경 시에도 잔여 모션을 정리한다.
+- 확인되지 않은 위치의 마커는 추가하지 않았다. 실제 Figma 이미지의 픽셀·비율·내용을 보존하고 그림자·카드·겹침을 제거했다. 이미지 크기 예약, lazy loading 및 비동기 decoding을 유지한다.
+- 이미지 상세 보기에는 맞춤/확대, 스크롤, ESC 닫기, 포커스 복귀를 유지한다. 모바일에서는 정보 위·이미지 아래로 배치하고 같은 탭으로 전환한다.
+- Chrome 브라우저 검수: 원본 14개 크기 확인, 두 탭과 모든 자료, 6단계와 빠른 입력, 방향키, 인터뷰 요약, 확대·ESC·포커스 복귀, reduced-motion, 다른 섹션 ScrollTrigger 유지, 1440/1024/768/390/320px 가로 넘침 없음. 런타임 오류 0건.
+- 검수 스크립트: `scripts/check-diptyque-process.mjs`. 결과: `artifacts/diptyque-process/cut-verification.json`. 미리보기: `cut-desktop-research.png`, `cut-desktop-result.png`, `cut-390.png`.
+
+아래는 원본 자료 매핑과 이전 구현 이력이다. 현재 UI 동작은 위 내용을 따른다.
+
 2026-10-18. `08 / DIPTYQUE / UX PLANNING PROCESS`를 Interactive Research Archive로 변경했다. 01~06 선택으로 섹션 내부 설명·자료·Key Finding을 전환한다. 데스크톱은 정보 패널 35%와 문서 아카이브 65%, 모바일은 세로 구성이다. 이 섹션의 가로 스크롤·pin은 제거했고, 공용 스타일·폰트·색상 및 다른 섹션은 수정하지 않았다.
 
 ## 자료와 서술 원칙

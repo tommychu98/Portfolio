@@ -28,13 +28,18 @@ export default function ZaraProcess() {
   const root = useRef(null), motion = useRef(null), opener = useRef(null), restoreFrame = useRef(0);
   const [current, setCurrent] = useState(0);
   const [requested, setRequested] = useState(0);
+  const [view, setView] = useState({ mode: 'research', index: 0 });
   const [document, setDocument] = useState(null);
   const step = archiveSteps[current];
   useLayoutEffect(() => { motion.current = initZaraProcess(root.current); return () => motion.current.destroy(); }, []);
   useEffect(() => () => cancelAnimationFrame(restoreFrame.current), []);
   const select = index => {
     setRequested(index);
-    motion.current.change(() => flushSync(() => setCurrent(index)));
+    motion.current.change(() => flushSync(() => { setCurrent(index); setView({ mode: 'research', index: 0 }); }));
+  };
+  const changeView = (mode, index = 0) => {
+    setRequested(current);
+    motion.current.change(() => flushSync(() => setView({ mode, index })), 'document');
   };
   const openDocument = useCallback((value, trigger) => { opener.current = trigger; setDocument(value); }, []);
   const closeDocument = () => { setDocument(null); restoreFrame.current = requestAnimationFrame(() => opener.current?.focus({ preventScroll: true })); };
@@ -46,17 +51,16 @@ export default function ZaraProcess() {
     event.preventDefault(); root.current.querySelector(`[data-step="${next}"]`).focus({ preventScroll: true }); select(next);
   };
   return <section id="zara-process" className="zara-process research-archive" ref={root} aria-labelledby="process-title">
-    <header className="research-archive__header" data-entry><SectionLabel number="08">DIPTYQUE / UX PLANNING PROCESS</SectionLabel><div className="research-archive__intro"><h2 id="process-title">From Research<br/><em>to Structure.</em></h2><div><span className="archive-eyebrow">A COLLECTIVE PROCESS / AN OPEN ARCHIVE</span><p>팀원들과 함께 자료를 수집하고 분석하며,<br className="archive-desktop-break"/> 발견한 문제를 하나의 사용자 경험 구조로<br className="archive-desktop-break"/> 발전시킨 과정입니다.</p></div></div></header>
+    <header className="research-archive__header" data-entry><SectionLabel number="08">DIPTYQUE / UX PLANNING PROCESS</SectionLabel><div className="research-archive__intro"><h2 id="process-title">From Research<br/><em>to Structure.</em></h2><div><span className="archive-eyebrow">RESEARCH CUT / INTERACTIVE UX ARCHIVE</span><p>팀원들과 함께 자료를 수집하고 분석하며,<br className="archive-desktop-break"/> 발견한 문제를 하나의 사용자 경험 구조로<br className="archive-desktop-break"/> 발전시킨 과정입니다.</p></div></div></header>
     <nav className="research-archive__nav" aria-label="UX 기획 단계" onKeyDown={navigate} data-entry>{archiveSteps.map((item, index) => <button key={item.id} type="button" data-step={index} aria-current={requested === index ? 'step' : undefined} aria-controls="research-archive-content" onClick={() => select(index)}><span>{item.number}</span><span>{item.title}</span><span className="research-archive__nav-dot" aria-hidden="true"/></button>)}</nav>
     <div id="research-archive-content" className="research-archive__body" data-entry aria-busy={requested !== current}>
       <div className="research-archive__information">
-        <div className="research-archive__step-copy" data-copy><div className="research-archive__chapter"><span className="archive-eyebrow">CHAPTER {step.number} / 06</span><span>{step.held ? 'ON HOLD' : 'TEAM RESEARCH'}</span></div><h3>{step.title}</h3><p className="research-archive__eyebrow">{step.eyebrow}</p><p className="research-archive__description">{step.description}</p><ul className="research-archive__tasks">{step.tasks.map(task => <li key={task}>{task}</li>)}</ul></div>
-        <div className="research-archive__finding" data-finding><span className="archive-eyebrow">{step.held ? 'CURRENT STATUS' : 'KEY FINDING'}<small>{step.evidence}</small></span><p>{step.keyFinding}</p><span className="research-archive__finding-rule"/></div>
-        <div className="research-archive__context" data-copy><p>{step.note}</p>{step.bridge && <p className="research-archive__bridge">{step.bridge}</p>}</div>
+        <div className="research-archive__step-copy" data-copy><div className="research-archive__chapter"><span className="archive-eyebrow">CHAPTER {step.number} / 06</span><span>{step.held ? 'ON HOLD' : 'TEAM RESEARCH'}</span></div><h3>{step.title}</h3><p className="research-archive__description">{step.description}</p></div>
+        <div className="research-archive__finding" data-finding hidden={view.mode !== 'result' && !step.held}><span className="archive-eyebrow">{step.held ? 'CURRENT STATUS' : `KEY FINDING ${step.number}`}<small>{step.evidence}</small></span><p>{step.findingHighlight ? <><span>{step.keyFinding.split(step.findingHighlight)[0]}</span><span className="research-finding__em" data-highlight>{step.findingHighlight}</span><span>{step.keyFinding.split(step.findingHighlight)[1]}</span></> : step.keyFinding}</p><div className="research-archive__context"><p>{step.note}</p></div></div>
       </div>
-      <ResearchDesk key={step.id} step={step} onExpand={openDocument}/>
+      <ResearchDesk step={step} view={view} onChange={changeView} onExpand={openDocument}/>
     </div>
-    <p className="sr-only" role="status" aria-live="polite">{step.number}. {step.title}{step.held ? ' · 보류' : ''}</p>
+    <p className="sr-only" role="status" aria-live="polite">{step.number}. {step.title}{step.held ? ' · 보류' : ` · ${view.mode.toUpperCase()} · ${view.index + 1}`}</p>
     <footer className="research-archive__footer"><span className="archive-eyebrow">COLLECT → COMPARE → CONNECT</span><div><a href={sources.research} target="_blank" rel="noopener noreferrer">자료조사 원본 ↗</a><a href={sources.analysis} target="_blank" rel="noopener noreferrer">자료분석 원본 ↗</a></div></footer>
     {document && <DocumentReader document={document} onClose={closeDocument}/>}
   </section>;
