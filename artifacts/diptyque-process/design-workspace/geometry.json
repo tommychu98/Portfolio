@@ -1,0 +1,305 @@
+{
+  "page": {
+    "id": "531:4818",
+    "name": "📍디자인 기획📍(૭ ｡•̀ ᵕ •́｡ )૭"
+  },
+  "primary": [
+    {
+      "id": "4498:17178",
+      "name": "이미지 느낌",
+      "type": "SECTION",
+      "bounds": {
+        "x": -6545,
+        "y": -1369,
+        "width": 1414,
+        "height": 2072
+      },
+      "ancestors": [
+        {
+          "id": "531:4818",
+          "name": "📍디자인 기획📍(૭ ｡•̀ ᵕ •́｡ )૭",
+          "type": "PAGE"
+        },
+        {
+          "id": "0:0",
+          "name": "Document",
+          "type": "DOCUMENT"
+        }
+      ],
+      "children": [
+        {
+          "id": "756:5463",
+          "name": "image 3",
+          "type": "RECTANGLE",
+          "w": 156,
+          "h": 154
+        },
+        {
+          "id": "756:5464",
+          "name": "image 4",
+          "type": "RECTANGLE",
+          "w": 123,
+          "h": 154
+        },
+        {
+          "id": "756:5465",
+          "name": "image 5",
+          "type": "RECTANGLE",
+          "w": 156,
+          "h": 156
+        },
+        {
+          "id": "756:5466",
+          "name": "image 6",
+          "type": "RECTANGLE",
+          "w": 123,
+          "h": 153
+        },
+        {
+          "id": "756:5467",
+          "name": "image 7",
+          "type": "RECTANGLE",
+          "w": 156,
+          "h": 282
+        },
+        {
+          "id": "756:5468",
+          "name": "image 8",
+          "type": "RECTANGLE",
+          "w": 123,
+          "h": 168
+        },
+        {
+          "id": "756:5469",
+          "name": "image 9",
+          "type": "RECTANGLE",
+          "w": 123,
+          "h": 154
+        },
+        {
+          "id": "756:5470",
+          "name": "image 10",
+          "type": "RECTANGLE",
+          "w": 155,
+          "h": 121
+        }
+      ]
+    },
+    {
+      "id": "578:3797",
+      "name": "무드보드",
+      "type": "SECTION",
+      "bounds": {
+        "x": -5056,
+        "y": -1369,
+        "width": 2319,
+        "height": 1387
+      },
+      "ancestors": [
+        {
+          "id": "531:4818",
+          "name": "📍디자인 기획📍(૭ ｡•̀ ᵕ •́｡ )૭",
+          "type": "PAGE"
+        },
+        {
+          "id": "0:0",
+          "name": "Document",
+          "type": "DOCUMENT"
+        }
+      ],
+      "children": [
+        {
+          "id": "985:4",
+          "name": "메인 무드보드 1",
+          "type": "RECTANGLE",
+          "w": 1920,
+          "h": 1080
+        }
+      ]
+    },
+    {
+      "id": "3622:10711",
+      "name": "image 90",
+      "type": "RECTANGLE",
+      "bounds": {
+        "x": -2662,
+        "y": -356,
+        "width": 1254,
+        "height": 1254
+      },
+      "ancestors": [
+        {
+          "id": "531:4818",
+          "name": "📍디자인 기획📍(૭ ｡•̀ ᵕ •́｡ )૭",
+          "type": "PAGE"
+        },
+        {
+          "id": "0:0",
+          "name": "Document",
+          "type": "DOCUMENT"
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "5227:7857",
+      "name": "와이어프레임",
+      "type": "SECTION",
+      "bounds": {
+        "x": -1195,
+        "y": -2180,
+        "width": 2570.42333984375,
+        "height": 4059
+      },
+      "ancestors": [
+        {
+          "id": "531:4818",
+          "name": "📍디자인 기획📍(૭ ｡•̀ ᵕ •́｡ )૭",
+          "type": "PAGE"
+        },
+        {
+          "id": "0:0",
+          "name": "Document",
+          "type": "DOCUMENT"
+        }
+      ],
+      "children": [
+        {
+          "id": "5227:7858",
+          "name": "pre-footer",
+          "type": "FRAME",
+          "w": 312.4936828613281,
+          "h": 130.20570373535156
+        },
+        {
+          "id": "5227:7867",
+          "name": "con 10",
+          "type": "FRAME",
+          "w": 312.4936828613281,
+          "h": 195.3085479736328
+        },
+        {
+          "id": "5227:7887",
+          "name": "con 11",
+          "type": "FRAME",
+          "w": 312.4936828613281,
+          "h": 175.7777099609375
+        },
+        {
+          "id": "5227:7893",
+          "name": "con 6-7",
+          "type": "FRAME",
+          "w": 312.4936828613281,
+          "h": 175.7777099609375
+        },
+        {
+          "id": "5227:7927",
+          "name": "Logo",
+          "type": "FRAME",
+          "w": 312.4936828613281,
+          "h": 175.7777099609375
+        },
+        {
+          "id": "5227:7944",
+          "name": "Logo",
+          "type": "FRAME",
+          "w": 312.4936828613281,
+          "h": 175.7777099609375
+        },
+        {
+          "id": "5227:7946",
+          "name": "Logo 2",
+          "type": "FRAME",
+          "w": 312.4936828613281,
+          "h": 175.7777099609375
+        },
+        {
+          "id": "5227:7949",
+          "name": "Logo 3",
+          "type": "FRAME",
+          "w": 312.4936828613281,
+          "h": 175.7777099609375
+        }
+      ]
+    }
+  ],
+  "topLevel": [
+    {
+      "id": "542:4822",
+      "name": "디자인 마인드맵",
+      "type": "SECTION",
+      "bounds": {
+        "x": -2675,
+        "y": -1351,
+        "width": 1040,
+        "height": 947
+      }
+    },
+    {
+      "id": "578:3797",
+      "name": "무드보드",
+      "type": "SECTION",
+      "bounds": {
+        "x": -5056,
+        "y": -1369,
+        "width": 2319,
+        "height": 1387
+      }
+    },
+    {
+      "id": "641:3737",
+      "name": "main back & pen color",
+      "type": "SECTION",
+      "bounds": {
+        "x": -5056,
+        "y": -2180,
+        "width": 658,
+        "height": 562
+      }
+    },
+    {
+      "id": "825:2971",
+      "name": "Rectangle 3",
+      "type": "RECTANGLE",
+      "bounds": {
+        "x": -4256,
+        "y": -2034,
+        "width": 241,
+        "height": 270
+      }
+    },
+    {
+      "id": "3622:10711",
+      "name": "image 90",
+      "type": "RECTANGLE",
+      "bounds": {
+        "x": -2662,
+        "y": -356,
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "id": "4498:17178",
+      "name": "이미지 느낌",
+      "type": "SECTION",
+      "bounds": {
+        "x": -6545,
+        "y": -1369,
+        "width": 1414,
+        "height": 2072
+      }
+    },
+    {
+      "id": "5227:7857",
+      "name": "와이어프레임",
+      "type": "SECTION",
+      "bounds": {
+        "x": -1195,
+        "y": -2180,
+        "width": 2570.42333984375,
+        "height": 4059
+      }
+    }
+  ]
+}

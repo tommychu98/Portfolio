@@ -97,11 +97,11 @@ try {
  assert.equal(await page.locator('.research-reader').count(),0);await brand.click();await page.locator('.research-reader img').evaluate(i=>i.decode());await page.keyboard.press('Escape');checks.push('Hover then click, plus original full-document reader');
  await root.scrollIntoViewIfNeeded();await root.locator('.figma-canvas-viewport').hover();const y=await page.evaluate(()=>scrollY);await page.mouse.wheel(0,450);await page.waitForTimeout(900);assert.ok(Math.abs(await page.evaluate(()=>scrollY)-y)>100);checks.push('Canvas wheel permits page scrolling');
  const section=page.locator('#zara-process');
- for(const step of [1,2,3,4,5]){
+ for(const [step,primary,background] of [[1,4,25],[2,3,22],[3,3,23],[4,3,28],[5,4,3]]){
   await section.locator(`[data-step="${step}"]`).click();await page.waitForTimeout(450);
-  assert.equal(await section.locator('[data-background-frame]').count(),0);assert.equal(await section.locator('.figma-workspace').count(),1);
+  assert.equal(await section.locator('[data-background-frame]').count(),background);assert.equal(await section.locator('[data-desk-frame]').count(),primary);
  }
- checks.push('Chapters 02–06 render their existing workspace without Desk Research layers');
+ checks.push('Chapters 03–06 render their existing workspace without Desk Research layers');
  await section.locator('[data-step="0"]').click();await page.waitForFunction(()=>document.querySelector('.desk-canvas-interface')?.dataset.backgroundReady==='true');
  await root.scrollIntoViewIfNeeded();await shot('final-overview');await click('market-research');await settle();await shot('final-focus');
  await page.emulateMedia({reducedMotion:'reduce'});await click('user-research');await page.waitForTimeout(100);await settle();checks.push('Reduced motion and chapter remount');

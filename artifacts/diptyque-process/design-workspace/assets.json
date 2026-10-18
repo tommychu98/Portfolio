@@ -1,0 +1,93 @@
+[
+  {
+    "id": "542:4822",
+    "primary": false,
+    "width": 1120,
+    "height": 1027,
+    "file": "public/media/images/diptyque/design-canvas/542-4822-background.png",
+    "bounds": {
+      "x": -2675,
+      "y": -1351,
+      "width": 1040,
+      "height": 947
+    }
+  },
+  {
+    "id": "578:3797",
+    "primary": true,
+    "width": 4798,
+    "height": 2934,
+    "file": "public/media/images/diptyque/design-canvas/578-3797-focus.png",
+    "bounds": {
+      "x": -5056,
+      "y": -1369,
+      "width": 2319,
+      "height": 1387
+    }
+  },
+  {
+    "id": "641:3737",
+    "primary": false,
+    "width": 738,
+    "height": 642,
+    "file": "public/media/images/diptyque/design-canvas/641-3737-background.png",
+    "bounds": {
+      "x": -5056,
+      "y": -2180,
+      "width": 658,
+      "height": 562
+    }
+  },
+  {
+    "id": "825:2971",
+    "primary": false,
+    "width": 241,
+    "height": 270,
+    "file": "public/media/images/diptyque/design-canvas/825-2971-background.png",
+    "bounds": {
+      "x": -4256,
+      "y": -2034,
+      "width": 241,
+      "height": 270
+    }
+  },
+  {
+    "id": "3622:10711",
+    "primary": true,
+    "width": 2508,
+    "height": 2508,
+    "file": "public/media/images/diptyque/design-canvas/3622-10711-focus.png",
+    "bounds": {
+      "x": -2662,
+      "y": -356,
+      "width": 1254,
+      "height": 1254
+    }
+  },
+  {
+    "id": "4498:17178",
+    "primary": true,
+    "width": 2988,
+    "height": 4304,
+    "file": "public/media/images/diptyque/design-canvas/4498-17178-focus.png",
+    "bounds": {
+      "x": -6545,
+      "y": -1369,
+      "width": 1414,
+      "height": 2072
+    }
+  },
+  {
+    "id": "5227:7857",
+    "primary": true,
+    "width": 5301,
+    "height": 8278,
+    "file": "public/media/images/diptyque/design-canvas/5227-7857-focus.png",
+    "bounds": {
+      "x": -1195,
+      "y": -2180,
+      "width": 2570.42333984375,
+      "height": 4059
+    }
+  }
+]

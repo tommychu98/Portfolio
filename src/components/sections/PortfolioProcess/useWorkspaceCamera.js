@@ -32,7 +32,7 @@ export function useWorkspaceCamera(viewport, plane, scene, selected, mode, index
     const focus=(animate=true)=>{
       const {w,h}=size(), {x,y,w:fw}=selected.position;
       const fh=fw*(selected.height*selected.crop[3])/(selected.width*selected.crop[2])+28;
-      const scale=Math.min(w*.74/fw,h*.74/fh,1.5);
+      const scale=Math.min(w*.74/fw,h*.74/fh,1.5)*1.6;
       move.current({scale,x:w/2-(x+fw/2)*scale,y:h/2-(y+fh/2)*scale},animate);
     };
     commands.current={overview,focus,zoom:factor=>{

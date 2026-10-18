@@ -1,8 +1,13 @@
 /* Source UI: 15356×8352. Gray bounds: x1978..13914, y334..8102.
-   All selectors belong exclusively to the first chapter's fixed screen. */
+   Shared fixed screen for Desk Research and Competitive Analysis. */
 .desk-canvas-interface{position:absolute;inset:0;color:var(--ink)}
+.desk-layer-entry{display:contents}
+.desk-frame__placeholder{display:block;width:100%;height:100%;background:#151515}
 .figma-canvas-viewport{position:absolute;left:calc(1978 / 15356 * 100%);right:calc(1442 / 15356 * 100%);top:calc(334 / 8352 * 100%);bottom:calc(250 / 8352 * 100% + 92px);overflow:hidden;isolation:isolate}
 .figma-canvas-world{position:absolute;inset:0 auto auto 0;width:6614px;height:20000px;transform-origin:0 0}
+.figma-canvas-viewport.is-reading{cursor:grab;touch-action:none}
+.figma-canvas-viewport.is-reading .desk-frame__select{cursor:grab}
+.figma-canvas-viewport.is-reading:active,.figma-canvas-viewport.is-reading:active .desk-frame__select{cursor:grabbing}
 .desk-frame{position:absolute;z-index:1}
 .research-frame--background{z-index:0;filter:grayscale(100%) brightness(.82);opacity:.65;pointer-events:none}
 .research-frame--primary{filter:none;opacity:1}
@@ -52,6 +57,7 @@
   .desk-layer-controls button{justify-content:center;border-bottom:1px solid var(--line);font-size:13px;padding:8px 2px}
   .desk-layer-controls button:hover{background:var(--paper-light)}
   .desk-layer-controls button[aria-pressed=true]{background:var(--teal-dark);color:var(--paper-light)}
+  .desk-canvas-interface[data-research-chapter="competitive-analysis"] .desk-layer-controls{grid-template-columns:repeat(2,minmax(0,1fr))}
   .figma-canvas-viewport{position:relative;inset:auto;height:360px;background:#d9d9d9;width:100%}
   .desk-canvas-footer{position:static;min-height:140px;align-items:stretch;flex-direction:column;gap:12px;padding-top:12px}
   .desk-canvas-tools{justify-content:flex-end}

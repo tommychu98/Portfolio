@@ -31,8 +31,8 @@ const scenes = [
   { description: '인터뷰의 불편을 모아\n주요 퍼소나로 정리했습니다.', research: [interview, questions], result: [persona] },
   { description: '인터뷰 의견을 묶고\n사용자 여정에 연결했습니다.', research: [affinity, interview], result: [journey] },
   { description: '인사이트를 바탕으로\n메뉴와 탐색 경로를 설계했습니다.', research: [canvas, menu, flow], result: [ia, menu, flow, canvas] },
-  { description: '브랜드 이야기의 흐름을\n실제 화면 구조로 옮겼습니다.', research: [wireHistory, wirePerfume, wireMenu], result: [wireHistory, wirePerfume], held: false,
-    keyFinding: '브랜드 이야기를 이미지와 텍스트의 흐름으로 구성했습니다.', findingHighlight: '이미지와 텍스트의 흐름' },
+  { title: 'Design', description: '디자인 레퍼런스를 탐색하고,\n와이어프레임에서 최종 시안까지 발전시켰습니다.', research: [wireHistory, wirePerfume, wireMenu], result: [wireHistory, wirePerfume], held: false,
+    keyFinding: '수집한 영감을 실제 화면 경험으로 구체화했습니다.', findingHighlight: '실제 화면 경험' },
 ];
 
 // Editorial arrangements of real source frames, not a recording of team activity.

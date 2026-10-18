@@ -5,6 +5,9 @@ for(const key of ['window','document','navigator','HTMLElement','HTMLDialogEleme
 globalThis.requestAnimationFrame=dom.window.requestAnimationFrame.bind(dom.window);
 globalThis.cancelAnimationFrame=dom.window.cancelAnimationFrame.bind(dom.window);
 globalThis.IS_REACT_ACT_ENVIRONMENT=true;
+// jsdom does not fetch/decode images; camera rendering is covered in Chrome.
+globalThis.Image=dom.window.Image;
+dom.window.HTMLImageElement.prototype.decode=async function(){};
 window.matchMedia=()=>({matches:false,addListener(){},removeListener(){},addEventListener(){},removeEventListener(){}});
 globalThis.matchMedia=window.matchMedia;
 globalThis.IntersectionObserver=class{observe(){}disconnect(){}unobserve(){}};

@@ -1,0 +1,32 @@
+{
+  "pageId": "531:4818",
+  "frames": [
+    {
+      "id": "542:4822",
+      "name": "디자인 마인드맵",
+      "x": -2675,
+      "y": -1351,
+      "width": 1040,
+      "height": 947,
+      "exportPadding": 40
+    },
+    {
+      "id": "641:3737",
+      "name": "main back & pen color",
+      "x": -5056,
+      "y": -2180,
+      "width": 658,
+      "height": 562,
+      "exportPadding": 40
+    },
+    {
+      "id": "825:2971",
+      "name": "Rectangle 3",
+      "x": -4256,
+      "y": -2034,
+      "width": 241,
+      "height": 270,
+      "exportPadding": 0
+    }
+  ]
+}

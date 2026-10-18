@@ -4,8 +4,13 @@ import { workspaceSteps as archiveSteps } from './Workspace.data';
 import SectionLabel from '../../ui/SectionLabel';
 import { pauseScroll } from '../../../motion/scroll';
 import { initPortfolioProcess } from './PortfolioProcess.motion';
-import ResearchDesk, { InterviewNotes } from './ResearchDesk';
+import { InterviewNotes } from './ResearchDesk';
 import RetroWorkspace from './RetroWorkspace';
+import {competitiveAnalysisLayers,competitiveBackgroundLayers} from './CompetitiveAnalysis.data';
+import {userResearchLayers,userResearchBackgroundLayers,userResearchOverviewPadding} from './UserResearch.data';
+import {insightSynthesisLayers,insightSynthesisBackgroundLayers} from './InsightSynthesis.data';
+import {uxStrategyLayers,uxStrategyBackgroundLayers} from './UXStrategy.data';
+import {designLayers,designBackgroundLayers} from './Design.data';
 import './PortfolioProcess.css';
 import './Workspace.css';
 
@@ -39,10 +44,6 @@ export default function PortfolioProcess() {
     setRequested(index);
     motion.current.change(() => flushSync(() => { setCurrent(index); setView({ mode: 'research', index: 0 }); }));
   };
-  const changeView = (mode, index = 0, focus = false) => {
-    setRequested(current);
-    motion.current.change(() => flushSync(() => setView({ mode, index, focus })), 'document');
-  };
   const openDocument = useCallback((value, trigger) => { opener.current = trigger; setDocument(value); }, []);
   const closeDocument = () => { setDocument(null); restoreFrame.current = requestAnimationFrame(() => opener.current?.focus({ preventScroll: true })); };
   const navigate = event => {
@@ -55,12 +56,12 @@ export default function PortfolioProcess() {
   return <section id="zara-process" className="zara-process research-archive workspace-archive" ref={root} aria-labelledby="process-title">
     <header className="research-archive__header" data-entry><SectionLabel number="08">DIPTYQUE / UX PLANNING PROCESS</SectionLabel><div className="research-archive__intro"><h2 id="process-title">From Research<br/><em>to Structure.</em></h2><div><span className="archive-eyebrow">RESEARCH CUT / INTERACTIVE UX ARCHIVE</span><p>팀원들과 함께 자료를 수집하고 분석하며,<br className="archive-desktop-break"/> 발견한 문제를 하나의 사용자 경험 구조로<br className="archive-desktop-break"/> 발전시킨 과정입니다.</p></div></div></header>
     <nav className="research-archive__nav" aria-label="UX 기획 단계" onKeyDown={navigate} data-entry>{archiveSteps.map((item, index) => <button key={item.id} type="button" data-step={index} aria-current={requested === index ? 'step' : undefined} aria-controls="research-archive-content" onClick={() => select(index)}><span>{item.number}</span><span>{item.title}</span><span className="research-archive__nav-dot" aria-hidden="true"/></button>)}</nav>
-    <div id="research-archive-content" className={`research-archive__body${current === 0 ? ' is-retro-preview' : ''}`} data-entry aria-busy={requested !== current}>
+    <div id="research-archive-content" className={`research-archive__body is-retro-preview`} data-entry aria-busy={requested !== current}>
       <div className="research-archive__information">
         <div className="research-archive__step-copy" data-copy><div className="research-archive__chapter"><span className="archive-eyebrow">CHAPTER {step.number} / 06</span></div><h3>{step.title}</h3><p className="research-archive__description">{step.description}</p></div>
         <div className="research-archive__finding" data-finding><span className="archive-eyebrow">{step.held ? 'CURRENT STATUS' : `KEY FINDING ${step.number}`}</span><p>{step.findingHighlight ? <><span>{step.keyFinding.split(step.findingHighlight)[0]}</span><span className="research-finding__em" data-highlight>{step.findingHighlight}</span><span>{step.keyFinding.split(step.findingHighlight)[1]}</span></> : step.keyFinding}</p></div>
       </div>
-      {current === 0 ? <RetroWorkspace onExpand={openDocument}/> : <ResearchDesk step={step} view={view} onChange={changeView} onExpand={openDocument}/>}
+      {current === 0 ? <RetroWorkspace key="desk-research" onExpand={openDocument}/> : current === 1 ? <RetroWorkspace key="competitive-analysis" chapter="competitive-analysis" layers={competitiveAnalysisLayers} backgroundLayers={competitiveBackgroundLayers} onExpand={openDocument}/> : current === 2 ? <RetroWorkspace key="user-research" chapter="user-research" overviewPadding={userResearchOverviewPadding} layers={userResearchLayers} backgroundLayers={userResearchBackgroundLayers} onExpand={openDocument}/> : current === 3 ? <RetroWorkspace key="insight-synthesis" chapter="insight-synthesis" layers={insightSynthesisLayers} backgroundLayers={insightSynthesisBackgroundLayers} onExpand={openDocument}/> : current === 4 ? <RetroWorkspace key="ux-strategy-ia" chapter="ux-strategy-ia" layers={uxStrategyLayers} backgroundLayers={uxStrategyBackgroundLayers} onExpand={openDocument}/> : <RetroWorkspace key="design" chapter="design" layers={designLayers} backgroundLayers={designBackgroundLayers} onExpand={openDocument}/>}
     </div>
     <p className="sr-only" role="status" aria-live="polite">{step.number}. {step.title}{step.held ? ' · 보류' : ` · ${view.mode.toUpperCase()} · ${view.index + 1}`}</p>
     <footer className="research-archive__footer"><span className="archive-eyebrow">COLLECT → COMPARE → CONNECT</span></footer>
