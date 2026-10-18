@@ -8,9 +8,9 @@ import WorkValues from './components/sections/WorkValues/WorkValues';
 import BoundaryBounce from './components/transitions/BoundaryBounce/BoundaryBounce';
 import Profile from './components/sections/Profile/Profile';
 import WorksIntro from './components/sections/WorksIntro/WorksIntro';
-import ZaraOverview from './components/sections/ZaraOverview/ZaraOverview';
-import ZaraDetails from './components/sections/ZaraDetails/ZaraDetails';
-import ZaraProcess from './components/sections/ZaraProcess/ZaraProcess';
+import PortfolioOverview from './components/sections/PortfolioOverview/PortfolioOverview';
+import PortfolioDetails from './components/sections/PortfolioDetails/PortfolioDetails';
+import PortfolioProcess from './components/sections/PortfolioProcess/PortfolioProcess';
 import PersonalWorks from './components/sections/PersonalWorks/PersonalWorks';
 import Film from './components/sections/Film/Film';
 import FilmArchive from './components/sections/FilmArchive';
@@ -33,9 +33,9 @@ export default function App() {
       <BoundaryBounce id="values-profile" from="var(--paper)" to="#CBD5D8" />
       <Profile />
       <WorksIntro />
-      <ZaraOverview />
-      <ZaraDetails />
-      <ZaraProcess />
+      <PortfolioOverview />
+      <PortfolioDetails />
+      <PortfolioProcess />
       <PersonalWorks />
       <Film />
       <FilmArchive />

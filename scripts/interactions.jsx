@@ -2,16 +2,16 @@ import assert from 'node:assert/strict';
 import { act } from 'react';
 import { createRoot } from 'react-dom/client';
 import Header from '../src/components/layout/Header';
-import ZaraProcess from '../src/components/sections/ZaraProcess/ZaraProcess';
-import WorkFolder from '../src/components/sections/ZaraDetails/WorkFolder';
-import { steps as processSteps } from '../src/components/sections/ZaraProcess/DiptyqueProcess.data';
+import PortfolioProcess from '../src/components/sections/PortfolioProcess/PortfolioProcess';
+import WorkFolder from '../src/components/sections/PortfolioDetails/WorkFolder';
+import { steps as processSteps } from '../src/components/sections/PortfolioProcess/DiptyqueProcess.data';
 import { gsap, ScrollTrigger } from '../src/motion/scroll';
 
 export async function run(){
   const root=createRoot(document.getElementById('test-root'));
   const click=async el=>act(()=>el.dispatchEvent(new MouseEvent('click',{bubbles:true})));
   try{
-    await act(()=>root.render(<><Header/><ZaraProcess/></>));
+    await act(()=>root.render(<><Header/><PortfolioProcess/></>));
     const menuButton=document.querySelector('[aria-controls="site-menu"]');
     await click(menuButton);
     assert.equal(menuButton.getAttribute('aria-expanded'),'true');

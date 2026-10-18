@@ -1,0 +1,11 @@
+2026-10-19 — Frame-only regeneration using built-in image_gen (imagegen skill).
+Saved asset: public/media/images/diptyque/window/retro-frame-v2.png
+Actual output: 1681 x 935 RGBA. Not a 4K output.
+Input: retro-frame.png (user-supplied cream retro frame).
+The original Figma screenshot is unchanged; only the decorative outer frame is AI-generated.
+
+Final prompt:
+Use case: precise-object-edit. Project asset: high-resolution transparent retro browser WINDOW FRAME ONLY. Recreate the provided frame at very high resolution (prefer 3840px wide), sharply defined fine dark ink edges and refined very subtle cream paper texture, NOT fuzzy/distressed low-resolution edges. Preserve its cream beige border, three small coral/mustard/teal circles upper left, a short dark horizontal line upper right, minimal thin teal offset along right and bottom. Flat front-on perfectly rectangular with lightly rounded corners, landscape overall approximately 1.8:1. Center opening fully transparent, exterior fully transparent; no black fill, no checkered fill. Frame near canvas edges with minimal outer transparent padding. Large rectangular opening leaving a thin rim on left/right/bottom and modest title bar on top. No content, no Figma screenshot, no labels, no letters, no additional ornament. Need premium crisp production-ready high-resolution PNG with actual alpha, not an enlarged blurry copy. Keep circles circular, straight borders level. Only the frame is generated; actual workspace will be inserted separately in CSS.
+
+Implementation: 9-slice frame, unmodified source PNG, native corner proportions.
+The first chapter alone uses a full-width window below a compact information row.

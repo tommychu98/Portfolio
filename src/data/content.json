@@ -57,22 +57,22 @@
         {
           "id": "brand",
           "label": "자사 분석",
-          "src": "/media/images/zara-methodology/brand.png"
+          "src": "/media/images/portfolio-methodology/brand.png"
         },
         {
           "id": "competitors",
           "label": "경쟁사 분석",
-          "src": "/media/images/zara-methodology/competitors.png"
+          "src": "/media/images/portfolio-methodology/competitors.png"
         },
         {
           "id": "steep",
           "label": "STEEP",
-          "src": "/media/images/zara-methodology/steep.png"
+          "src": "/media/images/portfolio-methodology/steep.png"
         },
         {
           "id": "3c",
           "label": "3C 분석",
-          "src": "/media/images/zara-methodology/3c.png"
+          "src": "/media/images/portfolio-methodology/3c.png"
         }
       ]
     },
@@ -83,22 +83,22 @@
         {
           "id": "interviews",
           "label": "인터뷰 원문",
-          "src": "/media/images/zara-methodology/interviews.png"
+          "src": "/media/images/portfolio-methodology/interviews.png"
         },
         {
           "id": "questions",
           "label": "인터뷰 질문",
-          "src": "/media/images/zara-methodology/questions.png"
+          "src": "/media/images/portfolio-methodology/questions.png"
         },
         {
           "id": "summary",
           "label": "응답 요약",
-          "src": "/media/images/zara-methodology/summary.png"
+          "src": "/media/images/portfolio-methodology/summary.png"
         },
         {
           "id": "affinity",
           "label": "어피니티 다이어그램",
-          "src": "/media/images/zara-methodology/affinity.png"
+          "src": "/media/images/portfolio-methodology/affinity.png"
         }
       ]
     },
@@ -109,17 +109,17 @@
         {
           "id": "persona",
           "label": "퍼소나",
-          "src": "/media/images/zara-methodology/persona.png"
+          "src": "/media/images/portfolio-methodology/persona.png"
         },
         {
           "id": "journey",
           "label": "저니맵",
-          "src": "/media/images/zara-methodology/journey.png"
+          "src": "/media/images/portfolio-methodology/journey.png"
         },
         {
           "id": "lean",
           "label": "린캔버스",
-          "src": "/media/images/zara-methodology/lean.png"
+          "src": "/media/images/portfolio-methodology/lean.png"
         }
       ]
     },
@@ -130,22 +130,22 @@
         {
           "id": "meeting",
           "label": "회의록",
-          "src": "/media/images/zara-methodology/meeting.png"
+          "src": "/media/images/portfolio-methodology/meeting.png"
         },
         {
           "id": "sitemap",
           "label": "메뉴트리",
-          "src": "/media/images/zara-methodology/sitemap.png"
+          "src": "/media/images/portfolio-methodology/sitemap.png"
         },
         {
           "id": "flow",
           "label": "사용자 플로우차트",
-          "src": "/media/images/zara-methodology/flow.png"
+          "src": "/media/images/portfolio-methodology/flow.png"
         },
         {
           "id": "requirements",
           "label": "요구사항 정의서",
-          "src": "/media/images/zara-methodology/requirements.png"
+          "src": "/media/images/portfolio-methodology/requirements.png"
         }
       ]
     },
@@ -156,12 +156,12 @@
         {
           "id": "moodboard",
           "label": "무드보드",
-          "src": "/media/images/zara-methodology/moodboard.png"
+          "src": "/media/images/portfolio-methodology/moodboard.png"
         },
         {
           "id": "mindmap",
           "label": "디자인 마인드맵",
-          "src": "/media/images/zara-methodology/mindmap.png"
+          "src": "/media/images/portfolio-methodology/mindmap.png"
         }
       ]
     },
@@ -172,17 +172,17 @@
         {
           "id": "wireframe",
           "label": "와이어프레임",
-          "src": "/media/images/zara-methodology/wireframe.png"
+          "src": "/media/images/portfolio-methodology/wireframe.png"
         },
         {
           "id": "system",
           "label": "디자인 시스템",
-          "src": "/media/images/zara-methodology/system.png"
+          "src": "/media/images/portfolio-methodology/system.png"
         },
         {
           "id": "components",
           "label": "컴포넌트",
-          "src": "/media/images/zara-methodology/components.png"
+          "src": "/media/images/portfolio-methodology/components.png"
         }
       ]
     }

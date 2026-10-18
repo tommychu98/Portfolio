@@ -1,0 +1,50 @@
+/* Source UI: 15356×8352. Gray bounds: x1978..13914, y334..8102.
+   All selectors belong exclusively to the first chapter's fixed screen. */
+.desk-canvas-interface{position:absolute;inset:0;color:var(--ink)}
+.figma-canvas-viewport{position:absolute;left:calc(1978 / 15356 * 100%);right:calc(1442 / 15356 * 100%);top:calc(334 / 8352 * 100%);bottom:calc(250 / 8352 * 100% + 92px);overflow:hidden;isolation:isolate}
+.figma-canvas-world{position:absolute;inset:0 auto auto 0;width:1320px;height:960px;transform-origin:0 0}
+.desk-frame{position:absolute;z-index:1}
+.desk-frame.is-selected,.desk-frame.is-hovered{z-index:2}
+.desk-frame__surface{transform-origin:center}
+.desk-frame__name{display:block;position:relative;height:28px;color:#464646}
+.desk-frame__name>span{position:absolute;bottom:5px;left:0;font:500 12px/1.5 var(--sans);white-space:nowrap;transform:scale(var(--label-scale,1));transform-origin:left bottom;pointer-events:none}
+.desk-frame__select{display:block;width:100%;border:0;padding:0;background:transparent;position:relative;cursor:zoom-in;text-align:left;outline-offset:4px}
+.desk-frame__select img{display:block;width:100%;height:auto;max-width:none;transform:none;user-select:none;background:#efebe3}
+.desk-frame__select::after{content:'';position:absolute;inset:-2px;border:2px solid var(--teal-dark);opacity:0;pointer-events:none;transition:opacity .25s}
+.desk-frame.is-selected .desk-frame__select::after,.desk-frame.is-hovered .desk-frame__select::after{opacity:1}
+/* Cover the complete source Layers content, not just the button rectangles.
+   Keep the bitmap's Layers header and vertical canvas ruler untouched. */
+.desk-layer-controls{position:absolute;left:calc(350 / 15356 * 100%);right:calc(13512 / 15356 * 100%);top:calc(3560 / 8352 * 100%);bottom:calc(250 / 8352 * 100%);padding:10px 6px;background:#2c2c2c;display:flex;flex-direction:column;gap:4px;color:#eee;box-sizing:border-box}
+.desk-layer-controls__label{display:none}
+.desk-layer-controls button{border:0;background:none;text-align:left;min-height:44px;padding:8px 5px;display:flex;align-items:center;gap:6px;font:500 12px/1.5 var(--sans);color:inherit;cursor:pointer;border-radius:3px;white-space:nowrap;transition:background-color .2s,color .2s}
+.desk-layer-controls button:hover{background:#383838}
+.desk-layer-controls button[aria-pressed=true]{background:#365b60;color:#fff}
+.desk-layer-controls button:focus-visible,.desk-canvas-tools button:focus-visible,.desk-canvas-caption button:focus-visible,.desk-canvas-caption a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.desk-canvas-footer{position:absolute;left:14%;right:10.2%;bottom:3.8%;min-height:76px;display:flex;align-items:center;gap:20px}
+.desk-canvas-tools{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.desk-canvas-tools button,.desk-canvas-tools a{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid var(--line);background:transparent;color:var(--teal-dark);font:500 12px/1.5 var(--sans);padding:8px 12px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background-color .2s}
+.desk-canvas-tools button:hover,.desk-canvas-tools a:hover{background:rgba(40,91,89,.08)}
+.desk-canvas-tools a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.desk-canvas-caption{flex:1;min-width:0;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .35s,transform .35s}
+.desk-canvas-caption.is-visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.desk-canvas-caption>strong{display:block;font:600 17px/1.5 var(--sans)}
+.desk-canvas-caption>p{font:400 13px/1.5 var(--sans);margin:4px 0 0;text-wrap:pretty}
+@media(min-width:701px) and (max-width:1100px){.desk-layer-controls button{gap:3px;padding-inline:2px}.desk-layer-controls button>span{display:none}.desk-canvas-footer{gap:10px}.desk-canvas-tools{gap:6px}.desk-canvas-tools button,.desk-canvas-tools a{padding-inline:8px}}
+@media(max-width:700px){
+  .diptyque-retro-window.has-desk-canvas{aspect-ratio:auto;container-type:normal}
+  .has-desk-canvas .diptyque-retro-window__screen{position:relative;inset:auto;aspect-ratio:auto;overflow:visible;border-radius:0;background:none}
+  .has-desk-canvas .diptyque-retro-window__ui-stage{position:relative;inset:auto;transform:none}
+  .has-desk-canvas .figma-workspace-ui,.has-desk-canvas .diptyque-retro-window__frame,.diptyque-retro-window.has-desk-canvas::after{display:none}
+  .desk-canvas-interface{position:relative;display:flex;flex-direction:column}
+  .desk-layer-controls{position:static;width:auto;padding:0 0 12px;background:none;display:grid;grid-template-columns:repeat(3,1fr);color:var(--ink);gap:6px}
+  .desk-layer-controls__label{display:none}
+  .desk-layer-controls button{justify-content:center;border-bottom:1px solid var(--line);font-size:13px;padding:8px 2px}
+  .desk-layer-controls button:hover{background:var(--paper-light)}
+  .desk-layer-controls button[aria-pressed=true]{background:var(--teal-dark);color:var(--paper-light)}
+  .figma-canvas-viewport{position:relative;inset:auto;height:360px;background:#d9d9d9;width:100%}
+  .desk-canvas-footer{position:static;min-height:140px;align-items:stretch;flex-direction:column;gap:12px;padding-top:12px}
+  .desk-canvas-tools{justify-content:flex-end}
+  .desk-canvas-caption{min-height:62px}
+  .desk-canvas-caption>p{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.desk-canvas-caption,.desk-frame__select::after,.desk-layer-controls button,.desk-canvas-tools button,.desk-canvas-tools a{transition:none}}

@@ -1,0 +1,70 @@
+/* Regenerated frame: 1681 × 935. A dark inner gasket hides alpha/subpixel seams.
+   9-slice preserves corner/button proportions; only straight edge strips stretch.
+   Screen ratio is the complete 15356 × 8352 user screenshot, without cropping. */
+.diptyque-retro-window{
+  position:relative;
+  width:100%;
+  min-width:0;
+  margin:0;
+  container-type:inline-size;
+  aspect-ratio:1681 / 1016.734305809;
+  isolation:isolate;
+  --screen-radius:clamp(3px, .83cqw, 15px);
+  --screen-seam:clamp(1.5px, .16cqw, 3px);
+}
+.diptyque-retro-window__screen{
+  position:absolute;
+  left:calc(100cqw * 58 / 1681);
+  right:calc(100cqw * 57 / 1681);
+  top:calc(100cqw * 100 / 1681);
+  aspect-ratio:15356 / 8352;
+  overflow:hidden;
+  background:#292929;
+  border-radius:var(--screen-radius);
+}
+.diptyque-retro-window__screen .figma-workspace-ui{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:none;
+}
+.diptyque-retro-window__ui-stage{
+  position:absolute;
+  inset:0;
+  /* Static underlap for the seam fix, never a camera transform. */
+  transform:scale(1.004);
+  transform-origin:center;
+}
+.diptyque-retro-window::after{
+  content:'';
+  position:absolute;
+  left:calc(100cqw * 58 / 1681);
+  right:calc(100cqw * 57 / 1681);
+  top:calc(100cqw * 100 / 1681);
+  aspect-ratio:15356 / 8352;
+  border-radius:var(--screen-radius);
+  box-shadow:inset 0 0 0 var(--screen-seam) #292929,0 0 0 1px #292929;
+  pointer-events:none;
+  z-index:2;
+}
+.diptyque-retro-window__frame{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  border-style:solid;
+  border-color:transparent;
+  border-width:calc(100cqw * 100 / 1681) calc(100cqw * 57 / 1681) calc(100cqw * 65 / 1681) calc(100cqw * 58 / 1681);
+  border-image-source:url('/media/images/diptyque/window/retro-frame-v2.png');
+  border-image-slice:100 57 65 58;
+  border-image-repeat:stretch;
+}
+.workspace-archive .research-archive__body.is-retro-preview{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;padding-top:28px}
+.workspace-archive .is-retro-preview .research-archive__information{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:0 16px;align-items:center}
+.workspace-archive .is-retro-preview .research-archive__finding{margin-top:0;max-width:560px;justify-self:end}
+.workspace-archive .is-retro-preview .research-archive__description{margin-top:12px}
+@media(max-width:700px){
+  .workspace-archive .is-retro-preview .research-archive__information{grid-template-columns:1fr;gap:24px;padding:0}
+  .workspace-archive .is-retro-preview .research-archive__finding{justify-self:start}
+  .workspace-archive .research-archive__body.is-retro-preview{gap:20px}
+}

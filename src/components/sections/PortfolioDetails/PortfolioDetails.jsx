@@ -6,8 +6,8 @@ import HorizontalControls from '../../ui/HorizontalControls';
 import ProjectList from './ProjectList';
 import WorkFolder from './WorkFolder';
 import LaptopPreview from './LaptopPreview';
-import { initZaraDetails } from './ZaraDetails.motion';
-import './ZaraDetails.css';
+import { initPortfolioDetails } from './PortfolioDetails.motion';
+import './PortfolioDetails.css';
 
 const details = [
   { title: <>Crafting<br/><em>the brand</em><br/>experience.</>, paragraphs: ['자연·여행·예술에서 출발한 딥디크의 이야기를 펜 드로잉과 종이 콜라주로 풀어냈습니다. 제품을 나열하기보다 브랜드의 장면과 분위기를 먼저 경험하도록 구성했습니다.'] },
@@ -26,9 +26,9 @@ function DetailVisual({ index }) {
   return <WorkFolder/>;
 }
 
-export default function ZaraDetails() {
+export default function PortfolioDetails() {
   const ref = useRef(null);
-  useEffect(() => initZaraDetails(ref.current), []);
+  useEffect(() => initPortfolioDetails(ref.current), []);
   return <section id="zara-details" className="zara-details" ref={ref} aria-labelledby="zara-details-title"><div className="horizontal-viewport" data-viewport>
     <div className="horizontal-heading"><SectionLabel number="07">DIPTYQUE / DESIGN &amp; MY ROLE</SectionLabel><h2 id="zara-details-title">Behind the <em>screen.</em></h2></div>
     <div data-track>{details.map((detail, i) => <article className={`horizontal-panel zara-details__panel${i === 0 ? ' zara-details__panel--laptop' : ''}`} data-panel key={i}><div className="zara-details__copy"><span className="fine-print">DIPTYQUE — 0{i + 1} / 04</span><h3>{detail.title}</h3>{detail.paragraphs.map((paragraph, j) => <p key={j}>{paragraph}</p>)}{i === 3 && <Link href={links.diptyque}>VIEW WEBSITE</Link>}</div><DetailVisual index={i}/></article>)}</div>

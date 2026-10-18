@@ -1,0 +1,50 @@
+/* Section-local spatial archive: source images with editorial coordinates. */
+.workspace-archive .research-archive__body{grid-template-columns:minmax(0,28fr) minmax(0,72fr);min-height:0;padding-top:32px;align-items:start}
+.workspace-archive .research-archive__information{padding:6px 28px 0 0}
+.workspace-archive .research-archive__description{white-space:pre-line;font-size:16px;line-height:1.6;margin-top:20px}
+.workspace-archive .research-archive__step-copy h3{font-size:38px}
+.workspace-archive .research-archive__finding{margin-top:36px}
+.workspace-archive .research-archive__finding>p{font-size:24px;line-height:1.55}
+.workspace-archive .research-archive__finding>.archive-eyebrow{font-size:13px}
+.research-desk.figma-workspace{min-width:0;width:100%;padding:0;border:0;border-radius:0;background:none}
+.workspace-titlebar{height:42px;padding:0 10px;display:flex;align-items:center;gap:10px;border-block:1px solid var(--line);font-size:12px}
+.workspace-titlebar>span:nth-child(2){overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.workspace-titlebar a{margin-left:auto;white-space:nowrap;font-size:12px;color:var(--teal-dark);padding:10px 0}
+.workspace-mark{font-size:22px;color:var(--teal-dark)}
+.workspace-layout{display:grid;grid-template-columns:106px minmax(0,1fr)}
+.workspace-layers{padding:18px 6px;border-right:1px solid var(--line);min-width:0}
+.workspace-panel-label{display:block;padding:0 5px;font:600 12px/1.5 var(--subheading);margin-bottom:10px}
+.workspace-page-name{font-size:11px;padding:9px 5px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+.workspace-layer-list{display:flex;flex-direction:column;gap:5px}
+.workspace-layer-list button{display:flex;align-items:center;gap:5px;min-height:44px;padding:8px 5px;border:0;background:none;cursor:pointer;text-align:left;font-size:11px;line-height:1.5;min-width:0}
+.workspace-layer-list button>span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.workspace-layer-list button[aria-pressed=true]{background:color-mix(in srgb,var(--teal) 12%,transparent);color:var(--teal-dark)}
+.workspace-main{min-width:0}
+.figma-workspace .research-cut__toolbar{height:48px;margin:0;padding:0 18px;gap:12px;background:none}
+.figma-workspace .research-cut__tabs{gap:20px}
+.workspace-mode{font:500 11px var(--subheading);letter-spacing:.04em}
+.workspace-canvas{position:relative;height:610px;overflow:hidden;padding:0;cursor:grab;touch-action:pan-y;background-color:color-mix(in srgb,var(--paper-light) 60%,var(--paper));background-image:radial-gradient(color-mix(in srgb,var(--ink) 13%,transparent) .6px,transparent .6px);background-size:18px 18px;isolation:isolate}
+.workspace-canvas.is-panning{cursor:grabbing}
+.workspace-scene{position:absolute;inset:0;pointer-events:none}
+.workspace-plane{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform;pointer-events:none}
+.workspace-frame{position:absolute;max-width:none;pointer-events:auto}
+.workspace-frame__name{height:28px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:clamp(12px,calc(12px / var(--camera-scale,1)),28px);line-height:28px;color:var(--ink)}
+.workspace-frame__name>span{color:var(--teal-dark)}
+.workspace-frame__image{position:relative;display:block;width:100%;padding:0;border:0;background:none;cursor:pointer}
+.workspace-frame.is-selected .workspace-frame__image{cursor:zoom-in}
+.workspace-frame__crop{position:relative;overflow:hidden;width:100%;background:white}
+.workspace-frame__crop img{position:absolute;height:auto;max-width:none;display:block;user-select:none;pointer-events:none}
+.workspace-frame__selection{position:absolute;inset:-3px;border:2px solid var(--teal-dark);pointer-events:none}
+.workspace-frame__selection i{position:absolute;width:7px;height:7px;background:var(--paper-light);border:1px solid var(--teal-dark)}
+.workspace-frame__selection i:nth-child(1){top:-4px;left:-4px}.workspace-frame__selection i:nth-child(2){top:-4px;right:-4px}.workspace-frame__selection i:nth-child(3){bottom:-4px;left:-4px}.workspace-frame__selection i:nth-child(4){bottom:-4px;right:-4px}
+.workspace-status{min-height:44px;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:0 10px;border-bottom:1px solid var(--line);font-size:11px}
+.workspace-zoom{display:flex;align-items:center;gap:6px}
+.workspace-zoom button{min-width:32px;min-height:44px;background:none;border:0;color:var(--ink);font-size:12px;cursor:pointer}
+.workspace-zoom output{width:36px;text-align:center;font-size:11px}
+.workspace-provenance{font-size:11px;line-height:1.6;margin-top:10px;color:var(--teal-dark)}
+.workspace-cursor{position:absolute;left:52%;top:48%;pointer-events:none;color:var(--teal-dark);visibility:hidden}
+.workspace-cursor span{display:block;background:var(--teal-dark);color:var(--paper-light);font-size:11px;padding:3px 7px;margin-left:16px;margin-top:-6px}
+@media(min-width:1500px){.workspace-canvas{height:680px}}
+@media(max-width:1100px){.workspace-archive .research-archive__body{grid-template-columns:minmax(0,30fr) minmax(0,70fr)}.workspace-layout{grid-template-columns:84px minmax(0,1fr)}.workspace-archive .research-archive__information{padding-right:20px}.workspace-archive .research-archive__step-copy h3{font-size:36px}.workspace-archive .research-archive__finding>p{font-size:23px}.workspace-canvas{height:560px}}
+@media(max-width:900px){.workspace-layout{grid-template-columns:74px minmax(0,1fr)}.workspace-status>span{display:none}.workspace-status{justify-content:flex-end}.workspace-archive .research-archive__description{white-space:normal}}
+@media(max-width:700px){.workspace-archive .research-archive__information{padding:0}.workspace-archive .research-archive__description{white-space:pre-line}.workspace-archive .research-archive__finding{margin-top:26px}.workspace-archive .research-archive__finding>p{font-size:23px}.workspace-layout{display:block}.workspace-layers{padding:6px 0;border-right:0}.workspace-panel-label,.workspace-page-name{display:none}.workspace-layer-list{flex-direction:row;overflow:auto;gap:6px}.workspace-layer-list button{flex:0 0 126px;max-width:150px}.workspace-titlebar{font-size:11px;padding:0;gap:7px}.workspace-titlebar a{font-size:11px}.figma-workspace .research-cut__toolbar{padding-inline:10px}.workspace-canvas{height:440px}.workspace-status{padding:0}.workspace-cursor{display:none}.workspace-provenance{font-size:11px}}

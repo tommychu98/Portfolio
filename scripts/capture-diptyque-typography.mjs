@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import { archiveSteps } from '../src/components/sections/ZaraProcess/DiptyqueProcess.data.js';
+import { archiveSteps } from '../src/components/sections/PortfolioProcess/DiptyqueProcess.data.js';
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const phase = process.argv[2] || 'after';
 const directory = `artifacts/diptyque-process/typography-${phase}`;

@@ -1,5 +1,47 @@
 # DIPTYQUE UX Case Study — Section 08
 
+## 2026-10-19 — First-chapter fixed-UI canvas
+
+This revision only changes `01 Desk Research`. The established retro frame, section copy, and Figma chrome stay fixed. The source screenshot's measured gray rectangle is x=1978..13914, y=334..8102 in a 15356×8352 image. A transparent clipped viewport overlays that rectangle; its world alone receives camera x/y/scale. Hover and one-time entry transforms are isolated to each frame's inner surface. Camera fitting measures DOM offset bounding boxes, remeasures on resize, kills interrupted tweens, and honors reduced motion. Actual HTML layer buttons replace only the list area; screenshot text is not used as invisible fake controls.
+
+Source selection: company `433:3679` reuses the existing original export. Market parent `251:327` → representative table `251:699` (768×393), full research document `251:616` (768×1613). User parent `251:328` → representative pain-point table `251:1285` (768×390), full document `251:1188` (768×1361). All exports are source screenshots, without AI-generated or rewritten content. Native-size PNG exports are retained to avoid lossy text conversion; full documents load only when their reading dialog opens. Source numbers are the team's collected research, not newly verified statistical claims.
+
+The complete documents are available through the existing zoom/scroll/ESC reader. On mobile the tiny static chrome is hidden in favor of three touch targets, a 360px canvas, and a readable caption/reader. Other chapters retain their prior workspace component. Validation: `scripts/check-desk-canvas.mjs`; state captures/report: `artifacts/diptyque-process/desk-canvas/`. This supersedes the first-chapter static-frame check in the historical `check-diptyque-retro.mjs`.
+
+## Current implementation: Interactive Figma Workspace
+
+### Spatial canvas revision
+
+The subsequent user review rejected the fixed-slot mockup. The current implementation replaces that slot with six spatial arrangements: collection and analysis, side-by-side comparisons, interview-to-persona, affinity-to-journey, strategy/IA tools, and wireframe sequence. Research and Result share the same frame coordinates; the camera pans/zooms instead of replacing a centered screenshot. All source images remain intact and accessible in the reader. The canvas is explicitly identified as an editorial reconstruction, not a live Figma recording or a reconstruction of actual collaborator activity.
+
+The five supplied source pages were re-inspected through Figma metadata; the actual wireframe section `2804:14317` was also rendered to verify its extended vertical/horizontal composition. No synthetic notes, metrics, interview responses or collaborator avatars were added. The original images provide the notes and diagrams themselves. Existing source mappings below remain unchanged.
+
+The section-local desktop split is now 28:72 (tablet 30:70), with a minimal toolbar/layer rail and no rounded outer card. The canvas supports drag-to-pan, keyboard arrows, zoom controls, selection focus, and an overview reset. Selecting a different frame retains surrounding documents and their positions. GSAP camera timelines are cancellable, scoped and reduced-motion aware; the site scroll handler is untouched and canvas wheel events are not intercepted. On mobile, the initial camera focuses the selected document; overview and all other frames remain reachable through the layer list.
+
+Current comparisons are in `artifacts/diptyque-process/canvas-comparison.html`, with immediately preceding implementation captures in `canvas-before/` and the new implementation in `canvas-after/`. The current check script additionally verifies fixed source coordinates, drag/keyboard panning, and zoom changes.
+
+### Earlier fixed-slot implementation (superseded above)
+
+2026-10-18. This revision supersedes the single-image archive and its typography notes below. Section 08 retains the existing title, tokens, six chapters, and desktop 35:65 layout. The information panel contains only the chapter, title, two-line description, and one finding. Research presents up to three original frames with one selected; Result isolates a selected analysis frame. Layers select other available documents. Toolbar, layers, selection outlines and the one-shot exploration cursor are HTML/CSS, not a captured live Figma session; no collaborator identity or activity is invented.
+
+Original assets and findings remain in `DiptyqueProcess.data.js`. `Workspace.data.js` adds short descriptions, source frame names and normalized preview crops. Crops are CSS windows into unmodified source images; opening a frame shows its complete original export, source link, zoom and scrolling. Image previews are explicitly labeled as partial views. The old supplementary paragraphs and evidence cards are not rendered.
+
+Additional Figma exports, verified against file `DwbaDAovYNR7jMSBg62PQs`:
+
+| Local asset (`public/media/images/diptyque/workspace/`) | Actual node | Frame name | Export pixels |
+| --- | --- | --- | --- |
+| korea-site.png | 813:5331 | screencapture-shinsegaev-store-diptyque-2026-08-28-11_44_48 1 | 946 × 2800 |
+| interview-board.png | 5149:9058 | 인터뷰 정리 | 1800 × 1629 |
+| wire-history.png | 2804:14750 | con 1 - history | 1800 × 1013 |
+| wire-perfume.png | 2804:14816 | con 3 - perfume history | 1800 × 432 |
+| wire-menu.png | 2100:4965 | menu - wire frame | 1800 × 104 |
+
+Wireframe is no longer held: the newly provided wireframe page (`813:4405`) and actual child frames were inspected. Its finding describes the visible image/text structure, not an unverified user outcome. Interview evidence is an actual Figma export, not generated interview content. No AI-generated assets are used.
+
+GSAP timelines are scoped and cleaned up. Step/tab/layer changes cancel previous transitions. Mobile and reduced-motion modes suppress the automatic cursor. Original dialog focus return, ESC, keyboard controls and global scrolling are preserved.
+
+Current browser verification: `scripts/check-diptyque-workspace.mjs` (supersedes the historical archive-only check/capture scripts). It covers 1440/1024/390px, all six chapters and both tabs, every available layer at desktop, original image dimensions, zoom/ESC/focus, rapid navigation, keyboard tabs, reduced motion, layout stability and unrelated ScrollTrigger preservation. Local comparison: `artifacts/diptyque-process/workspace-comparison.html`; screenshots: `workspace-before/` and `workspace-after/`.
+
 ## Typography & Visual Hierarchy refinement
 
 2026-10-18. Research Cut의 구조·35:65 그리드·폰트 패밀리·컬러·6단계를 보존하고 섹션 안의 가독성을 조정했다.
@@ -99,11 +141,11 @@
 
 ## 변경 파일
 
-- `src/components/sections/ZaraProcess/ZaraProcess.jsx`: 섹션 헤더·6단계 내비게이션·설명·Key Finding·접근 가능한 자료 읽기 dialog.
-- `src/components/sections/ZaraProcess/ResearchDesk.jsx`: 문서 묶음·선택·주석·자료 페이징·인터뷰 HTML 요약.
-- `src/components/sections/ZaraProcess/ZaraProcess.css`: 섹션에 한정된 에디토리얼 레이아웃·반응형·읽기 화면.
-- `src/components/sections/ZaraProcess/ZaraProcess.motion.js`: 한 번의 진입 모션·중단 가능한 단계 Timeline·문서 전면 배치.
-- `src/components/sections/ZaraProcess/DiptyqueProcess.data.js`: 기존 6단계 및 원본 매핑을 보존하고 `archiveSteps`에 표현용 작업 목록·주석·문서 역할을 추가.
+- `src/components/sections/PortfolioProcess/PortfolioProcess.jsx`: 섹션 헤더·6단계 내비게이션·설명·Key Finding·접근 가능한 자료 읽기 dialog.
+- `src/components/sections/PortfolioProcess/ResearchDesk.jsx`: 문서 묶음·선택·주석·자료 페이징·인터뷰 HTML 요약.
+- `src/components/sections/PortfolioProcess/PortfolioProcess.css`: 섹션에 한정된 에디토리얼 레이아웃·반응형·읽기 화면.
+- `src/components/sections/PortfolioProcess/PortfolioProcess.motion.js`: 한 번의 진입 모션·중단 가능한 단계 Timeline·문서 전면 배치.
+- `src/components/sections/PortfolioProcess/DiptyqueProcess.data.js`: 기존 6단계 및 원본 매핑을 보존하고 `archiveSteps`에 표현용 작업 목록·주석·문서 역할을 추가.
 - `scripts/check-diptyque-process.mjs`: 아카이브 브라우저 검수.
 - `reference/DIPTYQUE-RESEARCH.md`: 자료 매핑 및 구현·검수 보고.
 

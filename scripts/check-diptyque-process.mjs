@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
-import { archiveSteps } from '../src/components/sections/ZaraProcess/DiptyqueProcess.data.js';
+import { archiveSteps } from '../src/components/sections/PortfolioProcess/DiptyqueProcess.data.js';
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 const output = 'artifacts/diptyque-process';

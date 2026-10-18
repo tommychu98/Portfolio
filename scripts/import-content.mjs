@@ -18,7 +18,7 @@ const data = {
   processIntro: clean($('#zara-process .process-cover .process-copy p')),
   process: $('#zara-process .process-step').map((_, el) => ({
     title: clean($(el).find('h2')), body: clean($(el).find('.process-copy p')),
-    materials: $(el).find('[data-process-material]').map((_, b) => ({id: $(b).attr('data-process-material'), label: clean(b), src: local(`images/zara-methodology/${$(b).attr('data-process-material')}.png`)})).get()
+    materials: $(el).find('[data-process-material]').map((_, b) => ({id: $(b).attr('data-process-material'), label: clean(b), src: local(`images/portfolio-methodology/${$(b).attr('data-process-material')}.png`)})).get()
   })).get(),
   personal: $('.work-card').map((i, el) => ({ name: i === 0 ? 'ÉLAN' : 'ONDA', title: clean($(el).find('.card-meta h3')), body: clean($(el).find('.card-meta p')), href: new URL($(el).find('a').attr('href'), base).href, image: i === 0 ? 'perfume' : 'tea', tags: $(el).find('.tag').map((_, t) => clean(t)).get() })).get(),
   films: $('.shortform-scene').map((i, el) => ({title: clean($(el).find('h3')), subtitle: clean($(el).find('.work-scenes__desc-en')), src: local($(el).find('source').attr('src')), poster: local($(el).find('video').attr('poster')), wide: i === 2, meta: $(el).find('dl > div').map((_, d) => ({label: clean($(d).find('dt')), text: clean($(d).find('dd'))})).get()})).get(),

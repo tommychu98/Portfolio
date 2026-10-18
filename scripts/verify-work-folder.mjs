@@ -21,7 +21,7 @@ HTMLDialogElement.prototype.close = function () { this.removeAttribute('open'); 
 const server = await createServer({ server: { middlewareMode: true }, appType: 'custom' });
 const root = createRoot(document.getElementById('root'));
 try {
-  const { default: WorkFolder } = await server.ssrLoadModule('/src/components/sections/ZaraDetails/WorkFolder.jsx');
+  const { default: WorkFolder } = await server.ssrLoadModule('/src/components/sections/PortfolioDetails/WorkFolder.jsx');
   await act(() => root.render(React.createElement(WorkFolder)));
   const trigger = document.querySelector('.diptyque-work-folder__trigger');
   const click = element => act(() => element.click());

@@ -29,5 +29,5 @@
   });
   document.fonts.ready.then(()=>ScrollTrigger.refresh());
  }
- section.querySelectorAll('.process-step').forEach(panel=>panel.querySelectorAll('[data-process-material]').forEach(button=>button.addEventListener('click',()=>{panel.querySelectorAll('[data-process-material]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));const url=`images/zara-methodology/${button.dataset.processMaterial}.png`;const image=panel.querySelector('img');image.src=url;image.alt=button.textContent;panel.querySelector('.process-preview').href=url;panel.querySelector('.process-caption').textContent=button.textContent+' ↗';})));
+ section.querySelectorAll('.process-step').forEach(panel=>panel.querySelectorAll('[data-process-material]').forEach(button=>button.addEventListener('click',()=>{panel.querySelectorAll('[data-process-material]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));const url=`images/portfolio-methodology/${button.dataset.processMaterial}.png`;const image=panel.querySelector('img');image.src=url;image.alt=button.textContent;panel.querySelector('.process-preview').href=url;panel.querySelector('.process-caption').textContent=button.textContent+' ↗';})));
 })();

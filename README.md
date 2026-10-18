@@ -37,7 +37,7 @@ scripts/    콘텐츠 및 상호작용 검증 스크립트
 reference/  기존 참고 자료와 구현 기록
 ```
 
-DIPTYQUE 프로젝트 소개는 `src/components/sections/ZaraOverview/`에서 관리합니다. 폴더명과 내부 앵커는 기존 연결을 유지하기 위해 남겨 두었습니다.
+DIPTYQUE 프로젝트 소개는 `src/components/sections/PortfolioOverview/`에서 관리합니다. 폴더명과 내부 앵커는 기존 연결을 유지하기 위해 남겨 두었습니다.
 
 ## 주요 명령
 
