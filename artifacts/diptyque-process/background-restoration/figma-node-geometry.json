@@ -1,0 +1,1195 @@
+{
+  "page": [
+    {
+      "id": "293:235",
+      "name": "린캔버스 지도 사항",
+      "type": "SECTION",
+      "visible": true,
+      "x": 1638,
+      "y": 87,
+      "width": 3805,
+      "height": 5493,
+      "box": {
+        "x": 1638,
+        "y": 87,
+        "width": 3805,
+        "height": 5493
+      },
+      "transform": [
+        [
+          1,
+          0,
+          1638
+        ],
+        [
+          0,
+          1,
+          87
+        ]
+      ],
+      "children": 4
+    },
+    {
+      "id": "210:124",
+      "name": "딥디크에 대해",
+      "type": "FRAME",
+      "visible": true,
+      "x": -6508,
+      "y": 104,
+      "width": 1760,
+      "height": 6604,
+      "box": {
+        "x": -6508,
+        "y": 104,
+        "width": 1760,
+        "height": 6604
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -6508
+        ],
+        [
+          0,
+          1,
+          104
+        ]
+      ],
+      "children": 2
+    },
+    {
+      "id": "208:87",
+      "name": "Sticky Note",
+      "type": "GROUP",
+      "visible": true,
+      "x": 3114,
+      "y": 9893,
+      "width": 1887,
+      "height": 2499,
+      "box": {
+        "x": 3114,
+        "y": 9893,
+        "width": 1887,
+        "height": 2499
+      },
+      "transform": [
+        [
+          1,
+          0,
+          3114
+        ],
+        [
+          0,
+          1,
+          9893
+        ]
+      ],
+      "children": 3
+    },
+    {
+      "id": "208:144",
+      "name": "Media Block",
+      "type": "GROUP",
+      "visible": true,
+      "x": 2956,
+      "y": 9757,
+      "width": 223,
+      "height": 223,
+      "box": {
+        "x": 2956,
+        "y": 9757,
+        "width": 223,
+        "height": 223
+      },
+      "transform": [
+        [
+          1,
+          0,
+          2956
+        ],
+        [
+          0,
+          1,
+          9757
+        ]
+      ],
+      "children": 1
+    },
+    {
+      "id": "251:329",
+      "name": "린의 흔적",
+      "type": "SECTION",
+      "visible": true,
+      "x": -4600,
+      "y": 104,
+      "width": 6090,
+      "height": 4114,
+      "box": {
+        "x": -4600,
+        "y": 104,
+        "width": 6090,
+        "height": 4114
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -4600
+        ],
+        [
+          0,
+          1,
+          104
+        ]
+      ],
+      "children": 7
+    },
+    {
+      "id": "250:125",
+      "name": "온라인과 오프라인 브랜드 경험 차이",
+      "type": "FRAME",
+      "visible": true,
+      "x": -6172,
+      "y": 13331,
+      "width": 7998,
+      "height": 2426,
+      "box": {
+        "x": -6172,
+        "y": 13331,
+        "width": 7998,
+        "height": 2426
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -6172
+        ],
+        [
+          0,
+          1,
+          13331
+        ]
+      ],
+      "children": 3
+    },
+    {
+      "id": "557:3786",
+      "name": "할것",
+      "type": "SECTION",
+      "visible": true,
+      "x": 3114,
+      "y": 12470,
+      "width": 1887,
+      "height": 3188,
+      "box": {
+        "x": 3114,
+        "y": 12470,
+        "width": 1887,
+        "height": 3188
+      },
+      "transform": [
+        [
+          1,
+          0,
+          3114
+        ],
+        [
+          0,
+          1,
+          12470
+        ]
+      ],
+      "children": 4
+    },
+    {
+      "id": "237:286",
+      "name": "image 32",
+      "type": "RECTANGLE",
+      "visible": true,
+      "x": -6940,
+      "y": 9674,
+      "width": 9128,
+      "height": 3122,
+      "box": {
+        "x": -6940,
+        "y": 9674,
+        "width": 9128,
+        "height": 3122
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -6940
+        ],
+        [
+          0,
+          1,
+          9674
+        ]
+      ],
+      "children": 0
+    },
+    {
+      "id": "251:317",
+      "name": "image 33",
+      "type": "RECTANGLE",
+      "visible": true,
+      "x": 12525,
+      "y": 2309,
+      "width": 3070,
+      "height": 442,
+      "box": {
+        "x": 12525,
+        "y": 2309,
+        "width": 3070,
+        "height": 442
+      },
+      "transform": [
+        [
+          1,
+          0,
+          12525
+        ],
+        [
+          0,
+          1,
+          2309
+        ]
+      ],
+      "children": 0
+    },
+    {
+      "id": "254:154",
+      "name": "참고 사이트 및 참고사항",
+      "type": "SECTION",
+      "visible": true,
+      "x": -1434,
+      "y": 7234,
+      "width": 4390,
+      "height": 2114,
+      "box": {
+        "x": -1434,
+        "y": 7234,
+        "width": 4390,
+        "height": 2114
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -1434
+        ],
+        [
+          0,
+          1,
+          7234
+        ]
+      ],
+      "children": 7
+    },
+    {
+      "id": "251:316",
+      "name": "리서치 단계",
+      "type": "SECTION",
+      "visible": true,
+      "x": 8981,
+      "y": 3306,
+      "width": 6614,
+      "height": 20000,
+      "box": {
+        "x": 8981,
+        "y": 3306,
+        "width": 6614,
+        "height": 20000
+      },
+      "transform": [
+        [
+          1,
+          0,
+          8981
+        ],
+        [
+          0,
+          1,
+          3306
+        ]
+      ],
+      "children": 10
+    },
+    {
+      "id": "252:845",
+      "name": "경쟁사 분석",
+      "type": "SECTION",
+      "visible": true,
+      "x": 15980,
+      "y": 7885,
+      "width": 3792,
+      "height": 5320,
+      "box": {
+        "x": 15980,
+        "y": 7885,
+        "width": 3792,
+        "height": 5320
+      },
+      "transform": [
+        [
+          1,
+          0,
+          15980
+        ],
+        [
+          0,
+          1,
+          7885
+        ]
+      ],
+      "children": 4
+    },
+    {
+      "id": "267:164",
+      "name": "컬러 팔렛 · 프레젠테이션 전용",
+      "type": "FRAME",
+      "visible": true,
+      "x": 7409,
+      "y": -1261,
+      "width": 8186,
+      "height": 3163,
+      "box": {
+        "x": 7409,
+        "y": -1261,
+        "width": 8186,
+        "height": 3163
+      },
+      "transform": [
+        [
+          1,
+          0,
+          7409
+        ],
+        [
+          0,
+          1,
+          -1261
+        ]
+      ],
+      "children": 3
+    },
+    {
+      "id": "343:1357",
+      "name": "린캔버스 샘플",
+      "type": "SECTION",
+      "visible": true,
+      "x": -15901,
+      "y": 3697,
+      "width": 2672,
+      "height": 2759,
+      "box": {
+        "x": -15901,
+        "y": 3697,
+        "width": 2672,
+        "height": 2759
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -15901
+        ],
+        [
+          0,
+          1,
+          3697
+        ]
+      ],
+      "children": 32
+    },
+    {
+      "id": "347:1621",
+      "name": "페르소나 => 써본사람 but 너무 긍정적인 사람은 비추 => 문제점 찾아야 해서",
+      "type": "SECTION",
+      "visible": true,
+      "x": -12673,
+      "y": 3697,
+      "width": 4783,
+      "height": 5093,
+      "box": {
+        "x": -12673,
+        "y": 3697,
+        "width": 4783,
+        "height": 5093
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -12673
+        ],
+        [
+          0,
+          1,
+          3697
+        ]
+      ],
+      "children": 9
+    },
+    {
+      "id": "347:1622",
+      "name": "(참고) 가설 설정 및 린캔버스 반영",
+      "type": "SECTION",
+      "visible": true,
+      "x": -22548,
+      "y": 104,
+      "width": 14658,
+      "height": 2574,
+      "box": {
+        "x": -22548,
+        "y": 104,
+        "width": 14658,
+        "height": 2574
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -22548
+        ],
+        [
+          0,
+          1,
+          104
+        ]
+      ],
+      "children": 2
+    },
+    {
+      "id": "495:2210",
+      "name": "persona",
+      "type": "SECTION",
+      "visible": true,
+      "x": -22548,
+      "y": 3697,
+      "width": 6092,
+      "height": 4083,
+      "box": {
+        "x": -22548,
+        "y": 3697,
+        "width": 6092,
+        "height": 4083
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -22548
+        ],
+        [
+          0,
+          1,
+          3697
+        ]
+      ],
+      "children": 3
+    },
+    {
+      "id": "425:3426",
+      "name": "JTBD",
+      "type": "SECTION",
+      "visible": true,
+      "x": 8981,
+      "y": 24448,
+      "width": 14899,
+      "height": 3148,
+      "box": {
+        "x": 8981,
+        "y": 24448,
+        "width": 14899,
+        "height": 3148
+      },
+      "transform": [
+        [
+          1,
+          0,
+          8981
+        ],
+        [
+          0,
+          1,
+          24448
+        ]
+      ],
+      "children": 3
+    },
+    {
+      "id": "495:2211",
+      "name": "기타",
+      "type": "SECTION",
+      "visible": true,
+      "x": -27450,
+      "y": 16664,
+      "width": 7459,
+      "height": 5142,
+      "box": {
+        "x": -27450,
+        "y": 16664,
+        "width": 7459,
+        "height": 5142
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -27450
+        ],
+        [
+          0,
+          1,
+          16664
+        ]
+      ],
+      "children": 5
+    },
+    {
+      "id": "468:1724",
+      "name": "간단 ver.",
+      "type": "SECTION",
+      "visible": true,
+      "x": -30784,
+      "y": 17572,
+      "width": 944,
+      "height": 3506,
+      "box": {
+        "x": -30784,
+        "y": 17572,
+        "width": 944,
+        "height": 3506
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -30784
+        ],
+        [
+          0,
+          1,
+          17572
+        ]
+      ],
+      "children": 7
+    },
+    {
+      "id": "469:1783",
+      "name": "퍼소나 2 구체적 설문 2",
+      "type": "SECTION",
+      "visible": true,
+      "x": -28976,
+      "y": 16676,
+      "width": 638,
+      "height": 5390,
+      "box": {
+        "x": -28976,
+        "y": 16676,
+        "width": 638,
+        "height": 5390
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -28976
+        ],
+        [
+          0,
+          1,
+          16676
+        ]
+      ],
+      "children": 12
+    },
+    {
+      "id": "696:3341",
+      "name": "퍼소나 3 구체적 설문 3",
+      "type": "SECTION",
+      "visible": true,
+      "x": -28304,
+      "y": 16676,
+      "width": 638,
+      "height": 5390,
+      "box": {
+        "x": -28304,
+        "y": 16676,
+        "width": 638,
+        "height": 5390
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -28304
+        ],
+        [
+          0,
+          1,
+          16676
+        ]
+      ],
+      "children": 9
+    },
+    {
+      "id": "490:2057",
+      "name": "Container",
+      "type": "GROUP",
+      "visible": true,
+      "x": 3114,
+      "y": 15736,
+      "width": 3138,
+      "height": 1741,
+      "box": {
+        "x": 3114,
+        "y": 15736,
+        "width": 3138,
+        "height": 1741
+      },
+      "transform": [
+        [
+          1,
+          0,
+          3114
+        ],
+        [
+          0,
+          1,
+          15736
+        ]
+      ],
+      "children": 2
+    },
+    {
+      "id": "515:5157",
+      "name": "image 39",
+      "type": "RECTANGLE",
+      "visible": true,
+      "x": 4474,
+      "y": 16538,
+      "width": 1687,
+      "height": 753,
+      "box": {
+        "x": 4474,
+        "y": 16538,
+        "width": 1687,
+        "height": 753
+      },
+      "transform": [
+        [
+          1,
+          0,
+          4474
+        ],
+        [
+          0,
+          1,
+          16538
+        ]
+      ],
+      "children": 0
+    },
+    {
+      "id": "564:5515",
+      "name": "image 27",
+      "type": "RECTANGLE",
+      "visible": true,
+      "x": 2956,
+      "y": 12318,
+      "width": 223,
+      "height": 223,
+      "box": {
+        "x": 2956,
+        "y": 12318,
+        "width": 223,
+        "height": 223
+      },
+      "transform": [
+        [
+          1,
+          0,
+          2956
+        ],
+        [
+          0,
+          1,
+          12318
+        ]
+      ],
+      "children": 0
+    },
+    {
+      "id": "689:2717",
+      "name": "Card",
+      "type": "GROUP",
+      "visible": true,
+      "x": -12271,
+      "y": 11065,
+      "width": 3155,
+      "height": 4253,
+      "box": {
+        "x": -12271,
+        "y": 11065,
+        "width": 3155,
+        "height": 4253
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -12271
+        ],
+        [
+          0,
+          1,
+          11065
+        ]
+      ],
+      "children": 2
+    },
+    {
+      "id": "490:2058",
+      "name": "image 28",
+      "type": "RECTANGLE",
+      "visible": true,
+      "x": 2998,
+      "y": 15735,
+      "width": 223,
+      "height": 223,
+      "box": {
+        "x": 2998,
+        "y": 15735,
+        "width": 223,
+        "height": 223
+      },
+      "transform": [
+        [
+          1,
+          0,
+          2998
+        ],
+        [
+          0,
+          1,
+          15735
+        ]
+      ],
+      "children": 0
+    },
+    {
+      "id": "696:4984",
+      "name": "image 184",
+      "type": "RECTANGLE",
+      "visible": true,
+      "x": -28254,
+      "y": 19712,
+      "width": 444,
+      "height": 275,
+      "box": {
+        "x": -28254,
+        "y": 19712,
+        "width": 444,
+        "height": 275
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -28254
+        ],
+        [
+          0,
+          1,
+          19712
+        ]
+      ],
+      "children": 0
+    },
+    {
+      "id": "696:4990",
+      "name": "image 186",
+      "type": "RECTANGLE",
+      "visible": true,
+      "x": -28259,
+      "y": 20327,
+      "width": 449,
+      "height": 338,
+      "box": {
+        "x": -28259,
+        "y": 20327,
+        "width": 449,
+        "height": 338
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -28259
+        ],
+        [
+          0,
+          1,
+          20327
+        ]
+      ],
+      "children": 0
+    },
+    {
+      "id": "696:4996",
+      "name": "image 188",
+      "type": "RECTANGLE",
+      "visible": true,
+      "x": -28265,
+      "y": 21173,
+      "width": 561,
+      "height": 201,
+      "box": {
+        "x": -28265,
+        "y": 21173,
+        "width": 561,
+        "height": 201
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -28265
+        ],
+        [
+          0,
+          1,
+          21173
+        ]
+      ],
+      "children": 0
+    },
+    {
+      "id": "721:5819",
+      "name": "Card",
+      "type": "GROUP",
+      "visible": true,
+      "x": -16698,
+      "y": 15572,
+      "width": 9085,
+      "height": 5533,
+      "box": {
+        "x": -16698,
+        "y": 15572,
+        "width": 9085,
+        "height": 5533
+      },
+      "transform": [
+        [
+          1,
+          0,
+          -16698
+        ],
+        [
+          0,
+          1,
+          15572
+        ]
+      ],
+      "children": 7
+    }
+  ],
+  "research": [
+    {
+      "id": "251:313",
+      "name": "Arrow 4",
+      "type": "VECTOR",
+      "visible": true,
+      "x": 1978.0001220703125,
+      "y": 9723,
+      "width": 1413,
+      "height": 0,
+      "box": {
+        "x": 10958.999938235818,
+        "y": 13029,
+        "width": 0.00006176418173708953,
+        "height": 1413
+      },
+      "transform": [
+        [
+          -4.371138118131057e-8,
+          -1,
+          10959
+        ],
+        [
+          1,
+          -4.371138118131057e-8,
+          13029
+        ]
+      ],
+      "children": 0
+    },
+    {
+      "id": "251:312",
+      "name": "Arrow 4",
+      "type": "VECTOR",
+      "visible": true,
+      "x": 2236,
+      "y": 2999,
+      "width": 1413,
+      "height": 0,
+      "box": {
+        "x": 11216.999938235818,
+        "y": 6305,
+        "width": 0.00006176418173708953,
+        "height": 1413
+      },
+      "transform": [
+        [
+          -4.371138118131057e-8,
+          -1,
+          11217
+        ],
+        [
+          1,
+          -4.371138118131057e-8,
+          6305
+        ]
+      ],
+      "children": 0
+    },
+    {
+      "id": "251:326",
+      "name": "시장조사",
+      "type": "FRAME",
+      "visible": true,
+      "x": 424,
+      "y": 141,
+      "width": 5211,
+      "height": 3654,
+      "box": {
+        "x": 9405,
+        "y": 3447,
+        "width": 5211,
+        "height": 3654
+      },
+      "transform": [
+        [
+          1,
+          0,
+          9405
+        ],
+        [
+          0,
+          1,
+          3447
+        ]
+      ],
+      "children": 0
+    },
+    {
+      "id": "252:844",
+      "name": "자사분석",
+      "type": "SECTION",
+      "visible": true,
+      "x": 0,
+      "y": 4524,
+      "width": 3042,
+      "height": 5090,
+      "box": {
+        "x": 8981,
+        "y": 7830,
+        "width": 3042,
+        "height": 5090
+      },
+      "transform": [
+        [
+          1,
+          0,
+          8981
+        ],
+        [
+          0,
+          1,
+          7830
+        ]
+      ],
+      "children": 3
+    },
+    {
+      "id": "251:327",
+      "name": "시장조사",
+      "type": "SECTION",
+      "visible": true,
+      "x": 213,
+      "y": 222,
+      "width": 5932,
+      "height": 3202,
+      "box": {
+        "x": 9194,
+        "y": 3528,
+        "width": 5932,
+        "height": 3202
+      },
+      "transform": [
+        [
+          1,
+          0,
+          9194
+        ],
+        [
+          0,
+          1,
+          3528
+        ]
+      ],
+      "children": 3
+    },
+    {
+      "id": "251:328",
+      "name": "사용자 조사 => 인터뷰로 하기",
+      "type": "SECTION",
+      "visible": true,
+      "x": 495,
+      "y": 10538,
+      "width": 5624,
+      "height": 4180,
+      "box": {
+        "x": 9476,
+        "y": 13844,
+        "width": 5624,
+        "height": 4180
+      },
+      "transform": [
+        [
+          1,
+          0,
+          9476
+        ],
+        [
+          0,
+          1,
+          13844
+        ]
+      ],
+      "children": 2
+    },
+    {
+      "id": "261:1040",
+      "name": "설문",
+      "type": "SECTION",
+      "visible": true,
+      "x": 495,
+      "y": 15214,
+      "width": 1322,
+      "height": 1701,
+      "box": {
+        "x": 9476,
+        "y": 18520,
+        "width": 1322,
+        "height": 1701
+      },
+      "transform": [
+        [
+          1,
+          0,
+          9476
+        ],
+        [
+          0,
+          1,
+          18520
+        ]
+      ],
+      "children": 2
+    },
+    {
+      "id": "285:94",
+      "name": "구글폼 질문지 ( 구체적 ver. )",
+      "type": "SECTION",
+      "visible": true,
+      "x": 3052,
+      "y": 15074,
+      "width": 1322,
+      "height": 4168,
+      "box": {
+        "x": 12033,
+        "y": 18380,
+        "width": 1322,
+        "height": 4168
+      },
+      "transform": [
+        [
+          1,
+          0,
+          12033
+        ],
+        [
+          0,
+          1,
+          18380
+        ]
+      ],
+      "children": 1
+    },
+    {
+      "id": "410:1575",
+      "name": "주 타겟층",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3307,
+      "y": 10702,
+      "width": 2704,
+      "height": 3977,
+      "box": {
+        "x": 12288,
+        "y": 14008,
+        "width": 2704,
+        "height": 3977
+      },
+      "transform": [
+        [
+          1,
+          0,
+          12288
+        ],
+        [
+          0,
+          1,
+          14008
+        ]
+      ],
+      "children": 1
+    },
+    {
+      "id": "319:92",
+      "name": "구글폼 질문지 ( 간단 ver. )",
+      "type": "SECTION",
+      "visible": true,
+      "x": 4547,
+      "y": 15074,
+      "width": 1322,
+      "height": 4168,
+      "box": {
+        "x": 13528,
+        "y": 18380,
+        "width": 1322,
+        "height": 4168
+      },
+      "transform": [
+        [
+          1,
+          0,
+          13528
+        ],
+        [
+          0,
+          1,
+          18380
+        ]
+      ],
+      "children": 2
+    }
+  ]
+}

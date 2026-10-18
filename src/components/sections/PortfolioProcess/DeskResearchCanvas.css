@@ -2,14 +2,25 @@
    All selectors belong exclusively to the first chapter's fixed screen. */
 .desk-canvas-interface{position:absolute;inset:0;color:var(--ink)}
 .figma-canvas-viewport{position:absolute;left:calc(1978 / 15356 * 100%);right:calc(1442 / 15356 * 100%);top:calc(334 / 8352 * 100%);bottom:calc(250 / 8352 * 100% + 92px);overflow:hidden;isolation:isolate}
-.figma-canvas-world{position:absolute;inset:0 auto auto 0;width:1320px;height:960px;transform-origin:0 0}
+.figma-canvas-world{position:absolute;inset:0 auto auto 0;width:6614px;height:20000px;transform-origin:0 0}
 .desk-frame{position:absolute;z-index:1}
+.research-frame--background{z-index:0;filter:grayscale(100%) brightness(.82);opacity:.65;pointer-events:none}
+.research-frame--primary{filter:none;opacity:1}
+.desk-frame__background-image{position:absolute;inset:0}
+.desk-frame__background-image img{display:block;position:absolute;max-width:none;user-select:none}
+/* This real source frame overlaps the user-research document. Composite its
+   muted image over its own canvas backing, rather than bleeding two texts. */
+.research-frame--background[data-background-frame="410:1575"]{filter:none;opacity:1}
+.research-frame--background[data-background-frame="410:1575"] .desk-frame__background-image{background:#d9d9d9;overflow:hidden}
+.research-frame--background[data-background-frame="410:1575"] img{filter:grayscale(100%) brightness(.82);opacity:.65}
 .desk-frame.is-selected,.desk-frame.is-hovered{z-index:2}
-.desk-frame__surface{transform-origin:center}
-.desk-frame__name{display:block;position:relative;height:28px;color:#464646}
+.desk-frame__surface{transform-origin:center;width:100%;height:100%}
+.desk-frame__name{display:block;position:absolute;bottom:100%;left:0;width:100%;height:0;color:#464646}
 .desk-frame__name>span{position:absolute;bottom:5px;left:0;font:500 12px/1.5 var(--sans);white-space:nowrap;transform:scale(var(--label-scale,1));transform-origin:left bottom;pointer-events:none}
-.desk-frame__select{display:block;width:100%;border:0;padding:0;background:transparent;position:relative;cursor:zoom-in;text-align:left;outline-offset:4px}
-.desk-frame__select img{display:block;width:100%;height:auto;max-width:none;transform:none;user-select:none;background:#efebe3}
+.desk-frame__select{display:block;width:100%;height:100%;overflow:hidden;border:0;padding:0;background:transparent;position:relative;cursor:zoom-in;text-align:left;outline-offset:4px}
+/* MCP section exports include 40 Figma units of surrounding padding per side.
+   Clip that export padding so content occupies the exact source coordinates. */
+.desk-frame__select img{display:block;position:absolute;max-width:none;transform:none;user-select:none;background:#efebe3}
 .desk-frame__select::after{content:'';position:absolute;inset:-2px;border:2px solid var(--teal-dark);opacity:0;pointer-events:none;transition:opacity .25s}
 .desk-frame.is-selected .desk-frame__select::after,.desk-frame.is-hovered .desk-frame__select::after{opacity:1}
 /* Cover the complete source Layers content, not just the button rectangles.
