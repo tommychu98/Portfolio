@@ -1,0 +1,632 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>SCENT History</title><style>/* http://meyerweb.com/eric/tools/css/reset/
+	 v2.0 | 20110126
+	 License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+  --color-black: #000000;
+  --color-ink-black: #222222;
+  --color-gray-4b: #4b4b4b;
+  --color-gray-8b: #8b8b8b;
+  --color-ivory: #f7f6f4;
+  --color-paper-ivory: #f2e9da;
+  --color-deep-sage: #5f6c58;
+  --color-scent-amber: #b87b2e;
+  --color-title-black: #0e0e0d;
+  --color-white: #ffffff;
+  --color-light-background-3: #f7f7f7;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-red-50: #fef2f2;
+  --color-red-600: #dc2626;
+  --color-green-50: #f0fdf4;
+  --color-green-700: #15803d;
+  --color-yellow-50: #fefce8;
+  --color-yellow-700: #a16207;
+  --color-blue-50: #eff6ff;
+  --color-blue-700: #1d4ed8;
+  --color-bg-primary: var(--color-ivory);
+  --color-bg-secondary: var(--color-ink-black);
+  --color-bg-accent: var(--color-paper-ivory);
+  --color-surface: var(--color-white);
+  --color-text-primary: var(--color-ink-black);
+  --color-text-secondary: var(--color-gray-4b);
+  --color-text-muted: var(--color-gray-8b);
+  --color-text-inverse: var(--color-ivory);
+  --color-border-default: var(--color-gray-200);
+  --color-border-strong: var(--color-ink-black);
+  --color-action-primary: var(--color-ink-black);
+  --color-action-primary-hover: var(--color-gray-4b);
+  --color-accent-primary: var(--color-deep-sage);
+  --color-accent-highlight: var(--color-scent-amber);
+  --color-focus: #2563eb;
+  --color-error: var(--color-red-600);
+  --color-success: var(--color-green-700);
+  --color-warning: var(--color-yellow-700);
+  --color-info: var(--color-blue-700);
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --text-mobile-title-b1-size: 64px;
+  --text-mobile-title-b1-line-height: 1.3;
+  --text-mobile-title-b1-letter-spacing: 0;
+  --text-mobile-title-b1-weight: 700;
+  --text-mobile-title-m1-size: 58px;
+  --text-mobile-title-m1-line-height: 1.1;
+  --text-mobile-title-m1-letter-spacing: 0;
+  --text-mobile-title-m1-weight: 500;
+  --text-mobile-title-r1-size: 50px;
+  --text-mobile-title-r1-line-height: 1.1;
+  --text-mobile-title-r1-weight: 400;
+  --text-mobile-title-r2-size: 40px;
+  --text-mobile-title-r2-line-height: 1.1;
+  --text-mobile-title-r2-weight: 400;
+  --text-mobile-sub-title-r1-size: 32px;
+  --text-mobile-sub-title-r1-line-height: 1.1;
+  --text-mobile-sub-title-r2-size: 26px;
+  --text-mobile-sub-title-r2-line-height: 1.3;
+  --text-mobile-body-r1-size: 16px;
+  --text-mobile-body-r1-line-height: 1.4;
+  --text-mobile-body-r2-size: 14px;
+  --text-mobile-body-l1-size: 12px;
+  --text-web-title-b1-size: 130px;
+  --text-web-title-b1-line-height: 1;
+  --text-web-title-b1-letter-spacing: 0;
+  --text-web-title-b1-weight: 700;
+  --text-web-title-b2-size: 96px;
+  --text-web-title-b2-line-height: 1;
+  --text-web-title-b2-letter-spacing: 0;
+  --text-web-title-b2-weight: 700;
+  --text-web-title-m1-size: 160px;
+  --text-web-title-m1-line-height: 1;
+  --text-web-title-m1-letter-spacing: 0.02em;
+  --text-web-title-m1-weight: 500;
+  --text-web-title-m2-size: 110px;
+  --text-web-title-m2-line-height: 1;
+  --text-web-title-m2-letter-spacing: 0;
+  --text-web-title-m2-weight: 500;
+  --text-web-title-r1-size: 90px;
+  --text-web-title-r1-line-height: 1;
+  --text-web-title-r1-letter-spacing: 0;
+  --text-web-title-r1-weight: 400;
+  --text-sub-title-m1-size: 42px;
+  --text-sub-title-m1-line-height: 1.2;
+  --text-sub-title-m1-letter-spacing: 0;
+  --text-sub-title-m1-weight: 500;
+  --text-sub-title-r1-size: 64px;
+  --text-sub-title-r1-line-height: 1.1;
+  --text-sub-title-r1-letter-spacing: 0;
+  --text-sub-title-r1-weight: 400;
+  --text-sub-title-r2-size: 50px;
+  --text-sub-title-r2-line-height: 1.6;
+  --text-sub-title-r2-letter-spacing: 0;
+  --text-sub-title-r2-weight: 400;
+  --text-point-title-m1-size: 42px;
+  --text-point-title-m1-line-height: 1.5;
+  --text-point-title-m1-letter-spacing: 0.21em;
+  --text-point-title-m1-weight: 500;
+  --text-kr-sub-title-b1-size: 70px;
+  --text-kr-sub-title-b1-line-height: 1.3;
+  --text-kr-sub-title-b1-letter-spacing: 0;
+  --text-kr-sub-title-b1-weight: 700;
+  --text-kr-sub-title-r1-size: 40px;
+  --text-kr-sub-title-r1-line-height: 1.3;
+  --text-kr-sub-title-r1-letter-spacing: 0;
+  --text-kr-sub-title-r1-weight: 400;
+  --text-web-body-m1-eb-size: 28px;
+  --text-web-body-m1-eb-line-height: 1.3;
+  --text-web-body-m1-eb-letter-spacing: 0;
+  --text-web-body-m1-eb-weight: 500;
+  --text-web-body-b1-do-size: 20px;
+  --text-web-body-b1-do-line-height: 1.5;
+  --text-web-body-b1-do-letter-spacing: 0.02em;
+  --text-web-body-b1-do-weight: 700;
+  --text-web-body-m1-do-size: 20px;
+  --text-web-body-m1-do-line-height: 1.5;
+  --text-web-body-m1-do-letter-spacing: 0.02em;
+  --text-web-body-m1-do-weight: 500;
+  --text-web-body-m2-do-size: 18px;
+  --text-web-body-m2-do-line-height: 1.5;
+  --text-web-body-m2-do-letter-spacing: 0.02em;
+  --text-web-body-m2-do-weight: 500;
+  --text-web-body-l1-do-size: 18px;
+  --text-web-body-l1-do-line-height: 1.5;
+  --text-web-body-l1-do-letter-spacing: 0.02em;
+  --text-web-body-l1-do-weight: 300;
+  --text-web-body-l2-do-size: 16px;
+  --text-web-body-l2-do-line-height: 1.5;
+  --text-web-body-l2-do-letter-spacing: 0.02em;
+  --text-web-body-l2-do-weight: 300;
+  --text-web-kr-body-r1-size: 22px;
+  --text-web-kr-body-r1-line-height: 1.3;
+  --text-web-kr-body-r1-letter-spacing: 0.06em;
+  --text-web-kr-body-r1-weight: 400;
+  --text-web-footer-b1-do-size: 18px;
+  --text-web-footer-b1-do-line-height: 1.6;
+  --text-web-footer-b1-do-letter-spacing: 0.02em;
+  --text-web-footer-b1-do-weight: 700;
+  --text-web-footer-m1-do-size: 16px;
+  --text-web-footer-m1-do-line-height: 1.6;
+  --text-web-footer-m1-do-letter-spacing: 0.02em;
+  --text-web-footer-m1-do-weight: 500;
+  --text-web-footer-m2-do-size: 14px;
+  --text-web-footer-m2-do-line-height: 1.6;
+  --text-web-footer-m2-do-letter-spacing: 0.02em;
+  --text-web-footer-m2-do-weight: 500;
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --container-sm: 640px;
+  --container-md: 960px;
+  --container-lg: 1200px;
+  --container-xl: 1440px;
+  --page-padding: 16px;
+  --section-space: 64px;
+  --size-touch-min: 44px;
+  --size-input: 48px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.12);
+  --shadow-lg: 0 20px 48px rgb(0 0 0 / 0.18);
+  --z-header: 200;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --duration-fast: 120ms;
+  --duration-normal: 240ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (min-width: 768px) { :root { --page-padding: 24px; --section-space: 80px; } }
+@media (min-width: 1024px) { :root { --page-padding: 40px; --section-space: 96px; } }
+
+@font-face{font-family:'History Garamond';src:url('/media/diptyque-history/previews/garamond.woff2')}@font-face{font-family:'History Dotum';src:url('/media/diptyque-history/previews/dotum.woff2')}@font-face{font-family:'History Dotum';font-weight:700;src:url('/media/diptyque-history/previews/dotum-bold.woff2')}:root{--font-family-display:'History Garamond',Georgia,serif;--font-family-serif-kr:'History Dotum',serif;--font-family-sans:'History Dotum',sans-serif}body{font-family:var(--font-family-sans);font-size:16px;line-height:1.5;letter-spacing:.02em}html,body{margin:0;width:1920px;min-width:1920px;overflow:hidden;background:#faf7f0}*{box-sizing:border-box}
+.history-scent-scroll {
+  position: relative;
+  z-index: 1;
+  --light-x: 50%;
+  --light-y: 115vh;
+  --light-size: 16vh;
+  --shade-center: 1;
+  --shade-edge: 1;
+  --light-strength: 0;
+  --haze-strength: 0;
+  --vignette-strength: .32;
+  --effect-opacity: 1;
+  --flame-opacity: 0;
+  --entry-opacity: 0;
+  --title-opacity: 0;
+  --title-blur: 2px;
+  --title-bloom: 0;
+}
+
+.history-scent-scroll--cinematic .history-scent-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+  background: #080605;
+  opacity: var(--entry-opacity);
+}
+
+.history-scent-scroll--cinematic .history-scent {
+  will-change: transform;
+}
+
+.history-scent-scroll--cinematic:not([data-entered='true']) .history-scent-viewport {
+  visibility: hidden;
+}
+
+.history-scent-lighting { display: none; }
+.history-scent-scroll--cinematic .history-scent-lighting {
+  display: block;
+  position: absolute;
+  top: var(--scene-offset, 0px);
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  opacity: var(--effect-opacity);
+}
+
+.history-scent-lighting > div { position: absolute; inset: 0; }
+.history-scent-lighting__shade {
+  background: radial-gradient(ellipse var(--light-size) calc(var(--light-size) * 0.85) at var(--light-x) var(--light-y),
+    rgb(8 6 5 / var(--shade-center)) 0%,
+    rgb(8 6 5 / var(--shade-center)) 10%,
+    rgb(8 6 5 / var(--shade-edge)) 85%);
+}
+.history-scent-lighting__glow {
+  background: radial-gradient(ellipse var(--light-size) calc(var(--light-size) * 0.85) at var(--light-x) var(--light-y),
+    rgb(255 205 128 / 0.7) 0%, rgb(214 142 66 / 0.4) 21%, rgb(138 76 28 / 0.15) 49%, transparent 75%);
+  opacity: var(--light-strength);
+  mix-blend-mode: screen;
+}
+.history-scent-lighting__haze {
+  background: radial-gradient(ellipse 65% 50% at 44% 78%, #e1b983, transparent 80%);
+  opacity: var(--haze-strength);
+  mix-blend-mode: screen;
+}
+.history-scent-lighting__vignette {
+  background: radial-gradient(ellipse at 50% 62%, transparent 30%, rgb(8 6 5 / var(--vignette-strength)) 100%);
+}
+.history-scent-scroll[data-lighting-active='true'] .history-scent-lighting__glow {
+  animation: scent-light-breathe 4.7s ease-in-out infinite;
+}
+@keyframes scent-light-breathe {
+  0%, 100% { opacity: calc(var(--light-strength) * 0.96); }
+  27% { opacity: var(--light-strength); }
+  43% { opacity: calc(var(--light-strength) * 0.93); }
+  71% { opacity: calc(var(--light-strength) * 0.98); }
+}
+
+.history-scent__flame {
+  position: absolute;
+  /* Wick tip in the source image; include the flame's feathered lower edge. */
+  left: 50%;
+  bottom: 77.7%;
+  width: 4%;
+  height: 12%;
+  transform: translateX(-50%);
+  opacity: var(--flame-opacity);
+  pointer-events: none;
+}
+.history-scent__flame::before {
+  content: '';
+  position: absolute;
+  inset: -180% -550%;
+  background: radial-gradient(ellipse, rgb(255 192 92 / 0.5), rgb(255 155 58 / 0.13) 32%, transparent 69%);
+}
+.history-scent__flame > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 70% 35% 55% 50%;
+  background: radial-gradient(ellipse at 50% 78%, #fffce8 8%, #ffe6a8 36%, #efaa58 68%, transparent 85%);
+  box-shadow: 0 0 9px rgb(255 183 89 / 0.5);
+  transform-origin: 50% 100%;
+  animation: scent-flame-sway 2.7s ease-in-out infinite;
+}
+@keyframes scent-flame-sway {
+  0%, 100% { transform: rotate(-5deg) scale(0.97, 0.96); }
+  23% { transform: rotate(4deg) scale(1.02, 1.06); }
+  46% { transform: rotate(-2deg) scale(0.98, 0.99); }
+  72% { transform: rotate(5deg) scale(1.01, 1.04); }
+}
+
+.history-scent {
+  position: relative;
+  width: 100vw;
+  max-width: 1920px;
+  aspect-ratio: 1920 / 6830;
+  margin-inline: auto;
+  overflow: hidden;
+  background: #f7f6f4;
+  color: #f2e9da;
+}
+
+.history-scent__asset,
+.history-scent__hero,
+.history-scent__story {
+  position: absolute;
+}
+
+.history-scent__asset img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Table contact shadows follow the visible bases inside the transparent PNGs.
+   Keep flame/bloom out of the shadow filter. */
+.history-scent__decorative-object-01,
+.history-scent__decorative-object-02,
+.history-scent__decorative-object-03,
+.history-scent__feature-collage,
+.history-scent__candle-object {
+  isolation: isolate;
+}
+.history-scent__decorative-object-01 { --base-y: 84%; --base-width: 61%; --base-height: 10%; }
+.history-scent__decorative-object-02 { --base-y: 81%; --base-width: 83%; --base-height: 12%; }
+.history-scent__decorative-object-03 { --base-y: 91%; --base-width: 64%; --base-height: 7%; }
+.history-scent__feature-collage { --base-y: 88%; --base-width: 44%; --base-height: 8%; }
+.history-scent__candle-object { --base-y: 81%; --base-width: 66%; --base-height: 12%; }
+
+.history-scent__decorative-object-01::before,
+.history-scent__decorative-object-02::before,
+.history-scent__decorative-object-03::before,
+.history-scent__feature-collage::before,
+.history-scent__candle-object::before {
+  content: "";
+  position: absolute;
+  left: 57%;
+  top: var(--base-y);
+  width: var(--base-width);
+  height: var(--base-height);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse closest-side,
+    rgb(35 23 13 / 32%) 0%,
+    rgb(35 23 13 / 24%) 35%,
+    rgb(35 23 13 / 10%) 65%,
+    transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+.history-scent__background-long {
+  top: 28.770132%;
+  left: -32.708333%;
+  width: 159.53125%;
+  height: 71.229868%;
+  overflow: hidden;
+}
+
+.history-scent__background-long img {
+  width: 100.01%;
+  height: 111.93%;
+  max-width: none;
+}
+
+.history-scent__background-hero {
+  top: 0;
+  left: -29.791667%;
+  width: 183.177083%;
+  height: 38.433382%;
+}
+
+.history-scent__background-candle {
+  top: 12.796486%;
+  left: 32.708333%;
+  width: 98.4375%;
+  height: 27.467057%;
+}
+
+.history-scent__background-hero img,
+.history-scent__decorative-visual-01 img,
+.history-scent__decorative-object-01 img,
+.history-scent__decorative-object-02 img,
+.history-scent__story-02-feature img,
+.history-scent__fireworks img,
+.history-scent__decorative-object-03 img,
+.history-scent__feature-collage img,
+.history-scent__candle-object img {
+  object-fit: cover;
+}
+
+.history-scent__background-candle img {
+  object-fit: fill;
+  object-position: center bottom;
+}
+
+.history-scent__atmosphere-visual img {
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.history-scent__decorative-visual-01 {
+  top: 15.241581%;
+  left: -15.625%;
+  width: 47.604167%;
+  height: 20.073206%;
+}
+
+.history-scent__atmosphere-visual {
+  top: 23.704246%;
+  left: -21.770833%;
+  width: 142.083333%;
+  aspect-ratio: 1;
+}
+
+.history-scent__decorative-object-01 {
+  top: 27.964861%;
+  left: 6.927083%;
+  width: 12.864583%;
+  aspect-ratio: 1;
+}
+
+.history-scent__decorative-object-02 {
+  top: 26.266472%;
+  left: 49.114583%;
+  width: 25.364583%;
+  aspect-ratio: 1;
+}
+
+.history-scent__story-02-feature {
+  top: 66.764275%;
+  left: 5.729167%;
+  width: 88.489583%;
+  height: 33.235725%;
+}
+
+.history-scent__fireworks {
+  top: 50.937042%;
+  left: 0;
+  width: 100%;
+  height: 15.812592%;
+}
+
+.history-scent__decorative-object-03 {
+  top: 25.944363%;
+  left: 77.708333%;
+  width: 15.729167%;
+  height: 6.632504%;
+}
+
+.history-scent__feature-collage {
+  top: 20.292826%;
+  left: 18.385417%;
+  width: 33.489583%;
+  height: 12.606149%;
+}
+
+.history-scent__candle-object {
+  top: 29.267936%;
+  left: 41.770833%;
+  width: 16.458333%;
+  aspect-ratio: 1;
+}
+
+.history-scent__hero {
+  top: 2.108346%;
+  left: 19.791667%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: min(20.833333vw, 400px);
+}
+
+.history-scent__hero h2 {
+  opacity: var(--title-opacity, 1);
+  filter: blur(var(--title-blur, 0px));
+  text-shadow: 0 0 24px rgb(255 196 117 / var(--title-bloom, 0));
+  width: 100%;
+  font-family: var(--font-family-display);
+  font-size: min(8.333333vw, var(--text-web-title-m1-size));
+  font-weight: var(--text-web-title-m1-weight);
+  line-height: var(--text-web-title-m1-line-height);
+  letter-spacing: var(--text-web-title-m1-letter-spacing);
+}
+
+.history-scent__hero p {
+  opacity: var(--intro-copy-opacity, 1);
+  width: 100%;
+  font-family: var(--font-family-display);
+  font-size: min(3.333333vw, var(--text-sub-title-r1-size));
+  font-weight: var(--text-sub-title-r1-weight);
+  line-height: var(--text-sub-title-r1-line-height);
+  letter-spacing: var(--text-sub-title-r1-letter-spacing);
+  white-space: nowrap;
+}
+
+.history-scent__story {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: min(1.041667vw, 20px);
+  color: #f2e9da;
+  word-break: break-word;
+}
+
+.history-scent__story--one {
+  opacity: var(--story-copy-opacity, 1);
+  top: 14.978038%;
+  left: 54.791667%;
+  width: 19.6875%;
+}
+
+.history-scent__story--two {
+  top: 57.95022%;
+  left: 56.145833%;
+  width: 20.052083%;
+}
+
+.history-scent__story h3 {
+  width: 100%;
+  font-family: var(--font-family-display);
+  font-size: min(3.333333vw, var(--text-sub-title-r1-size));
+  font-weight: var(--text-sub-title-r1-weight);
+  line-height: var(--text-sub-title-r1-line-height);
+  letter-spacing: var(--text-sub-title-r1-letter-spacing);
+}
+
+.history-scent__story--two h3 {
+  width: 101.558442%;
+}
+
+.history-scent__story-body {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: min(2.083333vw, 40px);
+  font-family: var(--font-family-sans);
+  font-size: min(.833333vw, var(--text-web-body-l2-do-size));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-web-body-l2-do-line-height);
+  letter-spacing: var(--text-web-body-l2-do-letter-spacing);
+}
+
+.history-scent__story--one .history-scent__story-body {
+  white-space: nowrap;
+}
+
+.history-scent__story-body p {
+  width: 100%;
+}
+
+.history-scent-scroll{--title-opacity:1;--title-blur:0px;--intro-copy-opacity:1;--story-copy-opacity:1;--flame-opacity:1}
+      .history-objects__detail-visual-02{animation:preview-clock 12s linear infinite}
+      .history-maison__story-03-feature{animation:preview-clock 45s linear infinite}
+      @keyframes preview-clock{to{transform:rotate(360deg)}}
+      @media(prefers-reduced-motion:reduce){*{animation:none!important}}</style></head><body><div class="history-scent-scroll"><div class="history-scent-viewport"><section class="history-scent" aria-labelledby="history-scent-title"><div class="history-scent__asset history-scent__background-long" aria-hidden="true"><img src="/media/diptyque-history/scent/background-long-composite.png" alt="" loading="eager" decoding="async"></div><div class="history-scent__asset history-scent__background-hero" aria-hidden="true"><img src="/media/diptyque-history/scent/background-hero-scene.png" alt="" loading="eager" decoding="async"></div><div class="history-scent__asset history-scent__background-candle" aria-hidden="true"><img src="/media/diptyque-history/scent/background-candle-scene.png" alt="" loading="eager" decoding="async"></div><div class="history-scent__asset history-scent__decorative-visual-01" aria-hidden="true"><img src="/media/diptyque-history/scent/story-01-decorative-visual-01.png" alt="" loading="eager" decoding="async"></div><div class="history-scent__asset history-scent__atmosphere-visual" aria-hidden="true"><img src="/media/diptyque-history/scent/story-01-atmosphere-visual.png" alt="" loading="eager" decoding="async"></div><div class="history-scent__asset history-scent__decorative-object-01" aria-hidden="true"><img src="/media/diptyque-history/scent/story-01-decorative-object-01.png" alt="" loading="eager" decoding="async"></div><div class="history-scent__asset history-scent__decorative-object-02" aria-hidden="true"><img src="/media/diptyque-history/scent/story-01-decorative-object-02.png" alt="" loading="eager" decoding="async"></div><div class="history-scent__asset history-scent__story-02-feature" aria-hidden="true"><img src="/media/diptyque-history/scent/story-02-feature-visual.png" alt="" loading="eager" decoding="async"></div><div class="history-scent__asset history-scent__fireworks" aria-hidden="true"><img src="/media/diptyque-history/scent/scent-transition-fireworks.png" alt="" loading="eager" decoding="async"></div><div class="history-scent__asset history-scent__decorative-object-03" aria-hidden="true"><img src="/media/diptyque-history/scent/story-01-decorative-object-03.png" alt="" loading="eager" decoding="async"></div><div class="history-scent__asset history-scent__feature-collage" aria-hidden="true"><img src="/media/diptyque-history/scent/story-01-feature-collage.png" alt="" loading="eager" decoding="async"></div><div class="history-scent__asset history-scent__candle-object" aria-hidden="true"><img src="/media/diptyque-history/scent/story-01-candle-object-02.png" alt="" loading="eager" decoding="async"><span class="history-scent__flame"><span></span></span></div><article class="history-scent__story history-scent__story--one"><h3>THE CANDLE</h3><div class="history-scent__story-body"><p>1963년, 첫 향초는 딥디크의 세계에<br>새로운 감각을 더했습니다.</p><p>향이 더해지면서 딥디크의 세계는<br>시각과 촉각을 넘어<br>후각으로 확장되었습니다.</p><p>불을 밝히는 순간,<br>형태를 넘어 공간 전체의 분위기를<br>변화시키기 시작했습니다.</p></div></article><article class="history-scent__story history-scent__story--two"><h3>FROM SPACE<br>TO SKIN</h3><div class="history-scent__story-body"><p>캔들이 공간을 채웠다면,<br>퍼퓸은 개인의 주변을 채웠습니다.</p><p>패턴과 오브제가 눈으로 볼 수 있는<br>세계를 만들었다면,<br>향은 그 세계에 보이지 않는<br>깊이와 분위기를 더했습니다.</p><p>시간이 흐르며 향은<br>딥디크를 대표하는 가장 중요한<br>언어 중 하나가 되었습니다.</p></div></article><header class="history-scent__hero"><h2 id="history-scent-title">SCENT</h2><p>Then, scent changed everything.<br>The invisible became a new material.</p></header><div class="history-scent-lighting" aria-hidden="true"><div class="history-scent-lighting__shade"></div><div class="history-scent-lighting__glow"></div><div class="history-scent-lighting__haze"></div><div class="history-scent-lighting__vignette"></div></div></section></div></div></body></html>

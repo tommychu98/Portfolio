@@ -85,7 +85,7 @@ export default function PersonalWorks() {
 
   return <section id="personal" ref={section} className="personal-works paper-grain" aria-labelledby="personal-title">
     <div className="personal-works__intro">
-      <SectionLabel number="09">PERSONAL WORKS</SectionLabel>
+      <SectionLabel sectionId="personal">PERSONAL WORKS</SectionLabel>
       <div><h2 id="personal-title" className="display">Two brands,<br/><em>two directions.</em></h2><p>서로 다른 분위기를 메인 화면으로 표현합니다.<br/>개인 작업 2개 · 메인 페이지만 제작</p></div>
     </div>
 

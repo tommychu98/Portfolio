@@ -125,7 +125,7 @@ export default function FilmArchive() {
 
   return <section ref={ref} id="film-archive" className="film-archive" aria-labelledby="film-archive-title">
     <header className="film-archive__header">
-    <SectionLabel number="11">FILM ARCHIVE / SELECTED WORKS</SectionLabel>
+    <SectionLabel sectionId="film-archive">FILM ARCHIVE / SELECTED WORKS</SectionLabel>
     <div className="section-heading">
       <h2 id="film-archive-title" className="display">FILM ARCHIVE.</h2>
       <div className="film-archive__intro"><p>Selected Films &amp; Visual Stories</p><p>영상 제작을 통해 쌓아온 시각적 경험과 이야기를 소개합니다.</p></div>

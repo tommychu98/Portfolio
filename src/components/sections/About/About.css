@@ -7,3 +7,5 @@
 .about__question{display:flex;flex-direction:column;gap:10px;min-width:0}
 .about__question .about__number{font-size:12px;letter-spacing:.06em}
 .about details>p{padding-left:0}
+.about__photo{height:auto;border-radius:0;overflow:visible}
+.about__photo img{display:block;width:100%;height:auto;object-fit:contain;filter:saturate(.65)}

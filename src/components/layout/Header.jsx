@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { navigation } from '../../data/projects';
+import { sectionNumber } from '../../data/sections';
 import { pauseScroll } from '../../motion/scroll';
 import Link from '../ui/Link';
 import './Header.css';
@@ -32,7 +33,7 @@ export default function Header() {
     </header>
     <dialog ref={dialog} id="site-menu" className="site-menu paper-grain" aria-label="전체 메뉴" onCancel={()=>setOpen(false)} onClick={e=>{if(e.target===dialog.current)setOpen(false);}}>
       <div className="site-menu__inner"><div className="site-menu__top"><span>TOMMY CHU / INDEX</span><button type="button" autoFocus onClick={()=>setOpen(false)} aria-label="메뉴 닫기">닫기 ×</button></div>
-        <nav aria-label="전체 탐색">{navigation.map((n,i)=><a key={n.href} href={n.href} onClick={()=>setOpen(false)}><small>0{i+1}</small><span>{n.label}</span><span aria-hidden="true">↗</span></a>)}</nav>
+      <nav aria-label="전체 탐색">{navigation.map(n=><a key={n.href} href={n.href} onClick={()=>setOpen(false)}><small>{sectionNumber(n.href)}</small><span>{n.label}</span><span aria-hidden="true">↗</span></a>)}</nav>
         <div className="site-menu__projects"><Link href="#zara" onClick={()=>setOpen(false)}>ZARA</Link><Link href="#personal" onClick={()=>setOpen(false)}>ÉLAN / ONDA</Link><Link href="#clone" onClick={()=>setOpen(false)}>CLONE CODING</Link></div>
       </div>
     </dialog>

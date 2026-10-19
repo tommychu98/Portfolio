@@ -8,6 +8,7 @@ export const links = {
 export const navigation = [
   { href: '#story', label: 'ABOUT' },
   { href: '#work', label: 'WORK' },
+  { href: '#diptyque-history', label: 'HISTORY' },
   { href: '#film', label: 'FILM' },
   { href: '#skills', label: 'SKILLS' },
   { href: '#contact', label: 'CONTACT' },

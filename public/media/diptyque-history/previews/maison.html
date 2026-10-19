@@ -1,0 +1,681 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>MAISON History</title><style>/* http://meyerweb.com/eric/tools/css/reset/
+	 v2.0 | 20110126
+	 License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+  --color-black: #000000;
+  --color-ink-black: #222222;
+  --color-gray-4b: #4b4b4b;
+  --color-gray-8b: #8b8b8b;
+  --color-ivory: #f7f6f4;
+  --color-paper-ivory: #f2e9da;
+  --color-deep-sage: #5f6c58;
+  --color-scent-amber: #b87b2e;
+  --color-title-black: #0e0e0d;
+  --color-white: #ffffff;
+  --color-light-background-3: #f7f7f7;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-red-50: #fef2f2;
+  --color-red-600: #dc2626;
+  --color-green-50: #f0fdf4;
+  --color-green-700: #15803d;
+  --color-yellow-50: #fefce8;
+  --color-yellow-700: #a16207;
+  --color-blue-50: #eff6ff;
+  --color-blue-700: #1d4ed8;
+  --color-bg-primary: var(--color-ivory);
+  --color-bg-secondary: var(--color-ink-black);
+  --color-bg-accent: var(--color-paper-ivory);
+  --color-surface: var(--color-white);
+  --color-text-primary: var(--color-ink-black);
+  --color-text-secondary: var(--color-gray-4b);
+  --color-text-muted: var(--color-gray-8b);
+  --color-text-inverse: var(--color-ivory);
+  --color-border-default: var(--color-gray-200);
+  --color-border-strong: var(--color-ink-black);
+  --color-action-primary: var(--color-ink-black);
+  --color-action-primary-hover: var(--color-gray-4b);
+  --color-accent-primary: var(--color-deep-sage);
+  --color-accent-highlight: var(--color-scent-amber);
+  --color-focus: #2563eb;
+  --color-error: var(--color-red-600);
+  --color-success: var(--color-green-700);
+  --color-warning: var(--color-yellow-700);
+  --color-info: var(--color-blue-700);
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --text-mobile-title-b1-size: 64px;
+  --text-mobile-title-b1-line-height: 1.3;
+  --text-mobile-title-b1-letter-spacing: 0;
+  --text-mobile-title-b1-weight: 700;
+  --text-mobile-title-m1-size: 58px;
+  --text-mobile-title-m1-line-height: 1.1;
+  --text-mobile-title-m1-letter-spacing: 0;
+  --text-mobile-title-m1-weight: 500;
+  --text-mobile-title-r1-size: 50px;
+  --text-mobile-title-r1-line-height: 1.1;
+  --text-mobile-title-r1-weight: 400;
+  --text-mobile-title-r2-size: 40px;
+  --text-mobile-title-r2-line-height: 1.1;
+  --text-mobile-title-r2-weight: 400;
+  --text-mobile-sub-title-r1-size: 32px;
+  --text-mobile-sub-title-r1-line-height: 1.1;
+  --text-mobile-sub-title-r2-size: 26px;
+  --text-mobile-sub-title-r2-line-height: 1.3;
+  --text-mobile-body-r1-size: 16px;
+  --text-mobile-body-r1-line-height: 1.4;
+  --text-mobile-body-r2-size: 14px;
+  --text-mobile-body-l1-size: 12px;
+  --text-web-title-b1-size: 130px;
+  --text-web-title-b1-line-height: 1;
+  --text-web-title-b1-letter-spacing: 0;
+  --text-web-title-b1-weight: 700;
+  --text-web-title-b2-size: 96px;
+  --text-web-title-b2-line-height: 1;
+  --text-web-title-b2-letter-spacing: 0;
+  --text-web-title-b2-weight: 700;
+  --text-web-title-m1-size: 160px;
+  --text-web-title-m1-line-height: 1;
+  --text-web-title-m1-letter-spacing: 0.02em;
+  --text-web-title-m1-weight: 500;
+  --text-web-title-m2-size: 110px;
+  --text-web-title-m2-line-height: 1;
+  --text-web-title-m2-letter-spacing: 0;
+  --text-web-title-m2-weight: 500;
+  --text-web-title-r1-size: 90px;
+  --text-web-title-r1-line-height: 1;
+  --text-web-title-r1-letter-spacing: 0;
+  --text-web-title-r1-weight: 400;
+  --text-sub-title-m1-size: 42px;
+  --text-sub-title-m1-line-height: 1.2;
+  --text-sub-title-m1-letter-spacing: 0;
+  --text-sub-title-m1-weight: 500;
+  --text-sub-title-r1-size: 64px;
+  --text-sub-title-r1-line-height: 1.1;
+  --text-sub-title-r1-letter-spacing: 0;
+  --text-sub-title-r1-weight: 400;
+  --text-sub-title-r2-size: 50px;
+  --text-sub-title-r2-line-height: 1.6;
+  --text-sub-title-r2-letter-spacing: 0;
+  --text-sub-title-r2-weight: 400;
+  --text-point-title-m1-size: 42px;
+  --text-point-title-m1-line-height: 1.5;
+  --text-point-title-m1-letter-spacing: 0.21em;
+  --text-point-title-m1-weight: 500;
+  --text-kr-sub-title-b1-size: 70px;
+  --text-kr-sub-title-b1-line-height: 1.3;
+  --text-kr-sub-title-b1-letter-spacing: 0;
+  --text-kr-sub-title-b1-weight: 700;
+  --text-kr-sub-title-r1-size: 40px;
+  --text-kr-sub-title-r1-line-height: 1.3;
+  --text-kr-sub-title-r1-letter-spacing: 0;
+  --text-kr-sub-title-r1-weight: 400;
+  --text-web-body-m1-eb-size: 28px;
+  --text-web-body-m1-eb-line-height: 1.3;
+  --text-web-body-m1-eb-letter-spacing: 0;
+  --text-web-body-m1-eb-weight: 500;
+  --text-web-body-b1-do-size: 20px;
+  --text-web-body-b1-do-line-height: 1.5;
+  --text-web-body-b1-do-letter-spacing: 0.02em;
+  --text-web-body-b1-do-weight: 700;
+  --text-web-body-m1-do-size: 20px;
+  --text-web-body-m1-do-line-height: 1.5;
+  --text-web-body-m1-do-letter-spacing: 0.02em;
+  --text-web-body-m1-do-weight: 500;
+  --text-web-body-m2-do-size: 18px;
+  --text-web-body-m2-do-line-height: 1.5;
+  --text-web-body-m2-do-letter-spacing: 0.02em;
+  --text-web-body-m2-do-weight: 500;
+  --text-web-body-l1-do-size: 18px;
+  --text-web-body-l1-do-line-height: 1.5;
+  --text-web-body-l1-do-letter-spacing: 0.02em;
+  --text-web-body-l1-do-weight: 300;
+  --text-web-body-l2-do-size: 16px;
+  --text-web-body-l2-do-line-height: 1.5;
+  --text-web-body-l2-do-letter-spacing: 0.02em;
+  --text-web-body-l2-do-weight: 300;
+  --text-web-kr-body-r1-size: 22px;
+  --text-web-kr-body-r1-line-height: 1.3;
+  --text-web-kr-body-r1-letter-spacing: 0.06em;
+  --text-web-kr-body-r1-weight: 400;
+  --text-web-footer-b1-do-size: 18px;
+  --text-web-footer-b1-do-line-height: 1.6;
+  --text-web-footer-b1-do-letter-spacing: 0.02em;
+  --text-web-footer-b1-do-weight: 700;
+  --text-web-footer-m1-do-size: 16px;
+  --text-web-footer-m1-do-line-height: 1.6;
+  --text-web-footer-m1-do-letter-spacing: 0.02em;
+  --text-web-footer-m1-do-weight: 500;
+  --text-web-footer-m2-do-size: 14px;
+  --text-web-footer-m2-do-line-height: 1.6;
+  --text-web-footer-m2-do-letter-spacing: 0.02em;
+  --text-web-footer-m2-do-weight: 500;
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --container-sm: 640px;
+  --container-md: 960px;
+  --container-lg: 1200px;
+  --container-xl: 1440px;
+  --page-padding: 16px;
+  --section-space: 64px;
+  --size-touch-min: 44px;
+  --size-input: 48px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.12);
+  --shadow-lg: 0 20px 48px rgb(0 0 0 / 0.18);
+  --z-header: 200;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --duration-fast: 120ms;
+  --duration-normal: 240ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (min-width: 768px) { :root { --page-padding: 24px; --section-space: 80px; } }
+@media (min-width: 1024px) { :root { --page-padding: 40px; --section-space: 96px; } }
+
+@font-face{font-family:'History Garamond';src:url('/media/diptyque-history/previews/garamond.woff2')}@font-face{font-family:'History Dotum';src:url('/media/diptyque-history/previews/dotum.woff2')}@font-face{font-family:'History Dotum';font-weight:700;src:url('/media/diptyque-history/previews/dotum-bold.woff2')}:root{--font-family-display:'History Garamond',Georgia,serif;--font-family-serif-kr:'History Dotum',serif;--font-family-sans:'History Dotum',sans-serif}body{font-family:var(--font-family-sans);font-size:16px;line-height:1.5;letter-spacing:.02em}html,body{margin:0;width:1920px;min-width:1920px;overflow:hidden;background:#faf7f0}*{box-sizing:border-box}
+.history-maison {
+  position: relative;
+  width: 100vw;
+  max-width: 1920px;
+  aspect-ratio: 1920 / 8637;
+  margin-inline: auto;
+  overflow: hidden;
+  color: #222;
+}
+
+.history-maison__main,
+.history-maison__outro {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.history-maison__main {
+  top: 0;
+  height: 64.281579%;
+  background: #fff;
+}
+
+.history-maison__outro {
+  top: 64.281579%;
+  height: 35.718421%;
+}
+
+.history-maison__fishing-line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Overlap the white/sky seam; the transparent artwork keeps a soft silhouette. */
+.history-maison__cloud-bank {
+  position: absolute;
+  top: 64.281579%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.history-maison__cloud {
+  position: absolute;
+  display: block;
+  max-width: none;
+  height: auto;
+  animation: history-maison-cloud-drift calc(var(--cloud-period) * 1.25) ease-in-out var(--cloud-delay) infinite;
+}
+
+/* Backfill the central opening, including the full drift range of the front clouds. */
+.history-maison__cloud--bridge {
+  left: 33%;
+  width: 46%;
+  top: max(-23vw, -441.6px);
+  --cloud-period: 14s;
+  --cloud-delay: -5s;
+  --cloud-x: min(.35vw, 6.72px);
+  --cloud-y: min(.45vw, 8.64px);
+}
+
+.history-maison__cloud--left {
+  left: -48%;
+  width: 80%;
+  top: max(-30vw, -576px);
+  --cloud-period: 11s;
+  --cloud-delay: -4s;
+  --cloud-x: min(1vw, 19px);
+  --cloud-y: min(.8vw, 15px);
+}
+
+.history-maison__cloud--right {
+  left: 45%;
+  width: 70%;
+  top: max(-27vw, -518.4px);
+  --cloud-period: 13s;
+  --cloud-delay: -10s;
+  --cloud-x: max(-1.2vw, -23px);
+  --cloud-y: min(1vw, 19px);
+}
+
+.history-maison__cloud--front {
+  left: -18%;
+  width: 91%;
+  top: max(-39vw, -748.8px);
+  --cloud-period: 10s;
+  --cloud-delay: -7s;
+  --cloud-x: min(.7vw, 13px);
+  --cloud-y: min(1.1vw, 21px);
+}
+
+/* Animate outer cloud wrappers; preserve mirrored artwork transforms inside. */
+.history-maison__story-02-visual-02,
+.history-maison__story-02-visual-03,
+.history-maison__story-02-visual-05,
+.history-maison__story-02-visual-07,
+.history-maison__story-02-visual-08,
+.history-maison__story-03-visual-01,
+.history-maison__story-03-visual-02,
+.history-maison__story-03-visual-03,
+.history-maison__story-03-visual-04 {
+  animation: history-maison-cloud-drift calc(var(--cloud-period, 13s) * 1.25) ease-in-out var(--cloud-delay, -3s) infinite;
+  --cloud-x: min(3vw, 58px);
+  --cloud-y: min(2vw, 38px);
+}
+.history-maison__story-02-visual-02 { --cloud-period: 8s; --cloud-delay: -2s; }
+.history-maison__story-02-visual-03 { --cloud-period: 9s; --cloud-delay: -3.3s; --cloud-x: max(-3.2vw, -61px); }
+.history-maison__story-02-visual-05 { --cloud-period: 10s; --cloud-delay: -4.6s; }
+/* Harp angel and its supporting cloud share the exact same motion/phase. */
+.history-maison__story-02-visual-07,
+.history-maison__story-02-visual-08 { --cloud-period: 9.5s; --cloud-delay: -5.9s; --cloud-x: max(-3.2vw, -61px); }
+.history-maison__story-03-visual-01 { --cloud-period: 11s; --cloud-delay: -7.2s; }
+.history-maison__story-03-visual-02 { --cloud-period: 8.5s; --cloud-delay: -8.5s; --cloud-x: max(-3.2vw, -61px); }
+.history-maison__story-03-visual-03 { --cloud-period: 9s; --cloud-delay: -9.8s; }
+.history-maison__story-03-visual-04 { --cloud-period: 10s; --cloud-delay: -11.1s; --cloud-x: max(-3.2vw, -61px); }
+
+@keyframes history-maison-cloud-drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(calc(var(--cloud-x) * .52), calc(var(--cloud-y) * -.52), 0); }
+}
+
+.history-maison__image,
+.history-maison__hero,
+.history-maison__story,
+.history-maison__story-03-foreground {
+  position: absolute;
+}
+
+.history-maison__image img {
+  display: block;
+  pointer-events: none;
+}
+
+.history-maison__cover img,
+.history-maison__image.history-maison__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.history-maison__hero {
+  top: 17.182997%;
+  left: 19.635417%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: min(20.833333vw, 400px);
+}
+
+.history-maison__hero h2 {
+  width: 100%;
+  font-family: var(--font-family-display);
+  font-size: min(8.333333vw, var(--text-web-title-m1-size));
+  font-weight: var(--text-web-title-m1-weight);
+  line-height: var(--text-web-title-m1-line-height);
+  letter-spacing: var(--text-web-title-m1-letter-spacing);
+}
+
+.history-maison__hero p {
+  width: 100%;
+  font-family: var(--font-family-display);
+  font-size: min(3.333333vw, var(--text-sub-title-r1-size));
+  font-weight: var(--text-sub-title-r1-weight);
+  line-height: var(--text-sub-title-r1-line-height);
+  letter-spacing: var(--text-sub-title-r1-letter-spacing);
+  white-space: nowrap;
+}
+
+.history-maison__story {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: min(1.041667vw, 20px);
+  width: 20.052083%;
+  word-break: break-word;
+}
+
+.history-maison__story--one {
+  top: 47.87464%;
+  left: 46.71875%;
+}
+
+.history-maison__story--two {
+  top: 84.600144%;
+  left: 19.84375%;
+  color: #000;
+}
+
+.history-maison__story--three {
+  top: 50.016207%;
+  left: 73.28125%;
+  color: #000;
+}
+
+.history-maison__story h3 {
+  width: 100%;
+  font-family: var(--font-family-display);
+  font-size: min(3.333333vw, var(--text-sub-title-r1-size));
+  font-weight: var(--text-sub-title-r1-weight);
+  line-height: var(--text-sub-title-r1-line-height);
+  letter-spacing: var(--text-sub-title-r1-letter-spacing);
+}
+
+.history-maison__story--three h3 {
+  width: 104.675325%;
+}
+
+.history-maison__story-body {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: min(2.083333vw, 40px);
+  font-family: var(--font-family-sans);
+  font-size: min(.833333vw, var(--text-web-body-l2-do-size));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-web-body-l2-do-line-height);
+  letter-spacing: var(--text-web-body-l2-do-letter-spacing);
+}
+
+.history-maison__story-body p {
+  width: 100%;
+}
+
+.history-maison__story--three .history-maison__story-body {
+  font-weight: var(--font-weight-regular);
+}
+
+.history-maison__floating-01,
+.history-maison__floating-02,
+.history-maison__floating-03,
+.history-maison__floating-07,
+.history-maison__floating-09,
+.history-maison__floating-10,
+.history-maison__story-02-visual-01 {
+  overflow: hidden;
+}
+
+.history-maison__floating-01 { top: 6.231988%; left: 83.333333%; width: 23.072917%; height: 7.961095%; }
+.history-maison__floating-02 { top: 38.09438%; left: 37.34375%; width: 11.822917%; height: 4.070605%; }
+.history-maison__floating-03 { top: 4.971182%; left: 6.09375%; width: 13.541667%; height: 4.502882%; }
+.history-maison__floating-07 { top: 25.666427%; left: 79.739583%; width: 18.385417%; height: 8.969741%; }
+.history-maison__floating-09 { top: 36.113112%; left: -11.770833%; width: 29.739583%; height: 9.852305%; }
+.history-maison__floating-10 { top: 48.919308%; left: 79.739583%; width: 14.0625%; height: 6.394092%; }
+
+/* Move the cropped letter as a whole, preserving its inner artwork transforms. */
+.history-maison__main > [class*="history-maison__floating-"] {
+  --float-x: min(.6vw, 12px);
+  --float-y: min(1.8vw, 35px);
+  animation: history-maison-float calc(var(--float-duration, 11s) * 1.05) ease-in-out
+    var(--float-delay, -3s) infinite;
+  transform-origin: 50% 55%;
+  pointer-events: none;
+}
+
+.history-maison__floating-01 { --float-duration: 13s; --float-delay: -7s; }
+.history-maison__floating-02 { --float-duration: 9s; --float-delay: -2s; --float-tilt: -3deg; }
+.history-maison__floating-03 { --float-duration: 10.5s; --float-delay: -5s; }
+.history-maison__floating-04 { --float-duration: 12s; --float-delay: -9s; --float-tilt: -2deg; }
+.history-maison__floating-05 { --float-duration: 14s; --float-delay: -4s; }
+.history-maison__floating-06 { --float-duration: 11.5s; --float-delay: -8s; --float-tilt: -2.5deg; }
+.history-maison__floating-07 { --float-duration: 12.5s; --float-delay: -1s; }
+.history-maison__floating-08 { --float-duration: 10s; --float-delay: -6s; --float-tilt: -2deg; }
+.history-maison__floating-09 { --float-duration: 15s; --float-delay: -10s; }
+.history-maison__floating-10 { --float-duration: 9.5s; --float-delay: -4s; --float-tilt: -3deg; }
+
+@keyframes history-maison-float {
+  0%, 100% { transform: translate3d(0, var(--float-y), 0); }
+  25% { transform: translate3d(var(--float-x), 0, 0); }
+  50% { transform: translate3d(0, calc(var(--float-y) * -1), 0); }
+  75% { transform: translate3d(calc(var(--float-x) * -1), 0, 0); }
+}
+
+.history-maison__floating-01 img,
+.history-maison__floating-02 img {
+  position: absolute;
+  top: -535.14%;
+  left: -246.94%;
+  width: 918.51%;
+  height: 1075.16%;
+  max-width: none;
+}
+
+.history-maison__floating-03 img,
+.history-maison__floating-04-inner img {
+  position: absolute;
+  top: -596.77%;
+  left: -334.08%;
+  width: 900.94%;
+  height: 1092.48%;
+  max-width: none;
+}
+
+.history-maison__nested {
+  display: grid;
+  place-items: center;
+}
+
+.history-maison__nested > div {
+  position: relative;
+  flex: none;
+  overflow: hidden;
+}
+
+.history-maison__floating-04 { top: 60.392651%; left: 46.614583%; width: 16.48599%; height: 5.574712%; }
+.history-maison__floating-04-inner { width: 82.140204%; height: 80.77309%; transform: rotate(15.23deg); }
+
+.history-maison__floating-05 { top: 19.392291%; left: -2.164063%; width: 16.567656%; height: 7.23469%; }
+.history-maison__floating-05-inner { width: 73.876372%; height: 87.881096%; transform: rotate(-14.95deg); }
+.history-maison__floating-05-inner img {
+  position: absolute;
+  top: -199.56%;
+  left: -534.16%;
+  width: 1219.15%;
+  height: 947.03%;
+  max-width: none;
+}
+
+.history-maison__floating-06 { top: .957673%; left: 58.122917%; width: 17.347552%; height: 7.414643%; }
+.history-maison__floating-06-inner { width: 86.167304%; height: 91.822823%; transform: rotate(7.36deg); }
+.history-maison__floating-06-inner img,
+.history-maison__floating-10 img {
+  position: absolute;
+  top: -621.43%;
+  left: -439.02%;
+  width: 998.26%;
+  height: 884.39%;
+  max-width: none;
+}
+
+.history-maison__floating-07 img {
+  position: absolute;
+  top: -370.5%;
+  left: -406.59%;
+  width: 1069.03%;
+  height: 884.39%;
+  max-width: none;
+}
+
+.history-maison__floating-08 { top: 8.60951%; left: 33.072917%; width: 20.3125%; height: 5.223343%; }
+.history-maison__floating-08-inner { width: 100%; height: 100%; transform: scaleY(-1); }
+.history-maison__floating-08-inner img {
+  position: absolute;
+  top: -513.24%;
+  left: -369.56%;
+  width: 734.62%;
+  height: 1152.76%;
+  max-width: none;
+  transform: scaleY(-1);
+}
+
+.history-maison__story-02-visual-01 { top: 52.12536%; left: 14.635417%; width: 13.177083%; height: 4.12464%; }
+.history-maison__story-02-visual-01 img {
+  position: absolute;
+  top: -413.81%;
+  left: -446.49%;
+  width: 784.93%;
+  height: 1013.03%;
+  max-width: none;
+}
+
+.history-maison__story-02-visual-02 { top: 59.492075%; left: -13.854167%; width: 80.625%; height: 9.293948%; }
+.history-maison__story-02-visual-03 { top: 50.450288%; left: 64.84375%; width: 29.791667%; height: 7.726945%; }
+.history-maison__story-02-visual-03-inner { width: 100%; height: 100%; transform: rotate(180deg) scaleY(-1); }
+.history-maison__story-02-visual-04 { top: 56.7183%; left: 67.03125%; width: 35.109167%; height: 14.832511%; }
+.history-maison__story-02-visual-04-inner { width: 93.918076%; height: 96.06424%; transform: rotate(176.96deg) scaleY(-1); }
+.history-maison__story-02-visual-05 { top: 62.481988%; left: 63.125%; width: 60.9375%; height: 15.79611%; }
+.history-maison__story-02-visual-06 { top: 83.285303%; left: 55.052083%; width: 39.010417%; height: 12.319885%; }
+.history-maison__story-02-visual-06-inner { width: 100%; height: 100%; transform: rotate(180deg) scaleY(-1); }
+.history-maison__story-02-visual-07 { top: 70.893372%; left: -40.15625%; width: 103.28125%; height: 14.283141%; }
+.history-maison__story-02-visual-08 { top: 68.551873%; left: 10.208333%; width: 29.6875%; height: 12.824207%; }
+
+.history-maison__story-03-background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 102.171799%;
+  overflow: hidden;
+}
+
+.history-maison__story-03-background img {
+  position: absolute;
+  top: 0;
+  left: -.02%;
+  width: 100.01%;
+  height: 108.25%;
+  max-width: none;
+}
+
+.history-maison__story-03-foreground { top: 79.513776%; left: 38.802083%; width: 22.395833%; height: 20.940032%; }
+.history-maison__story-03-feature { top: 57.795786%; left: 30.15625%; width: 53.125%; height: 33.063209%; }
+.history-maison__story-03-accent-02 { top: 69.821718%; left: 55.9375%; width: 1.614583%; height: 1.004862%; }
+.history-maison__story-03-visual-01 { top: 21.685575%; left: 6.145833%; width: 19.895833%; height: 8.265802%; }
+.history-maison__story-03-visual-02 { top: 24.505673%; left: -8.541667%; width: 62.447917%; height: 38.865478%; }
+.history-maison__story-03-visual-02-inner { width: 100%; height: 100%; transform: rotate(180deg) scaleY(-1); }
+.history-maison__story-03-visual-03 { top: 21.685575%; left: 62.5%; width: 57.34375%; height: 26.774716%; }
+.history-maison__story-03-visual-03-inner { width: 100%; height: 100%; transform: rotate(180deg) scaleY(-1); }
+.history-maison__story-03-visual-04 { top: 13.646677%; left: 16.09375%; width: 40.260417%; height: 18.800648%; }
+.history-maison__story-03-accent-01 { top: 68.298217%; left: 55.104167%; width: 3.28125%; height: 2.042139%; }
+
+/* Reference composition is 16:9, anchored to the existing scene's bottom.
+   Separate outer travel and inner plant settling keep the final layout exact. */
+.history-maison__finale {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  pointer-events: none;
+}
+.history-maison__finale-layer { position: absolute; }
+.history-maison__finale-layer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: 50% 100%;
+}
+.history-maison__finale-layer--rock { left: 42%; bottom: 1%; width: 25%; }
+.history-maison__finale-layer--left { left: 0; bottom: 0; width: 58%; }
+.history-maison__finale-layer--right { right: 0; bottom: 0; width: 57%; }
+.history-maison__finale-layer--agave { left: 28%; bottom: 10%; width: 16%; }
+
+.history-scent-scroll{--title-opacity:1;--title-blur:0px;--intro-copy-opacity:1;--story-copy-opacity:1;--flame-opacity:1}
+      .history-objects__detail-visual-02{animation:preview-clock 12s linear infinite}
+      .history-maison__story-03-feature{animation:preview-clock 45s linear infinite}
+      @keyframes preview-clock{to{transform:rotate(360deg)}}
+      @media(prefers-reduced-motion:reduce){*{animation:none!important}}</style></head><body><section class="history-maison" aria-labelledby="history-maison-title"><div class="history-maison__main"><header class="history-maison__hero"><h2 id="history-maison-title">MAISON</h2><p>One language, many forms.<br>What began as a pattern became a language.</p></header><article class="history-maison__story history-maison__story--one"><h3>WORD<br>&amp; IMAGE</h3><div class="history-maison__story-body"><p>자유롭게 움직이는 글자와<br>섬세한 일러스트는 하나의<br>향과 함께 완성됩니다.</p><p>텍스트와 이미지는 서로를<br>설명하기보다 하나의 분위기를<br>함께 만들어냅니다.</p></div></article><article class="history-maison__story history-maison__story--two"><h3>THE MAISON TODAY</h3><div class="history-maison__story-body"><p>오늘날 딥디크의 세계는<br>처음보다 훨씬 넓어졌습니다.</p><p>하지만 자연과 예술, 여행과 발견<br>에서 영감을 얻는 태도는 여전히<br>그 중심에 남아 있습니다.</p></div></article><div class="history-maison__image history-maison__floating-01" aria-hidden="true"><img src="/media/diptyque-history/maison/floating-collage-image-01.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__floating-02" aria-hidden="true"><img src="/media/diptyque-history/maison/floating-collage-image-01.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__floating-03" aria-hidden="true"><img src="/media/diptyque-history/maison/floating-collage-image-03.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__nested history-maison__floating-04" aria-hidden="true"><div class="history-maison__floating-04-inner"><img src="/media/diptyque-history/maison/floating-collage-image-03.png" alt="" loading="eager" decoding="async"></div></div><div class="history-maison__image history-maison__nested history-maison__floating-05" aria-hidden="true"><div class="history-maison__floating-05-inner"><img src="/media/diptyque-history/maison/floating-collage-image-05.png" alt="" loading="eager" decoding="async"></div></div><div class="history-maison__image history-maison__nested history-maison__floating-06" aria-hidden="true"><div class="history-maison__floating-06-inner"><img src="/media/diptyque-history/maison/floating-collage-image-06.png" alt="" loading="eager" decoding="async"></div></div><div class="history-maison__image history-maison__floating-07" aria-hidden="true"><img src="/media/diptyque-history/maison/floating-collage-image-07.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__nested history-maison__floating-08" aria-hidden="true"><div class="history-maison__floating-08-inner"><img src="/media/diptyque-history/maison/floating-collage-image-08.png" alt="" loading="eager" decoding="async"></div></div><div class="history-maison__image history-maison__floating-09" aria-hidden="true"><img src="/media/diptyque-history/maison/floating-collage-image-09.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__floating-10" aria-hidden="true"><img src="/media/diptyque-history/maison/floating-collage-image-06.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__story-02-visual-01" aria-hidden="true"><img src="/media/diptyque-history/maison/story-02-visual-01.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__story-02-visual-02 history-maison__cover" aria-hidden="true"><img src="/media/diptyque-history/maison/story-02-visual-02.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__nested history-maison__story-02-visual-03" aria-hidden="true"><div class="history-maison__story-02-visual-03-inner history-maison__cover"><img src="/media/diptyque-history/maison/story-02-visual-03.png" alt="" loading="eager" decoding="async"></div></div><div class="history-maison__image history-maison__nested history-maison__story-02-visual-04" aria-hidden="true"><div class="history-maison__story-02-visual-04-inner history-maison__cover"><img src="/media/diptyque-history/maison/story-02-visual-04.png" alt="" loading="eager" decoding="async"></div></div><div class="history-maison__image history-maison__story-02-visual-05 history-maison__cover" aria-hidden="true"><img src="/media/diptyque-history/maison/story-02-visual-03.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__nested history-maison__story-02-visual-06" aria-hidden="true"><div class="history-maison__story-02-visual-06-inner history-maison__cover"><img src="/media/diptyque-history/maison/story-02-visual-06.png" alt="" loading="eager" decoding="async"></div></div><div class="history-maison__image history-maison__story-02-visual-07 history-maison__cover" aria-hidden="true"><img src="/media/diptyque-history/maison/story-02-visual-07.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__story-02-visual-08 history-maison__cover" aria-hidden="true"><img src="/media/diptyque-history/maison/story-02-visual-08.png" alt="" loading="eager" decoding="async"></div></div><svg class="history-maison__fishing-line" aria-hidden="true" focusable="false"><path fill="none" stroke="#756e60" stroke-width="1" vector-effect="non-scaling-stroke"></path></svg><div class="history-maison__cloud-bank" aria-hidden="true"><img class="history-maison__cloud history-maison__cloud--bridge" src="/media/diptyque-history/maison/story-02-visual-03.png" alt="" loading="eager"><img class="history-maison__cloud history-maison__cloud--left" src="/media/diptyque-history/maison/story-02-visual-03.png" alt="" loading="eager"><img class="history-maison__cloud history-maison__cloud--right" src="/media/diptyque-history/maison/story-02-visual-03.png" alt="" loading="eager"><img class="history-maison__cloud history-maison__cloud--front" src="/media/diptyque-history/maison/story-02-visual-03.png" alt="" loading="eager"></div><div class="history-maison__outro"><article class="history-maison__story history-maison__story--three"><h3>FROM<br>PARIS,<br>OUTWARD</h3><div class="history-maison__story-body"><p>파리의 작은 공간에서 시작된 감각은<br>시간이 흐르며 더 넓은 세계로 이어졌습니다.</p><p>딥디크의 역사는 완성된<br>이야기가 아니라 계속<br>만들어지는 과정에 가깝습니다.</p><p>처음의 시선은 남아 있고,<br>그것을 표현하는 형태만<br>계속 새로워지고 있습니다.</p></div></article><div class="history-maison__image history-maison__story-03-background" aria-hidden="true"><img src="/media/diptyque-history/maison/story-03-background.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__story-03-foreground" aria-hidden="true"></div><div class="history-maison__image history-maison__story-03-feature history-maison__cover" aria-hidden="true"><img src="/media/diptyque-history/maison/story-03-feature-visual.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__story-03-accent-02 history-maison__cover" aria-hidden="true"><img src="/media/diptyque-history/maison/story-03-small-accent-02.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__story-03-visual-01 history-maison__cover" aria-hidden="true"><img src="/media/diptyque-history/maison/story-03-visual-01.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__nested history-maison__story-03-visual-02" aria-hidden="true"><div class="history-maison__story-03-visual-02-inner history-maison__cover"><img src="/media/diptyque-history/maison/story-03-visual-02.png" alt="" loading="eager" decoding="async"></div></div><div class="history-maison__image history-maison__nested history-maison__story-03-visual-03" aria-hidden="true"><div class="history-maison__story-03-visual-03-inner history-maison__cover"><img src="/media/diptyque-history/maison/story-03-visual-03.png" alt="" loading="eager" decoding="async"></div></div><div class="history-maison__image history-maison__story-03-visual-04 history-maison__cover" aria-hidden="true"><img src="/media/diptyque-history/maison/story-03-visual-03.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__image history-maison__story-03-accent-01 history-maison__cover" aria-hidden="true"><img src="/media/diptyque-history/maison/story-03-small-accent-01.png" alt="" loading="eager" decoding="async"></div><div class="history-maison__finale" aria-hidden="true"><div class="history-maison__finale-layer history-maison__finale-layer--rock"><img src="/media/diptyque-history/maison/finale-rock.png" alt="" decoding="async" loading="eager"></div><div class="history-maison__finale-layer history-maison__finale-layer--left"><img src="/media/diptyque-history/maison/finale-left.png" alt="" decoding="async" loading="eager"></div><div class="history-maison__finale-layer history-maison__finale-layer--right"><img src="/media/diptyque-history/maison/finale-right.png" alt="" decoding="async" loading="eager"></div><div class="history-maison__finale-layer history-maison__finale-layer--agave"><img src="/media/diptyque-history/maison/finale-agave.png" alt="" decoding="async" loading="eager"></div></div></div></section></body></html>

@@ -1,0 +1,795 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>OBJECTS History</title><style>/* http://meyerweb.com/eric/tools/css/reset/
+	 v2.0 | 20110126
+	 License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+  --color-black: #000000;
+  --color-ink-black: #222222;
+  --color-gray-4b: #4b4b4b;
+  --color-gray-8b: #8b8b8b;
+  --color-ivory: #f7f6f4;
+  --color-paper-ivory: #f2e9da;
+  --color-deep-sage: #5f6c58;
+  --color-scent-amber: #b87b2e;
+  --color-title-black: #0e0e0d;
+  --color-white: #ffffff;
+  --color-light-background-3: #f7f7f7;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-red-50: #fef2f2;
+  --color-red-600: #dc2626;
+  --color-green-50: #f0fdf4;
+  --color-green-700: #15803d;
+  --color-yellow-50: #fefce8;
+  --color-yellow-700: #a16207;
+  --color-blue-50: #eff6ff;
+  --color-blue-700: #1d4ed8;
+  --color-bg-primary: var(--color-ivory);
+  --color-bg-secondary: var(--color-ink-black);
+  --color-bg-accent: var(--color-paper-ivory);
+  --color-surface: var(--color-white);
+  --color-text-primary: var(--color-ink-black);
+  --color-text-secondary: var(--color-gray-4b);
+  --color-text-muted: var(--color-gray-8b);
+  --color-text-inverse: var(--color-ivory);
+  --color-border-default: var(--color-gray-200);
+  --color-border-strong: var(--color-ink-black);
+  --color-action-primary: var(--color-ink-black);
+  --color-action-primary-hover: var(--color-gray-4b);
+  --color-accent-primary: var(--color-deep-sage);
+  --color-accent-highlight: var(--color-scent-amber);
+  --color-focus: #2563eb;
+  --color-error: var(--color-red-600);
+  --color-success: var(--color-green-700);
+  --color-warning: var(--color-yellow-700);
+  --color-info: var(--color-blue-700);
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --text-mobile-title-b1-size: 64px;
+  --text-mobile-title-b1-line-height: 1.3;
+  --text-mobile-title-b1-letter-spacing: 0;
+  --text-mobile-title-b1-weight: 700;
+  --text-mobile-title-m1-size: 58px;
+  --text-mobile-title-m1-line-height: 1.1;
+  --text-mobile-title-m1-letter-spacing: 0;
+  --text-mobile-title-m1-weight: 500;
+  --text-mobile-title-r1-size: 50px;
+  --text-mobile-title-r1-line-height: 1.1;
+  --text-mobile-title-r1-weight: 400;
+  --text-mobile-title-r2-size: 40px;
+  --text-mobile-title-r2-line-height: 1.1;
+  --text-mobile-title-r2-weight: 400;
+  --text-mobile-sub-title-r1-size: 32px;
+  --text-mobile-sub-title-r1-line-height: 1.1;
+  --text-mobile-sub-title-r2-size: 26px;
+  --text-mobile-sub-title-r2-line-height: 1.3;
+  --text-mobile-body-r1-size: 16px;
+  --text-mobile-body-r1-line-height: 1.4;
+  --text-mobile-body-r2-size: 14px;
+  --text-mobile-body-l1-size: 12px;
+  --text-web-title-b1-size: 130px;
+  --text-web-title-b1-line-height: 1;
+  --text-web-title-b1-letter-spacing: 0;
+  --text-web-title-b1-weight: 700;
+  --text-web-title-b2-size: 96px;
+  --text-web-title-b2-line-height: 1;
+  --text-web-title-b2-letter-spacing: 0;
+  --text-web-title-b2-weight: 700;
+  --text-web-title-m1-size: 160px;
+  --text-web-title-m1-line-height: 1;
+  --text-web-title-m1-letter-spacing: 0.02em;
+  --text-web-title-m1-weight: 500;
+  --text-web-title-m2-size: 110px;
+  --text-web-title-m2-line-height: 1;
+  --text-web-title-m2-letter-spacing: 0;
+  --text-web-title-m2-weight: 500;
+  --text-web-title-r1-size: 90px;
+  --text-web-title-r1-line-height: 1;
+  --text-web-title-r1-letter-spacing: 0;
+  --text-web-title-r1-weight: 400;
+  --text-sub-title-m1-size: 42px;
+  --text-sub-title-m1-line-height: 1.2;
+  --text-sub-title-m1-letter-spacing: 0;
+  --text-sub-title-m1-weight: 500;
+  --text-sub-title-r1-size: 64px;
+  --text-sub-title-r1-line-height: 1.1;
+  --text-sub-title-r1-letter-spacing: 0;
+  --text-sub-title-r1-weight: 400;
+  --text-sub-title-r2-size: 50px;
+  --text-sub-title-r2-line-height: 1.6;
+  --text-sub-title-r2-letter-spacing: 0;
+  --text-sub-title-r2-weight: 400;
+  --text-point-title-m1-size: 42px;
+  --text-point-title-m1-line-height: 1.5;
+  --text-point-title-m1-letter-spacing: 0.21em;
+  --text-point-title-m1-weight: 500;
+  --text-kr-sub-title-b1-size: 70px;
+  --text-kr-sub-title-b1-line-height: 1.3;
+  --text-kr-sub-title-b1-letter-spacing: 0;
+  --text-kr-sub-title-b1-weight: 700;
+  --text-kr-sub-title-r1-size: 40px;
+  --text-kr-sub-title-r1-line-height: 1.3;
+  --text-kr-sub-title-r1-letter-spacing: 0;
+  --text-kr-sub-title-r1-weight: 400;
+  --text-web-body-m1-eb-size: 28px;
+  --text-web-body-m1-eb-line-height: 1.3;
+  --text-web-body-m1-eb-letter-spacing: 0;
+  --text-web-body-m1-eb-weight: 500;
+  --text-web-body-b1-do-size: 20px;
+  --text-web-body-b1-do-line-height: 1.5;
+  --text-web-body-b1-do-letter-spacing: 0.02em;
+  --text-web-body-b1-do-weight: 700;
+  --text-web-body-m1-do-size: 20px;
+  --text-web-body-m1-do-line-height: 1.5;
+  --text-web-body-m1-do-letter-spacing: 0.02em;
+  --text-web-body-m1-do-weight: 500;
+  --text-web-body-m2-do-size: 18px;
+  --text-web-body-m2-do-line-height: 1.5;
+  --text-web-body-m2-do-letter-spacing: 0.02em;
+  --text-web-body-m2-do-weight: 500;
+  --text-web-body-l1-do-size: 18px;
+  --text-web-body-l1-do-line-height: 1.5;
+  --text-web-body-l1-do-letter-spacing: 0.02em;
+  --text-web-body-l1-do-weight: 300;
+  --text-web-body-l2-do-size: 16px;
+  --text-web-body-l2-do-line-height: 1.5;
+  --text-web-body-l2-do-letter-spacing: 0.02em;
+  --text-web-body-l2-do-weight: 300;
+  --text-web-kr-body-r1-size: 22px;
+  --text-web-kr-body-r1-line-height: 1.3;
+  --text-web-kr-body-r1-letter-spacing: 0.06em;
+  --text-web-kr-body-r1-weight: 400;
+  --text-web-footer-b1-do-size: 18px;
+  --text-web-footer-b1-do-line-height: 1.6;
+  --text-web-footer-b1-do-letter-spacing: 0.02em;
+  --text-web-footer-b1-do-weight: 700;
+  --text-web-footer-m1-do-size: 16px;
+  --text-web-footer-m1-do-line-height: 1.6;
+  --text-web-footer-m1-do-letter-spacing: 0.02em;
+  --text-web-footer-m1-do-weight: 500;
+  --text-web-footer-m2-do-size: 14px;
+  --text-web-footer-m2-do-line-height: 1.6;
+  --text-web-footer-m2-do-letter-spacing: 0.02em;
+  --text-web-footer-m2-do-weight: 500;
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --container-sm: 640px;
+  --container-md: 960px;
+  --container-lg: 1200px;
+  --container-xl: 1440px;
+  --page-padding: 16px;
+  --section-space: 64px;
+  --size-touch-min: 44px;
+  --size-input: 48px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.12);
+  --shadow-lg: 0 20px 48px rgb(0 0 0 / 0.18);
+  --z-header: 200;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --duration-fast: 120ms;
+  --duration-normal: 240ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (min-width: 768px) { :root { --page-padding: 24px; --section-space: 80px; } }
+@media (min-width: 1024px) { :root { --page-padding: 40px; --section-space: 96px; } }
+
+@font-face{font-family:'History Garamond';src:url('/media/diptyque-history/previews/garamond.woff2')}@font-face{font-family:'History Dotum';src:url('/media/diptyque-history/previews/dotum.woff2')}@font-face{font-family:'History Dotum';font-weight:700;src:url('/media/diptyque-history/previews/dotum-bold.woff2')}:root{--font-family-display:'History Garamond',Georgia,serif;--font-family-serif-kr:'History Dotum',serif;--font-family-sans:'History Dotum',sans-serif}body{font-family:var(--font-family-sans);font-size:16px;line-height:1.5;letter-spacing:.02em}html,body{margin:0;width:1920px;min-width:1920px;overflow:hidden;background:#faf7f0}*{box-sizing:border-box}
+.history-objects {
+  position: relative;
+  width: 100vw;
+  max-width: 1920px;
+  aspect-ratio: 1920 / 6831;
+  margin-inline: auto;
+  overflow: hidden;
+  background: #faf7f0;
+  color: var(--color-ink-black);
+  isolation: isolate;
+}
+
+/* Alpha-following shadows: light falls from the upper left.
+   Keep these on asset wrappers so mirrored images retain the same light direction. */
+.history-objects__framed-image-01,
+.history-objects__framed-image-02,
+.history-objects__framed-image-03,
+.history-objects__framed-image-04,
+.history-objects__framed-image-05,
+.history-objects__story-02-decorative,
+.history-objects__decorative-object-02,
+.history-objects__detail-visual-01 {
+  filter:
+    drop-shadow(min(.12vw, 2px) min(.2vw, 4px) min(.18vw, 3.5px) rgb(43 34 24 / 32%))
+    drop-shadow(min(.55vw, 11px) min(.8vw, 15px) min(.65vw, 12px) rgb(43 34 24 / 27%));
+}
+
+.history-objects__figure-visual {
+  filter:
+    drop-shadow(min(.18vw, 3.5px) min(.3vw, 6px) min(.25vw, 5px) rgb(43 34 24 / 23%))
+    drop-shadow(min(.85vw, 16px) min(1.1vw, 21px) min(.9vw, 17px) rgb(43 34 24 / 26%));
+}
+
+/* Small, firm contact shadow plus a softer cast shadow for every shelf object. */
+.history-objects :is(
+  [class*="history-objects__shelf-object-"],
+  [class*="history-objects__shelf-background-"],
+  .history-objects__tall-object-01,
+  .history-objects__outro-decorative-object
+),
+.history-objects__collected-strip img {
+  filter:
+    drop-shadow(min(.1vw, 2px) min(.18vw, 3.5px) min(.13vw, 2.5px) rgb(40 31 22 / 35%))
+    drop-shadow(min(.4vw, 8px) min(.55vw, 11px) min(.4vw, 8px) rgb(40 31 22 / 27%));
+}
+
+.history-objects__wide-collage {
+  filter: drop-shadow(min(.4vw, 8px) min(.65vw, 12px) min(.5vw, 10px) rgb(43 34 24 / 26%));
+}
+
+/* Floor-only shadows. The PNG feet end at roughly 82% of its transparent canvas. */
+.history-objects__feature-collage {
+  filter: none;
+  isolation: isolate;
+}
+
+.history-objects__feature-collage::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.history-objects__feature-collage::before {
+  left: 5%;
+  top: 75%;
+  width: 91%;
+  height: 8%;
+  background: linear-gradient(to bottom,
+    rgb(35 25 16 / 58%) 0%,
+    rgb(35 25 16 / 46%) 30%,
+    rgb(35 25 16 / 25%) 65%,
+    transparent 100%);
+  border-radius: 0 0 35% 20%;
+  filter: blur(min(.12vw, 2px));
+}
+
+.history-objects__feature-collage img {
+  position: relative;
+  z-index: 1;
+}
+
+.history-objects__story-01-feature {
+  filter:
+    drop-shadow(min(.1vw, 2px) min(.15vw, 3px) min(.12vw, 2px) rgb(43 34 24 / 22%))
+    drop-shadow(min(.25vw, 5px) min(.4vw, 8px) min(.4vw, 8px) rgb(43 34 24 / 18%));
+}
+
+
+.history-objects img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.history-objects__asset,
+.history-objects__centered-asset,
+.history-objects__mid-background,
+.history-objects__copy-backplate,
+.history-objects__collected-strip {
+  position: absolute;
+}
+
+.history-objects__centered-asset {
+  display: grid;
+  place-items: center;
+}
+
+.history-objects__background-main {
+  top: 0;
+  left: -34.114583%;
+  z-index: -2;
+  width: 169.21875%;
+  height: 84.541063%;
+}
+
+.history-objects__background-main img {
+  position: absolute;
+  top: 0;
+  left: 19.64%;
+  width: 60.69%;
+  height: 102.69%;
+  object-fit: fill;
+}
+
+.history-objects__background-main img,
+.history-objects__figure-visual img,
+.history-objects__walking-figure img,
+.history-objects__outro-background img,
+.history-objects__wide-collage img,
+.history-objects__feature-collage img,
+.history-objects__decorative-object-02 img,
+.history-objects__story-02-decorative img,
+.history-objects__collected-strip img,
+.history-objects__outro-decorative-object img,
+.history-objects__framed-image-01 img,
+.history-objects__framed-image-02 img,
+.history-objects__framed-image-03 img,
+.history-objects__framed-image-04 img,
+.history-objects__framed-image-05 img,
+.history-objects__story-01-feature img,
+.history-objects__small-accent-01 img,
+.history-objects__small-accent-02 img,
+.history-objects__detail-visual-01 img,
+.history-objects__detail-visual-02 img,
+.history-objects__detail-visual-03 img {
+  object-fit: cover;
+}
+
+.history-objects__background-lower {
+  top: 71.600059%;
+  left: -3.802083%;
+  z-index: -1;
+  width: 107.604167%;
+  height: 16.600791%;
+}
+
+.history-objects__background-lower img,
+.history-objects__shelf-object-01 img,
+.history-objects__shelf-object-02 img,
+.history-objects__tall-object-01 img,
+.history-objects__shelf-background-01 img,
+.history-objects__shelf-background-02 img,
+.history-objects__shelf-object-03 img,
+.history-objects__shelf-object-04 img,
+.history-objects__shelf-object-05 img,
+.history-objects__shelf-object-06 img,
+.history-objects__shelf-background-03 img,
+.history-objects__shelf-object-07 img,
+.history-objects__shelf-object-08 img,
+.history-objects__shelf-object-09 img,
+.history-objects__shelf-object-10 img,
+.history-objects__shelf-object-11 img {
+  object-position: center bottom;
+}
+
+.history-objects__background-lower img {
+  object-fit: cover;
+}
+
+.history-objects__figure-visual {
+  top: 58.161323%;
+  left: -4.427083%;
+  width: 40.46875%;
+  height: 20.216659%;
+}
+
+.history-objects__walking-figure {
+  top: 61.396574%;
+  left: -9.114583%;
+  width: 148.385417%;
+  height: 31.283853%;
+}
+
+.history-objects__outro-background {
+  top: 77.90953%;
+  left: -75.833333%;
+  width: 247.1875%;
+  height: 23.159128%;
+}
+
+.history-objects__hero {
+  position: absolute;
+  top: 4.713805%;
+  left: 22.34375%;
+  width: 40.208333%;
+  color: #faf7f0;
+}
+
+.history-objects__hero h2 {
+  font-family: var(--font-family-display);
+  font-size: min(8.333333vw, var(--text-web-title-m1-size));
+  font-weight: var(--text-web-title-m1-weight);
+  line-height: var(--text-web-title-m1-line-height);
+  letter-spacing: var(--text-web-title-m1-letter-spacing);
+  white-space: nowrap;
+}
+
+.history-objects__hero p {
+  margin-top: min(20.833333vw, 400px);
+  font-family: var(--font-family-display);
+  font-size: min(3.333333vw, var(--text-sub-title-r1-size));
+  font-weight: var(--text-sub-title-r1-weight);
+  line-height: var(--text-sub-title-r1-line-height);
+  letter-spacing: var(--text-sub-title-r1-letter-spacing);
+  white-space: nowrap;
+}
+
+.history-objects__mid-background {
+  top: 52.291026%;
+  left: 0;
+  width: 100%;
+  height: 13.52657%;
+}
+
+.history-objects__wide-collage {
+  top: 26.379739%;
+  left: 26.666667%;
+  width: 113.125%;
+  height: 10.598741%;
+}
+
+.history-objects__feature-collage {
+  top: 72.61016%;
+  left: -9.6875%;
+  width: 72.708333%;
+  height: 25.530669%;
+}
+
+.history-objects__decorative-object-02 {
+  top: 35.309618%;
+  left: 83.802083%;
+  width: 20.885417%;
+  aspect-ratio: 1;
+}
+
+.history-objects__shelf-object-01 {
+  top: 76.131603%;
+  left: 8.90625%;
+  width: 11.666667%;
+  height: 3.557312%;
+}
+
+.history-objects__shelf-object-02 {
+  top: 81.437564%;
+  left: 34.6875%;
+  width: 9.635417%;
+  height: 3.776899%;
+}
+
+.history-objects__tall-object-01 {
+  top: 71.365832%;
+  left: -7.96875%;
+  width: 23.75%;
+  height: 9.281218%;
+}
+
+.history-objects__shelf-background-01 {
+  top: 89.116525%;
+  left: 19.791667%;
+  width: 12.5%;
+  height: 2.020202%;
+}
+
+.history-objects__shelf-background-02 {
+  top: 88.838381%;
+  left: 30.46875%;
+  width: 10.833333%;
+  height: 2.386181%;
+}
+
+.history-objects__shelf-object-03 {
+  top: 81.774264%;
+  left: 9.947917%;
+  width: 7.864583%;
+  height: 3.08886%;
+}
+
+.history-objects__shelf-object-04 {
+  top: 82.520861%;
+  left: 45.46875%;
+  width: 9.114583%;
+  height: 2.57649%;
+}
+
+.history-objects__shelf-object-05 {
+  top: 81.891378%;
+  left: 21.145833%;
+  width: 8.125%;
+  height: 2.854633%;
+}
+
+.history-objects__shelf-object-06 {
+  top: 81.004237%;
+  left: 27.864583%;
+  width: 8.063958%;
+  height: 2.246509%;
+}
+
+.history-objects__shelf-object-06 img {
+  width: 85.899%;
+  height: 85.552%;
+  transform: rotate(-10.57deg);
+}
+
+.history-objects__shelf-background-03 {
+  top: 85.368904%;
+  left: 46.145833%;
+  width: 8.75%;
+  height: 2.825355%;
+}
+
+.history-objects__shelf-object-07 {
+  top: 75.128093%;
+  left: 52.1875%;
+  width: 6.71875%;
+  height: 5.504319%;
+}
+
+.history-objects__copy-backplate {
+  top: 56.228956%;
+  left: 51.302083%;
+  width: 19.166667%;
+  height: 6.441224%;
+  background: var(--color-ivory);
+}
+
+.history-objects__story-02-decorative {
+  top: 54.999268%;
+  left: 44.739583%;
+  width: 32.291667%;
+  aspect-ratio: 1;
+}
+
+.history-objects__shelf-object-08 {
+  top: 89.781877%;
+  left: 41.770833%;
+  width: 11.979167%;
+  height: 1.449275%;
+}
+
+.history-objects__shelf-object-09 {
+  top: 83.457766%;
+  left: 2.552083%;
+  width: 4.0625%;
+  height: 1.083297%;
+}
+
+.history-objects__shelf-object-10 {
+  top: 82.257356%;
+  left: -1.25%;
+  width: 4.84375%;
+  height: 2.40082%;
+}
+
+.history-objects__shelf-object-11 {
+  top: 86.393644%;
+  left: 34.635724%;
+  width: 10.833339%;
+  height: 2.037667%;
+}
+
+.history-objects__collected-strip {
+  top: 24.886547%;
+  left: 55.729167%;
+  width: 50.989583%;
+  height: 6.133802%;
+}
+
+.history-objects__collected-strip img {
+  position: absolute;
+  top: 0;
+  width: 32.073545%;
+  height: 100%;
+}
+
+.history-objects__collected-strip img:nth-child(1) { left: 0; }
+.history-objects__collected-strip img:nth-child(2) { left: 22.982635%; }
+.history-objects__collected-strip img:nth-child(3),
+.history-objects__collected-strip img:nth-child(4) {
+  top: .835322%;
+  width: 31.562819%;
+  height: 98.329356%;
+}
+.history-objects__collected-strip img:nth-child(3) { left: 45.965271%; }
+.history-objects__collected-strip img:nth-child(4) { left: 68.437181%; }
+
+.history-objects__outro-decorative-object {
+  top: 74.527888%;
+  left: 35.208333%;
+  width: 16.979167%;
+  height: 5.958132%;
+}
+
+.history-objects__outro-decorative-object img,
+.history-objects__story-01-feature img,
+.history-objects__small-accent-01 img,
+.history-objects__small-accent-02 img {
+  transform: rotate(180deg) scaleY(-1);
+}
+
+.history-objects__framed-image-05 { top: 49.773093%; left: 84.6875%; width: 37.083333%; height: 7.817303%; }
+.history-objects__framed-image-01 { top: 28.07788%; left: -20.104167%; width: 35.885417%; height: 7.568438%; }
+.history-objects__framed-image-02 { top: 13.760796%; left: 74.322917%; width: 36.25%; height: 7.641634%; }
+.history-objects__framed-image-03 { top: 45.38135%; left: -7.291667%; width: 33.958333%; height: 7.158542%; }
+.history-objects__framed-image-04 { top: 7.056068%; left: -20.3125%; width: 36.197917%; height: 7.626995%; }
+
+.history-objects__story {
+  position: absolute;
+  color: var(--color-ink-black);
+}
+
+.history-objects__story--two {
+  top: 56.975553%;
+  left: 54.583333%;
+  width: 12.604167%;
+}
+
+.history-objects__story h3,
+.history-objects__story-01-title {
+  font-family: var(--font-family-display);
+  font-size: min(2.1875vw, var(--text-sub-title-m1-size));
+  font-weight: var(--text-sub-title-m1-weight);
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.history-objects__story--two h3 {
+  width: 100%;
+}
+
+.history-objects__story-body,
+.history-objects__story-01-body {
+  display: flex;
+  flex-direction: column;
+  gap: min(2.083333vw, 40px);
+  font-family: var(--font-family-sans);
+  font-size: min(.833333vw, var(--text-web-body-l2-do-size));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-web-body-l2-do-line-height);
+  letter-spacing: var(--text-web-body-l2-do-letter-spacing);
+  white-space: nowrap;
+}
+
+.history-objects__story-body {
+  margin-top: min(1.041667vw, 20px);
+}
+
+.history-objects__story-01-feature {
+  top: 21.783048%;
+  left: 33.333333%;
+  width: 27.135417%;
+  height: 9.530083%;
+}
+
+.history-objects__story-01-title {
+  position: absolute;
+  top: 23.481189%;
+  left: 38.854167%;
+  z-index: 1;
+  width: 12.760417%;
+  color: var(--color-ink-black);
+  white-space: nowrap;
+}
+
+.history-objects__story-01-body {
+  position: absolute;
+  top: 25.398917%;
+  left: 43.75%;
+  z-index: 1;
+  width: 11.354167%;
+  color: var(--color-ink-black);
+}
+
+.history-objects__small-accent-02 {
+  top: 35.44137%;
+  left: 93.4375%;
+  width: 1.5625%;
+  aspect-ratio: 1;
+}
+
+.history-objects__detail-visual-01 {
+  top: 40.726102%;
+  left: 53.59375%;
+  width: 30.78125%;
+  aspect-ratio: 1;
+}
+
+.history-objects__small-accent-01 {
+  top: 40.945689%;
+  left: 68.177083%;
+  width: 1.614583%;
+  aspect-ratio: 1;
+}
+
+.history-objects__detail-visual-02 {
+  top: 43.463622%;
+  left: 64.895833%;
+  width: 10.580885%;
+  aspect-ratio: 1;
+  /* Pivot at the clock spindle, accounting for the image's transparent padding. */
+  transform-origin: 39% 63%;
+  transition: transform 1.2s cubic-bezier(.22, 1, .36, 1);
+}
+
+.history-objects__detail-visual-02.history-objects__minute-hand--moved {
+  transform: rotate(30deg);
+}
+
+.history-objects__detail-visual-02 img {
+  width: 93.37%;
+  height: auto;
+  aspect-ratio: 1;
+  transform: rotate(4.23deg);
+}
+
+.history-objects__detail-visual-03 {
+  top: 43.961353%;
+  left: 64.427083%;
+  width: 7.03125%;
+  aspect-ratio: 1;
+}
+
+.history-scent-scroll{--title-opacity:1;--title-blur:0px;--intro-copy-opacity:1;--story-copy-opacity:1;--flame-opacity:1}
+      .history-objects__detail-visual-02{animation:preview-clock 12s linear infinite}
+      .history-maison__story-03-feature{animation:preview-clock 45s linear infinite}
+      @keyframes preview-clock{to{transform:rotate(360deg)}}
+      @media(prefers-reduced-motion:reduce){*{animation:none!important}}</style></head><body><section class="history-objects" aria-labelledby="history-objects-title"><div class="history-objects__asset history-objects__background-main" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-background-main.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__background-lower" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-background-lower.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__figure-visual" aria-hidden="true"><img src="/media/diptyque-history/objects/story-02-figure-visual.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__outro-background" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-outro-background.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__copy-backplate" aria-hidden="true"></div><div class="history-objects__asset history-objects__story-02-decorative" aria-hidden="true"><img src="/media/diptyque-history/objects/story-02-decorative-visual.png" alt="" loading="eager" decoding="async"></div><article class="history-objects__story history-objects__story--two"><h3>A SENSE OF DISCOVERY</h3><div class="history-objects__story-body"><div><p>무엇을 발견하게 될지 알 수 없는<br>경험 자체가 부티크의 매력이었습니다.</p><p>딥디크는 물건을 판매하기보다 새로운<br>감각과 취향을 제안하기 시작했습니다.</p></div><p>아름답다고 느끼는 것이라면<br>무엇이든 딥디크의 세계 안으로<br>들어올 수 있었습니다.</p></div></article><div class="history-objects__asset history-objects__walking-figure" aria-hidden="true" data-objects-playback="waiting"><img src="/media/diptyque-history/objects/objects-walking-figure.png" alt="" loading="eager" decoding="async" fetchpriority="high" data-once-gif="/media/diptyque-history/objects/objects-walking-figure.gif" data-gif-subject=".17,.07,.23,.89" data-gif-visible-ratio=".85"></div><header class="history-objects__hero"><h2 id="history-objects-title">OBJECTS</h2><p>The shop became a world.<br>A collection became a language.</p></header><div class="history-objects__mid-background" aria-hidden="true"></div><div class="history-objects__asset history-objects__wide-collage" aria-hidden="true"><img src="/media/diptyque-history/objects/story-01-wide-collage.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__feature-collage" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-outro-feature-collage.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__decorative-object-02" aria-hidden="true"><img src="/media/diptyque-history/objects/floating-decorative-object-02.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-object-01" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-object-01.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-object-02" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-object-02.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__tall-object-01" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-tall-object-01.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-background-01" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-background-01.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-background-02" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-background-02.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-object-03" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-object-03.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-object-04" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-object-04.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-object-05" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-object-05.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__centered-asset history-objects__shelf-object-06" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-object-06.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-background-03" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-background-03.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-object-08" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-object-08.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-object-09" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-object-09.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-object-10" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-object-10.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-object-11" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-object-11.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__collected-strip" aria-hidden="true"><img src="/media/diptyque-history/objects/story-01-collected-object-01.png" alt="" loading="eager" decoding="async"><img src="/media/diptyque-history/objects/story-01-collected-object-02.png" alt="" loading="eager" decoding="async"><img src="/media/diptyque-history/objects/story-01-collected-object-03.png" alt="" loading="eager" decoding="async"><img src="/media/diptyque-history/objects/story-01-collected-object-04.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__outro-decorative-object" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-outro-decorative-object-01.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__framed-image-05" aria-hidden="true"><img src="/media/diptyque-history/objects/floating-framed-image-05.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__framed-image-01" aria-hidden="true"><img src="/media/diptyque-history/objects/floating-framed-image-01.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__framed-image-02" aria-hidden="true"><img src="/media/diptyque-history/objects/floating-framed-image-02.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__framed-image-03" aria-hidden="true"><img src="/media/diptyque-history/objects/floating-framed-image-03.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__framed-image-04" aria-hidden="true"><img src="/media/diptyque-history/objects/floating-framed-image-04.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__story-01-feature" aria-hidden="true"><img src="/media/diptyque-history/objects/story-01-feature-visual.png" alt="" loading="eager" decoding="async"></div><h3 class="history-objects__story-01-title">FOUND<br>ELSEWHERE</h3><div class="history-objects__story-01-body"><div><p>생제르맹의 부티크는 점차 다양한<br>오브제들로 채워졌습니다.</p><p>여행에서 발견한 물건들은 단순한<br>기념품으로 남지 않았습니다.<br>딥디크의 시선을 거치며 새로운<br>맥락과 의미를 가진 오브제로<br>다시 소개되었습니다.</p></div><p>보고, 만지고, 머무르며<br>새로운 취향을 발견하는 하나의<br>작은 세계에 가까웠습니다.</p></div><div class="history-objects__asset history-objects__small-accent-02" aria-hidden="true"><img src="/media/diptyque-history/objects/floating-small-accent-02.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__detail-visual-01" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-detail-visual-01.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__small-accent-01" aria-hidden="true"><img src="/media/diptyque-history/objects/floating-small-accent-01.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__centered-asset history-objects__detail-visual-02" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-detail-visual-02.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__detail-visual-03" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-detail-visual-03.png" alt="" loading="eager" decoding="async"></div><div class="history-objects__asset history-objects__shelf-object-07" aria-hidden="true"><img src="/media/diptyque-history/objects/objects-shelf-object-07.png" alt="" loading="eager" decoding="async"></div></section></body></html>

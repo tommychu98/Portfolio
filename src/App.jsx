@@ -11,6 +11,7 @@ import WorksIntro from './components/sections/WorksIntro/WorksIntro';
 import PortfolioOverview from './components/sections/PortfolioOverview/PortfolioOverview';
 import PortfolioDetails from './components/sections/PortfolioDetails/PortfolioDetails';
 import PortfolioProcess from './components/sections/PortfolioProcess/PortfolioProcess';
+import BrandHistory from './components/sections/BrandHistory/BrandHistory';
 import PersonalWorks from './components/sections/PersonalWorks/PersonalWorks';
 import Film from './components/sections/Film/Film';
 import FilmArchive from './components/sections/FilmArchive';
@@ -36,6 +37,7 @@ export default function App() {
       <PortfolioOverview />
       <PortfolioDetails />
       <PortfolioProcess />
+      <BrandHistory />
       <PersonalWorks />
       <Film />
       <FilmArchive />

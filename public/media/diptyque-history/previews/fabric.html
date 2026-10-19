@@ -1,0 +1,766 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>FABRIC History</title><style>/* http://meyerweb.com/eric/tools/css/reset/
+	 v2.0 | 20110126
+	 License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+  --color-black: #000000;
+  --color-ink-black: #222222;
+  --color-gray-4b: #4b4b4b;
+  --color-gray-8b: #8b8b8b;
+  --color-ivory: #f7f6f4;
+  --color-paper-ivory: #f2e9da;
+  --color-deep-sage: #5f6c58;
+  --color-scent-amber: #b87b2e;
+  --color-title-black: #0e0e0d;
+  --color-white: #ffffff;
+  --color-light-background-3: #f7f7f7;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-red-50: #fef2f2;
+  --color-red-600: #dc2626;
+  --color-green-50: #f0fdf4;
+  --color-green-700: #15803d;
+  --color-yellow-50: #fefce8;
+  --color-yellow-700: #a16207;
+  --color-blue-50: #eff6ff;
+  --color-blue-700: #1d4ed8;
+  --color-bg-primary: var(--color-ivory);
+  --color-bg-secondary: var(--color-ink-black);
+  --color-bg-accent: var(--color-paper-ivory);
+  --color-surface: var(--color-white);
+  --color-text-primary: var(--color-ink-black);
+  --color-text-secondary: var(--color-gray-4b);
+  --color-text-muted: var(--color-gray-8b);
+  --color-text-inverse: var(--color-ivory);
+  --color-border-default: var(--color-gray-200);
+  --color-border-strong: var(--color-ink-black);
+  --color-action-primary: var(--color-ink-black);
+  --color-action-primary-hover: var(--color-gray-4b);
+  --color-accent-primary: var(--color-deep-sage);
+  --color-accent-highlight: var(--color-scent-amber);
+  --color-focus: #2563eb;
+  --color-error: var(--color-red-600);
+  --color-success: var(--color-green-700);
+  --color-warning: var(--color-yellow-700);
+  --color-info: var(--color-blue-700);
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --text-mobile-title-b1-size: 64px;
+  --text-mobile-title-b1-line-height: 1.3;
+  --text-mobile-title-b1-letter-spacing: 0;
+  --text-mobile-title-b1-weight: 700;
+  --text-mobile-title-m1-size: 58px;
+  --text-mobile-title-m1-line-height: 1.1;
+  --text-mobile-title-m1-letter-spacing: 0;
+  --text-mobile-title-m1-weight: 500;
+  --text-mobile-title-r1-size: 50px;
+  --text-mobile-title-r1-line-height: 1.1;
+  --text-mobile-title-r1-weight: 400;
+  --text-mobile-title-r2-size: 40px;
+  --text-mobile-title-r2-line-height: 1.1;
+  --text-mobile-title-r2-weight: 400;
+  --text-mobile-sub-title-r1-size: 32px;
+  --text-mobile-sub-title-r1-line-height: 1.1;
+  --text-mobile-sub-title-r2-size: 26px;
+  --text-mobile-sub-title-r2-line-height: 1.3;
+  --text-mobile-body-r1-size: 16px;
+  --text-mobile-body-r1-line-height: 1.4;
+  --text-mobile-body-r2-size: 14px;
+  --text-mobile-body-l1-size: 12px;
+  --text-web-title-b1-size: 130px;
+  --text-web-title-b1-line-height: 1;
+  --text-web-title-b1-letter-spacing: 0;
+  --text-web-title-b1-weight: 700;
+  --text-web-title-b2-size: 96px;
+  --text-web-title-b2-line-height: 1;
+  --text-web-title-b2-letter-spacing: 0;
+  --text-web-title-b2-weight: 700;
+  --text-web-title-m1-size: 160px;
+  --text-web-title-m1-line-height: 1;
+  --text-web-title-m1-letter-spacing: 0.02em;
+  --text-web-title-m1-weight: 500;
+  --text-web-title-m2-size: 110px;
+  --text-web-title-m2-line-height: 1;
+  --text-web-title-m2-letter-spacing: 0;
+  --text-web-title-m2-weight: 500;
+  --text-web-title-r1-size: 90px;
+  --text-web-title-r1-line-height: 1;
+  --text-web-title-r1-letter-spacing: 0;
+  --text-web-title-r1-weight: 400;
+  --text-sub-title-m1-size: 42px;
+  --text-sub-title-m1-line-height: 1.2;
+  --text-sub-title-m1-letter-spacing: 0;
+  --text-sub-title-m1-weight: 500;
+  --text-sub-title-r1-size: 64px;
+  --text-sub-title-r1-line-height: 1.1;
+  --text-sub-title-r1-letter-spacing: 0;
+  --text-sub-title-r1-weight: 400;
+  --text-sub-title-r2-size: 50px;
+  --text-sub-title-r2-line-height: 1.6;
+  --text-sub-title-r2-letter-spacing: 0;
+  --text-sub-title-r2-weight: 400;
+  --text-point-title-m1-size: 42px;
+  --text-point-title-m1-line-height: 1.5;
+  --text-point-title-m1-letter-spacing: 0.21em;
+  --text-point-title-m1-weight: 500;
+  --text-kr-sub-title-b1-size: 70px;
+  --text-kr-sub-title-b1-line-height: 1.3;
+  --text-kr-sub-title-b1-letter-spacing: 0;
+  --text-kr-sub-title-b1-weight: 700;
+  --text-kr-sub-title-r1-size: 40px;
+  --text-kr-sub-title-r1-line-height: 1.3;
+  --text-kr-sub-title-r1-letter-spacing: 0;
+  --text-kr-sub-title-r1-weight: 400;
+  --text-web-body-m1-eb-size: 28px;
+  --text-web-body-m1-eb-line-height: 1.3;
+  --text-web-body-m1-eb-letter-spacing: 0;
+  --text-web-body-m1-eb-weight: 500;
+  --text-web-body-b1-do-size: 20px;
+  --text-web-body-b1-do-line-height: 1.5;
+  --text-web-body-b1-do-letter-spacing: 0.02em;
+  --text-web-body-b1-do-weight: 700;
+  --text-web-body-m1-do-size: 20px;
+  --text-web-body-m1-do-line-height: 1.5;
+  --text-web-body-m1-do-letter-spacing: 0.02em;
+  --text-web-body-m1-do-weight: 500;
+  --text-web-body-m2-do-size: 18px;
+  --text-web-body-m2-do-line-height: 1.5;
+  --text-web-body-m2-do-letter-spacing: 0.02em;
+  --text-web-body-m2-do-weight: 500;
+  --text-web-body-l1-do-size: 18px;
+  --text-web-body-l1-do-line-height: 1.5;
+  --text-web-body-l1-do-letter-spacing: 0.02em;
+  --text-web-body-l1-do-weight: 300;
+  --text-web-body-l2-do-size: 16px;
+  --text-web-body-l2-do-line-height: 1.5;
+  --text-web-body-l2-do-letter-spacing: 0.02em;
+  --text-web-body-l2-do-weight: 300;
+  --text-web-kr-body-r1-size: 22px;
+  --text-web-kr-body-r1-line-height: 1.3;
+  --text-web-kr-body-r1-letter-spacing: 0.06em;
+  --text-web-kr-body-r1-weight: 400;
+  --text-web-footer-b1-do-size: 18px;
+  --text-web-footer-b1-do-line-height: 1.6;
+  --text-web-footer-b1-do-letter-spacing: 0.02em;
+  --text-web-footer-b1-do-weight: 700;
+  --text-web-footer-m1-do-size: 16px;
+  --text-web-footer-m1-do-line-height: 1.6;
+  --text-web-footer-m1-do-letter-spacing: 0.02em;
+  --text-web-footer-m1-do-weight: 500;
+  --text-web-footer-m2-do-size: 14px;
+  --text-web-footer-m2-do-line-height: 1.6;
+  --text-web-footer-m2-do-letter-spacing: 0.02em;
+  --text-web-footer-m2-do-weight: 500;
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --container-sm: 640px;
+  --container-md: 960px;
+  --container-lg: 1200px;
+  --container-xl: 1440px;
+  --page-padding: 16px;
+  --section-space: 64px;
+  --size-touch-min: 44px;
+  --size-input: 48px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.12);
+  --shadow-lg: 0 20px 48px rgb(0 0 0 / 0.18);
+  --z-header: 200;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --duration-fast: 120ms;
+  --duration-normal: 240ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (min-width: 768px) { :root { --page-padding: 24px; --section-space: 80px; } }
+@media (min-width: 1024px) { :root { --page-padding: 40px; --section-space: 96px; } }
+
+@font-face{font-family:'History Garamond';src:url('/media/diptyque-history/previews/garamond.woff2')}@font-face{font-family:'History Dotum';src:url('/media/diptyque-history/previews/dotum.woff2')}@font-face{font-family:'History Dotum';font-weight:700;src:url('/media/diptyque-history/previews/dotum-bold.woff2')}:root{--font-family-display:'History Garamond',Georgia,serif;--font-family-serif-kr:'History Dotum',serif;--font-family-sans:'History Dotum',sans-serif}body{font-family:var(--font-family-sans);font-size:16px;line-height:1.5;letter-spacing:.02em}html,body{margin:0;width:1920px;min-width:1920px;overflow:hidden;background:#faf7f0}*{box-sizing:border-box}
+.history-fabric {
+  position: relative;
+  width: 100vw;
+  max-width: 1920px;
+  aspect-ratio: 1920 / 4464;
+  margin-inline: auto;
+  overflow: hidden;
+  background: #ddd9d1;
+  color: var(--color-ink-black);
+  isolation: isolate;
+}
+
+/* Warm tabletop shadows; applied outside rotated artwork so the light
+   consistently comes from the upper left. No image/text blur. */
+.history-fabric__floating-botanical-01 {
+  filter: drop-shadow(min(.45vw, 8px) min(.8vw, 15px) min(.7vw, 13px) rgb(48 40 28 / 24%));
+}
+
+.history-fabric__story-canvas {
+  box-shadow:
+    0 min(.12vw, 2px) min(.22vw, 4px) rgb(49 40 29 / 18%),
+    min(.35vw, 7px) min(.65vw, 12px) min(.95vw, 18px) rgb(49 40 29 / 16%),
+    min(.8vw, 15px) min(1.2vw, 23px) min(2vw, 38px) rgb(49 40 29 / 9%);
+}
+
+/* Ceramic objects: contact shadow plus a softer cast shadow. */
+.history-fabric__floating-object-03,
+.history-fabric__floating-object-04,
+.history-fabric__floating-object-07 {
+  filter:
+    drop-shadow(min(.12vw, 2px) min(.22vw, 4px) min(.2vw, 4px) rgb(43 34 24 / 28%))
+    drop-shadow(min(.65vw, 12px) min(1vw, 19px) min(.7vw, 13px) rgb(43 34 24 / 23%));
+}
+
+/* Loose paper and fabric remain close to the tabletop. */
+.history-fabric__floating-object-01,
+.history-fabric__floating-object-02,
+.history-fabric__floating-object-05,
+.history-fabric__floating-fabric-01,
+.history-fabric__floating-collage-01,
+.history-fabric__floating-collage-02 {
+  filter: drop-shadow(min(.2vw, 4px) min(.35vw, 7px) min(.35vw, 7px) rgb(49 40 29 / 20%));
+}
+
+.history-fabric__floating-object-06,
+.history-fabric__floating-object-08 {
+  filter: drop-shadow(min(.2vw, 4px) min(.3vw, 6px) min(.2vw, 4px) rgb(43 34 24 / 26%));
+}
+
+.history-fabric img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.history-fabric__background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  object-fit: fill;
+}
+
+.history-fabric__hero {
+  position: absolute;
+  top: 5.62276%;
+  left: 22.239583%;
+  width: 39.0625%;
+  color: var(--color-ink-black);
+}
+
+.history-fabric__hero h2 {
+  position: relative;
+  isolation: isolate;
+  font-family: var(--font-family-display);
+  font-size: min(8.333333vw, var(--text-web-title-m1-size));
+  font-weight: var(--text-web-title-m1-weight);
+  line-height: var(--text-web-title-m1-line-height);
+  letter-spacing: var(--text-web-title-m1-letter-spacing);
+  white-space: nowrap;
+}
+
+.history-fabric__hero p {
+  position: relative;
+  isolation: isolate;
+  color: #211d18;
+  margin-top: min(20.833333vw, 400px);
+  font-family: var(--font-family-display);
+  font-size: min(3.333333vw, var(--text-sub-title-r1-size));
+  font-weight: 500;
+  line-height: var(--text-sub-title-r1-line-height);
+  letter-spacing: var(--text-sub-title-r1-letter-spacing);
+  white-space: nowrap;
+}
+
+.history-fabric__hero h2::before,
+.history-fabric__hero p::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -70% -20%;
+  background: radial-gradient(ellipse at 48% 50%,
+    rgba(248, 244, 233, .72) 0%,
+    rgba(248, 244, 233, .55) 32%,
+    rgba(248, 244, 233, .24) 55%,
+    rgba(248, 244, 233, 0) 74%);
+  filter: blur(min(1.25vw, 24px));
+  pointer-events: none;
+}
+
+.history-fabric__asset,
+.history-fabric__centered-asset,
+.history-fabric__canvas-asset,
+.history-fabric__canvas-centered,
+.history-fabric__object-accent {
+  position: absolute;
+}
+
+.history-fabric__centered-asset,
+.history-fabric__canvas-centered {
+  display: grid;
+  place-items: center;
+}
+
+.history-fabric__floating-object-01 {
+  top: 17.517921%;
+  left: 66.5%;
+  width: 46.614583%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__story-canvas {
+  position: absolute;
+  top: 22.96147%;
+  left: 23.59375%;
+  width: 70.520833%;
+  height: 34.632616%;
+  overflow: hidden;
+  background: #faf7f0;
+}
+
+.history-fabric__canvas-fabric-01,
+.history-fabric__canvas-fabric-02 {
+  width: 54.911595%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__canvas-fabric-01 {
+  top: 58.408797%;
+  left: 78.581979%;
+}
+
+.history-fabric__canvas-fabric-02 {
+  top: 52.716688%;
+  left: 85.450517%;
+}
+
+.history-fabric__canvas-fabric-01 img,
+.history-fabric__canvas-fabric-02 img {
+  width: 74.608%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.history-fabric__canvas-fabric-01 img { transform: rotate(-26.4deg); }
+.history-fabric__canvas-fabric-02 img { transform: rotate(153.6deg); }
+
+.history-fabric__pattern-top,
+.history-fabric__pattern-bottom {
+  left: 0;
+  width: 100%;
+  height: 49.288486%;
+}
+
+.history-fabric__pattern-top { top: 0; }
+.history-fabric__pattern-bottom { top: 50.711514%; }
+.history-fabric__pattern-bottom img { transform: rotate(180deg); }
+
+.history-fabric__canvas-detail-01 {
+  top: 43.337646%;
+  left: 73.338257%;
+  width: 26.661743%;
+  height: 15.071151%;
+}
+
+.history-fabric__canvas-collage-01 {
+  top: -25.485123%;
+  left: 60.782866%;
+  width: 60.627179%;
+  height: 56.042367%;
+}
+
+.history-fabric__canvas-collage-01 img {
+  width: 66.512%;
+  height: 78.716%;
+  object-fit: cover;
+  opacity: .8;
+  transform: rotate(-31.31deg);
+}
+
+.history-fabric__founders-visual {
+  top: 10.349288%;
+  left: 44.608567%;
+  width: 55.760709%;
+  height: 53.557568%;
+}
+
+.history-fabric__founders-visual,
+.history-fabric__founders-visual img {
+  border-radius: min(.989583vw, 19px);
+}
+
+.history-fabric__founders-visual img,
+.history-fabric__bottom-collage img {
+  object-fit: cover;
+}
+
+.history-fabric__bottom-collage {
+  top: 70.698577%;
+  left: 0;
+  width: 100.369276%;
+  height: 29.301423%;
+}
+
+.history-fabric__story {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: min(1.041667vw, 20px);
+  color: var(--color-ink-black);
+}
+
+.history-fabric__story--one {
+  top: 11.384217%;
+  left: 11.595273%;
+  width: 27.917282%;
+}
+
+.history-fabric__story--two {
+  top: 57.309185%;
+  left: 42.836041%;
+  width: 28.434269%;
+}
+
+.history-fabric__story h3 {
+  font-family: var(--font-family-serif-kr);
+  font-size: min(3.645833vw, var(--text-kr-sub-title-b1-size));
+  font-weight: var(--text-kr-sub-title-b1-weight);
+  line-height: var(--text-kr-sub-title-b1-line-height);
+  letter-spacing: var(--text-kr-sub-title-b1-letter-spacing);
+  white-space: nowrap;
+}
+
+.history-fabric__story-copy {
+  display: flex;
+  flex-direction: column;
+  gap: min(2.083333vw, 40px);
+  font-family: var(--font-family-sans);
+  font-size: min(.833333vw, var(--text-web-body-l2-do-size));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-web-body-l2-do-line-height);
+  letter-spacing: var(--text-web-body-l2-do-letter-spacing);
+  white-space: nowrap;
+}
+
+.history-fabric__canvas-detail-02 {
+  top: 43.337646%;
+  left: 48.227474%;
+  width: 25.110783%;
+  height: 15.071151%;
+}
+
+.history-fabric__object-accent {
+  top: 30.53%;
+  left: 39.51%;
+  width: 17.51%;
+  height: 25.55%;
+}
+
+.history-fabric__object-accent img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 166.667%;
+  height: 60%;
+  object-fit: fill;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.history-fabric__floating-object-02 {
+  top: 5.376344%;
+  left: 78.333333%;
+  width: 30.731198%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__floating-object-02 img {
+  width: 74.401%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: rotate(-26.88deg);
+}
+
+.history-fabric__floating-fabric-01 {
+  top: 39.090502%;
+  left: 14.010521%;
+  width: 35.353021%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__floating-fabric-01 img {
+  width: 86.505%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: rotate(-9.83deg);
+}
+
+.history-fabric__floating-object-03 {
+  top: 74.955197%;
+  left: 65.46875%;
+  width: 44.449115%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__floating-object-03 img {
+  width: 73.282%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: rotate(29.78deg);
+}
+
+.history-fabric__floating-botanical-01 {
+  top: -1.344086%;
+  left: -29.375%;
+  width: 58.802083%;
+  height: 31.205197%;
+}
+
+.history-fabric__floating-botanical-01 img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  filter: saturate(.85);
+}
+
+.history-fabric__botanical-leaves {
+  transform-origin: 49% 38%;
+  animation: history-fabric-plant-sway 5.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes history-fabric-plant-sway {
+  0%, 100% { transform: rotate(-.55deg); }
+  50% { transform: rotate(.55deg); }
+}
+
+.history-fabric__floating-object-04 {
+  top: 39.426523%;
+  left: -15.78125%;
+  width: 52.167708%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__floating-object-04 img {
+  width: 75.263%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: rotate(24.97deg);
+}
+
+.history-fabric__floating-object-05 {
+  top: 53.853047%;
+  left: 64.84375%;
+  width: 40.145833%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__floating-object-05 img {
+  width: 97.414%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: rotate(-91.54deg);
+}
+
+.history-fabric__floating-object-06 {
+  top: 45.967742%;
+  left: 66.5625%;
+  width: 50.328854%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__floating-object-06 img {
+  width: 73.282%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: rotate(-119.78deg);
+}
+
+.history-fabric__floating-object-07 {
+  top: 71.438172%;
+  left: 30.833333%;
+  width: 41.25%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__floating-object-07 img { object-fit: cover; }
+
+.history-fabric__floating-accent-01 {
+  top: 19.825269%;
+  left: 58.854167%;
+  width: 14.635417%;
+  aspect-ratio: 1;
+  opacity: .8;
+}
+
+.history-fabric__floating-accent-01 img { object-fit: cover; }
+
+.history-fabric__floating-object-08 {
+  top: 65.255376%;
+  left: 73.333333%;
+  width: 28.77901%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__floating-object-08 img {
+  width: 76.372%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: rotate(67.2deg);
+}
+
+.history-fabric__floating-collage-01 {
+  top: 57.040547%;
+  left: -8.710938%;
+  width: 48.984687%;
+  height: 24.87509%;
+}
+
+.history-fabric__floating-collage-01 img {
+  width: 85.486%;
+  height: 90.508%;
+  object-fit: cover;
+  transform: rotate(8.29deg);
+}
+
+.history-fabric__floating-collage-02 {
+  top: 64.829749%;
+  left: -12.083333%;
+  width: 35.677083%;
+  height: 23.028674%;
+}
+
+.history-fabric__floating-collage-02 img { object-fit: cover; }
+
+.history-fabric__floating-accent-02 {
+  top: 76.635305%;
+  left: 9.479167%;
+  width: 11.167344%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__floating-accent-02 img {
+  width: 75.563%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  opacity: .8;
+  transform: rotate(24.35deg);
+}
+
+.history-fabric__floating-accent-03 {
+  top: 65.681004%;
+  left: 62.239583%;
+  width: 16.791771%;
+  aspect-ratio: 1;
+}
+
+.history-fabric__floating-accent-03 img {
+  width: 75.926%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  opacity: .8;
+  transform: rotate(66.36deg);
+}
+
+.history-fabric__pick-up-fabric {
+  top: 12.791219%;
+  left: -14.0625%;
+  width: 72.601354%;
+  height: 46.529144%;
+  visibility: hidden;
+}
+
+.history-fabric__pick-up-fabric--idle,
+.history-fabric__pick-up-fabric--playing {
+  visibility: visible;
+}
+
+.history-fabric__pick-up-fabric img {
+  width: 137.738%;
+  height: 51.997%;
+  object-fit: cover;
+  transform: rotate(80.1deg) scaleY(-1);
+}
+
+.history-scent-scroll{--title-opacity:1;--title-blur:0px;--intro-copy-opacity:1;--story-copy-opacity:1;--flame-opacity:1}
+      .history-objects__detail-visual-02{animation:preview-clock 12s linear infinite}
+      .history-maison__story-03-feature{animation:preview-clock 45s linear infinite}
+      @keyframes preview-clock{to{transform:rotate(360deg)}}
+      @media(prefers-reduced-motion:reduce){*{animation:none!important}}</style></head><body><section class="history-fabric" aria-labelledby="history-fabric-title"><img class="history-fabric__background" src="/media/diptyque-history/fabric/history-fabric-background.png" alt="" aria-hidden="true" loading="eager" decoding="async"><header class="history-fabric__hero"><h2 id="history-fabric-title">FABRIC</h2><p>It began with a pattern.<br>Before scent, there was texture.</p></header><div class="history-fabric__asset history-fabric__floating-object-01" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-decorative-object-01.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__story-canvas"><div class="history-fabric__canvas-centered history-fabric__canvas-fabric-01" aria-hidden="true"><img src="/media/diptyque-history/fabric/story-decorative-fabric-01.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__canvas-centered history-fabric__canvas-fabric-02" aria-hidden="true"><img src="/media/diptyque-history/fabric/story-decorative-fabric-01.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__canvas-asset history-fabric__pattern-top" aria-hidden="true"><img src="/media/diptyque-history/fabric/story-pattern-layer-top.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__canvas-asset history-fabric__pattern-bottom" aria-hidden="true"><img src="/media/diptyque-history/fabric/story-pattern-layer-top.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__canvas-asset history-fabric__canvas-detail-01" aria-hidden="true"><img src="/media/diptyque-history/fabric/story-decorative-detail-01.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__canvas-centered history-fabric__canvas-collage-01" aria-hidden="true"><img src="/media/diptyque-history/fabric/story-decorative-collage-01.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__canvas-asset history-fabric__founders-visual" aria-hidden="true"><img src="/media/diptyque-history/fabric/story-founders-visual.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__canvas-asset history-fabric__bottom-collage" aria-hidden="true"><img src="/media/diptyque-history/fabric/story-bottom-collage.png" alt="" loading="eager" decoding="async"></div><article class="history-fabric__story history-fabric__story--one"><h3>A Language<br>Born from<br>Fabric</h3><div class="history-fabric__story-copy"><p>딥디크의 첫 번째 언어는 향이 아니라<br>패턴과 직물이었습니다.<br>형태와 색, 반복되는 리듬 속에서<br>브랜드의 감각이 처음 모습을 드러냈습니다.</p><p>서로 다른 예술적 배경을 가진 세 창립자는<br>하나의 공간에서 감각을 공유했습니다.<br>각자의 시선은 패브릭과 드로잉을 통해<br>하나의 새로운 세계로 연결되었습니다.</p></div></article><article class="history-fabric__story history-fabric__story--two"><h3>Three Visions<br>One World</h3><div class="history-fabric__story-copy"><p>세 사람은 같은 것을 보면서도 서로<br>다른 방식으로 해석했습니다.<br>그 차이는 오히려 딥디크만의 독특한 균형과<br>리듬을 만들어냈습니다.</p><p>패브릭 위에는 자연과 기하학,<br>여행에서 얻은 인상들이 함께 등장했습니다.<br>작은 표면 안에 이미 딥디크가 바라보는<br>넓은 세계가 담겨 있었습니다.</p></div></article><div class="history-fabric__canvas-asset history-fabric__canvas-detail-02" aria-hidden="true"><img src="/media/diptyque-history/fabric/story-decorative-detail-02.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__object-accent" aria-hidden="true"><img src="/media/diptyque-history/fabric/story-object-accent.png" alt="" loading="eager" decoding="async"></div></div><div class="history-fabric__centered-asset history-fabric__floating-object-02" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-decorative-object-02.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__centered-asset history-fabric__floating-fabric-01" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-decorative-fabric-01.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__centered-asset history-fabric__floating-object-03" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-decorative-object-03.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__centered-asset history-fabric__floating-object-05" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-decorative-object-05.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__centered-asset history-fabric__floating-object-06" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-decorative-object-06.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__asset history-fabric__floating-object-07" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-decorative-object-07.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__asset history-fabric__floating-accent-01" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-small-accent-01.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__centered-asset history-fabric__floating-object-08" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-decorative-object-08.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__asset history-fabric__floating-botanical-01" aria-hidden="true"><img class="history-fabric__botanical-pot" src="/media/diptyque-history/fabric/floating-botanical-pot.png" alt="" loading="eager" decoding="async"><img class="history-fabric__botanical-leaves" src="/media/diptyque-history/fabric/floating-botanical-leaves.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__centered-asset history-fabric__floating-collage-01" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-fabric-collage-01.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__asset history-fabric__floating-collage-02" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-fabric-collage-02.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__centered-asset history-fabric__floating-accent-02" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-small-accent-02.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__centered-asset history-fabric__floating-accent-03" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-small-accent-03.png" alt="" loading="eager" decoding="async"></div><div class="history-fabric__centered-asset history-fabric__pick-up-fabric history-fabric__pick-up-fabric--idle" aria-hidden="true"><img src="/media/diptyque-history/fabric/fabric-pick-up.png" alt="" loading="eager" decoding="async" data-once-gif="/media/diptyque-history/fabric/fabric-pick-up.gif"></div><div class="history-fabric__centered-asset history-fabric__floating-object-04" aria-hidden="true"><img src="/media/diptyque-history/fabric/floating-decorative-object-04.png" alt="" loading="eager" decoding="async"></div></section></body></html>

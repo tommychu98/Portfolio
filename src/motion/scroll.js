@@ -3,6 +3,15 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 let lenis;
+// Pinned sections may register in different React effect phases. Measure them
+// in document order so an earlier pin's spacing reaches every later section.
+function refreshLayout() {
+  ScrollTrigger.sort((a, b) => {
+    if (!a.trigger || !b.trigger || a.trigger === b.trigger) return 0;
+    return a.trigger.compareDocumentPosition(b.trigger) & 2 ? 1 : -1;
+  });
+  ScrollTrigger.refresh();
+}
 export function scrollToPosition(target, immediate = false) {
   if (lenis) lenis.scrollTo(target, { immediate });
   else if (typeof target === 'number') window.scrollTo({top:target,behavior:'instant'});
@@ -19,7 +28,7 @@ export function initScroll() {
     tick = time => lenis?.raf(time * 1000);
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
-    ScrollTrigger.refresh();
+    refreshLayout();
   };
   const click = event => {
     const a = event.target.closest('a[href^="#"]');
@@ -37,7 +46,12 @@ export function initScroll() {
     });
   };
   let timer;
-  const refresh = () => { clearTimeout(timer); timer = setTimeout(() => ScrollTrigger.refresh(),100); };
+  const refresh = event => {
+    // These frames and object slots have fixed geometry. Refreshing pins on
+    // iframe load reparents the frame, reloads it, and causes a refresh loop.
+    if (event?.target?.tagName === 'IFRAME' || event?.target?.closest?.('#diptyque-history')) return;
+    clearTimeout(timer); timer = setTimeout(refreshLayout,100);
+  };
   setup();
   document.addEventListener('click',click);
   document.addEventListener('load',refresh,true);
