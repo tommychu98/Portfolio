@@ -47,9 +47,7 @@ try {
     const getY = () => chapter.locator('[data-preview-page]').first().evaluate(el => new DOMMatrix(getComputedStyle(el).transform).m42);
     const y1 = await getY(); await page.waitForTimeout(1300); const y2 = await getY();
     assert(y2 < y1, `${name}: full page must move down automatically`);
-    await chapter.getByRole('button', { name: `${name} 미리보기 일시정지`, exact: true }).click();
-    const paused = await getY(); await page.waitForTimeout(350); assert(Math.abs(await getY() - paused) < .1);
-    await chapter.getByRole('button', { name: `${name} 미리보기 재생`, exact: true }).click();
+    assert.equal(await chapter.locator('.history-preview button, .history-preview input').count(), 0, 'Full-page preview has no playback controls');
     await chapter.locator('.history-preview__viewport').evaluate(async el => {
       const { gsap } = await import('/src/motion/scroll.js');
       const loop = gsap.getTweensOf(el.querySelector('[data-preview-page]'))[0].parent;
@@ -76,7 +74,7 @@ try {
       const { gsap } = await import('/src/motion/scroll.js');
       gsap.getTweensOf(el.querySelector('[data-preview-page]'))[0].parent.timeScale(1);
     });
-    console.log(`${name}: objects, hover, autoplay, pause, bottom, crossfade, repeat passed`);
+    console.log(`${name}: objects, hover, autoplay, bottom, crossfade, repeat passed`);
   }
   // Exit with physical wheel input, then return through the header anchor.
   await page.mouse.move(700, 500); await page.mouse.wheel(0, 2000); await page.waitForTimeout(1800);
@@ -89,7 +87,7 @@ try {
   assert.notEqual(await page.locator('[data-history-chapter][data-active="true"] h3').textContent(), 'FABRIC');
   await page.mouse.wheel(0, -2200); await page.waitForTimeout(1800);
   assert.equal(await page.locator('[data-history-chapter][data-active="true"] h3').textContent(), 'FABRIC');
-  // Mobile and reduced motion keep all eight objects and an accessible page viewer.
+  // Mobile and reduced motion show one selected chapter, with automatic pan.
   await page.setViewportSize({ width: 390, height: 844 }); await page.waitForTimeout(1000);
   await page.locator('.brand-history__chapter--fabric').scrollIntoViewIfNeeded();
   assert.equal(await page.locator('#diptyque-history').evaluate(el => el.classList.contains('is-animated')), false);
@@ -97,8 +95,9 @@ try {
   await page.screenshot({ path: `${out}/mobile.png` });
   for (const chapter of await page.locator('[data-history-chapter]').all()) assert.equal(await chapter.locator('.history-object button').count(), 8);
   await page.emulateMedia({ reducedMotion: 'reduce' }); await page.waitForTimeout(800);
-  assert.equal(await page.locator('.history-preview__seek').count(), 4);
+  assert.equal(await page.locator('.history-preview__seek').count(), 0);
+  assert.equal(await page.locator('[data-history-chapter]:not([hidden])').count(), 1);
   assert.equal(await page.locator('[data-history-chapter][aria-hidden="true"]').count(), 0);
   assert.deepEqual(errors, []);
-  await writeFile(`${out}/result.json`, JSON.stringify({ errors, status: 'passed', chapters: 4, objects: 32, checks: ['header entry', 'full page autoplay', 'pause/resume', 'page bottom', 'crossfade', 'loop restart', 'hover explanations', 'forward/reverse wheel', 'next section', 're-entry', '390px mobile', 'reduced motion'] }, null, 2));
+  await writeFile(`${out}/result.json`, JSON.stringify({ errors, status: 'passed', chapters: 4, objects: 32, checks: ['header entry', 'full page autoplay', 'no playback controls', 'page bottom', 'crossfade', 'loop restart', 'hover explanations', 'forward/reverse wheel', 'next section', 're-entry', '390px mobile', 'reduced motion'] }, null, 2));
 } finally { await browser.close(); }

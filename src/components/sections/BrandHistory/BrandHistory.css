@@ -1,9 +1,16 @@
 .brand-history{position:relative;background:var(--paper);color:var(--ink);border-top:1px solid var(--line);scroll-margin-top:0}
 .brand-history__stage{padding:90px var(--gutter) 24px;background:var(--paper)}
-.brand-history__header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:24px}
-.brand-history__header .section-label{margin:0}
+.brand-history__header{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:26px 32px;margin-bottom:30px;flex-shrink:0}
+.brand-history__header .section-label{margin:0;font-size:13px;letter-spacing:.06em}
 .brand-history__header>a{font:500 11px var(--sans);letter-spacing:.05em;flex-shrink:0}
+.brand-history__intro{grid-column:1/-1;display:flex;justify-content:space-between;align-items:flex-end;gap:32px}
+.brand-history__intro h2{margin:0;font:400 clamp(48px,5.65vw,82px)/1.03 var(--poster);letter-spacing:-.025em}
+.brand-history__intro h2 em{font-style:normal;color:var(--teal-dark)}
+.brand-history__project{max-width:410px;width:31%;padding-bottom:4px}
+.brand-history__project>span{font:500 13px/1.6 var(--subheading);letter-spacing:.055em;color:var(--teal-dark)}
+.brand-history__project p{margin-top:10px;font:400 16px/1.7 var(--sans);word-break:keep-all}
 .brand-history__chapter{display:grid;grid-template-columns:1fr 1fr;gap:5%;margin-bottom:70px}
+.brand-history__chapter[hidden]{display:none}
 .brand-history__hero{position:relative;min-height:520px;overflow:hidden;background:var(--history-color)}
 .brand-history__tiles{position:absolute;inset:0}
 .brand-history__tile{position:absolute;top:0;width:25.05%;height:100%;overflow:hidden}
@@ -29,11 +36,23 @@
 .brand-history__footer button[aria-current]{opacity:1;border-bottom-color:currentColor}
 .brand-history__footer button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 .brand-history.is-animated{height:600svh}
-.brand-history.is-animated .brand-history__stage{position:sticky;top:0;height:100svh;min-height:650px;display:flex;flex-direction:column}
+.brand-history.is-animated .brand-history__stage{position:sticky;top:0;height:100svh;display:flex;flex-direction:column}
 .brand-history.is-animated .brand-history__chapters{position:relative;flex:1;min-height:0;margin-bottom:24px}
-.brand-history.is-animated .brand-history__chapter{position:absolute;inset:0;margin:0;pointer-events:none}
+.brand-history.is-animated .brand-history__chapter{position:absolute;inset:0;margin:0;grid-template-rows:minmax(0,1fr);pointer-events:none}
 .brand-history.is-animated .brand-history__hero{min-height:0}
 .brand-history__chapter{scroll-margin-top:100px}
+@media(min-width:1024px) and (max-height:739px){
+ .brand-history.is-animated .brand-history__stage{padding-top:64px;padding-bottom:16px}
+ .brand-history.is-animated .brand-history__header{margin-bottom:14px}
+ .brand-history.is-animated .brand-history__chapters{margin-bottom:14px}
+ .brand-history.is-animated .brand-history__editorial{gap:6px;min-height:0}
+ .brand-history.is-animated .history-object__visual{height:clamp(28px,5vh,37px)}
+ .brand-history.is-animated .history-object__number{font-size:8px;line-height:1.2;margin-top:3px}
+ .brand-history.is-animated .brand-history__copy{padding:0}
+ .brand-history.is-animated .brand-history__copy h4{font-size:16px;line-height:1.35;margin:6px 0 8px}
+ .brand-history.is-animated .brand-history__copy p{font-size:11px;line-height:1.55}
+ .brand-history.is-animated .brand-history__copy p+p{margin-top:6px}
+}
 @media(max-width:1023px){
  .brand-history__stage{padding-inline:24px}
  .brand-history__chapter{gap:24px}
@@ -41,12 +60,18 @@
  .brand-history__copy h4{margin:8px 0 12px}
  .brand-history__copy p{line-height:1.7}
  .brand-history__thumbnails--bottom img{height:65px}
+ .brand-history__project{width:36%;max-width:340px}
 }
 @media(max-width:767px){
  .brand-history__stage{padding:76px 20px 18px}
- .brand-history__header{margin-bottom:16px}
- .brand-history__header .section-label{font-size:9px;gap:8px}
+ .brand-history__header{margin-bottom:24px;row-gap:22px}
+ .brand-history__header .section-label{font-size:11px;gap:8px}
  .brand-history__header>a{font-size:9px}
+ .brand-history__intro{flex-direction:column;align-items:flex-start;gap:20px}
+ .brand-history__intro h2{font-size:clamp(40px,10vw,62px)}
+ .brand-history__project{width:100%;max-width:none}
+ .brand-history__project>span{font-size:13px}
+ .brand-history__project p{font-size:16px;line-height:1.65}
  .brand-history__chapter{grid-template-columns:1fr;gap:18px}
  .brand-history__hero{min-height:330px}
  .brand-history__title{font-size:clamp(55px,14vw,90px)}
@@ -88,11 +113,7 @@
 .history-preview__page{position:absolute;inset:0 auto auto 0;width:100%;will-change:transform,opacity}
 .history-preview__page:nth-child(2){opacity:0}
 .history-preview iframe{display:block;border:0;max-width:none;transform-origin:top left;pointer-events:none}
-.history-preview__controls{position:relative;display:flex;align-items:center;gap:12px;min-height:38px;padding:8px 12px;background:var(--paper);border-top:1px solid var(--line);font:400 9px/1.3 var(--sans);letter-spacing:.04em}
-.history-preview__controls>span{margin-right:auto}
-.history-preview__controls button{border:0;background:none;color:inherit;padding:4px;font:inherit;cursor:pointer}
-.history-preview__controls button:focus-visible,.history-object button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.history-preview__seek{width:100%;accent-color:var(--ink)}
+.history-object button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .history-object{position:relative;z-index:1}
 .history-object:hover,.history-object:focus-within{z-index:5}
 .history-object button{display:block;border:0;padding:0;width:100%;text-align:left;color:inherit;background:transparent;cursor:help}
