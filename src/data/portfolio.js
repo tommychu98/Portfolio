@@ -1,8 +1,8 @@
 // Temporary copy. Add local video/poster URLs when the five films are ready.
 export const filmArchive = [
-  { id: 'film-01', title: 'AFTER THE RAIN', description: '비가 지나간 도시, 젖은 빛 사이에 남아 있는 작은 순간들.', year: 'TBD', genre: 'Short Film', role: ['Director', 'Editor'], video: '', poster: '', detailUrl: '' },
-  { id: 'film-02', title: 'SOFT FOCUS', description: '익숙한 풍경을 낯선 시선으로 바라보는 짧은 시각적 기록.', year: 'TBD', genre: 'Visual Essay', role: ['Director', 'Cinematographer'], video: '', poster: '', detailUrl: '' },
+  { id: 'film-01', title: 'Romance Deadline', description: '결혼보단 사랑이 하고싶은 여성의 이야기. "사랑의 데드라인이 있을까?"', year: '', genre: 'SHORTFILM', role: ['EDITOR', 'SCRIPT SUPERVISOR'], video: '', youtubeId: 'qXL1rfAt8Tg', poster: '/media/romance-deadline/rd1.png', stills: [2, 3, 4, 5].map(number => `/media/romance-deadline/rd${number}.png`), detailUrl: '' },
+  { id: 'film-02', title: 'FINE', description: '판데믹 사태를 마주한 한인 가족의 이야기. "난 괜찮아, 정말로."', year: '', genre: 'SHORT FILM', role: ['DIRECTOR', 'EDITOR'], video: '', youtubeId: 'wrRYcgvTuqs', poster: '/media/fine/fine1.png', posterPosition: '47% center', posterOpacity: 0.9, stills: [2, 3, 4, 5].map(number => `/media/fine/fine${number}.png`), detailUrl: '' },
   { id: 'film-03', title: 'BLUE HOUR', description: '낮과 밤의 경계에서 천천히 변화하는 색과 움직임.', year: 'TBD', genre: 'Mood Film', role: ['Art Director', 'Editor'], video: '', poster: '', detailUrl: '' },
-  { id: 'film-04', title: 'IN BETWEEN', description: '스쳐 지나가는 장면 사이에서 발견한 일상의 리듬.', year: 'TBD', genre: 'Motion Study', role: ['Motion Designer', 'Editor'], video: '', poster: '', detailUrl: '' },
-  { id: 'film-05', title: 'STILL HERE', description: '시간이 흐른 뒤에도 마음에 남는 공간과 사람의 흔적.', year: 'TBD', genre: 'Visual Story', role: ['Director', 'Editor'], video: '', poster: '', detailUrl: '' },
+  { id: 'film-04', title: 'EVERY DAY PROJECT', description: '우크라이나 전쟁의 매일을 그린 작가의 홍보 영상. 타이포와 컷편집 위주 제작.', year: '', genre: 'SNS MEDIA', role: ['EDITOR'], video: '/media/every-day-project/everyday.mp4', poster: '/media/every-day-project/everyday1.png', posterPosition: 'center', detailUrl: '' },
+  { id: 'film-05', title: 'STARSCOLLECTIVE EVENT NIGHT', description: 'NFT 아티스트 홍보성 회사 이벤트 영상. 촬영과 SNS용 영상 편집 전담.', year: '', genre: 'SNS MEDIA', role: ['DP', 'EDITOR'], video: '/media/starscollective-event-night/starscollective_party.mp4', poster: '/media/starscollective-event-night/party1.png', posterPosition: 'center', detailUrl: '' },
 ];

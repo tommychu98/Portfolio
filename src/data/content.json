@@ -283,14 +283,17 @@
     },
     {
       "title": "WEBSITE HERO",
-      "subtitle": "A quiet presence.",
-      "src": "/media/images/shortform/hero.webm",
-      "poster": "/media/images/shortform/hero-poster.png",
+      "subtitle": "The world of Diptyque.",
+      "brand": "DIPTYQUE",
+      "src": "/media/videos/diptyque/website-hero.mp4",
+      "type": "video/mp4",
+      "duration": 21.184,
+      "loop": true,
       "wide": true,
       "meta": [
         {
           "label": "기획 의도",
-          "text": "빛과 여백, 제품의 조형미를 활용해 홈페이지 첫 화면에서 바이레도의 브랜드 분위기를 전달하는 히어로 광고 콘셉트"
+          "text": "딥디크 웹사이트의 히어로 영상 제작. 딥디크만의 감성을 보여줄 세계관을 설정했습니다."
         },
         {
           "label": "타깃",
@@ -298,19 +301,19 @@
         },
         {
           "label": "제작 과정",
-          "text": "히어로 콘셉트 기획 → AI 제품 이미지 생성 → 가로형 구도 설계 → 4개 장면 편집 → 카피·타이포그래피 적용"
+          "text": "영상 기획 → 비주얼 설정 → 캐릭터 시트·스토리보드 작성 → AI 영상 제작 → Premiere Pro 편집"
         },
         {
           "label": "편집 포인트",
-          "text": "제품은 오른쪽, 메시지는 왼쪽에 배치하고 부드러운 카메라 움직임과 문구 전환으로 첫 화면의 집중도 조절"
+          "text": "영상의 끝부분과 웹페이지의 시작점이 자연스럽게 연결되는 스토리텔링을 구현했습니다."
         },
         {
           "label": "사용 도구",
-          "text": "OpenAI 이미지 생성 · HTML/CSS 모션 · Playwright · FFmpeg"
+          "text": "Higgsfield · ChatGPT · Gemini · Premiere Pro · After Effects · Figma"
         },
         {
           "label": "포맷",
-          "text": "기업 홈페이지 히어로 광고용 · 가로형 16:9 · 16초"
+          "text": "딥디크 웹사이트 히어로 영상 · 가로형 16:9 · 약 21초 · 반복 재생"
         }
       ]
     }

@@ -71,22 +71,21 @@ export default function DeskResearchCanvas({onExpand,layers=deskResearchLayers,b
       const box=bounds(id),w=view.clientWidth,h=view.clientHeight;
       const fit=Math.min(w/box.w,Math.max(1,h-36)/box.h);
       const focusFit=layers.find(layer=>layer.id===id)?.focusFit;
-      const scale=id?(focusFit?fit*focusFit:Math.max(fit*1.44,w*.9/box.w)):fit*.94;
+      // Once focused, retain the live magnification across layer selections,
+      // including interrupted flights. Only entering/leaving overview changes it.
+      const keepZoom=Boolean(id&&currentId);
+      const scale=keepZoom?pose.scale:id?(focusFit?fit*focusFit:Math.max(fit*1.44,w*.9/box.w)):fit*.94;
       const target={scale,cx:box.x+box.w/2,cy:box.y+box.h/2};
       const start={...pose},distance=Math.hypot(target.cx-start.cx,target.cy-start.cy);
       const travel=id&&currentId&&id!==currentId;
       const duration=travel?Math.min(2.15,1.65+distance/25000):id?1.35:1.5;
-      // A single eased clock drives pan and zoom together. The logarithmic zoom
-      // valley widens the view mid-flight without stopping the pan at a waypoint.
-      const midScale=travel?Math.min(start.scale,scale)*.68:Math.sqrt(start.scale*scale);
-      const dip=travel?Math.log(Math.sqrt(start.scale*scale)/midScale):0;
       currentId=id;
       // Explicit Layers/Overview clicks request this spatial transition. Keep
       // those animated; reduced motion still applies to automatic layout changes.
       const shouldAnimate=animate&&(interactive||!media.matches);
       el.dataset.cameraMoving=String(shouldAnimate);
       if(!shouldAnimate){Object.assign(pose,target);render();}
-      await Promise.all([preparePath(start,target,Math.min(start.scale,scale,midScale)),shouldAnimate?uiReady:Promise.resolve()]);
+      await Promise.all([preparePath(start,target,Math.min(start.scale,scale)),shouldAnimate?uiReady:Promise.resolve()]);
       if(!alive||ticket!==request)return;
       el.dataset.backgroundReady='true';
       context.add(()=>{
@@ -102,7 +101,7 @@ export default function DeskResearchCanvas({onExpand,layers=deskResearchLayers,b
           const t=clock.progress;
           pose.cx=start.cx+(target.cx-start.cx)*t;
           pose.cy=start.cy+(target.cy-start.cy)*t;
-          pose.scale=Math.exp(Math.log(start.scale)*(1-t)+Math.log(scale)*t-dip*Math.sin(Math.PI*t)**2);
+          pose.scale=keepZoom?start.scale:Math.exp(Math.log(start.scale)*(1-t)+Math.log(scale)*t);
           render();
         }});
       });

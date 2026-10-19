@@ -9,7 +9,47 @@ gsap.registerPlugin(CustomEase);
 // A broad acceleration/deceleration curve avoids the previous mid-motion snap.
 CustomEase.create('filmArchiveReveal', '0.4,0,0.3,1');
 
-function ArchiveVideo({ film }) {
+function ArchiveStills({ film, expanded, motionEnabled }) {
+  const [slide, setSlide] = useState(0);
+  useEffect(() => {
+    if (!expanded || !motionEnabled) return;
+    const timer = window.setInterval(() => setSlide(value => (value + 1) % film.stills.length), 4000);
+    return () => window.clearInterval(timer);
+  }, [expanded, motionEnabled, film.stills]);
+  return <>
+    <img className="film-archive__cover" src={film.poster} alt="" style={{ opacity: expanded ? 0 : (film.posterOpacity ?? 0.45), objectPosition: film.posterPosition }} />
+    {expanded && <div className="film-archive__stills">
+      {film.stills.map((src, index) => <img key={src} src={src} alt={`${film.title} 스틸컷 ${index + 1}`} aria-hidden={index !== slide} style={{ opacity: index === slide ? 1 : 0, transitionDuration: motionEnabled ? '1200ms' : '0ms' }} />)}
+    </div>}
+  </>;
+}
+
+function ArchiveEmbed({ film, playing }) {
+  const ref = useRef(null);
+  const monitorRef = useRef(null);
+  const [initialAutoplay] = useState(playing ? 1 : 0);
+  useEffect(() => {
+    const frame = monitorRef.current;
+    return () => { gsap.killTweensOf(frame); };
+  }, []);
+  const highlightFrame = highlighted => {
+    gsap.to(monitorRef.current, { borderColor: highlighted ? '#77756b' : '#343631', duration: 0.3, ease: 'power2.out', overwrite: true });
+  };
+  const command = () => {
+    const send = func => ref.current?.contentWindow?.postMessage(JSON.stringify({ event: 'command', func, args: [] }), 'https://www.youtube.com');
+    if (playing) send('mute');
+    send(playing ? 'playVideo' : 'pauseVideo');
+  };
+  useEffect(command, [playing]);
+  return <figure className="film-archive__monitor" onPointerEnter={() => highlightFrame(true)} onPointerLeave={() => highlightFrame(false)} onFocus={() => highlightFrame(true)} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) highlightFrame(false); }}>
+    <div ref={monitorRef} className="film-archive__monitor-frame">
+      <iframe ref={ref} className="film-archive__embed" title={`${film.title} 영상`} src={`https://www.youtube.com/embed/${film.youtubeId}?enablejsapi=1&autoplay=${initialAutoplay}&mute=1&playsinline=1&rel=0&origin=${encodeURIComponent(window.location.origin)}`} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen onLoad={command} />
+    </div>
+    <figcaption className="film-archive__monitor-caption"><span>{film.title}</span><span className="film-archive__monitor-label">WATCH FILM ↗</span></figcaption>
+  </figure>;
+}
+
+function ArchiveVideo({ film, expanded, motionEnabled }) {
   const ref = useRef(null);
   const [failed, setFailed] = useState(false);
   useEffect(() => {
@@ -17,11 +57,10 @@ function ArchiveVideo({ film }) {
     if (!video) return;
     let visible = false;
     let disposed = false;
-    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const update = () => {
-      if (!visible || document.hidden || motion.matches) { video.pause(); return; }
+      if (!expanded || !motionEnabled || !visible || document.hidden) { video.pause(); return; }
       video.play()?.then(() => {
-        if (disposed || !visible || document.hidden || motion.matches) video.pause();
+        if (disposed || !visible || document.hidden) video.pause();
         else setFailed(false);
       }).catch(() => { if (!disposed) setFailed(true); });
     };
@@ -31,24 +70,23 @@ function ArchiveVideo({ film }) {
     });
     observer.observe(video);
     document.addEventListener('visibilitychange', update);
-    motion.addEventListener('change', update);
     return () => {
       disposed = true;
       observer.disconnect();
       video.pause();
       document.removeEventListener('visibilitychange', update);
-      motion.removeEventListener('change', update);
     };
-  }, []);
+  }, [expanded, motionEnabled]);
   return <>
-    {film.poster && <img className="film-archive__media" src={film.poster} alt="" />}
-    <video ref={ref} className="film-archive__media" style={{ opacity: failed ? 0 : 1 }} src={film.video} poster={film.poster || undefined} autoPlay muted loop playsInline preload="metadata" aria-hidden="true" onError={() => setFailed(true)} />
+    {film.poster && <img className="film-archive__cover" src={film.poster} alt="" style={{ opacity: expanded ? 1 : (film.posterOpacity ?? 0.45), objectPosition: film.posterPosition }} />}
+    <video ref={ref} className="film-archive__media" style={{ opacity: expanded && !failed ? 1 : 0 }} src={film.video} poster={film.poster || undefined} muted loop playsInline preload="metadata" aria-hidden="true" onError={() => setFailed(true)} />
   </>;
 }
 
 export default function FilmArchive() {
   const ref = useRef(null);
   const [active, setActive] = useState(null);
+  const [hovered, setHovered] = useState(null);
   // This gallery's explicitly requested hover motion can be disabled locally.
   // Do not silently suppress it based on the browser's reduced-motion setting.
   const [motionEnabled, setMotionEnabled] = useState(true);
@@ -92,17 +130,19 @@ export default function FilmArchive() {
       <h2 id="film-archive-title" className="display">FILM ARCHIVE.</h2>
       <div className="film-archive__intro"><p>Selected Films &amp; Visual Stories</p><p>영상 제작을 통해 쌓아온 시각적 경험과 이야기를 소개합니다.</p></div>
     </div>
-    <div className="film-archive__caption"><span>SELECTED FILMS / 05</span><span>영상 업로드 예정 · 임시 작품 정보 <button type="button" className="film-archive__motion-toggle" aria-pressed={motionEnabled} onClick={() => setMotionEnabled(enabled => !enabled)}>모션 {motionEnabled ? '켜짐' : '꺼짐'}</button></span></div>
+    <div className="film-archive__caption"><span>SELECTED FILMS / 05</span><span><button type="button" className="film-archive__motion-toggle" aria-pressed={motionEnabled} onClick={() => setMotionEnabled(enabled => !enabled)}>모션 {motionEnabled ? '켜짐' : '꺼짐'}</button></span></div>
     </header>
     <div className="film-archive__gallery" role="group" aria-label="영상 작품 선택">
-      {filmArchive.map((film, index) => <button key={film.id} type="button" className={`film-archive__panel${index === active ? ' is-active' : ''}`} aria-pressed={index === active} aria-label={`${film.title} 선택${film.video ? '' : ' — 영상 준비 중'}`} onPointerEnter={event => { if (event.pointerType === 'mouse') setActive(index); }} onFocus={() => setActive(index)} onClick={() => setActive(index)}>
-        {film.video && <ArchiveVideo film={film} />}
+      {filmArchive.map((film, index) => <div key={film.id} role="group" tabIndex={0} className={`film-archive__panel${index === active ? ' is-active' : ''}${film.stills ? ' film-archive__panel--stills' : ''}`} aria-label={`${film.title}${film.video || film.youtubeId ? '' : ' — 영상 준비 중'}`} onPointerEnter={event => { if (event.pointerType === 'mouse') { setActive(index); setHovered(index); } }} onPointerLeave={() => setHovered(null)} onFocus={() => setActive(index)} onClick={() => setActive(index)} onKeyDown={event => { if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); setActive(index); } }}>
+        {film.stills && <ArchiveStills key={String(index === active || !wide)} film={film} expanded={index === active || !wide} motionEnabled={motionEnabled} />}
+        {film.video && <ArchiveVideo film={film} expanded={index === active || !wide} motionEnabled={motionEnabled} />}
         <span className="film-archive__overlay">
-          <span className="film-archive__row film-archive__title"><span>{film.title}</span><span className="film-archive__year">{film.year}</span></span>
+          <span className="film-archive__row film-archive__title"><span>{film.title}</span>{film.year && <span className="film-archive__year">{film.year}</span>}</span>
           <span className="film-archive__row film-archive__description">{film.description}</span>
           <span className="film-archive__row film-archive__meta">{film.genre} · {film.role.join(' / ')}</span>
         </span>
-      </button>)}
+        {film.youtubeId && (index === active || !wide) && <ArchiveEmbed film={film} playing={index === hovered && motionEnabled} />}
+      </div>)}
     </div>
   </section>;
 }

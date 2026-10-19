@@ -5,8 +5,8 @@ import Link from '../../ui/Link';
 import './Film.css';
 function FilmPlayer({film,index}){
   const [failed,setFailed]=useState(false);
-  const duration=film.duration??16;
-  return <div className={`film__media ${film.wide?'film__media--wide':''}`}><video controls playsInline preload="none" poster={film.poster} aria-label={`${film.title} — 원본 오디오 포함 ${duration}초 영상`} onError={()=>setFailed(true)} width={film.wide?1280:720} height={film.wide?720:1280}><source src={film.src} type={film.type??'video/webm'}/><a href={film.src}>영상 파일 열기</a></video><div className="film__media-caption"><span>0{index+1} / {film.wide?'16:9':'9:16'} · {duration} SEC</span><Link href={film.src} target="_blank" rel="noopener noreferrer">{failed?'영상 파일로 보기':'ORIGINAL FILM'}</Link></div>{failed&&<p role="status">이 브라우저에서 재생되지 않아 원본 영상 링크를 제공합니다.</p>}</div>;
+  const duration=Math.round(film.duration??16);
+  return <div className={`film__media ${film.wide?'film__media--wide':''}`}><video controls playsInline loop={film.loop??false} preload={film.loop?'metadata':'none'} poster={film.poster} aria-label={`${film.title} — 원본 오디오 포함 ${duration}초 영상${film.loop?' · 반복 재생':''}`} onError={()=>setFailed(true)} width={film.wide?1280:720} height={film.wide?720:1280}><source src={film.src} type={film.type??'video/webm'}/><a href={film.src}>영상 파일 열기</a></video><div className="film__media-caption"><span>0{index+1} / {film.wide?'16:9':'9:16'} · {duration} SEC</span><Link href={film.src} target="_blank" rel="noopener noreferrer">{failed?'영상 파일로 보기':'ORIGINAL FILM'}</Link></div>{failed&&<p role="status">이 브라우저에서 재생되지 않아 원본 영상 링크를 제공합니다.</p>}</div>;
 }
 export default function Film(){
   const ref=useRef(null);
