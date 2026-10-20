@@ -1,0 +1,44 @@
+[
+  {
+    "width": 1440,
+    "elements": 91,
+    "sections": [
+      "profile",
+      "work",
+      "zara",
+      "zara-process",
+      "diptyque-history",
+      "personal",
+      "film",
+      "film-archive",
+      "clone",
+      "skills",
+      "about",
+      "closing",
+      "contact"
+    ],
+    "geometryDifferences": [],
+    "errors": []
+  },
+  {
+    "width": 390,
+    "elements": 91,
+    "sections": [
+      "profile",
+      "work",
+      "zara",
+      "zara-process",
+      "diptyque-history",
+      "personal",
+      "film",
+      "film-archive",
+      "clone",
+      "skills",
+      "about",
+      "closing",
+      "contact"
+    ],
+    "geometryDifferences": [],
+    "errors": []
+  }
+]

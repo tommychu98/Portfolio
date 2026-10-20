@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Initial Intro visible; existing Intro untouched; no external design-source links",
+    "Pending split resize and live reduced-motion toggles restore readable text",
+    "Research canvas selection/reset and chapter changes; Key Finding remains owned by its original timeline",
+    "History scroll timeline remains registered and seekable without nested text reveals",
+    "Film Archive hover and click accordion preserved",
+    "Memory Wall scroll scatter and next/previous focus preserved"
+  ],
+  "errors": [],
+  "externalErrors": []
+}

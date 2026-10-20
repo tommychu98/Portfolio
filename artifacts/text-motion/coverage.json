@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "label": 44,
+    "title": 6,
+    "body": 33,
+    "subtitle": 8
+  },
+  "sections": {
+    "profile": 1,
+    "work": 1,
+    "zara": 1,
+    "zara-process": 1,
+    "diptyque-history": 4,
+    "personal": 3,
+    "film": 53,
+    "film-archive": 5,
+    "clone": 2,
+    "skills": 1,
+    "about": 2,
+    "closing": 6,
+    "contact": 11
+  },
+  "fallback": [
+    "영상 기획 → 비주얼 설정 → 캐릭터 시트·스토리보드 작성 → AI 영상 제작 → Premiere Pro 편집"
+  ],
+  "highlights": 4,
+  "noJavaScript": "17 sections readable"
+}

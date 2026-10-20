@@ -36,7 +36,6 @@
 }
 @media(max-width:767px){.film-archive__gallery{gap:6px}.film-archive__panel{height:75svh;min-height:420px}.film-archive__header{padding-bottom:20px}}
 @media(min-width:768px) and (max-width:1023px){.film-archive__overlay{padding-inline:20px}.film-archive__title{font-size:28px}}
-.film-archive__motion-toggle{margin-left:16px;padding:4px 8px;border:1px solid var(--line);background:transparent;font:inherit;color:inherit;cursor:pointer}
 
 /* Full-panel stills crossfade beneath the translucent caption gradient. */
 .film-archive__cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% center;transition:opacity .3s}

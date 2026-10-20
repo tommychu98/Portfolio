@@ -87,9 +87,7 @@ export default function FilmArchive() {
   const ref = useRef(null);
   const [active, setActive] = useState(null);
   const [hovered, setHovered] = useState(null);
-  // This gallery's explicitly requested hover motion can be disabled locally.
-  // Do not silently suppress it based on the browser's reduced-motion setting.
-  const [motionEnabled, setMotionEnabled] = useState(true);
+  const motionEnabled = true;
   const [wide, setWide] = useState(window.innerWidth >= 768);
   useEffect(() => {
     const wide = window.matchMedia('(min-width: 768px)');
@@ -130,7 +128,7 @@ export default function FilmArchive() {
       <h2 id="film-archive-title" className="display">FILM ARCHIVE.</h2>
       <div className="film-archive__intro"><p>Selected Films &amp; Visual Stories</p><p>영상 제작을 통해 쌓아온 시각적 경험과 이야기를 소개합니다.</p></div>
     </div>
-    <div className="film-archive__caption"><span>SELECTED FILMS / 05</span><span><button type="button" className="film-archive__motion-toggle" aria-pressed={motionEnabled} onClick={() => setMotionEnabled(enabled => !enabled)}>모션 {motionEnabled ? '켜짐' : '꺼짐'}</button></span></div>
+    <div className="film-archive__caption"><span>SELECTED FILMS / 05</span></div>
     </header>
     <div className="film-archive__gallery" role="group" aria-label="영상 작품 선택">
       {filmArchive.map((film, index) => <div key={film.id} role="group" tabIndex={0} className={`film-archive__panel${index === active ? ' is-active' : ''}${film.stills ? ' film-archive__panel--stills' : ''}${film.youtubeId ? ' film-archive__panel--embed' : ''}`} aria-label={`${film.title}${film.video || film.youtubeId ? '' : ' — 영상 준비 중'}`} onPointerEnter={event => { if (event.pointerType === 'mouse') { setActive(index); setHovered(index); } }} onPointerLeave={() => setHovered(null)} onFocus={() => setActive(index)} onClick={() => setActive(index)} onKeyDown={event => { if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); setActive(index); } }}>

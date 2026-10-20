@@ -1,0 +1,114 @@
+PORTFOLIO TEXT MOTION — 완료 보고
+검증일: 2026-10-20
+
+적용 범위: 기존 모션이 없는 13개 섹션의 91개 요소
+- Profile: 1
+- Selected Works: 1
+- DIPTYQUE Overview: 1
+- UX Planning Process: 1
+- DIPTYQUE Brand History: 4
+- Personal Works: 3
+- Film & Motion: 53
+- Film Archive: 5
+- Clone Coding: 2
+- Tools & Skills: 1
+- Work Ethic / Q&A: 2
+- About Me / Memory Wall: 6
+- Contact / Footer: 11
+
+효과
+- 큰 제목 6개: 글자별 상승 + 줄 마스크, 0.92초, power3.out.
+- 소제목 8개: 줄 단위 마스크, 24px 상승.
+- 본문 33개: 한국어 줄 단위 마스크, 16px 상승.
+- 라벨 44개: 분할 없이 8px 상승, 0.48초.
+- Brand History 및 About Me의 강조 구절 2곳에 청록색 밑줄 배경의 좌→우 등장 적용.
+  SplitText 처리 중에는 강조 노드가 줄별로 나뉠 수 있어 DOM 개수와 원본 구절 수는 다르다.
+- top 88%에서 1회 실행, 빠르게 지나친 텍스트도 완료 처리.
+- 완료 후 SplitText DOM을 복원하여 원래 인라인 의미와 반응형 레이아웃 유지.
+- document.fonts.ready, autoSplit, gsap.context, unmount cleanup, reduced-motion 대응.
+- data-no-text-animation 및 기존 모션/컨트롤 제외 가드 제공.
+
+레이아웃 보완
+- Film 소개의 flex intrinsic width가 분할 중 440px→428px로 변하던 문제 수정.
+- 본문 분할 측정 시 한국어 및 구두점의 원래 inline 줄바꿈 규칙 유지.
+- 모바일에서 혼합 문자 때문에 측정된 한 줄이 재차 줄바꿈되는 예외는
+  원본 문단을 유지한 Fade Up으로 처리. 390px 검증에서는 1개 문장에 해당:
+  “영상 기획 → 비주얼 설정 → 캐릭터 시트·스토리보드 작성 → AI 영상 제작 → Premiere Pro 편집”
+  이 예외에는 줄 마스크를 강제하지 않으며, 원래 줄 수와 크기를 우선한다.
+
+기존 모션 보호 / 제외
+- Intro 진입, Story의 copy 진입, Work Values 진입/퇴장.
+- Profile 제목 글자 및 본문 레이아웃 진입.
+- data-reveal 요소와 그 내부의 제목/본문/카드.
+- DIPTYQUE 가로 스크롤 트랙, ProjectList hover와 WorkFolder.
+- UX 기획의 data-entry, data-copy, data-finding 및 기존 Key Finding highlight.
+- Research Canvas 원본 레이어와 pan/zoom, 선택 컨트롤.
+- Brand History 장면/본문 전환과 오브젝트.
+- Personal Works 카드 회전, 본문 전환 및 상세 대화상자.
+- Film Archive 패널 내부 hover/click 텍스트.
+- Memory Wall 사진 scatter/focus/flip, 사진 내부 텍스트.
+- 고정 메뉴, 링크, 버튼, 입력, 동적/스크린리더 전용 텍스트.
+  기존 효과의 타이밍과 순서를 이번 작업에서 변경하지 않았다.
+
+브라우저 검증
+- Chrome + Playwright, 개발 서버 http://127.0.0.1:5173.
+- 1440×900 및 390×900: 각 91개 요소 초기화.
+- SplitText 상태와 완료 후 원본 상태의 폭/높이 차이: 0건(2px 허용).
+- 빠른 정방향 및 역방향 스크롤 후 미완료 텍스트: 0개.
+- Film / About Me 화면 캡처 및 스크롤 영상 기록.
+- 완료 후 resize, reduced-motion 상태의 새로고침 통과.
+- 아직 진입하지 않은 텍스트의 resize 및 실행 중 reduced-motion 변경 통과.
+- Intro 첫 화면, Research Canvas 선택/전체 보기 및 단계 변경 통과.
+- Key Finding 중복 적용 없음. 기존 전환 코드는 유지.
+- History ScrollTrigger 등록/스크롤 이동 확인.
+- Film Archive hover/click 아코디언 통과.
+- Memory Wall 스크롤 scatter 및 next/previous focus 통과.
+- 회귀 검증 중 애플리케이션 오류 0건, 외부 프레임 오류 0건.
+- 외부 디자인 소스 링크가 화면에 생성되지 않음.
+- JavaScript 비활성화: noscript 링크로 읽기 페이지 이동, 17개 섹션 본문 표시 통과.
+  읽기 페이지는 빌드마다 현재 React 콘텐츠에서 생성되는 정적 HTML이다.
+
+빌드 및 정적 검사
+- npm run build 통과(prebuild의 읽기 페이지 생성 포함).
+- 번들 500kB 초과 경고는 남아 있음. 배포 차단 오류는 없음.
+- 이번 공통 모션/검증/읽기 페이지 생성 코드의 oxlint 통과.
+- src 전체 검사에는 기존 Header effect cleanup 관련 경고 1개 존재.
+- 전체 npm run lint는 기존 reference/coc.js 등 참조 코드의 오류 때문에 실패.
+
+검증의 한계 / 기존 검사
+- scripts/check-brand-history.mjs: 원본 39개 에셋 및 timeline 정/역방향 DOM 검증 통과.
+- 기존 scripts/check-memory-scroll.mjs는 첫 stacked 위치/scale 기대값에서 실패.
+  해당 테스트 기대값이나 기존 사진 레이아웃을 이 작업에서 변경하지 않았다.
+  현재 UI 기준 scatter/focus 동작은 별도 브라우저 회귀 검사에서 통과했다.
+- 모든 영상의 외부 서비스 재생, 모든 사진 flip, 모든 History 장면의 시각 결과와
+  ProjectList hover 전체를 재검증한 것은 아니다.
+
+이번 작업의 관련 파일
+- src/App.jsx (공통 PortfolioTextMotion 연결; 기존 MemoryWall 연결은 유지)
+- src/components/ui/AnimatedText.jsx
+- src/components/ui/PortfolioTextMotion.jsx
+- src/motion/textReveal.js
+- src/motion/textRevealManifest.js
+- src/motion/useTextReveal.js
+- src/motion/text-motion.css
+- src/components/sections/Film/Film.css
+- scripts/check-text-motion.mjs
+- scripts/check-text-motion-regression.mjs
+- scripts/build-readable.mjs
+- package.json (prebuild)
+- index.html (noscript 읽기 링크)
+- public/readable.html (자동 생성)
+- artifacts/text-motion/* (검증 결과/화면/영상)
+
+기존 작업 디렉터리의 FilmArchive와 MemoryWall 관련 변경은 보존했다.
+프로덕션 배포, 커밋, 푸시는 실행하지 않았다.
+
+재검증
+1. npm run dev -- --host 127.0.0.1
+2. node scripts/check-text-motion.mjs
+3. node scripts/check-text-motion-regression.mjs
+4. npm run build
+
+참고 문서
+- GSAP SplitText masks: https://gsap.com/docs/v3/Plugins/SplitText/masks/
+- Codrops On-Scroll Text Highlight: https://tympanus.net/codrops/2024/04/17/some-on-scroll-text-highlight-animations/

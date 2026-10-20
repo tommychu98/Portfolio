@@ -18,8 +18,9 @@ import FilmArchive from './components/sections/FilmArchive';
 import CloneCoding from './components/sections/CloneCoding/CloneCoding';
 import Skills from './components/sections/Skills/Skills';
 import About from './components/sections/About/About';
-import Closing from './components/sections/Closing/Closing';
+import MemoryWall from './components/sections/About/MemoryWall';
 import Contact from './components/sections/Contact/Contact';
+import PortfolioTextMotion from './components/ui/PortfolioTextMotion';
 
 const introSources = introObjects.map(object=>object.src);
 
@@ -44,8 +45,9 @@ export default function App() {
       <CloneCoding />
       <Skills />
       <About />
-      <Closing />
+      <MemoryWall />
       <Contact />
+      <PortfolioTextMotion />
     </main>
   </ScrollProvider>;
 }
