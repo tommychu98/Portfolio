@@ -31,7 +31,7 @@ try {
     await goto('#memory-wall-title');
     await page.screenshot({ path: `${out}/${width}-memory-title.png` });
     assert.equal(await page.locator('#memory-wall-title').getAttribute('data-text-revealed'), 'true');
-    assert.equal(await page.locator('#memory-wall-title .text-motion-highlight').count(), 1);
+    assert.equal(await page.locator('#memory-wall-title .text-motion-highlight').count(), 0);
     // Fast forward and reverse traversal must never leave skipped copy hidden.
     const height = await page.evaluate(() => document.documentElement.scrollHeight);
     for (let y = 0; y < height; y += 1800) { await move(y); await page.waitForTimeout(35); }

@@ -1,0 +1,51 @@
+/* Keep the site's Anton poster face and palette; only opted-in titles change. */
+.highlight-title.highlight-title{
+  --title-paper:#e4b342;
+  --title-paper-back:#d5a232;
+  font-family:var(--poster);
+  font-weight:400;
+  font-size:clamp(42px,7.25vw,104px);
+  line-height:1.13;
+  letter-spacing:-.015em;
+  text-transform:uppercase;
+  color:var(--ink);
+  overflow:visible;
+}
+.highlight-title.highlight-title--hero{font-size:clamp(64px,9vw,130px)}
+.highlight-title__line{display:block}
+.highlight-title .highlight-title__paper,
+.highlight-title__paper{
+  --title-paper:#e4b342;
+  --title-paper-back:#d5a232;
+  position:relative;
+  display:inline-block;
+  isolation:isolate;
+  white-space:nowrap;
+  font:inherit;
+  letter-spacing:inherit;
+  color:var(--ink);
+  vertical-align:baseline;
+}
+.highlight-title__paper::before,
+.highlight-title__paper::after{
+  content:"";
+  position:absolute;
+  inset:.06em -.065em .015em;
+  z-index:-1;
+  pointer-events:none;
+  background-color:var(--title-paper);
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%237b571b' opacity='.13' filter='url(%23grain)' d='M0 0h140v140H0z'/%3E%3C/svg%3E");
+  background-size:140px 140px;
+  clip-path:polygon(0 2%,16% 0,37% 1%,61% 0,82% 2%,100% 0,99.6% 35%,100% 68%,99.7% 100%,76% 99%,51% 100%,29% 98.5%,0 100%,.4% 63%,0 30%);
+  transform:rotate(-1.15deg);
+}
+.highlight-title__paper::before{
+  inset:.045em -.035em -.02em -.075em;
+  background-color:var(--title-paper-back);
+  transform:rotate(1.25deg) translateY(.015em);
+}
+.highlight-title .text-motion-line-mask{overflow-clip-margin:.23em}
+@media(max-width:820px){
+  .highlight-title.highlight-title{font-size:clamp(42px,10vw,64px);line-height:1.15}
+  .highlight-title.highlight-title--hero{font-size:clamp(58px,16vw,88px)}
+}

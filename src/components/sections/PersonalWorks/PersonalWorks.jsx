@@ -1,3 +1,4 @@
+import HighlightTitle, { TitleHighlight } from '../../ui/HighlightTitle';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import content from '../../../data/projects';
 import Photo from '../../ui/Photo';
@@ -86,7 +87,7 @@ export default function PersonalWorks() {
   return <section id="personal" ref={section} className="personal-works paper-grain" aria-labelledby="personal-title">
     <div className="personal-works__intro">
       <SectionLabel sectionId="personal">PERSONAL WORKS</SectionLabel>
-      <div><h2 id="personal-title" className="display">Two brands,<br/><em>two directions.</em></h2><p>서로 다른 분위기를 메인 화면으로 표현합니다.<br/>개인 작업 2개 · 메인 페이지만 제작</p></div>
+      <div><HighlightTitle id="personal-title">Two brands,<br/><TitleHighlight as="em">two directions.</TitleHighlight></HighlightTitle><p>서로 다른 분위기를 메인 화면으로 표현합니다.<br/>개인 작업 2개 · 메인 페이지만 제작</p></div>
     </div>
 
     <div className="personal-works__stage" data-personal-stage>

@@ -31,7 +31,10 @@ export default function PortfolioDetails() {
   useEffect(() => initPortfolioDetails(ref.current), []);
   return <section id="zara-details" className="zara-details" ref={ref} aria-labelledby="zara-details-title"><div className="horizontal-viewport" data-viewport>
     <div className="horizontal-heading"><SectionLabel sectionId="zara-details">DIPTYQUE / DESIGN &amp; MY ROLE</SectionLabel><h2 id="zara-details-title">Behind the <em>screen.</em></h2></div>
-    <div data-track>{details.map((detail, i) => <article className={`horizontal-panel zara-details__panel${i === 0 ? ' zara-details__panel--laptop' : ''}`} data-panel key={i}><div className="zara-details__copy"><span className="fine-print">DIPTYQUE — 0{i + 1} / 04</span><h3>{detail.title}</h3>{detail.paragraphs.map((paragraph, j) => <p key={j}>{paragraph}</p>)}{i === 3 && <Link href={links.diptyque}>VIEW WEBSITE</Link>}</div><DetailVisual index={i}/></article>)}</div>
+    <div data-track>{details.map((detail, i) => <article className={`horizontal-panel zara-details__panel${i === 0 ? ' zara-details__panel--laptop' : ''}`} data-panel key={i} aria-labelledby={`diptyque-part-${i + 1}`}>
+      <div className="zara-details__boundary"><span className="zara-details__part-number" data-part-number>0{i + 1}<span> / 04</span></span><span className="zara-details__part-rule" data-part-rule aria-hidden="true"/><span className="zara-details__part-label">DIPTYQUE</span></div>
+      <div className="zara-details__copy"><h3 id={`diptyque-part-${i + 1}`}>{detail.title}</h3>{detail.paragraphs.map((paragraph, j) => <p key={j}>{paragraph}</p>)}{i === 3 && <Link href={links.diptyque}>VIEW WEBSITE</Link>}</div><DetailVisual index={i}/>
+    </article>)}</div>
     <HorizontalControls label="DIPTYQUE 상세"/>
   </div></section>;
 }

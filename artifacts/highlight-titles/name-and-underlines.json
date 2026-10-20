@@ -1,0 +1,54 @@
+[
+  {
+    "width": 1440,
+    "id": "profile-title",
+    "text": "팀의 아이디어를완성된 화면으로 옮기는주경덕입니다.",
+    "paper": {
+      "before": "rgb(213, 162, 50)",
+      "after": "rgb(228, 179, 66)",
+      "left": 836.078125,
+      "right": 1053.859375
+    },
+    "underlines": 0
+  },
+  {
+    "width": 1440,
+    "id": "brand-history-title",
+    "text": "DIPTYQUEBRAND HISTORY.",
+    "paper": null,
+    "underlines": 0
+  },
+  {
+    "width": 1440,
+    "id": "memory-wall-title",
+    "text": "A LITTLE MOREABOUT ME.",
+    "paper": null,
+    "underlines": 0
+  },
+  {
+    "width": 390,
+    "id": "profile-title",
+    "text": "팀의 아이디어를완성된 화면으로 옮기는주경덕입니다.",
+    "paper": {
+      "before": "rgb(213, 162, 50)",
+      "after": "rgb(228, 179, 66)",
+      "left": 20,
+      "right": 176.828125
+    },
+    "underlines": 0
+  },
+  {
+    "width": 390,
+    "id": "brand-history-title",
+    "text": "DIPTYQUEBRAND HISTORY.",
+    "paper": null,
+    "underlines": 0
+  },
+  {
+    "width": 390,
+    "id": "memory-wall-title",
+    "text": "A LITTLE MOREABOUT ME.",
+    "paper": null,
+    "underlines": 0
+  }
+]

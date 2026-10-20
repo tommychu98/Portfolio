@@ -1,0 +1,60 @@
+EDITORIAL PAPER HIGHLIGHT TITLES
+2026-10-20
+
+Applied to five existing section titles:
+- Selected Works: works.
+- Personal Works: two directions.
+- Clone Coding: building.
+- Tools & Skills: practice.
+- Work Ethic: VALUE?
+
+New files:
+- src/components/ui/HighlightTitle.jsx
+- src/components/ui/HighlightTitle.css
+- scripts/check-highlight-titles.mjs
+
+Modified section files:
+- src/components/sections/WorksIntro/WorksIntro.jsx
+- src/components/sections/PersonalWorks/PersonalWorks.jsx
+- src/components/sections/CloneCoding/CloneCoding.jsx
+- src/components/sections/Skills/Skills.jsx
+- src/components/sections/About/About.jsx
+
+API:
+HighlightTitle: as (default h2), scale (section or hero), className and native heading props.
+TitleLine: optional block line wrapper for normal or highlighted lines.
+TitleHighlight: inline word/phrase or full-line highlight; as defaults to span and supports em.
+
+Example using the actual Personal Works content:
+<HighlightTitle id="personal-title">
+  Two brands,<br/>
+  <TitleHighlight as="em">two directions.</TitleHighlight>
+</HighlightTitle>
+
+Paper layers are ::before and ::after, with mustard #e4b342 and warm ochre #d5a232.
+Opposing -1.15deg/+1.25deg rotations, irregular clip-path edges, subtle SVG grain.
+No shadow or 3D effects. Existing Anton font, black ink token, and section backgrounds retained.
+The highlight span is position:relative with isolation:isolate; layers use z-index:-1.
+Text is rendered once and remains above the decorative layers.
+Responsive font sizes use clamp(); line-height 1.13 on desktop and 1.15 on mobile.
+Existing section structure, copy, identifiers and motion attributes remain intact.
+The component adds no animation hooks and does not duplicate GSAP ownership.
+SplitText mask clip margin is scoped to opted-in headings to preserve paper corners.
+
+Validation:
+- Chrome / Playwright at 1440x900, 390x900 and 320x900.
+- All five highlighted phrases remain inside viewport safe margins.
+- Both pseudo-elements generated; ink color and Anton font verified.
+- Existing reveal completes and restores native DOM.
+- Reduced Motion reload leaves no SplitText masks.
+- Screenshot review of desktop/mobile title layouts and an in-progress reveal.
+- Browser page errors: zero in all three viewport tests.
+- No external design-source links rendered.
+- Global text regression: 95 elements each at desktop/mobile; geometry differences zero.
+- Production build passed; existing >500kB chunk warning remains.
+- Changed JSX and verification script pass oxlint.
+
+Screenshots: 1440-*, 390-*, 320-*; personal-reveal-in-progress.png.
+Machine-readable results: results.json.
+Previous chapter-spacing work has been preserved.
+No commit, push, or production deployment performed for this change.

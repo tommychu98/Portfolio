@@ -129,7 +129,7 @@
 .research-archive__finding>.archive-eyebrow{flex-wrap:wrap;gap:6px 12px}
 .research-archive__finding small{font-size:12px;line-height:1.6;color:var(--ink);font-weight:400}
 .research-archive__finding>p{font-size:24px;font-weight:600;line-height:1.55;letter-spacing:-.025em;margin-top:12px;word-break:keep-all;overflow-wrap:anywhere}
-.research-finding__em{color:var(--teal-dark);background-image:linear-gradient(transparent calc(100% - 2px),var(--teal-dark) 0);background-size:var(--finding-reveal,100%) 100%;background-repeat:no-repeat;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.research-finding__em{color:var(--teal-dark)}
 .research-archive__context{margin-top:20px}
 .research-archive__context>p{font-size:13px;line-height:1.7;word-break:keep-all;overflow-wrap:anywhere}
 .research-desk.research-cut{padding-left:8px}

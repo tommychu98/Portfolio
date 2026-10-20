@@ -1,0 +1,551 @@
+[
+  {
+    "width": 1440,
+    "pins": 1,
+    "parts": [
+      {
+        "title": "Craftingthe brandexperience.",
+        "header": {
+          "x": 46.513824462890625,
+          "y": 201.5625,
+          "width": 1344.96875,
+          "height": 30,
+          "top": 201.5625,
+          "right": 1391.4825744628906,
+          "bottom": 231.5625,
+          "left": 46.513824462890625
+        },
+        "heading": {
+          "x": 46.513824462890625,
+          "y": 338.421875,
+          "width": 322.78125,
+          "height": 211.5,
+          "top": 338.421875,
+          "right": 369.2950744628906,
+          "bottom": 549.921875,
+          "left": 46.513824462890625
+        },
+        "copy": {
+          "x": 46.513824462890625,
+          "y": 338.421875,
+          "width": 322.78125,
+          "height": 351.5,
+          "top": 338.421875,
+          "right": 369.2950744628906,
+          "bottom": 689.921875,
+          "left": 46.513824462890625
+        },
+        "visual": {
+          "x": 448.0919494628906,
+          "y": 229.21875,
+          "width": 891.46875,
+          "height": 569.921875,
+          "top": 229.21875,
+          "right": 1339.5606994628906,
+          "bottom": 799.140625,
+          "left": 448.0919494628906
+        }
+      },
+      {
+        "title": "Exploringthe scent.",
+        "header": {
+          "x": 47.10693359375,
+          "y": 201.5625,
+          "width": 1344.96875,
+          "height": 30,
+          "top": 201.5625,
+          "right": 1392.07568359375,
+          "bottom": 231.5625,
+          "left": 47.10693359375
+        },
+        "heading": {
+          "x": 47.10693359375,
+          "y": 387.171875,
+          "width": 589.21875,
+          "height": 141,
+          "top": 387.171875,
+          "right": 636.32568359375,
+          "bottom": 528.171875,
+          "left": 47.10693359375
+        },
+        "copy": {
+          "x": 47.10693359375,
+          "y": 387.171875,
+          "width": 589.21875,
+          "height": 254,
+          "top": 387.171875,
+          "right": 636.32568359375,
+          "bottom": 641.171875,
+          "left": 47.10693359375
+        },
+        "visual": {
+          "x": 743.91943359375,
+          "y": 246.59375,
+          "width": 648.15625,
+          "height": 535.15625,
+          "top": 246.59375,
+          "right": 1392.07568359375,
+          "bottom": 781.75,
+          "left": 743.91943359375
+        }
+      },
+      {
+        "title": "Contentthat connects.",
+        "header": {
+          "x": 47.70556640625,
+          "y": 201.5625,
+          "width": 1344.96875,
+          "height": 30,
+          "top": 201.5625,
+          "right": 1392.67431640625,
+          "bottom": 231.5625,
+          "left": 47.70556640625
+        },
+        "heading": {
+          "x": 47.70556640625,
+          "y": 387.171875,
+          "width": 589.21875,
+          "height": 141,
+          "top": 387.171875,
+          "right": 636.92431640625,
+          "bottom": 528.171875,
+          "left": 47.70556640625
+        },
+        "copy": {
+          "x": 47.70556640625,
+          "y": 387.171875,
+          "width": 589.21875,
+          "height": 254,
+          "top": 387.171875,
+          "right": 636.92431640625,
+          "bottom": 641.171875,
+          "left": 47.70556640625
+        },
+        "visual": {
+          "x": 744.51806640625,
+          "y": 297.390625,
+          "width": 648.15625,
+          "height": 433.5625,
+          "top": 297.390625,
+          "right": 1392.67431640625,
+          "bottom": 730.953125,
+          "left": 744.51806640625
+        }
+      },
+      {
+        "title": "Bettertogether.",
+        "header": {
+          "x": 47.296875,
+          "y": 201.5625,
+          "width": 1344.96875,
+          "height": 30,
+          "top": 201.5625,
+          "right": 1392.265625,
+          "bottom": 231.5625,
+          "left": 47.296875
+        },
+        "heading": {
+          "x": 47.296875,
+          "y": 330.171875,
+          "width": 589.21875,
+          "height": 141,
+          "top": 330.171875,
+          "right": 636.515625,
+          "bottom": 471.171875,
+          "left": 47.296875
+        },
+        "copy": {
+          "x": 47.296875,
+          "y": 330.171875,
+          "width": 589.21875,
+          "height": 368,
+          "top": 330.171875,
+          "right": 636.515625,
+          "bottom": 698.171875,
+          "left": 47.296875
+        },
+        "visual": {
+          "x": 744.109375,
+          "y": 248.546875,
+          "width": 648.15625,
+          "height": 531.265625,
+          "top": 248.546875,
+          "right": 1392.265625,
+          "bottom": 779.8125,
+          "left": 744.109375
+        }
+      }
+    ],
+    "errors": [],
+    "externalErrors": []
+  },
+  {
+    "width": 390,
+    "pins": 0,
+    "parts": [
+      {
+        "title": "Craftingthe brandexperience.",
+        "header": {
+          "x": 20,
+          "y": 179.5,
+          "width": 350,
+          "height": 29,
+          "top": 179.5,
+          "right": 370,
+          "bottom": 208.5,
+          "left": 20
+        },
+        "heading": {
+          "x": 20,
+          "y": 240.5,
+          "width": 350,
+          "height": 159.09375,
+          "top": 240.5,
+          "right": 370,
+          "bottom": 399.59375,
+          "left": 20
+        },
+        "copy": {
+          "x": 20,
+          "y": 240.5,
+          "width": 350,
+          "height": 304.65625,
+          "top": 240.5,
+          "right": 370,
+          "bottom": 545.15625,
+          "left": 20
+        },
+        "visual": {
+          "x": -58.75,
+          "y": 577.15625,
+          "width": 507.5,
+          "height": 324.453125,
+          "top": 577.15625,
+          "right": 448.75,
+          "bottom": 901.609375,
+          "left": -58.75
+        }
+      },
+      {
+        "title": "Exploringthe scent.",
+        "header": {
+          "x": 20,
+          "y": 179.609375,
+          "width": 350,
+          "height": 29,
+          "top": 179.609375,
+          "right": 370,
+          "bottom": 208.609375,
+          "left": 20
+        },
+        "heading": {
+          "x": 20,
+          "y": 240.609375,
+          "width": 350,
+          "height": 106.0625,
+          "top": 240.609375,
+          "right": 370,
+          "bottom": 346.671875,
+          "left": 20
+        },
+        "copy": {
+          "x": 20,
+          "y": 240.609375,
+          "width": 350,
+          "height": 251.625,
+          "top": 240.609375,
+          "right": 370,
+          "bottom": 492.234375,
+          "left": 20
+        },
+        "visual": {
+          "x": 20,
+          "y": 540.234375,
+          "width": 350,
+          "height": 345.71875,
+          "top": 540.234375,
+          "right": 370,
+          "bottom": 885.953125,
+          "left": 20
+        }
+      },
+      {
+        "title": "Contentthat connects.",
+        "header": {
+          "x": 20,
+          "y": 179.953125,
+          "width": 350,
+          "height": 29,
+          "top": 179.953125,
+          "right": 370,
+          "bottom": 208.953125,
+          "left": 20
+        },
+        "heading": {
+          "x": 20,
+          "y": 240.953125,
+          "width": 350,
+          "height": 106.0625,
+          "top": 240.953125,
+          "right": 370,
+          "bottom": 347.015625,
+          "left": 20
+        },
+        "copy": {
+          "x": 20,
+          "y": 240.953125,
+          "width": 350,
+          "height": 251.625,
+          "top": 240.953125,
+          "right": 370,
+          "bottom": 492.578125,
+          "left": 20
+        },
+        "visual": {
+          "x": 20,
+          "y": 524.578125,
+          "width": 350,
+          "height": 413.5625,
+          "top": 524.578125,
+          "right": 370,
+          "bottom": 938.140625,
+          "left": 20
+        }
+      },
+      {
+        "title": "Bettertogether.",
+        "header": {
+          "x": 20,
+          "y": 180.140625,
+          "width": 350,
+          "height": 29,
+          "top": 180.140625,
+          "right": 370,
+          "bottom": 209.140625,
+          "left": 20
+        },
+        "heading": {
+          "x": 20,
+          "y": 241.140625,
+          "width": 350,
+          "height": 106.0625,
+          "top": 241.140625,
+          "right": 370,
+          "bottom": 347.203125,
+          "left": 20
+        },
+        "copy": {
+          "x": 20,
+          "y": 241.140625,
+          "width": 350,
+          "height": 399.40625,
+          "top": 241.140625,
+          "right": 370,
+          "bottom": 640.546875,
+          "left": 20
+        },
+        "visual": {
+          "x": 20,
+          "y": 672.546875,
+          "width": 350,
+          "height": 286.875,
+          "top": 672.546875,
+          "right": 370,
+          "bottom": 959.421875,
+          "left": 20
+        }
+      }
+    ],
+    "errors": [],
+    "externalErrors": [
+      {
+        "message": "this.api.isExternalMethodAvailable is not a function",
+        "stack": "TypeError: this.api.isExternalMethodAvailable is not a function\n    at _.k.onMessage (https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.wMnrtqKCFlk.es5.O/am=AAAAIA/d=1/excm=base,root/br=1/rs=AGKMywFBirUeGgkk1U6Ii4J013Xe8IQTzQ/m=root,base:1232:312)\n    at jO.ea (https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.wMnrtqKCFlk.es5.O/am=AAAAIA/d=1/excm=base,root/br=1/rs=AGKMywFBirUeGgkk1U6Ii4J013Xe8IQTzQ/m=root,base:1105:344)\n    at new jO (https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.wMnrtqKCFlk.es5.O/am=AAAAIA/d=1/excm=base,root/br=1/rs=AGKMywFBirUeGgkk1U6Ii4J013Xe8IQTzQ/m=root,base:1105:446)\n    at HSa (https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.wMnrtqKCFlk.es5.O/am=AAAAIA/d=1/excm=base,root/br=1/rs=AGKMywFBirUeGgkk1U6Ii4J013Xe8IQTzQ/m=root,base:1118:196)\n    at JSa (https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.wMnrtqKCFlk.es5.O/am=AAAAIA/d=1/excm=base,root/br=1/rs=AGKMywFBirUeGgkk1U6Ii4J013Xe8IQTzQ/m=root,base:1117:453)\n    at https://www.youtube.com/embed/wrRYcgvTuqs?enablejsapi=1&autoplay=0&mute=1&playsinline=1&rel=0&origin=http%3A%2F%2F127.0.0.1%3A5173:11:9536"
+      },
+      {
+        "message": "this.api.isExternalMethodAvailable is not a function",
+        "stack": "TypeError: this.api.isExternalMethodAvailable is not a function\n    at _.k.onMessage (https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.wMnrtqKCFlk.es5.O/am=AAAAIA/d=1/excm=base,root/br=1/rs=AGKMywFBirUeGgkk1U6Ii4J013Xe8IQTzQ/m=root,base:1232:312)\n    at jO.ea (https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.wMnrtqKCFlk.es5.O/am=AAAAIA/d=1/excm=base,root/br=1/rs=AGKMywFBirUeGgkk1U6Ii4J013Xe8IQTzQ/m=root,base:1105:344)\n    at new jO (https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.wMnrtqKCFlk.es5.O/am=AAAAIA/d=1/excm=base,root/br=1/rs=AGKMywFBirUeGgkk1U6Ii4J013Xe8IQTzQ/m=root,base:1105:446)\n    at HSa (https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.wMnrtqKCFlk.es5.O/am=AAAAIA/d=1/excm=base,root/br=1/rs=AGKMywFBirUeGgkk1U6Ii4J013Xe8IQTzQ/m=root,base:1118:196)\n    at JSa (https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.wMnrtqKCFlk.es5.O/am=AAAAIA/d=1/excm=base,root/br=1/rs=AGKMywFBirUeGgkk1U6Ii4J013Xe8IQTzQ/m=root,base:1117:453)\n    at https://www.youtube.com/embed/HFousj1ra0g?enablejsapi=1&autoplay=0&mute=1&playsinline=1&rel=0&origin=http%3A%2F%2F127.0.0.1%3A5173:11:9536"
+      }
+    ]
+  },
+  {
+    "width": 1024,
+    "pins": 1,
+    "parts": [
+      {
+        "title": "Craftingthe brandexperience.",
+        "header": {
+          "x": 32.779449462890625,
+          "y": 188.75,
+          "width": 956.421875,
+          "height": 30,
+          "top": 188.75,
+          "right": 989.2013244628906,
+          "bottom": 218.75,
+          "left": 32.779449462890625
+        },
+        "heading": {
+          "x": 32.779449462890625,
+          "y": 282,
+          "width": 229.53125,
+          "height": 140.71875,
+          "top": 282,
+          "right": 262.3106994628906,
+          "bottom": 422.71875,
+          "left": 32.779449462890625
+        },
+        "copy": {
+          "x": 32.779449462890625,
+          "y": 282,
+          "width": 229.53125,
+          "height": 326.71875,
+          "top": 282,
+          "right": 262.3106994628906,
+          "bottom": 608.71875,
+          "left": 32.779449462890625
+        },
+        "visual": {
+          "x": 292.7950744628906,
+          "y": 226.390625,
+          "width": 685.03125,
+          "height": 437.953125,
+          "top": 226.390625,
+          "right": 977.8263244628906,
+          "bottom": 664.34375,
+          "left": 292.7950744628906
+        }
+      },
+      {
+        "title": "Exploringthe scent.",
+        "header": {
+          "x": 33.5306396484375,
+          "y": 188.75,
+          "width": 956.4375,
+          "height": 30,
+          "top": 188.75,
+          "right": 989.9681396484375,
+          "bottom": 218.75,
+          "left": 33.5306396484375
+        },
+        "heading": {
+          "x": 33.5306396484375,
+          "y": 345.953125,
+          "width": 419.015625,
+          "height": 93.8125,
+          "top": 345.953125,
+          "right": 452.5462646484375,
+          "bottom": 439.765625,
+          "left": 33.5306396484375
+        },
+        "copy": {
+          "x": 33.5306396484375,
+          "y": 345.953125,
+          "width": 419.015625,
+          "height": 198.8125,
+          "top": 345.953125,
+          "right": 452.5462646484375,
+          "bottom": 544.765625,
+          "left": 33.5306396484375
+        },
+        "visual": {
+          "x": 529.0462646484375,
+          "y": 240.1875,
+          "width": 460.921875,
+          "height": 410.34375,
+          "top": 240.1875,
+          "right": 989.9681396484375,
+          "bottom": 650.53125,
+          "left": 529.0462646484375
+        }
+      },
+      {
+        "title": "Contentthat connects.",
+        "header": {
+          "x": 34.28173828125,
+          "y": 188.75,
+          "width": 956.4375,
+          "height": 30,
+          "top": 188.75,
+          "right": 990.71923828125,
+          "bottom": 218.75,
+          "left": 34.28173828125
+        },
+        "heading": {
+          "x": 34.28173828125,
+          "y": 345.953125,
+          "width": 419.015625,
+          "height": 93.8125,
+          "top": 345.953125,
+          "right": 453.29736328125,
+          "bottom": 439.765625,
+          "left": 34.28173828125
+        },
+        "copy": {
+          "x": 34.28173828125,
+          "y": 345.953125,
+          "width": 419.015625,
+          "height": 198.8125,
+          "top": 345.953125,
+          "right": 453.29736328125,
+          "bottom": 544.765625,
+          "left": 34.28173828125
+        },
+        "visual": {
+          "x": 529.79736328125,
+          "y": 228.578125,
+          "width": 460.921875,
+          "height": 433.5625,
+          "top": 228.578125,
+          "right": 990.71923828125,
+          "bottom": 662.140625,
+          "left": 529.79736328125
+        }
+      },
+      {
+        "title": "Bettertogether.",
+        "header": {
+          "x": 34.03125,
+          "y": 188.75,
+          "width": 956.4375,
+          "height": 30,
+          "top": 188.75,
+          "right": 990.46875,
+          "bottom": 218.75,
+          "left": 34.03125
+        },
+        "heading": {
+          "x": 34.03125,
+          "y": 288.953125,
+          "width": 419.015625,
+          "height": 93.8125,
+          "top": 288.953125,
+          "right": 453.046875,
+          "bottom": 382.765625,
+          "left": 34.03125
+        },
+        "copy": {
+          "x": 34.03125,
+          "y": 288.953125,
+          "width": 419.015625,
+          "height": 312.8125,
+          "top": 288.953125,
+          "right": 453.046875,
+          "bottom": 601.765625,
+          "left": 34.03125
+        },
+        "visual": {
+          "x": 529.546875,
+          "y": 256.453125,
+          "width": 460.921875,
+          "height": 377.796875,
+          "top": 256.453125,
+          "right": 990.46875,
+          "bottom": 634.25,
+          "left": 529.546875
+        }
+      }
+    ],
+    "errors": [],
+    "externalErrors": []
+  }
+]

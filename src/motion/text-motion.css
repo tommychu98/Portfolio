@@ -3,12 +3,3 @@
 [data-text-motion="body"] .text-motion-word,
 [data-text-motion="subtitle"] .text-motion-word{display:inline!important}
 .text-motion-line-mask{overflow:clip;overflow-clip-margin:.16em}
-.text-motion-highlight{
-  background-image:linear-gradient(90deg,color-mix(in srgb,var(--teal-dark) 22%,transparent),color-mix(in srgb,var(--teal-dark) 22%,transparent));
-  background-repeat:no-repeat;
-  background-position:0 92%;
-  background-size:var(--text-highlight,100%) .13em;
-  -webkit-box-decoration-break:clone;
-  box-decoration-break:clone;
-}
-@media(prefers-reduced-motion:reduce){.text-motion-highlight{background-size:100% .13em}}

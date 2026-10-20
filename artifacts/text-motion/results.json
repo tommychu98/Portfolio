@@ -1,11 +1,12 @@
 [
   {
     "width": 1440,
-    "elements": 91,
+    "elements": 95,
     "sections": [
       "profile",
       "work",
       "zara",
+      "zara-details",
       "zara-process",
       "diptyque-history",
       "personal",
@@ -22,11 +23,12 @@
   },
   {
     "width": 390,
-    "elements": 91,
+    "elements": 95,
     "sections": [
       "profile",
       "work",
       "zara",
+      "zara-details",
       "zara-process",
       "diptyque-history",
       "personal",

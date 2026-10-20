@@ -15,3 +15,29 @@
 .zara-details__products figure>div>img{border-radius:3px}
 .zara-details__products figure>div::after{content:'';position:absolute;left:-9.06%;top:-11.68%;width:118.56%;height:120.77%;background:url('/media/images/diptyque/portrait-browser-frame.png') center/100% 100% no-repeat;pointer-events:none;z-index:1}
 .zara-details__products figcaption{padding-top:30px}
+
+/* Part boundaries stay inside chapter 07 and share its existing content gutter. */
+.zara-details .zara-details__panel{padding-top:144px;padding-bottom:128px;border-bottom:0;row-gap:40px;align-content:center}
+.zara-details__boundary{grid-column:1/-1;display:flex;align-items:center;gap:24px;min-width:0}
+.zara-details__part-number{flex-shrink:0;font:400 30px/1 var(--poster);color:var(--teal-dark);font-variant-numeric:tabular-nums}
+.zara-details__part-number>span{font:12px var(--sans);color:var(--ink);opacity:.6}
+.zara-details__part-rule{height:1px;background:var(--line);flex:1;transform-origin:left center}
+.zara-details__part-label{font-size:10px;letter-spacing:.14em;opacity:.65}
+.zara-details .zara-details__copy{min-width:0}
+.zara-details .zara-details__copy h3{margin:0 0 32px}
+.zara-details .zara-details__copy>p{margin-top:16px}
+.zara-details.has-horizontal .zara-details__panel{padding-top:24px;padding-bottom:36px;row-gap:32px;grid-template-rows:auto minmax(0,1fr)}
+.zara-details.has-horizontal [data-track]{column-gap:clamp(200px,24vw,400px)}
+.zara-details.has-horizontal .zara-details__copy{align-self:center}
+.zara-details.has-horizontal .zara-details__panel>.diptyque-laptop-preview{width:100%;max-width:min(100%,calc((100svh - 330px)*1.564));justify-self:center}
+@media(max-width:820px){
+  .zara-details .zara-details__panel{padding-top:80px;padding-bottom:96px;row-gap:32px}
+  .zara-details__boundary{gap:16px}
+  .zara-details__part-number{font-size:28px}
+  .zara-details .zara-details__copy h3{margin-bottom:24px}
+  .zara-details .zara-details__panel>.zara-details__products{margin-top:16px}
+}
+@media(min-width:1024px) and (min-height:740px) and (max-height:820px){
+  .zara-details.has-horizontal .zara-details__panel{row-gap:20px;padding-top:12px;padding-bottom:16px}
+  .zara-details.has-horizontal .zara-details__copy h3{font-size:clamp(46px,4.3vw,62px);margin-bottom:24px}
+}

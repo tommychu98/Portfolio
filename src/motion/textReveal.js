@@ -7,7 +7,7 @@ gsap.registerPlugin(SplitText);
 export const textExclusions = '[data-no-text-animation],[data-reveal],[data-entry],[data-copy],[data-finding],[data-personal-copy],[data-history-copy],[data-values-exit],button,a,summary,input,textarea,select,[aria-live],.sr-only';
 
 // Explicit opt-in only. This guard is a second line of defense, not motion detection.
-export function attachTextReveal(element, { variant = 'body', highlight } = {}) {
+export function attachTextReveal(element, { variant = 'body', highlight, scrollTrigger: scrollOptions = {}, onComplete } = {}) {
   if (element.closest(textExclusions) || element.querySelector(textExclusions) || element.dataset.textMotion) return () => {};
   let split, tween, trigger, disposed = false, finished = false;
   const context = gsap.context(() => {}, element);
@@ -17,6 +17,7 @@ export function attachTextReveal(element, { variant = 'body', highlight } = {}) 
   const finish = () => {
     finished = true;
     element.dataset.textRevealed = 'true';
+    onComplete?.();
     // Restore native kerning, inline semantics and the exact original DOM.
     queueMicrotask(() => { if (!disposed) split?.revert(); });
   };
@@ -39,11 +40,13 @@ export function attachTextReveal(element, { variant = 'body', highlight } = {}) 
         }, variant === 'label' ? 0 : variant === 'title' ? .06 : .12);
         if (highlights.length) tween.fromTo(element, { '--text-highlight': '0%' }, { '--text-highlight': '100%', duration: .65, ease: 'power2.inOut' }, .55);
         trigger?.kill();
-        trigger = ScrollTrigger.create({ trigger: element, start: 'clamp(top 88%)', once: true,
+        trigger = ScrollTrigger.create({ trigger: element, start: 'clamp(top 88%)', ...scrollOptions, once: true,
           onEnter: () => tween.play(), onLeave: () => tween.progress(1),
           onRefresh: self => { if (self.progress === 1 && !finished) tween.progress(1); },
         });
-        if (element.getBoundingClientRect().top < innerHeight * .88) tween.play();
+        const bounds = element.getBoundingClientRect();
+        const horizontallyVisible = !scrollOptions.containerAnimation || (bounds.left < innerWidth * .88 && bounds.right > 0);
+        if (bounds.top < innerHeight * .88 && horizontallyVisible) tween.play();
         return tween;
       };
       if (variant === 'label') animate([element]);
