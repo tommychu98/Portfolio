@@ -1,0 +1,54 @@
+﻿/* Reference Details proportions; scoped to the MEDIPEEL dialog only. */
+.sw-detail--medipeel .sw-detail__content { padding-top:130px; }
+.medipeel-detail { font-family:ui-sans-serif,system-ui,var(--sans); font-size:16px; line-height:1.5; color:var(--sw-foreground); }
+.sw-detail--medipeel .medipeel-detail__header { margin:0 0 80px; text-align:left; }
+.sw-detail--medipeel .medipeel-detail h2 { margin:0; font:400 clamp(48px,5.55vw,80px)/1.1 var(--sw-serif); letter-spacing:-.035em; color:var(--sw-accent); }
+.medipeel-detail h2 span { display:block; }
+.medipeel-detail__subtitle { font:400 clamp(24px,2.23vw,32px)/1.5 var(--sw-serif); margin-top:0; }
+.medipeel-detail__meta { display:flex; flex-wrap:wrap; gap:12px 32px; margin-top:24px; font-size:15.2px; }
+.medipeel-detail p { word-break:normal; overflow-wrap:break-word; }
+.medipeel-detail__meta p { word-break:keep-all; }
+.medipeel-detail__description { font-size:clamp(17.6px,2vw,20px); line-height:1.5; margin-bottom:128px; max-width:75ch; }
+.medipeel-detail__overview { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; }
+.medipeel-detail h3 { position:relative; margin:0 0 32px; font:600 24px/1.5 ui-sans-serif,system-ui,var(--sans); }
+.medipeel-detail h3::after { content:''; position:absolute; left:0; bottom:-6px; width:48px; height:2px; background:var(--sw-accent); }
+.medipeel-detail ul { list-style:disc; margin:0; padding-left:1.2rem; }
+.medipeel-detail li { margin-bottom:12px; line-height:1.6; overflow-wrap:break-word; }
+.medipeel-detail__badges { display:flex; flex-wrap:wrap; gap:16px; align-items:start; }
+.medipeel-detail__badges span { display:inline-block; padding:4px 12px; border-radius:6px; font-size:14px; font-weight:500; line-height:20px; background:#e1e7e5; color:#173a44; }
+.medipeel-detail__creative { margin-top:40px; }
+.medipeel-detail__challenges { margin-top:64px; }
+.medipeel-detail__challenge { padding:40px; margin-bottom:32px; border-radius:20px; background:transparent; }
+.medipeel-detail__challenge h4 { position:relative; display:inline-block; font:700 24px/1.5 ui-sans-serif,system-ui,var(--sans); color:#4ed9a5; padding-bottom:16px; margin:0 0 24px; }
+.medipeel-detail__challenge h4::after { content:''; position:absolute; bottom:0; left:0; width:32px; height:2px; background:#4ed9a5; }
+.medipeel-detail__challenge > p { font-size:16.8px; line-height:1.8; margin-bottom:32px; }
+.medipeel-detail__solution { position:relative; padding-top:32px; }
+.medipeel-detail__solution h5 { position:absolute; top:-14px; left:0; margin:0; color:#4ed9a5; font-size:17.6px; font-weight:600; line-height:1.5; }
+.medipeel-detail__solution p { line-height:1.5; }
+.medipeel-detail__links { display:flex; flex-wrap:wrap; gap:16px; margin-top:48px; }
+/* Match the live reference's heading, challenge and Solution hover timings. */
+.medipeel-detail h3::after { transition:width .3s; }
+.medipeel-detail__challenge { position:relative; overflow:hidden; isolation:isolate; transition:transform .3s cubic-bezier(.4,0,.2,1); }
+.medipeel-detail__challenge::before { content:''; position:absolute; inset:0; z-index:-1; pointer-events:none; background:linear-gradient(135deg,var(--sw-accent),transparent); transform:translateX(-100%); opacity:0; transition:transform .4s cubic-bezier(.4,0,.2,1),opacity .4s cubic-bezier(.4,0,.2,1); }
+.medipeel-detail__challenge h4::after { transition:width .3s; }
+.medipeel-detail__solution h5 { transition:transform .3s,font-size .3s; }
+@media (hover:hover) and (pointer:fine) {
+  .medipeel-detail h3:hover::after { width:96px; }
+  .medipeel-detail__challenge:hover { transform:translateY(-5px); }
+  .medipeel-detail__challenge:hover::before { transform:translateX(0); opacity:.05; }
+  .medipeel-detail__challenge:hover h4::after { width:100%; }
+  .medipeel-detail__solution:hover h5 { transform:translateY(-2px); font-size:24px; }
+}
+@media (orientation:portrait), (max-width:767px) {
+  .sw-detail--medipeel .sw-detail__content { width:100%; margin-left:0; padding:100px 32px 64px; }
+}
+@media (max-width:767px) {
+  .medipeel-detail__overview { grid-template-columns:minmax(0,1fr); }
+  .sw-detail--medipeel .medipeel-detail h2 { font-size:clamp(40px,10vw,64px); }
+  .sw-detail--medipeel .medipeel-detail__header { margin-bottom:48px; text-align:center; }
+  .medipeel-detail__description { margin-bottom:64px; }
+  .medipeel-detail__challenge { padding:24px; }
+  .medipeel-detail__challenge h4 { font-size:20px; padding-bottom:12px; margin-bottom:20px; }
+  .medipeel-detail__challenge > p { font-size:16px; margin-bottom:24px; }
+  .medipeel-detail__links { flex-direction:column; }
+}

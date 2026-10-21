@@ -189,14 +189,59 @@
   ],
   "personal": [
     {
-      "name": "ÉLAN",
-      "title": "ÉLAN — 향의 여운",
-      "body": "이미지와 여백으로 브랜드 감성을 표현한 메인 페이지.",
-      "href": "https://personal3-gilt.vercel.app/pages/personal-01.html",
-      "image": "perfume",
+      "name": "MEDIPEEL",
+      "title": "MEDIPEEL — 자연과 과학이 만나는 더마 뷰티",
+      "body": "자연에서 얻은 영감과 더마 기술의 정교함을 담아, 고급스럽고 모던한 브랜드 경험으로 풀어낸 메디필 웹사이트 리뉴얼.",
+      "href": "https://medipeel.vercel.app/",
+      "image": "medipeel",
+      "scope": "웹사이트 리뉴얼 / 메인 페이지",
+      "type": "더마 뷰티 브랜드 웹사이트 리뉴얼",
       "tags": [
-        "MAIN PAGE",
-        "DESIGN & PUBLISHING"
+        "WEBSITE RENEWAL",
+        "DERMA BEAUTY",
+        "NATURE × SCIENCE"
+      ],
+      "story": [
+        {
+          "label": "CHALLENGE",
+          "title": "전문성과 감성의 균형",
+          "body": "이 리뉴얼의 디자인 과제는 고기능성 더마 브랜드의 전문성과 프리미엄 화장품의 감성을 한 화면 안에서 조화시키는 것입니다. 제품과 기술 설명이 많아도 첫인상은 명료하게, 브랜드의 분위기는 충분히 느껴지도록 정보의 우선순위를 잡았습니다."
+        },
+        {
+          "label": "DIRECTION",
+          "title": "자연의 유연함, 과학의 정밀함",
+          "body": "잎과 피부, 물의 질감에서 느껴지는 유기적인 이미지에 정돈된 타이포그래피와 넓은 여백을 더했습니다. 제품의 투명한 소재감과 절제된 색상은 깨끗한 인상을 만들고, 큰 세리프 타이틀은 더마 화장품의 고급스러움을 모던하게 표현합니다."
+        },
+        {
+          "label": "SOLUTION",
+          "title": "풍부한 이미지 속에서도 명확한 흐름",
+          "body": "비주얼의 몰입감과 정보의 가독성을 함께 확보하는 것이 핵심 설계 과제였습니다. 메인 비주얼에서 신제품과 피부 고민별 케어로 탐색을 이어가고, 자연을 담은 브랜드 메시지 다음에 핵심 기술을 배치했습니다. 기술 정보는 이미지·제목·짧은 설명으로 나누어 읽는 부담을 줄이는 구성입니다."
+        },
+        {
+          "label": "OUTCOME",
+          "title": "감각에서 이해로 이어지는 브랜드 경험",
+          "body": "완성된 메인 페이지는 제품의 첫인상, 피부 고민에 따른 탐색, 자연에서 출발한 브랜드 감성, 기술의 전문성을 하나의 흐름으로 연결합니다. 고급스러운 분위기와 정돈된 정보 구조를 함께 담아, 자연과 과학이 공존하는 메디필의 디자인 방향을 구현했습니다."
+        }
+      ],
+      "screens": [
+        {
+          "src": "/media/images/medipeel/hero.jpg",
+          "alt": "메디필의 푸른 제품 비주얼과 대형 세리프 타이틀",
+          "label": "01 / FIRST IMPRESSION",
+          "caption": "투명한 제품 질감과 큰 타이포그래피로 프리미엄 더마 브랜드의 첫인상을 구성합니다."
+        },
+        {
+          "src": "/media/images/medipeel/nature.jpg",
+          "alt": "잎과 피부 이미지를 배치한 메디필 자연스러운 아름다움 섹션",
+          "label": "02 / INSPIRED BY NATURE",
+          "caption": "자연의 이미지와 여백으로 기술 중심의 브랜드에 부드러운 감각과 깊이를 더합니다."
+        },
+        {
+          "src": "/media/images/medipeel/technology.jpg",
+          "alt": "기술별 이미지와 설명을 정리한 메디필 CORE TECHNOLOGY 섹션",
+          "label": "03 / DEFINED BY SCIENCE",
+          "caption": "각 기술을 시각적 단위로 구분해 전문적인 정보를 차분하게 읽을 수 있도록 정리합니다."
+        }
       ]
     },
     {

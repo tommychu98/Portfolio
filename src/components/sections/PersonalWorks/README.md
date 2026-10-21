@@ -4,7 +4,7 @@ Reference: https://project-portfolio-gules.vercel.app/
 
 Reference HTML, deployed CSS and animation JavaScript were inspected. The source uses paired portrait images (9:13), a large circular orbit with 20 degrees between projects, scroll-linked selection, split/rotated active cards, and a detail transition that moves the images left while revealing the description. Only that work-browsing pattern is adapted here; gutters, layout and control behavior remain unchanged. Typography and colors now follow the attached poster palette and the updated root design-guideline.md.
 
-ÉLAN and ONDA use the existing content data and image component. Desktop browsing spans one viewport of scroll for the two works. This section reuses the shared scroll module and owns only its own GSAP context/trigger. Below 1024px, below 740px height, or with reduced motion enabled, both works appear sequentially. The native modal provides detail content; closing restores focus and releases the shared scroll lock.
+MEDIPEEL and ONDA use the existing content data and image component. Desktop browsing spans one viewport of scroll for the two works. This section reuses the shared scroll module and owns only its own GSAP context/trigger. Below 1024px, below 740px height, or with reduced motion enabled, both works appear sequentially. The native modal provides detail content; closing restores focus and releases the shared scroll lock.
 
 ## Validation
 

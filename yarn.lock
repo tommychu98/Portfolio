@@ -73,6 +73,11 @@
   resolved "https://registry.npmjs.org/@fontsource-variable/eb-garamond/-/eb-garamond-5.3.0.tgz"
   integrity sha512-656OJsA9Vv24yhqRZFEzXnzS2AYgKdEILLgHJYLzzXndgcWFKfSXFqzbRI5/6Yk1Yt7UfWrUeppE5nRQPQMwlQ==
 
+"@fontsource-variable/lora@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.npmjs.org/@fontsource-variable/lora/-/lora-5.3.0.tgz"
+  integrity sha512-2ph8KiZ8Bn141hWuC3ErtpJ+Ui8p2MJQn8TJNRSRmLmnCIOCtHfiBM9R7WLRPeUG/q6hXyHOxWQ8DvRSX+ixvQ==
+
 "@fontsource-variable/noto-sans-kr@^5.3.1":
   version "5.3.1"
   resolved "https://registry.npmjs.org/@fontsource-variable/noto-sans-kr/-/noto-sans-kr-5.3.1.tgz"

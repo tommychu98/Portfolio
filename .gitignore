@@ -33,3 +33,6 @@ playwright-report/
 *.njsproj
 *.sln
 *.sw?
+
+# Local capture and verification artifacts
+/artifacts/
