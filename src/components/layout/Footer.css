@@ -3,4 +3,10 @@
 @media(max-width:600px){.site-footer{padding:45px 20px 24px}.site-footer__top{grid-template-columns:1fr;gap:35px}.site-footer__signature{margin-bottom:10px}.site-footer h3{margin-bottom:15px}.site-footer__bottom{align-items:start;flex-direction:column;gap:14px;margin-top:55px}.site-footer__bottom .text-link{margin-top:10px}}
 
 /* Image-reference typography; existing layout and motion retained. */
+.site-footer__top .site-footer__email{width:135px;max-width:100%;background:none;color:inherit;cursor:pointer;text-align:left}
+.site-footer__email:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+.site-footer__email:hover .text-link__arrow{transform:none}
+.site-footer__toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,8px);z-index:2000;max-width:calc(100vw - 32px);width:max-content;padding:12px 20px;border:1px solid #e8d8ba55;border-radius:8px;background:#25271f;color:#f4ead7;font:500 14px/1.6 var(--sans);text-align:center;box-shadow:0 6px 24px #0003;opacity:0;pointer-events:none;transition:opacity .18s,transform .18s}
+.site-footer__toast.is-visible{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){.site-footer__toast{transition:none}}
 .site-footer{--line:#e8d8ba52}.site-footer__signature,.site-footer__bottom>span:nth-child(2){font-family:var(--compact)}

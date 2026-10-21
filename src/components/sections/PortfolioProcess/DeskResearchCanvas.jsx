@@ -18,7 +18,7 @@ export default function DeskResearchCanvas({onExpand,layers=deskResearchLayers,b
     const uiImage=el.closest('.diptyque-retro-window')?.querySelector('.figma-workspace-ui');
     const uiReady=uiImage?uiImage.decode().catch(()=>{}):Promise.resolve();
     const context=gsap.context(()=>{},el);
-    let camera,moving=false,currentId=null,request=0,alive=true;
+    let camera,moving=false,currentId=null,request=0,alive=true,lastWheelAt=0;
     const frames=[...stage.querySelectorAll('[data-desk-frame]')];
     const surfaces=frames.map(f=>f.querySelector('.desk-frame__surface'));
     const backgroundImages=new Map([...stage.querySelectorAll('[data-background-frame]')].map(frame=>[frame.dataset.backgroundFrame,frame.querySelector('img')]));
@@ -71,11 +71,11 @@ export default function DeskResearchCanvas({onExpand,layers=deskResearchLayers,b
       const box=bounds(id),w=view.clientWidth,h=view.clientHeight;
       const fit=Math.min(w/box.w,Math.max(1,h-36)/box.h);
       const focusFit=layers.find(layer=>layer.id===id)?.focusFit;
-      // Once focused, retain the live magnification across layer selections,
-      // including interrupted flights. Only entering/leaving overview changes it.
-      const keepZoom=Boolean(id&&currentId);
-      const scale=keepZoom?pose.scale:id?(focusFit?fit*focusFit:Math.max(fit*1.44,w*.9/box.w)):fit*.94;
-      const target={scale,cx:box.x+box.w/2,cy:box.y+box.h/2};
+      // Fit each document's width independently; long documents start at the
+      // top and are read vertically instead of centering their hidden middle.
+      const scale=id?Math.min(w*.94/box.w,focusFit?fit*focusFit:Math.max(fit*1.44,w*.9/box.w)):fit*.94;
+      const target={scale,cx:box.x+box.w/2,cy:id&&box.h*scale>h-48?box.y+(h/2-24)/scale:box.y+box.h/2};
+      lastWheelAt=0;
       const start={...pose},distance=Math.hypot(target.cx-start.cx,target.cy-start.cy);
       const travel=id&&currentId&&id!==currentId;
       const duration=travel?Math.min(2.15,1.65+distance/25000):id?1.35:1.5;
@@ -101,7 +101,7 @@ export default function DeskResearchCanvas({onExpand,layers=deskResearchLayers,b
           const t=clock.progress;
           pose.cx=start.cx+(target.cx-start.cx)*t;
           pose.cy=start.cy+(target.cy-start.cy)*t;
-          pose.scale=keepZoom?start.scale:Math.exp(Math.log(start.scale)*(1-t)+Math.log(scale)*t);
+          pose.scale=Math.exp(Math.log(start.scale)*(1-t)+Math.log(scale)*t);
           render();
         }});
       });
@@ -111,11 +111,30 @@ export default function DeskResearchCanvas({onExpand,layers=deskResearchLayers,b
       if(!surface)return;
       context.add(()=>gsap.to(surface,{scale:active&&!moving&&!selectedRef.current&&!media.matches?1.035:1,force3D:stableRaster?false:'auto',duration:media.matches?0:.35,ease:'power2.out',overwrite:'auto'}));
     };
-    const pan=(dx,dy)=>{
+    const readingRange=()=>{
+      const box=bounds(selectedRef.current),half=(size.h/2-24)/pose.scale;
+      const fits=box.h*pose.scale<=size.h-48;
+      return {box,top:fits?box.y+box.h/2:box.y+half,bottom:fits?box.y+box.h/2:box.y+box.h-half};
+    };
+    const pan=(_dx,dy)=>{
       if(!selectedRef.current)return;
       request++;camera?.kill();moving=false;el.dataset.cameraMoving='false';
-      stage.style.willChange='auto';pose.cx-=dx/pose.scale;pose.cy-=dy/pose.scale;render();
+      const {box,top,bottom}=readingRange();
+      stage.style.willChange='auto';pose.cx=box.x+box.w/2;pose.cy=Math.max(top,Math.min(bottom,pose.cy-dy/pose.scale));render();
     };
+    const wheel=event=>{
+      if(!selectedRef.current||event.ctrlKey||!event.deltaY)return;
+      event.preventDefault();event.stopPropagation();
+      if(moving)return;
+      const now=performance.now(),newGesture=now-lastWheelAt>180;lastWheelAt=now;
+      const {bottom}=readingRange();
+      // Reaching the end consumes this gesture. A fresh downward gesture
+      // returns to overview, so trackpad momentum cannot dismiss the page.
+      if(event.deltaY>0&&pose.cy>=bottom-.5/pose.scale&&newGesture){select(null);return;}
+      const delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?size.h:1);
+      pan(0,-delta);
+    };
+    view.addEventListener('wheel',wheel,{passive:false});
     api.current={focus,hover,preparePrimary,pan};
     focus(null,false);
     const backgroundObserver=new IntersectionObserver(entries=>{
@@ -131,8 +150,8 @@ export default function DeskResearchCanvas({onExpand,layers=deskResearchLayers,b
     });observer.observe(view);
     const reduced=()=>focus(selectedRef.current,false);
     media.addEventListener('change',reduced);
-    return ()=>{alive=false;request++;camera?.kill();observer.disconnect();backgroundObserver.disconnect();media.removeEventListener('change',reduced);context.revert();api.current=null;};
-  },[layers,backgroundLayers,chapter,overviewPadding]);
+    return ()=>{alive=false;request++;camera?.kill();view.removeEventListener('wheel',wheel);observer.disconnect();backgroundObserver.disconnect();media.removeEventListener('change',reduced);context.revert();api.current=null;};
+  },[layers,backgroundLayers,chapter,overviewPadding,select]);
   const active=layers.find(layer=>layer.id===(selected||hovered));
   const hover=(id,value)=>{
     setHovered(value?id:null);api.current?.hover(id,value);if(value)api.current?.preparePrimary(id);
@@ -148,7 +167,7 @@ export default function DeskResearchCanvas({onExpand,layers=deskResearchLayers,b
         <button type="button" data-desk-layer={layer.id} data-layer-group={layer.group} aria-pressed={selected===layer.id} onClick={event=>select(layer.id,event.currentTarget)}><span aria-hidden="true">⌗</span>{layer.title}</button>
       </div>)}
     </div>
-    <div ref={viewport} className={`figma-canvas-viewport${selected?' is-reading':''}`} aria-label={`${chapterTitle} 조사 자료 캔버스 · 확대 후 드래그 또는 방향키로 이동`} tabIndex={0}
+    <div ref={viewport} className={`figma-canvas-viewport${selected?' is-reading':''}`} data-lenis-prevent-wheel={selected?'':undefined} aria-label={`${chapterTitle} 조사 자료 캔버스 · 확대 후 스크롤 또는 방향키로 읽기 · 맨 아래에서 다시 내리면 전체 보기`} tabIndex={0}
       onPointerDown={event=>{
         if(!selectedRef.current||event.button!==0)return;
         suppressClick.current=false;drag.current={x:event.clientX,y:event.clientY,moved:false};

@@ -38,12 +38,11 @@ const chapterObjects = {
   maison: [
     object('maison', 'story-03-feature-visual.png', '태양', '천천히 회전하는 태양의 드로잉. 자연과 예술의 영감을 담고 마지막 풍경의 중심을 만듭니다.', 'MOTION', 'sun'),
     object('maison', 'story-03-background.png', '열리는 풍경', 'MAISON의 마지막을 받치는 전체 배경. 브랜드의 세계가 넓어지는 여운을 남깁니다.', 'BACKGROUND'),
-    object('maison', 'story-03-visual-01.png', '구름', '층을 이루는 구름의 드로잉. 넓은 풍경의 깊이와 부드러운 장면 연결을 담당합니다.'),
-    object('maison', 'story-02-visual-03.png', '겹쳐지는 구름', '여러 크기와 방향으로 반복되는 구름 레이어. 글자와 천사 사이에 깊이와 여백을 만듭니다.'),
+    object('maison', 'story-03-visual-01.png', '두 공간을 잇는 구름', '구름을 경계로 서로 다른 두 공간을 자연스럽게 이었습니다. 겹쳐진 구름이 장면 사이의 경계를 부드럽게 감싸며 하나의 흐름으로 이어줍니다.'),
+    { ...object('maison', 'floating-collage-image-05.png', '글자로 이루어진 디자인', 'MAISON 파트에서는 딥디크의 글자로 이루어진 디자인을 시각화했습니다. 글자를 독립적인 조형 요소로 배치해 브랜드의 시각적 언어를 표현했습니다.', 'TYPOGRAPHY'), layout: 'typography' },
     object('maison', 'story-02-visual-06.png', '활을 든 천사', '구름 위에 놓인 또 다른 천사. 서로 다른 몸짓이 넓은 여백에 시각적인 리듬을 만듭니다.'),
     object('maison', 'story-02-visual-08.png', '날개를 펼친 천사', '마지막 풍경으로 넘어가기 전 등장하는 천사 드로잉. 예술에서 얻은 영감을 브랜드의 세계에 연결합니다.'),
     object('maison', 'finale-agave.png', '자연의 실루엣', '마지막 장면의 식물 레이어. 자연에서 얻는 영감이 브랜드의 현재까지 이어짐을 보여줍니다.'),
-    object('maison', 'finale-rock.png', '풍경의 중심', '마지막 풍경을 받치는 바위 레이어. 앞뒤 요소의 깊이 차이로 장면을 안정적으로 마무리합니다.'),
   ],
 };
 

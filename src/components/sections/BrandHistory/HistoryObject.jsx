@@ -5,7 +5,7 @@ export default function HistoryObject({ item, index, chapterId }) {
       <span className="history-object__visual">
         <span className="history-object__art">
           {item.motion === 'quote-frame' && <span className="history-object__framed-copy" aria-hidden="true"><strong>A SENSE OF<br/>DISCOVERY</strong><span>무엇을 발견하게 될지<br/>알 수 없는 경험.<br/><br/>아름답다고 느끼는 것은<br/>무엇이든 이곳으로.</span></span>}
-          <img src={item.src} alt="" loading="lazy" decoding="async" />
+          {item.layout === 'typography' ? [1, 2, 3].map(glyph => <span key={glyph} className={`history-object__glyph history-object__glyph--${glyph}`}><img src={item.src} alt="" loading="lazy" decoding="async" /></span>) : <img src={item.src} alt="" loading="lazy" decoding="async" />}
           {item.motion === 'plant' && <img className="history-object__leaves" src="/media/diptyque-history/fabric/floating-botanical-leaves.png" alt="" loading="lazy" decoding="async" />}
           {item.motion === 'clock' && <>
             <img className="history-object__hour" src="/media/diptyque-history/objects/objects-detail-visual-03.png" alt="" />
