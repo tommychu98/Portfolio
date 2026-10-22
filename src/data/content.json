@@ -258,35 +258,39 @@
   ],
   "films": [
     {
-      "title": "THE QUIET EDIT",
-      "subtitle": "A moment of quiet.",
-      "src": "/media/images/shortform/quiet.webm",
-      "poster": "/media/images/shortform/quiet-poster.png",
+      "title": "COLLECTIVE — DIGITAL TICKET",
+      "subtitle": "아티스트와 관객이 만나는 순간을, 디지털 티켓으로.",
+      "brand": "COLLECTIVE",
+      "src": "/media/videos/collective/collective-1.mp4",
+      "playlist": ["/media/videos/collective/collective-1.mp4", "/media/videos/collective/collective-2.mp4"],
+      "type": "video/mp4",
+      "duration": 13,
+      "poster": "/media/videos/collective/collective-poster.jpg",
       "wide": false,
       "meta": [
         {
           "label": "기획 의도",
-          "text": "빛과 여백을 활용해 일상 속 고요한 순간을 표현하고, 바이레도 향수의 제품 이미지를 기억하도록 구성한 콘셉트 광고"
+          "text": "아티스트와 관객이 직접 만나 소통하는 참여형 무대를 위해 디지털 티켓 영상을 제작했습니다. 공연을 알리는 정보에 무대의 분위기와 기대감을 담아, SNS에서 영상을 접하는 순간부터 관객의 참여 경험이 시작되도록 기획했습니다."
         },
         {
           "label": "타깃",
-          "text": "미니멀한 디자인과 감성적인 향수 콘텐츠를 선호하는 SNS 이용자"
+          "text": "영화와 미디어 아트에 관심이 있고, SNS를 통해 새로운 공연과 전시를 발견하는 이용자를 대상으로 했습니다. 아티스트의 작업 세계를 가까이에서 경험하고 관객으로서 직접 참여하고 싶은 사람들에게 무대의 성격을 전달하고자 했습니다."
         },
         {
           "label": "제작 과정",
-          "text": "콘셉트 기획 → AI 제품 이미지 생성 → 장면별 움직임 구성 → 4개 장면 편집 → 타이포그래피 적용"
+          "text": "콘셉트 미팅 및 회의 → 콘텐츠 구성 → 레퍼런스 조사 → After Effects 모션 작업 → SNS 배포. 회의에서 무대의 방향과 전달할 메시지를 정리하고, 짧은 영상 안에 들어갈 정보의 순서를 구성했습니다. 레퍼런스로 시각적 방향을 구체화한 뒤 그래픽과 모션을 제작하고, SNS에 맞는 세로형 영상으로 완성했습니다."
         },
         {
           "label": "편집 포인트",
-          "text": "클로즈업으로 제품에 시선을 모으고, 장면의 움직임과 텍스트 등장 타이밍을 조절해 차분한 분위기 전달"
+          "text": "과한 효과보다 정돈된 화면 구성과 간결한 움직임에 집중했습니다. 정보의 가독성을 유지하면서 그래픽의 전환과 등장 타이밍을 조절해, 디지털 미디어 특유의 미래적인 인상과 깔끔한 분위기가 함께 느껴지도록 편집했습니다."
         },
         {
           "label": "사용 도구",
-          "text": "OpenAI 이미지 생성 · HTML/CSS 모션 · Playwright · FFmpeg"
+          "text": "Adobe Photoshop으로 이미지와 그래픽 요소를 준비하고, Adobe After Effects로 모션 그래픽과 장면 전환을 제작했습니다. 완성된 영상은 SNS 미디어에 배포할 수 있는 숏폼 콘텐츠로 구성했습니다."
         },
         {
           "label": "포맷",
-          "text": "인스타그램 릴스용 · 세로형 9:16 · 16초"
+          "text": "SNS 숏폼 · 세로형 9:16 · 각 약 13초 · 2종. 두 영상을 01 → 02 순서로 번갈아 반복 재생합니다."
         }
       ]
     },
@@ -374,20 +378,24 @@
       "name": "LIVE EVIL"
     },
     {
-      "title": "스튜디오형 메인",
-      "category": "02 / STUDIO",
-      "body": "타이포그래피 · 인터랙션",
-      "href": "https://personal3-gilt.vercel.app/pages/clone-02.html",
-      "image": "office",
-      "name": "FORM"
+      "title": "한샘 브랜드 메인",
+      "category": "02 / HOME & LIVING",
+      "body": "거실·주방·침실의 공간 이미지와 브랜드 스토리를 연결한 메인 페이지입니다. 여백과 타이포그래피의 위계를 구성하고, 공간별 필터와 스크롤 인터랙션을 구현하며 브랜드 콘텐츠의 흐름을 학습했습니다.",
+      "href": "https://clonecoding2-eight.vercel.app/",
+      "thumbnail": "/media/images/clone/hanssem-hero.jpg",
+      "thumbnailAlt": "한샘 브랜드 메인 — 집을 새롭게, 일상을 더 좋게라는 문구와 거실 인테리어",
+      "tagline": "A better everyday.",
+      "name": "HANSSEM"
     },
     {
-      "title": "브랜드형 메인",
-      "category": "03 / BRAND",
-      "body": "이미지 구성 · 슬라이드",
-      "href": "https://personal3-gilt.vercel.app/pages/clone-03.html",
-      "image": "fashion",
-      "name": "MODE"
+      "title": "케이벨로 여행 메인",
+      "category": "03 / TRAVEL & CYCLING",
+      "body": "자전거 여행과 라이딩 행사를 소개하는 메인 페이지입니다. 대형 이미지 슬라이드와 아이콘 내비게이션, 여행·행사 카드와 이용후기를 구성하며 콘텐츠가 많은 화면의 정보 위계와 탐색 흐름을 학습했습니다.",
+      "href": "https://clonecoding3-rosy.vercel.app/",
+      "thumbnail": "/media/images/clone/clone3-hero.jpg",
+      "thumbnailAlt": "케이벨로 여행 메인 — 산악 풍경 속 자전거를 탄 라이더와 메인 슬라이드",
+      "tagline": "Ride into discovery.",
+      "name": "K-VELO"
     }
   ],
   "skills": [

@@ -1,7 +1,4 @@
-@import '@fontsource-variable/lora/wght.css';
-@import '@fontsource-variable/lora/wght-italic.css';
-
-.selected-works,.sw-detail { --sw-background:#385e59; --sw-accent:#e7d6b3; --sw-foreground:#fffaf1; --sw-serif:'Lora Variable',Georgia,serif; --sw-card-height:60svh; color:var(--sw-foreground); font-family:var(--sans); }
+.selected-works,.sw-detail { --sw-background:#385e59; --sw-accent:#e7d6b3; --sw-foreground:#fffaf1; --sw-serif:var(--poster); --sw-card-height:60svh; color:var(--sw-foreground); font-family:var(--sans); }
 .selected-works { position:relative; background:var(--sw-background); }
 .sw-stage { position:relative; height:100svh; min-height:440px; overflow:clip; background:var(--sw-background); isolation:isolate; }
 .sw-stage__label { position:absolute; top:32px; left:32px; right:32px; display:flex; justify-content:space-between; gap:20px; z-index:4; color:var(--sw-accent); font-size:13px; letter-spacing:.06em; pointer-events:none; }
@@ -14,10 +11,10 @@
 .sw-title { position:absolute; width:max-content; max-width:calc(100% - 32px); left:50%; top:50%; translate:-50% -50%; text-align:center; z-index:3; will-change:transform,opacity; }
 .sw-category { font-size:16px; font-weight:400; line-height:1.5; margin:0 0 24px; }
 .sw-title h3 { margin:0; font:inherit; }
-.sw-name { display:block; padding:0; border:0; background:none; color:inherit; font:400 min(calc(9vw + 5svh),12.5vw)/1.05 var(--sw-serif); letter-spacing:-.035em; text-align:center; text-shadow:2px 2px #00000019,10px 10px #00000030; }
+.sw-name { display:block; padding:0; border:0; background:none; color:inherit; font:400 min(calc(9vw + 5svh),12.5vw)/1.05 var(--sw-serif); letter-spacing:-.015em; text-transform:uppercase; text-align:center; text-shadow:2px 2px #00000019,10px 10px #00000030; }
 button.sw-name { cursor:pointer; pointer-events:auto; }
 .sw-name>span { display:block; white-space:nowrap; }
-.sw-name .sw-name__italic { font-style:italic; }
+.sw-name .sw-name__italic { font-style:normal; }
 .sw-actions { display:flex; justify-content:center; align-items:center; gap:32px; margin-top:40px; pointer-events:auto; }
 .sw-button { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:50px; padding:12px 24px; border:0; border-radius:8px; font:400 16px/1.5 var(--sans); text-decoration:none; cursor:pointer; transition:transform .25s,background .25s; }
 .sw-button--primary { background:var(--sw-accent); color:#182922; }

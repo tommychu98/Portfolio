@@ -1,22 +1,20 @@
-// Coordinates measured in the supplied, unedited 1024 × 1536 illustration.
-// A full-width sky band is safer than routing cards around the figure: every
-// straight GSAP path remains above the figure, even when interrupted.
+// Person, ground and shadow share one photographic coordinate system.
+// The invisible SVG bounds reserve room for the embedded subject.
 export const desertScene = {
-  source: '/media/images/about/memories/la-desert-background.png',
-  width: 1024, height: 1536,
-  sky: { left: .035, top: .035, right: .965, bottom: .64 },
-  person: { left: .445, top: .713, right: .555, bottom: .912 },
+  source: '/media/images/about/memories/la-desert-composed-v4.png',
+  width: 1536, height: 1024,
 };
 
 export function sceneGeometry(root, stage, heading) {
   const r = root.getBoundingClientRect(), s = stage.getBoundingClientRect();
-  const frame = root.querySelector('.memory-wall__desert').getBoundingClientRect();
-  const scale = Math.min(frame.width / desertScene.width, frame.height / desertScene.height);
-  const width = desertScene.width * scale, height = desertScene.height * scale;
-  const image = { left: frame.left - r.left + (frame.width - width) / 2, top: frame.bottom - r.top - height, width, height };
-  const map = rect => ({ left: image.left + rect.left * width, top: image.top + rect.top * height,
-    right: image.left + rect.right * width, bottom: image.top + rect.bottom * height });
-  const sky = map(desertScene.sky), person = map(desertScene.person);
+  const frame = root.querySelector('.memory-wall__sky').getBoundingClientRect();
+  const landscape = root.querySelector('.memory-wall__desert').getBoundingClientRect();
+  const figure = root.querySelector('.memory-wall__person').getBoundingClientRect();
+  const image = { left: frame.left-r.left, top: frame.top-r.top, width: frame.width, height: frame.height };
+  const person = { left: figure.left-r.left, top: figure.top-r.top, right: figure.right-r.left, bottom: figure.bottom-r.top };
+  const gutter = Math.max(18, r.width * .035);
+  const sky = { left: gutter, right: r.width-gutter, top: 0,
+    bottom: Math.min(landscape.top-r.top+landscape.height*.12,person.top-36) };
   const origin = { x: s.left - r.left + s.width / 2, y: s.top - r.top + s.height / 2 };
   sky.top = Math.max(sky.top, heading.getBoundingClientRect().bottom - r.top + 18);
   sky.bottom = Math.min(sky.bottom, s.bottom - r.top);

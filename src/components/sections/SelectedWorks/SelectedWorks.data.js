@@ -1,6 +1,7 @@
 
 import { medipeel, medipeelDetail } from '../../../data/medipeel';
 import { t1Project } from '../../../data/t1';
+import { zippoProject } from '../../../data/zippo';
 
 // Detail copy and media are maintained in each project's own data module.
 export const selectedProjects = [{
@@ -14,4 +15,4 @@ export const selectedProjects = [{
   paragraphs: medipeel.paragraphs, images: medipeel.images,
   detail: medipeelDetail,
   links: medipeelDetail.links,
-}, t1Project];
+}, t1Project, zippoProject];

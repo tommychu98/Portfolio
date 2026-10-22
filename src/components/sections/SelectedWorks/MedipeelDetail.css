@@ -1,8 +1,8 @@
-﻿/* Reference Details proportions; scoped to the MEDIPEEL dialog only. */
+/* Reference Details proportions; scoped to the MEDIPEEL dialog only. */
 .sw-detail--medipeel .sw-detail__content { padding-top:130px; }
 .medipeel-detail { font-family:ui-sans-serif,system-ui,var(--sans); font-size:16px; line-height:1.5; color:var(--sw-foreground); }
 .sw-detail--medipeel .medipeel-detail__header { margin:0 0 80px; text-align:left; }
-.sw-detail--medipeel .medipeel-detail h2 { margin:0; font:400 clamp(48px,5.55vw,80px)/1.1 var(--sw-serif); letter-spacing:-.035em; color:var(--sw-accent); }
+.sw-detail--medipeel .medipeel-detail h2 { margin:0; font:400 clamp(48px,5.55vw,80px)/1.1 var(--sw-serif); letter-spacing:-.015em; text-transform:uppercase; color:var(--sw-accent); }
 .medipeel-detail h2 span { display:block; }
 .medipeel-detail__subtitle { font:400 clamp(24px,2.23vw,32px)/1.5 var(--sw-serif); margin-top:0; }
 .medipeel-detail__meta { display:flex; flex-wrap:wrap; gap:12px 32px; margin-top:24px; font-size:15.2px; }
@@ -19,11 +19,11 @@
 .medipeel-detail__creative { margin-top:40px; }
 .medipeel-detail__challenges { margin-top:64px; }
 .medipeel-detail__challenge { padding:40px; margin-bottom:32px; border-radius:20px; background:transparent; }
-.medipeel-detail__challenge h4 { position:relative; display:inline-block; font:700 24px/1.5 ui-sans-serif,system-ui,var(--sans); color:#4ed9a5; padding-bottom:16px; margin:0 0 24px; }
-.medipeel-detail__challenge h4::after { content:''; position:absolute; bottom:0; left:0; width:32px; height:2px; background:#4ed9a5; }
+.medipeel-detail__challenge h4 { position:relative; display:inline-block; font:700 24px/1.5 ui-sans-serif,system-ui,var(--sans); color:var(--sw-challenge-accent, #4ed9a5); padding-bottom:16px; margin:0 0 24px; }
+.medipeel-detail__challenge h4::after { content:''; position:absolute; bottom:0; left:0; width:32px; height:2px; background:var(--sw-challenge-accent, #4ed9a5); }
 .medipeel-detail__challenge > p { font-size:16.8px; line-height:1.8; margin-bottom:32px; }
 .medipeel-detail__solution { position:relative; padding-top:32px; }
-.medipeel-detail__solution h5 { position:absolute; top:-14px; left:0; margin:0; color:#4ed9a5; font-size:17.6px; font-weight:600; line-height:1.5; }
+.medipeel-detail__solution h5 { position:absolute; top:-14px; left:0; margin:0; color:var(--sw-challenge-accent, #4ed9a5); font-size:17.6px; font-weight:600; line-height:1.5; }
 .medipeel-detail__solution p { line-height:1.5; }
 .medipeel-detail__links { display:flex; flex-wrap:wrap; gap:16px; margin-top:48px; }
 /* Match the live reference's heading, challenge and Solution hover timings. */

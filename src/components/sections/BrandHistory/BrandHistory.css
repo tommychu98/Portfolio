@@ -19,7 +19,7 @@
 .brand-history__tile-image img.is-cover{object-fit:cover;padding:0}
 .brand-history__title{position:absolute;top:6%;left:0;right:0;font:400 clamp(60px,7.6vw,145px)/.95 var(--poster);letter-spacing:-.025em;background:var(--paper);padding:6px 8px 10px;overflow:hidden;text-align:center}
 .brand-history__quote{position:absolute;left:16px;right:16px;bottom:16px;padding:8px 10px;background:var(--paper);font:500 italic 16px/1.25 var(--subheading);max-width:360px}
-.brand-history__editorial{display:flex;flex-direction:column;justify-content:space-between;gap:18px;min-width:0}
+.brand-history__editorial{display:flex;flex-direction:column;justify-content:center;min-width:0}
 .brand-history__thumbnails{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .brand-history__thumbnails figure{margin:0;min-width:0}
 .brand-history__thumbnails img{display:block;width:100%;height:clamp(70px,10vh,130px);object-fit:contain;background:#d9cdb5}
@@ -45,7 +45,7 @@
  .brand-history.is-animated .brand-history__stage{padding-top:64px;padding-bottom:16px}
  .brand-history.is-animated .brand-history__header{margin-bottom:14px}
  .brand-history.is-animated .brand-history__chapters{margin-bottom:14px}
- .brand-history.is-animated .brand-history__editorial{gap:6px;min-height:0}
+ .brand-history.is-animated .brand-history__editorial{min-height:0}
  .brand-history.is-animated .history-object__visual{height:clamp(28px,5vh,37px)}
  .brand-history.is-animated .history-object__number{font-size:8px;line-height:1.2;margin-top:3px}
  .brand-history.is-animated .brand-history__copy{padding:0}

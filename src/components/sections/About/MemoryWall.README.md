@@ -9,6 +9,15 @@ Edit `memories.js` to add or replace photos. Web derivatives live under
 `category`, `year`, `alt`, and `description` are editable. Blank dates are omitted;
 a reverse face requires both an image and a nonempty description.
 
+On entry, photo 01 is selected. Once its entrance/selection motion finishes,
+autoplay waits five seconds, advances in photo order, and wraps from 10 to 01.
+Manual selection or previous/next navigation restarts the delay from that photo.
+Showing the reverse face pauses autoplay; returning to the front starts a fresh
+five-second delay. Leaving the section gathers the cards and clears the timer;
+reentry starts at 01. Hidden browser tabs also pause and restart with a fresh
+delay when visible. Run `node artifacts/verify-memory-autoplay.mjs` to check these
+interactions on desktop and mobile.
+
 The ten current photos and six transparent paper frames were supplied by the
 user. Previous stock placeholders and profile/study pictures are no longer used
 in this wall. Descriptions only describe visible scenes; replace them with personal
@@ -85,25 +94,19 @@ No pinning or additional scroll driver is used.
 `la-desert-background.png` is a byte-for-byte copy of the supplied
 `사막의 고독한 후드 인물.png` (SHA256
 `C0896E5D481ADCF9F819B8B489196FD14034B029414420F573D72DB2F8078C01`).
-The full 1024×1536 image is contained, bottom-centered, without cropping,
-recoloring, stretching or an extra texture overlay. Uncovered space uses the
-existing paper color. Both sky and figure are always present in the section.
-The lower control strip is reserved outside the image frame so mobile hint text
-and Previous/Next cannot sit over the figure either.
+The current scene uses la-desert-composed-v4.png, generated from original la3.jpg. The person, gravel, shrubs and long cast shadow are embedded in one photograph, so responsive crops retain their shared perspective. The sky uses a person-free upper crop; the landscape uses a centered, aspect-preserving SVG crop. An invisible SVG rectangle reserves space for the embedded person. No separately scaled figure or synthetic shadow is rendered. Prompts: artifacts/memory-fullbleed/generation-v4.json.
 
-`memoryScene.js` maps normalized original-image coordinates through the exact
-contain scale and offset. The legal sky ends at 64% of image height; the protected
-figure rectangle spans 44.5–55.5% horizontally and 71.3–91.2% vertically. The sky
-also excludes the heading. Stack, scatter, focus, shuffle and props all use this
-same region, rather than only changing the central card's z-index.
+Scene geometry measures the actual sky, landscape and figure elements. The
+legal card region excludes the heading and stops above both the landscape and
+the figure. Stack, scatter, focus, shuffle and props all use this same region.
 
 Safety uses half the card diagonal as a conservative radius for any rotation.
 Sticker radii additionally include 15% for inner art pulses. Position and scale
 use the same non-overshooting ease, so intermediate straight paths stay inside
 the convex sky band. Resizing reprojects old transforms synchronously inside
 ResizeObserver before paint, then continues toward the current state's target.
-On phones, smaller photos/stickers and a shorter stage keep the original image
-fully visible without stretching it. All ten photos and all eight props remain.
+On phones, smaller photos/stickers and a shorter stage preserve the card area
+and keep the entire figure visible. All ten photos and all eight props remain.
 
 Run `node scripts/check-memory-desert.mjs` with the Vite development server
 running. Current scene screenshots and per-rendered-frame bounds checks are

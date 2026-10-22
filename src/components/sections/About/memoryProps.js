@@ -25,7 +25,7 @@ export const memoryAssociations = {
   'memory-10': ['light', 'camera', 'film'],
 };
 
-export function memoryPropLayout(width, height, dimensions, focus, relatedIds, revision, photoLayout) {
+export function memoryPropLayout(width, height, dimensions, focus, relatedIds, revision, photoLayout, focusId) {
   let seed = 3167 + revision * 1013;
   const random = () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296; };
   const compact = width < 700;
@@ -41,7 +41,11 @@ export function memoryPropLayout(width, height, dimensions, focus, relatedIds, r
       const cx = focus.width / 2, cy = focus.height / 2;
       // Foreground stickers visibly cross the paper corners rather than peeking
       // out from behind them. Keep the image's central subject unobstructed.
-      const firstCorner = prop.id === 'camera' ? [-cx + w * .10, cy - h * .80] : [-cx + w * .10, -cy + h * .24];
+      const firstCorner = prop.id === 'camera'
+        ? [-cx + w * .10, cy - h * .80]
+        : focusId === 'memory-01' && prop.id === 'palms'
+          ? [-cx - w * .28, -cy + h * .24]
+          : [-cx + w * .10, -cy + h * .24];
       const positions = [firstCorner, [cx - w * .16, -cy + h * .22], [cx + w * .05, cy - h * .05]];
       [x, y] = positions[slot % positions.length];
     } else {

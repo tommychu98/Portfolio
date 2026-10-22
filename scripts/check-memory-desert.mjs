@@ -1,4 +1,4 @@
-import { chromium } from 'playwright';
+const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
 import { mkdir, writeFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 
@@ -12,7 +12,7 @@ try {
     const page = await context.newPage();
     page.on('pageerror', e => { if (!/isExternalMethodAvailable/.test(e.message)) errors.push(e.message); });
     await page.goto('http://127.0.0.1:5173'); await page.waitForTimeout(3500);
-    await page.waitForFunction(() => document.querySelector('.memory-wall__desert').complete);
+    await page.evaluate(async () => { const image = new Image(); image.src = document.querySelector('.memory-wall__desert image').getAttribute('href'); await image.decode(); });
     const geometry = () => page.evaluate(async () => {
       const { sceneGeometry } = await import('/src/components/sections/About/memoryScene.js');
       const root = document.querySelector('#closing');
@@ -22,7 +22,8 @@ try {
     let g = await geometry();
     console.log(mode, JSON.stringify(g));
     assert(g.height > 160 && g.width > 250, 'Enough sky remains for the photographs');
-    assert(Math.abs(g.image.width / g.image.height - 2 / 3) < .001);
+    assert(Math.abs(g.image.width - width) < 1, 'Background covers the entire viewport width');
+    assert(g.person.bottom > g.person.top, 'Embedded figure bounds follow the shared scene transform');
     assert(g.person.bottom < g.rootHeight && g.person.top > g.sky.bottom);
     // Observe every rendered frame, including inner PNG pulses, rather than only
     // testing target coordinates. A bounding box includes rotation and scale.
@@ -119,7 +120,7 @@ try {
     await sceneCapture('scatter');
     await page.getByRole('button', { name: '다음 사진', exact: true }).click(); await state('focused');
     await sceneCapture('focus');
-    results.push({ mode, frames: audit.samples, checks: ['unaltered portrait background contains full figure', 'auto scatter', 'direct focus/touch', 'all 10 photo shuffle transitions', 'reverse and close', 'previous/next and rapid clicks', 'both complete exits and reentry', 'interrupted gather', 'resize', 'all sampled card and sticker bounds remain in sky'] });
+    results.push({ mode, frames: audit.samples, checks: ['full-width background with independent figure', 'auto scatter', 'direct focus/touch', 'all 10 photo shuffle transitions', 'reverse and close', 'previous/next and rapid clicks', 'both complete exits and reentry', 'interrupted gather', 'resize', 'all sampled card and sticker bounds remain in sky'] });
     await context.close();
   }
   assert.deepEqual(errors, []);

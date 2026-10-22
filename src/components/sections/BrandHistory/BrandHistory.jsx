@@ -4,7 +4,6 @@ import { gsap, ScrollTrigger, scrollToPosition } from '../../../motion/scroll';
 import { historyChapters } from './BrandHistory.data';
 import { chapterTimes, createHistoryTimeline } from './BrandHistory.motion';
 import HistoryPreview from './HistoryPreview';
-import HistoryObject from './HistoryObject';
 import './BrandHistory.css';
 
 function Chapter({ chapter, active, hidden }) {
@@ -14,17 +13,11 @@ function Chapter({ chapter, active, hidden }) {
       <HistoryPreview chapter={chapter} active={active}/>
     </div>
     <div className="brand-history__editorial">
-      <div className="brand-history__thumbnails">
-        {chapter.objects.slice(0, 4).map((item, index) => <HistoryObject key={item.src} item={item} index={index} chapterId={chapter.id}/>)}
-      </div>
       <div className="brand-history__copy" data-history-copy>
         <span className="brand-history__theme">{chapter.theme}</span>
         <h4>{chapter.statement}</h4>
         <p>{chapter.description}</p>
         <p>{chapter.design}</p>
-      </div>
-      <div className="brand-history__thumbnails brand-history__thumbnails--bottom">
-        {chapter.objects.slice(4, 8).map((item, index) => <HistoryObject key={item.src} item={item} index={index + 4} chapterId={chapter.id}/>)}
       </div>
     </div>
   </article>;
@@ -45,7 +38,7 @@ export default function BrandHistory() {
     }, { rootMargin: '1600px 0px' });
     preload.observe(element);
     const match = gsap.matchMedia();
-    match.add('(prefers-reduced-motion: no-preference) and (min-width: 1024px)', () => {
+    match.add('(prefers-reduced-motion: no-preference) and (min-width: 1024px) and (min-height: 1000px)', () => {
       element.classList.add('is-animated');
       setPinned(true);
       const timeline = createHistoryTimeline(element, setActive);

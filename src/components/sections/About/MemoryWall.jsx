@@ -8,13 +8,6 @@ import { memoryProps, memoryAssociations, memoryPropLayout } from './memoryProps
 import { desertScene, sceneGeometry, constrainToSky } from './memoryScene';
 import './MemoryWall.css';
 
-// Original-image coordinates: only the crowns move, never the trunks or figure.
-const palmCrowns = [
-  [72, 970, 112, 118, 128, 1080], [24, 1038, 80, 97, 64, 1125],
-  [145, 1035, 100, 108, 193, 1135], [832, 1070, 68, 75, 865, 1138],
-  [875, 1100, 65, 75, 905, 1168], [790, 1118, 56, 65, 818, 1177],
-];
-
 export default function MemoryWall() {
   const root = useRef(null);
   const stage = useRef(null);
@@ -27,17 +20,33 @@ export default function MemoryWall() {
   useLayoutEffect(() => {
     let active = -1, reversed = false, revision = 0, timeline, lifecycle;
     let phase = 'stacked', expanded = false, disposed = false, currentArea;
+    let advanceTimer;
     const nodes = memories.map(memory => cards.current.get(memory.id));
     const propNodes = memoryProps.map(prop => props.current.get(prop.id));
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const ctx = gsap.context(() => {}, root);
     const faces = nodes.flatMap(node => [...node.querySelectorAll('[data-memory-face]')]);
     const arts = propNodes.map(node => node.querySelector('svg'));
+    const stopAdvance = () => {
+      window.clearTimeout(advanceTimer);
+      advanceTimer = undefined;
+    };
+    const prepareAdvance = () => {
+      stopAdvance();
+      if (disposed || !expanded || active < 0 || reversed || phase !== 'focused' || document.hidden) return;
+      advanceTimer = window.setTimeout(() => {
+        advanceTimer = undefined;
+        ctx.focusMemory((active + 1) % nodes.length);
+      }, 5000);
+    };
     const setPhase = value => {
       phase = value;
       root.current.dataset.memoryState = value;
+      if (value === 'focused') prepareAdvance();
+      else stopAdvance();
     };
     const resetSelection = () => {
+      stopAdvance();
       gsap.killTweensOf(faces);
       gsap.set(root.current.querySelectorAll('[data-memory-face="front"]'), { autoAlpha: 1, scale: 1 });
       gsap.set(root.current.querySelectorAll('[data-memory-face="back"]'), { autoAlpha: 0, scale: .97 });
@@ -50,9 +59,6 @@ export default function MemoryWall() {
       gsap.killTweensOf(arts);
       const stack = kind === 'stack' || kind === 'gather';
       const area = sceneGeometry(root.current, stage.current, root.current.querySelector('.memory-wall__rule'));
-      root.current.style.setProperty('--scene-top', `${area.image.top}px`);
-      root.current.style.setProperty('--scene-ground', `${area.image.top + area.image.height * .72}px`);
-      root.current.style.setProperty('--scene-bottom', `${area.image.top + area.image.height}px`);
       const dimensions = nodes.map(node => ({ width: node.offsetWidth, height: node.offsetHeight }));
       const propDimensions = propNodes.map(node => ({ width: node.offsetWidth, height: node.offsetHeight }));
       const rawLayout = stack ? memoryStackLayout(nodes.length) : memoryLayout(area.width, area.height, dimensions, active, revision);
@@ -61,7 +67,7 @@ export default function MemoryWall() {
       const rawProps = memoryPropLayout(area.width, area.height, propDimensions,
         active >= 0 ? { width: dimensions[active].width * layout[active].scale, height: dimensions[active].height * layout[active].scale } : null,
         memoryAssociations[memories[active]?.id] || [], revision,
-        localPhotos);
+        localPhotos, memories[active]?.id);
       const propLayout = constrainToSky(rawProps, propDimensions, area, area.width < 600 ? .65 : .85, 1.15);
       // A resize changes the legal region itself. Reproject old transforms into
       // its new safe band before continuing, rather than tweening from the ground.
@@ -84,6 +90,7 @@ export default function MemoryWall() {
       let order = 0;
       nodes.forEach((node, i) => {
         const { zIndex, ...transform } = layout[i];
+        node.style.setProperty('--memory-focus-scale', layout[i].scale);
         gsap.set(node, { zIndex });
         const delay = immediate ? 0 : kind === 'scatter' ? i * .055 : kind === 'gather' ? i * .035 : i === active ? .04 : Math.min(order++ * .03, .24);
         timeline.to(node, transform, delay);
@@ -108,6 +115,8 @@ export default function MemoryWall() {
       expanded = true;
       revision = 0;
       resetSelection();
+      active = 0;
+      setSelected(0);
       ctx.arrange('scatter');
     });
 
@@ -140,6 +149,7 @@ export default function MemoryWall() {
       if (active < 0) return;
       reversed = show;
       setBack(show);
+      prepareAdvance();
       const front = nodes[active].querySelector('[data-memory-face="front"]');
       const reverse = nodes[active].querySelector('[data-memory-face="back"]');
       gsap.to(front, { autoAlpha: show ? 0 : 1, scale: show ? .97 : 1, duration: reduced.matches ? 0 : .28, overwrite: 'auto' });
@@ -161,6 +171,7 @@ export default function MemoryWall() {
         if (toggle && memories[index].image && memories[index].description.trim()) ctx.showFace(!reversed);
         return;
       }
+      stopAdvance();
       // Stop reverse-face tweens independently of the outer position timeline.
       gsap.killTweensOf(faces);
       gsap.set(root.current.querySelectorAll('[data-memory-face="front"]'), { autoAlpha: 1, scale: 1 });
@@ -208,31 +219,26 @@ export default function MemoryWall() {
     observer.observe(stage.current);
     observer.observe(root.current);
     const motionChange = () => ctx.arrange(expanded ? active >= 0 ? 'focus' : 'scatter' : 'stack', false);
+    const visibilityChange = () => prepareAdvance();
+    document.addEventListener('visibilitychange', visibilityChange);
     reduced.addEventListener('change', motionChange);
     return () => {
       disposed = true;
+      stopAdvance();
       observer.disconnect(); visibility.disconnect(); lifecycle.kill();
+      document.removeEventListener('visibilitychange', visibilityChange);
       reduced.removeEventListener('change', motionChange);
       timeline?.kill(); ctx.revert(); controls.current = null;
     };
   }, []);
 
-  const current = memories[selected];
-  const hasBack = Boolean(current?.image && current?.description.trim());
   return <section id="closing" className="memory-wall section-space" ref={root} aria-labelledby="memory-wall-title">
-    <img className="memory-wall__desert" src={desertScene.source} width={desertScene.width} height={desertScene.height} alt="" aria-hidden="true" decoding="async"/>
-    <svg className="memory-wall__palms" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="memory-crown-feather"><feGaussianBlur stdDeviation="3"/></filter>
-        {palmCrowns.map(([x,y,w,h], i) => <mask key={i} id={`memory-crown-${i}`} maskUnits="userSpaceOnUse" x={x-10} y={y-10} width={w+20} height={h+20}>
-          <rect x={x} y={y} width={w} height={h} rx="12" fill="white" filter="url(#memory-crown-feather)"/>
-        </mask>)}
-      </defs>
-      {palmCrowns.map(([, , , , x, y], i) => <g key={i} mask={`url(#memory-crown-${i})`}>
-        <g className="memory-wall__crown" style={{ transformOrigin: `${x}px ${y}px`, '--sway-time': `${5.7+i*.63}s`, '--sway-delay': `${-i*1.3}s` }}>
-          <image href={desertScene.source} width="1024" height="1536"/>
-        </g>
-      </g>)}
+    <svg className="memory-wall__sky" viewBox="0 0 1536 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <image href={desertScene.source} width="1536" height="1024"/>
+    </svg>
+    <svg className="memory-wall__desert" viewBox="0 300 1536 724" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <image href={desertScene.source} width="1536" height="1024"/>
+      <rect className="memory-wall__person" x="718" y="505" width="101" height="334" fill="none"/>
     </svg>
     <SectionLabel sectionId="closing">ABOUT ME</SectionLabel>
     <div className="memory-wall__heading">
@@ -285,7 +291,6 @@ export default function MemoryWall() {
       </div>
     </div>
     <div className="memory-wall__bottom">
-      <p className="memory-wall__hint" aria-live="polite">{selected < 0 ? '작은 순간들을 하나씩 꺼내보세요.' : hasBack ? (back ? '다시 누르면 사진으로 돌아갑니다.' : '가운데 사진을 한 번 더 누르면 이야기가 펼쳐집니다.') : '새로운 사진이 곧 채워질 자리입니다.'}</p>
       <nav className="memory-wall__nav" aria-label="추억 사진 탐색">
         <button type="button" onClick={() => controls.current?.step(-1)} aria-label="이전 사진">← <span>PREVIOUS</span></button>
         <span className="memory-wall__count" aria-live="polite" aria-atomic="true">{String(selected + 1).padStart(2, '0')} <span>/ {String(memories.length).padStart(2, '0')}</span></span>

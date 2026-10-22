@@ -20,7 +20,7 @@ export function memoryLayout(width, height, dimensions, selected, revision) {
   const gap = width > 1000 ? 56 : width > 600 ? 44 : 34;
   const focus = selected >= 0 ? dimensions[selected] : null;
   // Leave usable space around the enlarged selection in the shallow sky band.
-  const focusScale = focus ? Math.min(1.42, width * .52 / focus.width, height * .60 / focus.height) : 1.42;
+  const focusScale = focus ? Math.min(1.42, width * (width < 600 ? .72 : .52) / focus.width, height * .60 / focus.height) : 1.42;
   const centerX = focus ? focus.width * focusScale / 2 : 0;
   const centerY = focus ? focus.height * focusScale / 2 : 0;
   const placed = [];

@@ -1,0 +1,138 @@
+/* Shared editorial typography. Loaded after section styles so breakpoints use
+   the same reading size instead of shrinking copy to fit a particular scene. */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/media/fonts/PretendardVariable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --sans: 'Pretendard', sans-serif;
+  --serif: 'Pretendard', sans-serif;
+  --korean-serif: 'Pretendard', sans-serif;
+  --compact: 'Portfolio Compact', 'Pretendard', sans-serif;
+  --emphasis: 'Portfolio Emphasis', 'Pretendard', sans-serif;
+  --poster: 'Anton', 'Pretendard', sans-serif;
+  --subheading: 'Barlow Condensed', 'Pretendard', sans-serif;
+  --body-size: 16px;
+  --body-weight: 400;
+  --body-leading: 1.8;
+  --title-size: clamp(48px, 6.5vw, 96px);
+  --title-leading: 1.08;
+  --copy-title-size: 24px;
+  --space-copy: 16px;
+  --space-heading: 32px;
+  --space-group: 48px;
+  --space-section: 120px;
+}
+
+/* Normal copy includes descriptions in dialogs, lists and card reverses.
+   Eyebrows, image captions, navigation and display slogans are separate roles. */
+:root body :is(
+  .story__copy > p, .work-values article p, .profile__copy > p,
+  .works-intro p, .zara-overview__copy > p, .zara-details__copy > p, p.zara-details__copy,
+  .diptyque-project-list__row p, .section-heading > p,
+  .research-archive__intro p, .research-archive__description,
+  .research-archive__tasks li, .research-archive__finding > p,
+  .research-archive__context > p, .research-cut__caption p,
+  .research-cut__excerpt blockquote, .research-cut__empty p,
+  .research-reader__caption, .research-notes dd, .research-notes li,
+  .desk-canvas-caption > p, .brand-history__project p, .brand-history__copy p,
+  .sw-detail__introduction, .sw-detail__tools, .sw-detail__paragraphs p,
+  .medipeel-detail p, .medipeel-detail li, .feature-video p,
+  .film__introduction > p, .film__copy dd, .film-archive__intro p + p,
+  .film-archive__description, .clone-coding article > p, .clone-coding__note,
+  .skills p, .about__copy p, .about__qa p, .memory-wall__intro,
+  .memory-card__description, .project-meta dd, .site-footer p:not(.fine-print)
+) {
+  font-family: var(--sans);
+  font-size: var(--body-size);
+  font-weight: var(--body-weight);
+  font-style: normal;
+  line-height: var(--body-leading);
+  letter-spacing: 0;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+:root body :is(.sw-detail__paragraphs, .medipeel-detail) strong {
+  font-weight: var(--body-weight);
+}
+:root body :is(.medipeel-detail, .medipeel-detail h3, .medipeel-detail h4, .medipeel-detail h5) {
+  font-family: var(--sans);
+}
+
+:root body :is(.display, .highlight-title:not(.highlight-title--hero),
+  .research-archive__intro h2, .brand-history__intro h2) {
+  font-family: var(--poster);
+  font-size: var(--title-size);
+  font-weight: 400;
+  line-height: var(--title-leading);
+  letter-spacing: -.015em;
+}
+
+:root body :is(.work-values__title, .profile__copy h2, .korean-display,
+  .zara-overview__copy h3, .brand-history__copy h4, .clone-coding h3,
+  .about__copy h3, .medipeel-detail__subtitle, .medipeel-detail h3,
+  .medipeel-detail h4) {
+  font-family: var(--sans);
+  font-size: var(--copy-title-size);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -.02em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+:root body .story__lead {
+  font: var(--body-weight) var(--body-size)/var(--body-leading) var(--sans);
+  letter-spacing: 0;
+}
+:root body :is(.section-label, .archive-eyebrow, .memory-wall__eyebrow) {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: .08em;
+}
+
+:root body .section-space:not(.story):not(.story__body) { padding-block: var(--space-section); }
+:root body .section-heading { gap: var(--space-heading); margin-bottom: var(--space-group); }
+:root body .section-label { margin-bottom: var(--space-heading); }
+:root body .section-label > span:first-child { flex-shrink: 0; white-space: nowrap; }
+:root body :is(.brand-history__header, .contact__heading) .section-label { margin-bottom: 0; }
+:root body :is(.story__copy, .zara-details__copy, .brand-history__copy, .about__copy,
+  .sw-detail__paragraphs, .medipeel-detail__solution) p + p { margin-top: var(--space-copy); }
+:root body :is(.work-values__title, .brand-history__copy h4, .clone-coding h3,
+  .about__copy h3) { margin-bottom: var(--space-copy); }
+:root body .medipeel-detail__description { margin-bottom: var(--space-group); }
+:root body .medipeel-detail__header { margin-bottom: var(--space-heading); }
+:root body .medipeel-detail__challenge { padding: 32px; margin-bottom: var(--space-heading); }
+:root body .medipeel-detail__challenge > p { margin-bottom: var(--space-heading); }
+:root body .medipeel-detail__solution h5 { font-size: 18px; }
+
+/* Scaled collage cards need inverse type scaling to retain a 16px reading size. */
+:root body .memory-card[data-selected='true'] .memory-card__description {
+  font-size: calc(var(--body-size) / var(--memory-focus-scale, 1));
+}
+:root body .memory-card[data-selected='true'] .memory-card__back-title {
+  font-size: calc(24px / var(--memory-focus-scale, 1));
+  line-height: 1.2;
+}
+:root body .memory-card__back { min-height: 0; }
+:root body .memory-card__description { overscroll-behavior: contain; }
+
+/* Keep the pinned history scene readable without reducing its body text. */
+:root body .brand-history.is-animated .history-object__visual { height: 60px; }
+:root body .brand-history.is-animated .brand-history__editorial { gap: 12px; min-height: 0; }
+:root body .brand-history.is-animated .brand-history__copy { padding: 0; }
+
+@media(max-width: 820px) {
+  :root { --title-size: clamp(42px, 10vw, 64px); --copy-title-size: 22px;
+    --space-section: 80px; --space-heading: 24px; --space-group: 32px; }
+  :root body .medipeel-detail__challenge { padding: 24px 0; }
+}
+@media(max-width: 700px) {
+  :root body .memory-wall__stage { height: 880px; }
+}

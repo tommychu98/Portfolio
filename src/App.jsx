@@ -21,6 +21,7 @@ import About from './components/sections/About/About';
 import MemoryWall from './components/sections/About/MemoryWall';
 import Contact from './components/sections/Contact/Contact';
 import PortfolioTextMotion from './components/ui/PortfolioTextMotion';
+import SectionStack from './components/transitions/SectionStack';
 
 const introSources = introObjects.map(object=>object.src);
 
@@ -34,17 +35,21 @@ export default function App() {
       <WorkValues />
       <BoundaryBounce id="values-profile" from="var(--paper)" to="#CBD5D8" />
       <Profile />
-      <WorksIntro />
-      <PortfolioOverview />
+      <SectionStack>
+        <WorksIntro />
+        <PortfolioOverview />
+      </SectionStack>
       <PortfolioDetails />
       <PortfolioProcess />
       <BrandHistory />
       <PersonalWorks />
       <Film />
-      <FilmArchive />
-      <CloneCoding />
-      <Skills />
-      <About />
+      <SectionStack>
+        <FilmArchive />
+        <CloneCoding />
+        <Skills />
+        <About />
+      </SectionStack>
       <MemoryWall />
       <Contact />
       <PortfolioTextMotion />

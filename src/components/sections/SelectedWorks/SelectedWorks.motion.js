@@ -7,6 +7,8 @@ export function initSelectedWorks(root, projects, onActive) {
   const media = gsap.matchMedia();
   let trigger, current = -1, locked = false, staticSelect;
   const state = { position: 0 };
+  // Each work owns a scroll interval, including a full interval for the last work.
+  const positionAt = progress => Math.min(progress * projects.length, projects.length - 1);
   const activate = index => {
     if (index === current) return;
     current = index;
@@ -47,9 +49,9 @@ export function initSelectedWorks(root, projects, onActive) {
       trigger = ScrollTrigger.create({
         trigger:root, start:'top top', end:()=>`+=${window.innerHeight * projects.length}`,
         pin:stage, invalidateOnRefresh:true,
-        snap:{snapTo:value=>gsap.utils.snap(1/(projects.length-1),value),duration:{min:.15,max:.35},delay:.7,inertia:false},
-        onUpdate:self=>{ if(locked) return; staticSelect(self.progress*(projects.length-1)); },
-        onRefresh:self=>{ if(!locked) staticSelect(self.progress*(projects.length-1)); },
+        snap:{snapTo:value=>gsap.utils.snap(1/projects.length,value),duration:{min:.15,max:.35},delay:.7,inertia:false},
+        onUpdate:self=>{ if(locked) return; staticSelect(positionAt(self.progress)); },
+        onRefresh:self=>{ if(!locked) staticSelect(positionAt(self.progress)); },
       });
     }    return () => { trigger=null; };
   });
@@ -57,7 +59,12 @@ export function initSelectedWorks(root, projects, onActive) {
     select(index) {
       if(locked) return;
       index=Math.max(0,Math.min(projects.length-1,index));
-      if(trigger) { scrollToPosition(trigger.start+(trigger.end-trigger.start)*index/(projects.length-1),true); ScrollTrigger.update(); staticSelect(index); }
+      if(trigger) {
+        trigger.getTween(true)?.kill?.();
+        const immediate = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        scrollToPosition(trigger.start+(trigger.end-trigger.start)*index/projects.length,immediate);
+        if(immediate) { ScrollTrigger.update(); staticSelect(index); }
+      }
       else staticSelect(index);
     },
     lock(value) { locked=value; if(value) { trigger?.getTween(true)?.kill?.(); } },

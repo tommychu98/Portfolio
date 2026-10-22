@@ -16,7 +16,7 @@ export default function ProjectDetail({ project, origin, onClosed }) {
     return ()=>{motion.current?.destroy();element.close();document.body.style.overflow=previous;pauseScroll(false);};
   },[origin]);
   const close=()=>{if(closing.current)return;closing.current=true;setIsClosing(true);motion.current.close(onClosed);};
-  return <dialog ref={dialog} id="selected-work-detail" className={`sw-detail${project.detail ? ' sw-detail--medipeel' : ''}`} aria-labelledby="selected-detail-title" data-lenis-prevent onCancel={event=>{event.preventDefault();close();}} style={{'--sw-background':project.detail?.background || project.background,'--sw-accent':project.detail?.accent || project.accent,'--sw-foreground':project.detail?.foreground || project.foreground}}>
+  return <dialog ref={dialog} id="selected-work-detail" className={`sw-detail${project.detail ? ' sw-detail--medipeel' : ''}`} aria-labelledby="selected-detail-title" data-lenis-prevent onCancel={event=>{event.preventDefault();close();}} style={{'--sw-background':project.detail?.background || project.background,'--sw-accent':project.detail?.accent || project.accent,'--sw-foreground':project.detail?.foreground || project.foreground,'--sw-challenge-accent':project.detail?.challengeAccent}}>
     <div className="sw-detail__visual" data-detail-visual aria-hidden="true"><ProjectCards project={project} active detail/><div className="sw-detail__display sw-name" data-detail-title><ProjectName project={project}/></div></div>
     <button className="sw-detail__close" autoFocus onClick={close} aria-label="프로젝트 상세 닫기">{project.detail ? 'Back to Works' : 'Back Home'} <span aria-hidden="true">↙</span></button>
     <div className="sw-detail__content" data-detail-content>

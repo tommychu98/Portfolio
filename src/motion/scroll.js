@@ -16,8 +16,16 @@ export function scrollToPosition(target, immediate = false) {
   if (lenis) lenis.scrollTo(target, { immediate });
   else if (typeof target === 'number') window.scrollTo({top:target,behavior:'instant'});
   else target?.scrollIntoView({behavior:'instant'});
+  if (immediate) ScrollTrigger.update();
 }
 export function pauseScroll(paused) { if (paused) lenis?.stop(); else lenis?.start(); }
+export function sectionLayoutTop(target) {
+  const item = target.closest('.section-stack__item');
+  if (!item) return target.getBoundingClientRect().top + window.scrollY;
+  const surface = item.querySelector('.section-stack__surface');
+  return item.previousElementSibling.getBoundingClientRect().top + window.scrollY
+    + target.getBoundingClientRect().top - surface.getBoundingClientRect().top;
+}
 export function initScroll() {
   let tick;
   const destroy = () => { if(tick) gsap.ticker.remove(tick); lenis?.destroy(); lenis = undefined; };
@@ -41,7 +49,7 @@ export function initScroll() {
     requestAnimationFrame(() => {
       target.setAttribute('tabindex','-1');
       target.focus({preventScroll:true});
-      const top = target.getBoundingClientRect().top + window.scrollY - 105;
+      const top = sectionLayoutTop(target) - 105;
       scrollToPosition(Math.max(0,top));
     });
   };

@@ -20,7 +20,7 @@ export default function CloneCoding() {
           <article key={clone.name} data-reveal>
             <a href={clone.href} target="_blank" rel="noopener noreferrer" className="clone-coding__visual" aria-label={`${clone.title} 학습 데모 새 창`}>
               {clone.thumbnail
-                ? <img className="photo" src={clone.thumbnail} alt="LIVE EVIL 메인 프로모션 — 세럼 제품을 들고 있는 모델" loading="lazy" width="1200" height="613"/>
+                ? <img className="photo" src={clone.thumbnail} alt={clone.thumbnailAlt || `${clone.name} 메인 페이지 미리보기`} loading="lazy" width="1200" height="900"/>
                 : <Photo kind={clone.image} alt={`${clone.name} ${clone.title} 학습 데모 비주얼`}/>}
               <span>{clone.name}<em>{clone.tagline || (clone.name === 'FORM' ? 'Ideas into possibilities.' : 'A new perspective.')}</em></span>
               <b aria-hidden="true">↗</b>
