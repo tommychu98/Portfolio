@@ -7,14 +7,19 @@ export function initPreloader(root,sources,onReady,onComplete){
   let drawing;
   context.add(()=>{
     paths.forEach(path=>{const length=path.getTotalLength();gsap.set(path,{strokeDasharray:length,strokeDashoffset:length});});
-    drawing=gsap.to(paths,{strokeDashoffset:0,duration:.65,stagger:.18,ease:'power1.inOut'});
+    drawing=gsap.to(paths,{strokeDashoffset:0,duration:.45,stagger:.07,ease:'power1.inOut'});
   });
   const leave=()=>{
     if(disposed||leaving)return;
     leaving=true;clearTimeout(deadline);clearTimeout(minimumTimer);
     drawing?.progress(1).pause();
-    onReady();
-    exit=gsap.to(root,{opacity:0,duration:.45,ease:'power2.inOut',onComplete:()=>{if(!disposed)onComplete();}});
+    // Start the heavier intro entrance only after the loader has faded, so it
+    // cannot delay the one-second loader animation on slower devices.
+    exit=gsap.to(root,{opacity:0,duration:.18,ease:'power2.inOut',onComplete:()=>{
+      if(disposed)return;
+      onComplete();
+      onReady();
+    }});
   };
   // Start font requests for the typography actually used above the fold.
   const fonts=document.fonts ? Promise.allSettled([
@@ -24,8 +29,9 @@ export function initPreloader(root,sources,onReady,onComplete){
     document.fonts.ready,
   ]) : Promise.resolve();
   const images=sources.map(src=>Promise.resolve().then(()=>{const image=new Image();image.src=src;return image.decode();}));
-  const minimum=new Promise(resolve=>{minimumTimer=setTimeout(resolve,1600);});
+  // Keep the complete draw-and-fade sequence within roughly one second.
+  const minimum=new Promise(resolve=>{minimumTimer=setTimeout(resolve,820);});
   Promise.all([minimum,Promise.allSettled([...images,fonts])]).then(leave);
-  deadline=setTimeout(leave,5000);
+  deadline=setTimeout(leave,820);
   return()=>{disposed=true;clearTimeout(minimumTimer);clearTimeout(deadline);exit?.kill();context.revert();};
 }

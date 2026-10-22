@@ -23,7 +23,7 @@ try{
     let ready=0,complete=0;
     const cleanup=initPreloader(root,['/test.png'],()=>ready++,()=>complete++);
     if(mode==='unmount')cleanup();
-    await new Promise(resolve=>setTimeout(resolve,mode==='hung'?5700:reduced?350:2200));
+    await new Promise(resolve=>setTimeout(resolve,1100));
     assert.equal(ready,mode==='unmount'?0:1,`${mode}: ready exactly once`);
     assert.equal(complete,mode==='unmount'?0:1,`${mode}: overlay removed exactly once`);
     cleanup();root.remove();
