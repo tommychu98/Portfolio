@@ -365,12 +365,13 @@
   ],
   "clones": [
     {
-      "title": "기업형 메인",
-      "category": "01 / CORPORATE",
-      "body": "콘텐츠 구획 · 레이아웃",
-      "href": "https://personal3-gilt.vercel.app/pages/clone-01.html",
-      "image": "architecture",
-      "name": "NORTH"
+      "title": "LIVE EVIL 쇼핑몰 메인",
+      "category": "01 / E-COMMERCE",
+      "body": "프로모션 배너부터 상품 카드와 라이브 랭킹까지, 쇼핑몰 메인 페이지의 정보 구조와 레이아웃을 구현했습니다. Swiper를 활용한 슬라이드와 재생 제어를 학습한 클론 코딩 작업입니다.",
+      "href": "https://tommychu98.github.io/Clonecoding_1/",
+      "thumbnail": "/media/images/clone/live-evil-hero.jpg",
+      "tagline": "Shopping in motion.",
+      "name": "LIVE EVIL"
     },
     {
       "title": "스튜디오형 메인",

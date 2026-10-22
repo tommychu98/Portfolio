@@ -7,3 +7,6 @@
 
 /* Condensed poster typography; palette, layout and animation unchanged. */
 .clone-coding h3{font-weight:700}.clone-coding__category{font-family:var(--subheading);font-weight:600}
+.clone-coding__visual img.photo{object-fit:cover}
+.clone-coding__visual>span{max-width:calc(100% - 46px);font-size:clamp(30px,3vw,44px)}
+.clone-coding article>p{line-height:1.75;word-break:keep-all;overflow-wrap:anywhere}
